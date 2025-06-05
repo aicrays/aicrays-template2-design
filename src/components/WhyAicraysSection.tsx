@@ -114,33 +114,33 @@ const WhyAicraysSection = () => {
           ))}
         </div>
 
-        {/* Refined Bottom CTA */}
-        <div className="text-center">
-          <div className="relative max-w-2xl mx-auto">
-            {/* Soft background curve */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pulse-50/40 via-pulse-100/20 to-pulse-50/40 rounded-2xl transform scale-105 blur-sm"></div>
+        {/* Minimal Pill-Style CTA */}
+        <div className="text-center mt-8">
+          <a 
+            href="#contact" 
+            className="group inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-transparent bg-gradient-to-r from-pulse-200 via-pulse-300 to-pulse-200 bg-clip-border rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.4), rgba(124,58,237,0.3)) border-box'
+            }}
+          >
+            <span className="text-gray-700 text-sm font-normal">
+              Still stuck with generic software?
+            </span>
+            <span className="text-pulse-600 text-sm font-semibold group-hover:text-pulse-700 transition-colors">
+              Let's talk
+            </span>
+            <svg 
+              className="w-4 h-4 text-pulse-600 transition-all duration-300 group-hover:translate-x-1 group-hover:text-pulse-700" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
             
-            <div className="relative bg-white/80 backdrop-blur-sm border border-pulse-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 group">
-              <p className="text-pulse-600 font-medium mb-2">
-                Still stuck with generic software?
-              </p>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-pulse-700 transition-colors">
-                Let's Build What Your Current Platform Can't
-              </h3>
-              <p className="text-gray-600 mb-6">
-                Ready to transform your operations with a platform designed around your business? Let's discuss what's possible.
-              </p>
-              <a 
-                href="#contact" 
-                className="button-primary group-hover:scale-105 transition-all relative overflow-hidden inline-flex items-center gap-2 px-8 py-3"
-              >
-                <span className="relative z-10">Book Consultation</span>
-                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </a>
-            </div>
-          </div>
+            {/* Subtle hover pulse background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-pulse-100/30 via-pulse-200/30 to-pulse-100/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </div>
       </div>
     </section>
