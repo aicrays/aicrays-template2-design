@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Search, Wrench, Code, Globe } from "lucide-react";
 
@@ -85,7 +84,7 @@ const ProcessSection = () => {
 
         {/* Enhanced Timeline - Desktop Only */}
         <div className="hidden lg:block relative mb-20">
-          {/* SVG Timeline with proper positioning */}
+          {/* SVG Timeline with just the curved line */}
           <div className="absolute top-0 left-0 right-0 h-32 flex justify-center">
             <svg className="w-full max-w-6xl h-32" viewBox="0 0 1000 128" preserveAspectRatio="xMidYMid meet">
               <defs>
@@ -106,7 +105,7 @@ const ProcessSection = () => {
                 </filter>
               </defs>
               
-              {/* Main curved path */}
+              {/* Main curved path - keeping just the line */}
               <path 
                 d="M 100 64 Q 300 40, 500 64 Q 700 88, 900 64" 
                 stroke="url(#timelineGradient)" 
@@ -115,36 +114,6 @@ const ProcessSection = () => {
                 filter="url(#glow)"
                 className="opacity-90"
               />
-              
-              {/* Step circles positioned on the curve - REMOVED NUMBERS */}
-              {[
-                { x: 100, y: 64 },
-                { x: 350, y: 48 },
-                { x: 650, y: 80 },
-                { x: 900, y: 64 }
-              ].map(({ x, y }, index) => (
-                <g key={index}>
-                  {/* Step circle background */}
-                  <circle
-                    cx={x}
-                    cy={y}
-                    r="20"
-                    fill="url(#timelineGradient)"
-                    className={`${visibleSteps.includes(index) ? 'opacity-100' : 'opacity-30'} transition-all duration-500`}
-                    style={{ animationDelay: `${index * 0.3}s` }}
-                  />
-                  
-                  {/* Pulsing dot */}
-                  <circle
-                    cx={x}
-                    cy={y}
-                    r="3"
-                    fill="white"
-                    className={`${visibleSteps.includes(index) ? 'animate-pulse opacity-80' : 'opacity-0'} transition-all duration-500`}
-                    style={{ animationDelay: `${index * 0.3}s` }}
-                  />
-                </g>
-              ))}
             </svg>
           </div>
         </div>
