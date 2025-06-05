@@ -26,7 +26,7 @@ const Hero = () => {
       <HeroBackground />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center min-h-[80vh]">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between min-h-[80vh] py-8 lg:py-16">
           <HeroContent />
           <HeroVisual />
         </div>

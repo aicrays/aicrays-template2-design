@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8">
+    <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8 flex flex-col justify-center">
       {/* Enhanced Context Header */}
       <div 
         className="pulse-chip opacity-0 animate-fade-in" 
@@ -53,14 +53,14 @@ const HeroContent = () => {
       {/* Enhanced Subtitle with Better Spacing */}
       <p 
         style={{ animationDelay: "0.9s" }} 
-        className="text-xl lg:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl mt-6"
+        className="text-xl lg:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl"
       >
         We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
       </p>
       
-      {/* Enhanced CTAs with Better Spacing */}
+      {/* Enhanced CTAs with Better Alignment */}
       <div 
-        className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-6 opacity-0 animate-fade-in" 
+        className="flex flex-col sm:flex-row gap-4 lg:gap-6 opacity-0 animate-fade-in" 
         style={{ animationDelay: "1.1s" }}
       >
         <a 
@@ -84,7 +84,7 @@ const HeroContent = () => {
       
       {/* Scroll Indicator */}
       <div 
-        className="pt-8 opacity-0 animate-fade-in" 
+        className="opacity-0 animate-fade-in" 
         style={{ animationDelay: "1.3s" }}
       >
         <a 
