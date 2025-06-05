@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Code, Settings, Users, Wrench } from "lucide-react";
 
@@ -55,13 +54,13 @@ const WhyAicraysSection = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gradient-to-b from-white via-gray-50/30 to-white relative" id="about" ref={sectionRef}>
+    <section className="py-8 bg-gradient-to-b from-white via-gray-50/30 to-white relative" id="about" ref={sectionRef}>
       {/* Soft Abstract Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,58,237,0.06)_0%,transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(124,58,237,0.04)_0%,transparent_60%)] pointer-events-none"></div>
       
       <div className="section-container relative z-10">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6">
           <h2 className="section-title mb-3">
             Not Templates. Not Theoretical.<br />
             <span className="text-pulse-500 relative">
@@ -83,7 +82,7 @@ const WhyAicraysSection = () => {
         </div>
 
         {/* Unified 2x2 Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
           {valuePillars.map((pillar, index) => (
             <div 
               key={pillar.title}
@@ -114,28 +113,25 @@ const WhyAicraysSection = () => {
           ))}
         </div>
 
-        {/* Refined Bottom CTA */}
-        <div className="text-center">
-          <div className="relative max-w-2xl mx-auto">
-            {/* Soft background curve */}
-            <div className="absolute inset-0 bg-gradient-to-r from-pulse-50/40 via-pulse-100/20 to-pulse-50/40 rounded-2xl transform scale-105 blur-sm"></div>
-            
-            <div className="relative bg-white/80 backdrop-blur-sm border border-pulse-100 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 group">
-              <p className="text-pulse-600 font-medium mb-2">
+        {/* Compact Bottom CTA */}
+        <div className="text-center mt-4">
+          <div className="relative max-w-xl mx-auto">
+            <div className="relative bg-white/70 backdrop-blur-sm border border-pulse-100/50 p-5 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 group">
+              <p className="text-pulse-600 font-medium text-sm mb-1">
                 Still stuck with generic software?
               </p>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-pulse-700 transition-colors">
+              <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-pulse-700 transition-colors">
                 Let's Build What Your Current Platform Can't
               </h3>
-              <p className="text-gray-600 mb-6">
-                Ready to transform your operations with a platform designed around your business? Let's discuss what's possible.
+              <p className="text-gray-600 text-sm leading-snug mb-4">
+                Ready to transform your operations with a platform designed around your business?
               </p>
               <a 
                 href="#contact" 
-                className="button-primary group-hover:scale-105 transition-all relative overflow-hidden inline-flex items-center gap-2 px-8 py-3"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-pulse-500 to-pulse-600 hover:from-pulse-600 hover:to-pulse-700 text-white font-medium px-5 py-2 rounded-full transition-all duration-300 hover:shadow-lg hover:scale-105 text-sm"
               >
-                <span className="relative z-10">Book Consultation</span>
-                <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span>Book Consultation</span>
+                <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </a>
