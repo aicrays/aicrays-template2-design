@@ -7,7 +7,6 @@ const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredModule, setHoveredModule] = useState<string | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -42,27 +41,6 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
-
-  const moduleTypes = [
-    { 
-      id: "access", 
-      title: "Intelligent Access", 
-      subtitle: "Identity & Security",
-      color: "from-blue-400 to-cyan-500"
-    },
-    { 
-      id: "quote", 
-      title: "Quote AI Engine", 
-      subtitle: "Smart Automation",
-      color: "from-purple-400 to-pink-500"
-    },
-    { 
-      id: "fleet", 
-      title: "Fleet Manager", 
-      subtitle: "Coming Soon",
-      color: "from-green-400 to-emerald-500"
-    }
-  ];
   
   return (
     <section 
@@ -132,17 +110,17 @@ const Hero = () => {
               <span className="font-semibold">Modular AI-Powered Platforms</span>
             </div>
             
-            {/* Enhanced Split Headline with Typewriter Effect */}
-            <div className="space-y-2">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+            {/* Fixed Split Headline with Better Spacing */}
+            <div className="space-y-4">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
                 <div 
-                  className="opacity-0 animate-fade-in" 
+                  className="opacity-0 animate-fade-in mb-2" 
                   style={{ animationDelay: "0.3s" }}
                 >
                   <span className="block text-gray-900">Empowering Enterprises</span>
                 </div>
                 <div 
-                  className="opacity-0 animate-fade-in" 
+                  className="opacity-0 animate-fade-in mb-2" 
                   style={{ animationDelay: "0.5s" }}
                 >
                   <span className="block">
@@ -168,17 +146,17 @@ const Hero = () => {
               </h1>
             </div>
             
-            {/* Enhanced Subtitle */}
+            {/* Enhanced Subtitle with Better Spacing */}
             <p 
               style={{ animationDelay: "0.9s" }} 
-              className="text-xl lg:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl"
+              className="text-xl lg:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl mt-6"
             >
               We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
             </p>
             
-            {/* Enhanced CTAs */}
+            {/* Enhanced CTAs with Better Spacing */}
             <div 
-              className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-4 opacity-0 animate-fade-in" 
+              className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-6 opacity-0 animate-fade-in" 
               style={{ animationDelay: "1.1s" }}
             >
               <a 
@@ -215,13 +193,11 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Enhanced Right Side Visual */}
+          {/* Enhanced Right Side Visual - Removed Hover Functionality */}
           <div className="w-full lg:w-1/2 relative">
             <div 
               className="relative z-10 opacity-0 animate-fade-in" 
               style={{ animationDelay: "1.5s" }}
-              onMouseEnter={() => !isMobile && setHoveredModule("main")}
-              onMouseLeave={() => !isMobile && setHoveredModule(null)}
             >
               {/* Main Platform Visual */}
               <div className="relative transition-all duration-700 ease-out overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-br from-pulse-500 to-pulse-700 p-8 lg:p-12 hover:shadow-3xl hover:scale-[1.02] transform">
@@ -293,30 +269,6 @@ const Hero = () => {
                 <div className="absolute top-4 right-4 w-3 h-3 bg-white/40 rounded-full animate-float"></div>
                 <div className="absolute bottom-4 left-4 w-2 h-2 bg-white/60 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
               </div>
-              
-              {/* Platform Types Overlay */}
-              {hoveredModule && (
-                <div className="absolute top-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl animate-fade-in z-20">
-                  <div className="space-y-2">
-                    {moduleTypes.map((module, index) => (
-                      <div 
-                        key={module.id} 
-                        className={cn(
-                          "flex items-center justify-between p-2 rounded-lg transition-all duration-300",
-                          `bg-gradient-to-r ${module.color} bg-opacity-10 hover:bg-opacity-20`
-                        )}
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        <div>
-                          <div className="font-semibold text-gray-900">{module.title}</div>
-                          <div className="text-sm text-gray-600">{module.subtitle}</div>
-                        </div>
-                        <div className={cn("w-3 h-3 rounded-full bg-gradient-to-r", module.color)}></div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </div>
