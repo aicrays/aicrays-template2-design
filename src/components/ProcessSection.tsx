@@ -61,7 +61,7 @@ const ProcessSection = () => {
 
   return (
     <section 
-      className="h-screen flex items-center justify-center bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden" 
+      className="min-h-screen flex items-center justify-center bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden py-16" 
       id="process" 
       ref={sectionRef}
     >
@@ -87,43 +87,43 @@ const ProcessSection = () => {
         <div className="absolute bottom-40 right-1/3 w-40 h-40 bg-gradient-to-tl from-purple-200/20 to-purple-500/10 rounded-full blur-2xl animate-float opacity-42" style={{ animationDelay: '2.5s' }}></div>
       </div>
       
-      <div className="section-container relative z-10 py-8">
+      <div className="section-container relative z-10 max-w-7xl mx-auto px-6">
         {/* Compact Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-12">
           <div className="pulse-chip mx-auto mb-4">
             <span>Our Process</span>
           </div>
           <div className={`transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-700 to-purple-900 bg-clip-text text-transparent relative">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-700 to-purple-900 bg-clip-text text-transparent relative">
               How We Build
               <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 rounded-full transition-all duration-1000 delay-500 ${titleVisible ? 'w-24 opacity-100' : 'w-0 opacity-0'}`}></div>
             </h2>
           </div>
-          <p className={`section-subtitle mx-auto text-gray-600 max-w-2xl font-medium transition-all duration-1000 delay-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-lg text-gray-600 max-w-3xl mx-auto font-medium transition-all duration-1000 delay-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Our delivery approach balances speed with strategy, using modular frameworks to reduce risk.
           </p>
         </div>
 
-        {/* Desktop Process Flow - More Compact */}
+        {/* Desktop Process Flow - Optimized Layout */}
         <div className="hidden lg:block">
           {/* Enhanced Gradient Timeline */}
-          <div className="relative mb-8">
-            <div className="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-600 transform -translate-y-1/2 rounded-full opacity-80"></div>
+          <div className="relative mb-10">
+            <div className="absolute top-1/2 left-16 right-16 h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-600 transform -translate-y-1/2 rounded-full opacity-80"></div>
             
             {/* Animated Progress Trail */}
             {hoveredStep !== null && (
               <div 
                 className="absolute top-1/2 h-1.5 bg-gradient-to-r from-purple-500 to-purple-700 transform -translate-y-1/2 transition-all duration-500 rounded-full shadow-lg"
                 style={{
-                  left: `${8 + (hoveredStep * 21)}%`,
-                  width: `${21}%`,
+                  left: `${16 + (hoveredStep * 17)}%`,
+                  width: `${17}%`,
                   boxShadow: '0 0 20px rgba(147, 51, 234, 0.5)',
                 }}
               ></div>
             )}
 
-            {/* Process Cards - More Compact */}
-            <div className="grid grid-cols-4 gap-6">
+            {/* Process Cards - Optimized Grid */}
+            <div className="grid grid-cols-4 gap-8 px-4">
               {processSteps.map((step, index) => {
                 const isVisible = visibleSteps.includes(index);
                 return (
@@ -139,42 +139,42 @@ const ProcessSection = () => {
                     onMouseEnter={() => setHoveredStep(index)}
                     onMouseLeave={() => setHoveredStep(null)}
                   >
-                    {/* Compact Floating Icon */}
-                    <div className="flex justify-center mb-4">
-                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center transition-all duration-500 shadow-lg ${
+                    {/* Floating Icon */}
+                    <div className="flex justify-center mb-6">
+                      <div className={`w-18 h-18 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center transition-all duration-500 shadow-lg ${
                         hoveredStep === index 
                           ? 'scale-110 shadow-xl shadow-purple-500/30 border-purple-400' 
                           : 'hover:scale-105 hover:shadow-xl hover:shadow-purple-400/20'
                       }`}>
-                        <step.icon className="w-7 h-7 text-purple-700" strokeWidth={2.5} />
+                        <step.icon className="w-8 h-8 text-purple-700" strokeWidth={2.5} />
                       </div>
                     </div>
 
-                    {/* Compact Process Card */}
-                    <div className={`bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-5 shadow-xl transition-all duration-500 ${
+                    {/* Process Card */}
+                    <div className={`bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-6 shadow-xl transition-all duration-500 h-48 flex flex-col justify-between ${
                       hoveredStep === index 
                         ? 'shadow-2xl transform -translate-y-2 border-purple-200' 
                         : 'hover:shadow-2xl hover:-translate-y-1'
                     }`}>
-                      <div className="text-center">
+                      <div className="text-center flex-1 flex flex-col">
                         <div className="flex items-center justify-center mb-3">
                           <span className="text-xs font-bold text-purple-700 bg-gradient-to-r from-purple-100 to-purple-200 px-3 py-1 rounded-full border border-purple-200">
                             Step {index + 1}
                           </span>
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 mb-2 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed mb-3 font-medium">
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4 font-medium flex-1">
                           {step.description}
                         </p>
                         
-                        {/* Enhanced Hover Tooltip */}
-                        {hoveredStep === index && (
-                          <div className="text-xs text-purple-700 font-bold bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-2 rounded-xl border border-purple-200 transition-all duration-300 transform scale-105">
-                            ✨ {step.stat}
-                          </div>
-                        )}
+                        {/* Stats Display */}
+                        <div className={`text-xs text-purple-700 font-bold bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-2 rounded-xl border border-purple-200 transition-all duration-300 ${
+                          hoveredStep === index ? 'transform scale-105' : ''
+                        }`}>
+                          ✨ {step.stat}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -184,9 +184,9 @@ const ProcessSection = () => {
           </div>
         </div>
 
-        {/* Mobile Process Flow - More Compact */}
+        {/* Mobile Process Flow - Optimized */}
         <div className="lg:hidden">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {processSteps.map((step, index) => {
               const isVisible = visibleSteps.includes(index);
               
@@ -205,23 +205,23 @@ const ProcessSection = () => {
 
                   <div className="text-center">
                     {/* Mobile Icon */}
-                    <div className="flex justify-center mb-3">
-                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center shadow-lg">
-                        <step.icon className="w-6 h-6 text-purple-700" strokeWidth={2.5} />
+                    <div className="flex justify-center mb-4">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center shadow-lg">
+                        <step.icon className="w-7 h-7 text-purple-700" strokeWidth={2.5} />
                       </div>
                     </div>
 
                     {/* Mobile Card */}
-                    <div className="bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-5 shadow-xl">
-                      <div className="flex items-center justify-center gap-3 mb-2">
+                    <div className="bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-6 shadow-xl">
+                      <div className="flex items-center justify-center gap-3 mb-3">
                         <span className="text-xs font-bold text-purple-700 bg-gradient-to-r from-purple-100 to-purple-200 px-3 py-1 rounded-full border border-purple-200">
                           Step {index + 1}
                         </span>
                       </div>
-                      <h3 className="text-base font-bold text-gray-900 mb-2 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-3 font-medium">
+                      <p className="text-sm text-gray-600 leading-relaxed mb-4 font-medium">
                         {step.description}
                       </p>
                       <div className="text-xs text-purple-700 font-bold bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-2 rounded-lg border border-purple-200 inline-block">
