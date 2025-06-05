@@ -101,24 +101,6 @@ const Index = () => {
         <div className="absolute bottom-[20%] left-[60%] w-7 h-7 bg-violet-400/28 rounded-full blur-md animate-float-vertical opacity-45" style={{ animationDelay: '32s', animationDuration: '11s' }}></div>
         <div className="absolute top-[65%] right-[90%] w-5 h-5 bg-purple-300/32 rounded-full blur-sm animate-float-vertical opacity-55" style={{ animationDelay: '34s', animationDuration: '9s' }}></div>
         
-        {/* Extra floating orbs throughout the page */}
-        <div className="absolute top-[5%] left-[25%] w-38 h-38 bg-purple-300/22 rounded-full blur-2xl animate-float-vertical opacity-60" style={{ animationDelay: '36s', animationDuration: '26s' }}></div>
-        <div className="absolute top-[90%] right-[30%] w-42 h-42 bg-violet-400/18 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '38s', animationDuration: '30s' }}></div>
-        <div className="absolute top-[65%] left-[3%] w-28 h-28 bg-indigo-300/24 rounded-full blur-2xl animate-float-vertical opacity-65" style={{ animationDelay: '40s', animationDuration: '20s' }}></div>
-        <div className="absolute top-[35%] right-[3%] w-32 h-32 bg-purple-200/26 rounded-full blur-2xl animate-float-vertical opacity-55" style={{ animationDelay: '42s', animationDuration: '24s' }}></div>
-        <div className="absolute bottom-[5%] left-[50%] w-36 h-36 bg-violet-300/20 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '44s', animationDuration: '28s' }}></div>
-        
-        {/* More medium orbs */}
-        <div className="absolute top-[18%] left-[75%] w-22 h-22 bg-purple-400/28 rounded-full blur-xl animate-float-vertical opacity-60" style={{ animationDelay: '46s', animationDuration: '16s' }}></div>
-        <div className="absolute top-[78%] left-[80%] w-24 h-24 bg-indigo-400/25 rounded-full blur-xl animate-float-vertical opacity-55" style={{ animationDelay: '48s', animationDuration: '18s' }}></div>
-        <div className="absolute top-[42%] right-[85%] w-20 h-20 bg-violet-400/30 rounded-full blur-xl animate-float-vertical opacity-65" style={{ animationDelay: '50s', animationDuration: '14s' }}></div>
-        <div className="absolute bottom-[80%] right-[65%] w-26 h-26 bg-purple-300/24 rounded-full blur-xl animate-float-vertical opacity-50" style={{ animationDelay: '52s', animationDuration: '22s' }}></div>
-        
-        {/* Scattered small orbs */}
-        <div className="absolute top-[28%] left-[45%] w-16 h-16 bg-indigo-300/26 rounded-full blur-lg animate-float-vertical opacity-45" style={{ animationDelay: '54s', animationDuration: '12s' }}></div>
-        <div className="absolute top-[72%] right-[40%] w-18 h-18 bg-violet-300/28 rounded-full blur-lg animate-float-vertical opacity-60" style={{ animationDelay: '56s', animationDuration: '15s' }}></div>
-        <div className="absolute bottom-[28%] left-[85%] w-14 h-14 bg-purple-400/24 rounded-full blur-lg animate-float-vertical opacity-55" style={{ animationDelay: '58s', animationDuration: '11s' }}></div>
-        
         {/* Enhanced particle dots with vertical movement */}
         <div className="absolute top-[30%] left-[20%] w-3 h-3 bg-purple-500/60 rounded-full animate-float-vertical" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
         <div className="absolute top-[75%] right-[20%] w-2.5 h-2.5 bg-violet-500/55 rounded-full animate-float-vertical" style={{ animationDelay: '5s', animationDuration: '10s' }}></div>
@@ -130,11 +112,6 @@ const Index = () => {
         <div className="absolute top-[20%] left-[30%] w-2.5 h-2.5 bg-purple-400/45 rounded-full animate-float-vertical" style={{ animationDelay: '18s', animationDuration: '7s' }}></div>
         <div className="absolute bottom-[25%] right-[35%] w-3 h-3 bg-indigo-400/50 rounded-full animate-float-vertical" style={{ animationDelay: '21s', animationDuration: '9s' }}></div>
         <div className="absolute top-[55%] left-[10%] w-1.5 h-1.5 bg-violet-500/40 rounded-full animate-float-vertical" style={{ animationDelay: '24s', animationDuration: '5s' }}></div>
-        <div className="absolute top-[12%] right-[15%] w-2.5 h-2.5 bg-purple-500/50 rounded-full animate-float-vertical" style={{ animationDelay: '60s', animationDuration: '8s' }}></div>
-        <div className="absolute bottom-[40%] left-[20%] w-3 h-3 bg-indigo-500/45 rounded-full animate-float-vertical" style={{ animationDelay: '62s', animationDuration: '10s' }}></div>
-        <div className="absolute top-[88%] right-[18%] w-2 h-2 bg-violet-400/55 rounded-full animate-float-vertical" style={{ animationDelay: '64s', animationDuration: '6s' }}></div>
-        <div className="absolute top-[38%] left-[92%] w-4 h-4 bg-purple-400/40 rounded-full animate-float-vertical" style={{ animationDelay: '66s', animationDuration: '12s' }}></div>
-        <div className="absolute bottom-[65%] right-[88%] w-2.5 h-2.5 bg-indigo-400/48 rounded-full animate-float-vertical" style={{ animationDelay: '68s', animationDuration: '9s' }}></div>
       </div>
       
       <div className="relative z-10">
