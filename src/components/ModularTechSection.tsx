@@ -109,7 +109,7 @@ const ModularTechSection = () => {
         </div>
 
         {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-12">
           {components.map((component, index) => (
             <div
               key={component.title}
@@ -151,41 +151,33 @@ const ModularTechSection = () => {
           ))}
         </div>
 
-        {/* Enhanced Call to Action */}
+        {/* Compact Pill-Style CTA */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
-          <div className="relative backdrop-blur-xl bg-white/70 border border-white/40 rounded-3xl p-10 lg:p-12 shadow-2xl max-w-4xl mx-auto overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-50/50 via-white/30 to-violet-50/50 rounded-3xl"></div>
+          <a 
+            href="#contact" 
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-transparent bg-gradient-to-r from-purple-200 via-purple-300 to-purple-200 bg-clip-border rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 relative overflow-hidden"
+            style={{
+              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.4), rgba(124,58,237,0.3)) border-box'
+            }}
+          >
+            <span className="text-gray-700 text-sm font-normal">
+              Looking to combine these components for your solution?
+            </span>
+            <span className="text-purple-600 text-sm font-semibold group-hover:text-purple-700 transition-colors flex items-center gap-1">
+              Let's Build Together
+              <svg 
+                className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </span>
             
-            <div className="relative z-10">
-              <p className="text-xl lg:text-2xl text-gray-700 mb-8 font-light">
-                Ready to see these components in action?
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <a 
-                  href="#contact" 
-                  className="group relative inline-flex items-center justify-center px-10 py-4 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px]"
-                >
-                  <span className="relative z-10">Schedule Discovery Session</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-purple-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></div>
-                </a>
-                
-                <button 
-                  onClick={() => {
-                    const solutionsSection = document.querySelector('#case-studies');
-                    if (solutionsSection) {
-                      solutionsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="group inline-flex items-center justify-center px-8 py-4 text-lg lg:text-xl font-medium text-purple-600 bg-white/80 backdrop-blur-sm border-2 border-purple-200 rounded-full hover:border-purple-400 hover:bg-white transition-all duration-300 hover:shadow-lg min-w-[280px] sm:min-w-[200px]"
-                >
-                  <span>See Examples</span>
-                  <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
-                </button>
-              </div>
-            </div>
-          </div>
+            {/* Subtle hover pulse background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/30 via-purple-200/30 to-purple-100/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </a>
         </div>
       </div>
     </section>
