@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Wrench, Users, Heart, Globe, ArrowRight, Search } from "lucide-react";
 
@@ -65,25 +64,10 @@ const IndustriesSection = () => {
 
   return (
     <section className="py-20 md:py-32 relative overflow-hidden min-h-screen flex items-center" ref={sectionRef}>
-      {/* Dynamic Radial Gradient Background */}
+      {/* Dynamic Radial Gradient Background - No Grid Pattern */}
       <div className="absolute inset-0">
         {/* Main radial gradient */}
         <div className="absolute inset-0 bg-gradient-radial from-purple-50/40 via-white to-violet-50/30"></div>
-        
-        {/* Animated circuit pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <svg className="w-full h-full animate-subtle-rotate" viewBox="0 0 400 400" preserveAspectRatio="none">
-            <defs>
-              <pattern id="circuit-pattern" width="80" height="80" patternUnits="userSpaceOnUse">
-                <path d="M0 40h80M40 0v80M20 20h40M60 60h20M20 60v20" stroke="currentColor" strokeWidth="0.5" opacity="0.6"/>
-                <circle cx="40" cy="40" r="2" fill="currentColor" opacity="0.4"/>
-                <circle cx="20" cy="20" r="1" fill="currentColor" opacity="0.3"/>
-                <circle cx="60" cy="60" r="1" fill="currentColor" opacity="0.3"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
-          </svg>
-        </div>
         
         {/* Floating gradient orbs */}
         <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-gradient-to-br from-purple-200/10 to-purple-300/5 rounded-full blur-3xl animate-float"></div>
