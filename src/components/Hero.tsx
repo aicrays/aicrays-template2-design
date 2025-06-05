@@ -2,7 +2,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import HeroBackground from "./Hero/HeroBackground";
 import HeroContent from "./Hero/HeroContent";
-import HeroVisual from "./Hero/HeroVisual";
 import { useMobileDetection } from "@/hooks/useMobileDetection";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 
@@ -20,15 +19,14 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-gradient-to-br from-pulse-50 via-white to-pulse-100 min-h-[90vh] lg:min-h-screen flex items-center" 
+      className="overflow-hidden relative bg-gradient-to-br from-pulse-50 via-white to-pulse-100 min-h-screen flex items-center" 
       id="hero"
     >
       <HeroBackground />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-between min-h-[80vh] py-8 lg:py-16">
+        <div className="flex justify-center items-center min-h-[85vh] py-16 lg:py-24">
           <HeroContent />
-          <HeroVisual />
         </div>
       </div>
       
