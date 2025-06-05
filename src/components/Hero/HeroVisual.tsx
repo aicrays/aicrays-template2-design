@@ -6,37 +6,43 @@ const HeroVisual = () => {
   const components = [
     {
       icon: Brain,
-      title: "AI/ML Intelligence",
+      title: "AI/ML",
+      subtitle: "Intelligence",
       benefit: "Automated decisioning and forecasting",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Shield,
-      title: "Cybersecurity",
+      title: "Security",
+      subtitle: "Protection",
       benefit: "Enterprise-grade threat protection",
       gradient: "from-purple-600 to-purple-700"
     },
     {
       icon: Wifi,
-      title: "IoT/RFID Systems",
+      title: "IoT",
+      subtitle: "Connectivity",
       benefit: "Real-time operational visibility",
       gradient: "from-purple-400 to-purple-500"
     },
     {
       icon: BarChart3,
-      title: "Data Intelligence",
+      title: "Data",
+      subtitle: "Analytics",
       benefit: "Insights from real-time dashboards",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Cloud,
-      title: "Cloud DevOps",
+      title: "Cloud",
+      subtitle: "DevOps",
       benefit: "Scalable infrastructure deployment",
       gradient: "from-purple-600 to-purple-700"
     },
     {
       icon: Layout,
-      title: "UX Systems",
+      title: "UX",
+      subtitle: "Systems",
       benefit: "Human-centered design interfaces",
       gradient: "from-purple-400 to-purple-500"
     }
@@ -55,44 +61,46 @@ const HeroVisual = () => {
         className="relative z-10 opacity-0 animate-fade-in" 
         style={{ animationDelay: "1.2s" }}
       >
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-          <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-purple-600 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
-        </div>
+        {/* Background with gradient and decorative elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/10 rounded-3xl -m-4"></div>
+        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white/40 rounded-full animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
 
-        {/* 2x3 Modular Components Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 max-w-4xl">
+        {/* 2x3 Grid Layout */}
+        <div className="grid grid-cols-2 gap-4 lg:gap-6 max-w-2xl relative">
           {components.map((component, index) => (
             <div
               key={component.title}
-              className={`group glass-card p-4 lg:p-6 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] relative overflow-hidden opacity-0 animate-fade-in`}
+              className={`group bg-white/90 backdrop-blur-sm p-6 lg:p-8 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in rounded-2xl lg:rounded-3xl border border-white/20`}
               style={{ animationDelay: `${1.4 + index * 0.1}s` }}
             >
               {/* Background Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 group-hover:from-purple-50/20 group-hover:to-purple-100/10 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-purple-100/30 group-hover:from-purple-100/60 group-hover:to-purple-200/40 transition-all duration-500 rounded-2xl lg:rounded-3xl"></div>
               
               <div className="relative z-10">
-                <div className="flex items-center justify-between mb-3">
-                  <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${component.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                    <component.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white group-hover:animate-pulse" />
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${component.gradient} rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300`}>
+                    <component.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                   </div>
-                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse group-hover:scale-150 transition-transform"></div>
                 </div>
                 
-                <h3 className="text-sm lg:text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
-                  {component.title}
-                </h3>
+                <div className="mb-3">
+                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
+                    {component.title}
+                  </h3>
+                  <p className="text-sm lg:text-base text-gray-600 group-hover:text-purple-600 transition-colors font-medium">
+                    {component.subtitle}
+                  </p>
+                </div>
                 
-                <p className="text-xs lg:text-sm text-gray-600 mb-3 leading-relaxed group-hover:text-gray-700 transition-colors">
+                <p className="text-xs lg:text-sm text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors">
                   {component.benefit}
                 </p>
                 
                 {/* CTA Link */}
                 <button
                   onClick={handleCTAClick}
-                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 mt-3"
                 >
                   <div className="text-xs font-medium text-purple-600 hover:text-purple-700 transition-colors flex items-center">
                     Explore This →
@@ -101,7 +109,7 @@ const HeroVisual = () => {
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-bl from-purple-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-br-2xl lg:rounded-br-3xl"></div>
             </div>
           ))}
         </div>
