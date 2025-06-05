@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
@@ -184,6 +185,13 @@
 
   .border-gradient {
     @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-gradient-to-r before:from-pulse-400 before:to-pulse-600 before:p-[2px] before:mask-composite-exclude before:mask-[linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)];
+  }
+}
+
+@layer utilities {
+  /* Custom shadow utilities */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
   }
 }
 
