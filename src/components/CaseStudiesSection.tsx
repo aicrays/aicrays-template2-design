@@ -61,14 +61,19 @@ const CaseStudiesSection = () => {
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Live":
-        return "bg-green-100 text-green-700 border-green-200";
+        return "bg-green-50 text-green-700 border-green-200 hover:bg-green-100";
       case "MVP":
-        return "bg-blue-100 text-blue-700 border-blue-200";
+        return "bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100";
       case "In Progress":
-        return "bg-yellow-100 text-yellow-700 border-yellow-200";
+        return "bg-yellow-50 text-yellow-700 border-yellow-200 hover:bg-yellow-100";
       default:
-        return "bg-gray-100 text-gray-700 border-gray-200";
+        return "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100";
     }
+  };
+
+  const getIndustryColor = (industry: string) => {
+    // All industry badges use consistent purple theming
+    return "bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100";
   };
 
   useEffect(() => {
@@ -99,12 +104,12 @@ const CaseStudiesSection = () => {
       {/* Enhanced Background with Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Dynamic Gradient Mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/8 via-violet-400/6 to-blue-400/10 animate-gradient-shift"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/8 via-violet-400/6 to-purple-400/10 animate-gradient-shift"></div>
         
         {/* Floating Glow Orbs */}
         <div className="absolute top-[15%] right-[10%] w-28 h-28 bg-purple-200/12 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '0s', animationDuration: '10s' }}></div>
         <div className="absolute bottom-[20%] left-[15%] w-36 h-36 bg-violet-300/10 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '3s', animationDuration: '12s' }}></div>
-        <div className="absolute top-[50%] left-[5%] w-20 h-20 bg-blue-200/8 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s', animationDuration: '8s' }}></div>
+        <div className="absolute top-[50%] left-[5%] w-20 h-20 bg-purple-200/8 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s', animationDuration: '8s' }}></div>
         
         {/* Micro Particles */}
         <div className="absolute top-[30%] left-[30%] w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse opacity-25"></div>
@@ -157,10 +162,15 @@ const CaseStudiesSection = () => {
                     </div>
                     
                     <div className="flex flex-col gap-2 items-end">
-                      <Badge variant="outline" className="text-xs border-purple-200 text-purple-700 bg-purple-50/50">
+                      <Badge 
+                        variant="outline" 
+                        className={`text-xs transition-colors ${getIndustryColor(solution.industry)}`}
+                      >
                         {solution.industry}
                       </Badge>
-                      <Badge className={`text-xs ${getStatusColor(solution.status)}`}>
+                      <Badge 
+                        className={`text-xs transition-colors ${getStatusColor(solution.status)}`}
+                      >
                         {solution.status}
                       </Badge>
                     </div>
