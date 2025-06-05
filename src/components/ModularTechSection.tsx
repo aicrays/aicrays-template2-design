@@ -50,8 +50,7 @@ const ModularTechSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const cards = sectionRef.current?.querySelectorAll('.component-card');
-            cards?.forEach((card, index) => {
+            components.forEach((_, index) => {
               setTimeout(() => {
                 setVisibleCards(prev => [...prev, index]);
               }, index * 150);
@@ -71,7 +70,7 @@ const ModularTechSection = () => {
 
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 relative overflow-hidden" id="solutions">
-      {/* Animated Background Elements */}
+      {/* Enhanced Background with Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Dynamic Gradient Mesh */}
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-violet-400/8 to-blue-400/12 animate-gradient-shift"></div>
@@ -89,7 +88,7 @@ const ModularTechSection = () => {
       </div>
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
-        {/* Section Header */}
+        {/* Enhanced Section Header */}
         <div className="text-center mb-16">
           <div 
             className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/60 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
@@ -108,75 +107,142 @@ const ModularTechSection = () => {
           </p>
         </div>
 
-        {/* 3-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 mb-12">
-          {components.map((component, index) => (
-            <div
-              key={component.title}
-              className={`component-card group cursor-pointer transition-all duration-700 ${
-                visibleCards.includes(index) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-            >
-              {/* Glassmorphic Card */}
-              <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
-                {/* Background Glow on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                
-                {/* Card Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`w-14 h-14 bg-gradient-to-br ${component.gradient} rounded-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                    <component.icon className="w-7 h-7 text-white" />
-                  </div>
-                  
-                  {/* Content */}
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-700 transition-colors">
-                    {component.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                    {component.description}
-                  </p>
-                </div>
+        {/* Modular Cluster Layout - Staggered Grid */}
+        <div className="relative mb-12">
+          {/* Desktop Staggered Layout */}
+          <div className="hidden lg:grid grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {components.map((component, index) => {
+              // Create staggered positioning
+              const staggerClasses = [
+                "translate-y-0", // Top row - normal
+                "translate-y-8", // Top row - down
+                "translate-y-4", // Top row - slightly down
+                "translate-y-12", // Bottom row - down
+                "translate-y-0", // Bottom row - normal
+                "translate-y-6"  // Bottom row - slightly down
+              ];
+              
+              return (
+                <div
+                  key={component.title}
+                  className={`component-card group cursor-pointer transition-all duration-700 ${staggerClasses[index]} ${
+                    visibleCards.includes(index) 
+                      ? 'opacity-100 translate-x-0' 
+                      : 'opacity-0 translate-x-8'
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Enhanced Glassmorphic Card */}
+                  <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
+                    {/* Background Glow on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                    
+                    {/* Card Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`w-14 h-14 bg-gradient-to-br ${component.gradient} rounded-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                        <component.icon className="w-7 h-7 text-white" strokeWidth={2} />
+                      </div>
+                      
+                      {/* Content */}
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-700 transition-colors">
+                        {component.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                        {component.description}
+                      </p>
+                    </div>
 
-                {/* Subtle Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                
-                {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Subtle Corner Accent */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                    
+                    {/* Hover Glow Effect */}
+                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Tablet Layout - 2 Columns */}
+          <div className="hidden md:grid lg:hidden grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {components.map((component, index) => (
+              <div
+                key={component.title}
+                className={`component-card group cursor-pointer transition-all duration-700 ${
+                  visibleCards.includes(index) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-3xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                  
+                  <div className="relative z-10">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${component.gradient} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 transition-all duration-300`}>
+                      <component.icon className="w-6 h-6 text-white" strokeWidth={2} />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">
+                      {component.title}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      {component.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Mobile Layout - Single Column */}
+          <div className="md:hidden grid grid-cols-1 gap-6 max-w-md mx-auto">
+            {components.map((component, index) => (
+              <div
+                key={component.title}
+                className={`component-card group cursor-pointer transition-all duration-700 ${
+                  visibleCards.includes(index) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  
+                  <div className="relative z-10 text-center">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${component.gradient} rounded-xl flex items-center justify-center shadow-lg mb-4 mx-auto group-hover:scale-110 transition-all duration-300`}>
+                      <component.icon className="w-6 h-6 text-white" strokeWidth={2} />
+                    </div>
+                    
+                    <h3 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors">
+                      {component.title}
+                    </h3>
+                    
+                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      {component.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Compact Pill-Style CTA */}
+        {/* Subtle CTA */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+          <p className="text-gray-600 mb-4">Want to see these components in action?</p>
           <a 
             href="#contact" 
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-transparent bg-gradient-to-r from-purple-200 via-purple-300 to-purple-200 bg-clip-border rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 relative overflow-hidden"
-            style={{
-              background: 'linear-gradient(white, white) padding-box, linear-gradient(135deg, rgba(124,58,237,0.3), rgba(168,85,247,0.4), rgba(124,58,237,0.3)) border-box'
-            }}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105"
           >
-            <span className="text-gray-700 text-sm font-normal">
-              Looking to combine these components for your solution?
-            </span>
-            <span className="text-purple-600 text-sm font-semibold group-hover:text-purple-700 transition-colors flex items-center gap-1">
-              Let's Build Together
-              <svg 
-                className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </span>
-            
-            {/* Subtle hover pulse background */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-100/30 via-purple-200/30 to-purple-100/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            Schedule Discovery Session
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </a>
         </div>
       </div>
