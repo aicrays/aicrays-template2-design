@@ -9,7 +9,7 @@
   }
 
   .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200 transition-all duration-300 hover:bg-pulse-200 hover:shadow-md;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200 transition-all duration-300 hover:bg-pulse-200 hover:shadow-md font-sans;
   }
   
   .section-container {
@@ -21,7 +21,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl;
+    @apply text-lg md:text-xl text-gray-600 mt-4 max-w-3xl font-sans;
   }
 
   .glass-card {
@@ -33,15 +33,15 @@
   }
   
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden font-sans;
   }
 
   .button-secondary {
-    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg;
+    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg font-sans;
   }
   
   .nav-link {
-    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;
+    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full font-sans;
   }
 
   /* Interactive Elements */
@@ -55,5 +55,19 @@
 
   .border-gradient {
     @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-gradient-to-r before:from-pulse-400 before:to-pulse-600 before:p-[2px] before:mask-composite-exclude before:mask-[linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)];
+  }
+
+  /* Ensure consistent typography across all components */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  p, span, div, button, input, textarea {
+    @apply font-sans;
+  }
+
+  /* Override any system defaults */
+  .font-consistency {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif !important;
   }
 }
