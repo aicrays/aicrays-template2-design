@@ -77,12 +77,12 @@ const IndustriesSection = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-pulse-50/60 via-white to-pulse-100/40"></div>
         
         {/* Flowing mesh background */}
-        <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute inset-0 opacity-[0.02]">
           <svg className="w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="none">
             <defs>
-              <pattern id="flowing-mesh" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M0 20h40M20 0v40" stroke="currentColor" strokeWidth="0.5" opacity="0.3"/>
-                <circle cx="20" cy="20" r="1" fill="currentColor" opacity="0.2"/>
+              <pattern id="flowing-mesh" width="60" height="60" patternUnits="userSpaceOnUse">
+                <path d="M0 30h60M30 0v60" stroke="currentColor" strokeWidth="0.5" opacity="0.4"/>
+                <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.3"/>
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#flowing-mesh)" />
@@ -118,24 +118,24 @@ const IndustriesSection = () => {
           <div className="hidden lg:block relative h-[600px]">
             {/* Central CTA Hub */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-              <div className="glass-morphism-card group relative overflow-hidden transition-all duration-700 hover:scale-105 w-80 h-80 flex items-center justify-center">
+              <div className="glass-morphism-card group relative overflow-hidden transition-all duration-700 hover:scale-105 w-96 h-96 flex items-center justify-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-pulse-100/70 to-pulse-200/50 backdrop-blur-xl border border-pulse-300/40 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-pulse-400/0 to-pulse-600/0 group-hover:from-pulse-400/20 group-hover:to-pulse-600/10 rounded-2xl transition-all duration-700"></div>
                 
-                <div className="relative z-10 text-center p-8">
+                <div className="relative z-10 text-center p-8 max-w-xs">
                   <div className="w-20 h-20 bg-gradient-to-br from-pulse-500 to-pulse-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-pulse-500/40 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
                     <span className="text-3xl">🔍</span>
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
                     Don't See Your Industry?
                   </h3>
                   
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 mb-6 leading-relaxed text-base">
                     Our platform adapts to unique sector requirements. Let's discuss your specific needs.
                   </p>
                   
-                  <button className="button-primary group/btn w-full flex items-center justify-center gap-2 group-hover:scale-105 transition-all duration-300">
+                  <button className="button-primary group/btn w-full flex items-center justify-center gap-2 group-hover:scale-105 transition-all duration-300 py-3 px-6 text-sm font-medium">
                     Let's Talk 
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </button>
@@ -261,7 +261,7 @@ const IndustriesSection = () => {
                     <span className="text-2xl">🔍</span>
                   </div>
                   
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
                     Don't See Your Industry?
                   </h3>
                   
