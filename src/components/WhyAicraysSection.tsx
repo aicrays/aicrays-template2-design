@@ -55,12 +55,12 @@ const WhyAicraysSection = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gradient-to-b from-white via-gray-50/30 to-white relative" id="about" ref={sectionRef}>
+    <section className="h-screen flex items-center justify-center bg-gradient-to-b from-white via-gray-50/30 to-white relative" id="about" ref={sectionRef}>
       {/* Soft Abstract Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,58,237,0.06)_0%,transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(124,58,237,0.04)_0%,transparent_60%)] pointer-events-none"></div>
       
-      <div className="section-container relative z-10">
+      <div className="section-container relative z-10 py-8">
         <div className="text-center mb-8">
           <h2 className="section-title mb-3">
             Not Templates. Not Theoretical.<br />
@@ -83,7 +83,7 @@ const WhyAicraysSection = () => {
         </div>
 
         {/* Unified 2x2 Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
           {valuePillars.map((pillar, index) => (
             <div 
               key={pillar.title}
@@ -115,7 +115,7 @@ const WhyAicraysSection = () => {
         </div>
 
         {/* Minimal Pill-Style CTA */}
-        <div className="text-center mt-8">
+        <div className="text-center">
           <a 
             href="#contact" 
             className="group inline-flex items-center gap-2 px-6 py-3 bg-white/80 backdrop-blur-sm border-2 border-transparent bg-gradient-to-r from-pulse-200 via-pulse-300 to-pulse-200 bg-clip-border rounded-full shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 relative overflow-hidden"
