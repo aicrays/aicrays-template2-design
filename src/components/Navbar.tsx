@@ -52,13 +52,9 @@ const Navbar = () => {
             e.preventDefault();
             scrollToTop();
           }}
-          aria-label="Pulse Robot"
+          aria-label="Aicrays"
         >
-          <img 
-            src="/logo.svg" 
-            alt="Pulse Robot Logo" 
-            className="h-7 sm:h-8" 
-          />
+          <div className="text-2xl font-bold text-pulse-500">Aicrays</div>
         </a>
 
         {/* Desktop Navigation */}
@@ -73,11 +69,23 @@ const Navbar = () => {
           >
             Home
           </a>
-          <a href="#features" className="nav-link">About</a>
-          <a href="#details" className="nav-link">Contact</a>
+          <a href="#solutions" className="nav-link">What We Build</a>
+          <a href="#process" className="nav-link">How We Build</a>
+          <a href="#about" className="nav-link">About</a>
+          <a href="#contact" className="nav-link">Contact</a>
         </nav>
 
-        {/* Mobile menu button - increased touch target */}
+        {/* CTA Button */}
+        <div className="hidden md:block">
+          <a 
+            href="#contact" 
+            className="button-primary"
+          >
+            Book Consultation
+          </a>
+        </div>
+
+        {/* Mobile menu button */}
         <button 
           className="md:hidden text-gray-700 p-3 focus:outline-none" 
           onClick={toggleMenu}
@@ -87,7 +95,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Navigation - improved for better touch experience */}
+      {/* Mobile Navigation */}
       <div className={cn(
         "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
@@ -106,7 +114,27 @@ const Navbar = () => {
             Home
           </a>
           <a 
-            href="#features" 
+            href="#solutions" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            What We Build
+          </a>
+          <a 
+            href="#process" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            How We Build
+          </a>
+          <a 
+            href="#about" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -116,7 +144,7 @@ const Navbar = () => {
             About
           </a>
           <a 
-            href="#details" 
+            href="#contact" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
             onClick={() => {
               setIsMenuOpen(false);
@@ -124,6 +152,16 @@ const Navbar = () => {
             }}
           >
             Contact
+          </a>
+          <a 
+            href="#contact" 
+            className="button-primary w-full text-center mt-4"
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Book Consultation
           </a>
         </nav>
       </div>
