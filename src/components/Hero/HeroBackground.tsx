@@ -2,102 +2,74 @@
 import React from "react";
 
 const HeroBackground = () => {
-  const floatingOrbs = [
-    { size: "w-20 h-20", position: "top-1/6 right-1/4", delay: "0s", opacity: "opacity-10", blur: "blur-sm" },
-    { size: "w-16 h-16", position: "top-1/3 right-1/6", delay: "3s", opacity: "opacity-8", blur: "blur-md" },
-    { size: "w-28 h-28", position: "top-1/2 right-1/8", delay: "6s", opacity: "opacity-12", blur: "blur-lg" },
-    { size: "w-12 h-12", position: "bottom-1/3 right-1/3", delay: "2s", opacity: "opacity-15", blur: "blur-sm" },
-    { size: "w-24 h-24", position: "bottom-1/5 right-1/5", delay: "4s", opacity: "opacity-10", blur: "blur-md" },
-    { size: "w-14 h-14", position: "top-3/4 right-1/7", delay: "8s", opacity: "opacity-12", blur: "blur-lg" },
-    { size: "w-32 h-32", position: "top-1/5 right-1/12", delay: "1s", opacity: "opacity-8", blur: "blur-xl" },
-    { size: "w-18 h-18", position: "bottom-2/5 right-1/4", delay: "7s", opacity: "opacity-10", blur: "blur-md" },
-  ];
-
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Animated Gradient Mesh Base Layer */}
-      <div className="absolute inset-0">
-        {/* Primary gradient mesh */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-br from-violet-100/40 via-purple-50/30 to-blue-100/40"
-          style={{
-            animation: 'gradientShift 20s ease-in-out infinite alternate'
-          }}
-        ></div>
-        
-        {/* Secondary flowing gradient */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-tl from-purple-100/30 via-pink-50/20 to-indigo-100/35"
-          style={{
-            animation: 'gradientFlow 25s ease-in-out infinite alternate-reverse'
-          }}
-        ></div>
-        
-        {/* Tertiary mesh overlay */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-50/25 to-transparent"
-          style={{
-            animation: 'gradientSweep 30s linear infinite'
-          }}
-        ></div>
-      </div>
-
-      {/* Floating Bubble Orbs - Mid Layer */}
-      {floatingOrbs.map((orb, index) => (
-        <div
-          key={index}
-          className={`absolute ${orb.position} ${orb.size} ${orb.opacity} ${orb.blur}`}
-          style={{ 
-            animationDelay: orb.delay,
-            animation: `orbFloat ${8 + index * 2}s ease-in-out infinite, orbGlow ${6 + index}s ease-in-out infinite alternate`
-          }}
-        >
-          <div className="relative w-full h-full">
-            {/* Main orb with gradient */}
-            <div className="w-full h-full bg-gradient-radial from-purple-200/60 via-violet-100/40 to-transparent rounded-full"></div>
-            
-            {/* Inner glow effect */}
-            <div className="absolute inset-2 bg-gradient-radial from-white/40 to-transparent rounded-full"></div>
-            
-            {/* Ambient shadow glow */}
-            <div className="absolute inset-0 bg-purple-300/30 rounded-full blur-2xl scale-150 -z-10"></div>
-          </div>
-        </div>
-      ))}
-
-      {/* Radial Ambient Glow Zones - Accent Layer */}
-      {/* Headline glow zone */}
-      <div 
-        className="absolute top-1/4 left-1/2 transform -translate-x-1/2 w-3/4 h-1/3 bg-gradient-radial from-violet-200/20 via-purple-100/10 to-transparent blur-3xl"
-        style={{
-          animation: 'pulseGlow 8s ease-in-out infinite alternate'
-        }}
-      ></div>
+      {/* Enhanced Flowing Background Shapes */}
+      <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[90%] bg-gradient-to-br from-pulse-200/30 to-pulse-400/15 rounded-full blur-3xl animate-pulse-slow"></div>
+      <div className="absolute bottom-0 left-0 w-[60%] h-[70%] bg-gradient-to-tr from-blue-200/20 to-purple-300/15 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
       
-      {/* CTA buttons glow zone */}
-      <div 
-        className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 w-2/3 h-1/4 bg-gradient-radial from-blue-200/15 via-indigo-100/8 to-transparent blur-2xl"
-        style={{
-          animation: 'pulseGlow 10s ease-in-out infinite alternate-reverse'
-        }}
-      ></div>
-
-      {/* Ambient Particles - Micro Layer */}
-      <div className="absolute inset-0">
-        {/* Corner particles */}
-        <div className="absolute top-1/6 right-1/5 w-1 h-1 bg-violet-400/30 rounded-full animate-pulse" style={{ animationDuration: '3s' }}></div>
-        <div className="absolute top-1/3 right-1/8 w-0.5 h-0.5 bg-purple-500/40 rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-1/4 right-1/6 w-1.5 h-1.5 bg-blue-400/25 rounded-full animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 right-1/12 w-0.5 h-0.5 bg-indigo-500/35 rounded-full animate-pulse" style={{ animationDuration: '6s', animationDelay: '3s' }}></div>
-        <div className="absolute bottom-1/5 right-1/4 w-1 h-1 bg-pink-400/30 rounded-full animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '1.5s' }}></div>
-        
-        {/* Edge shimmer particles */}
-        <div className="absolute top-2/3 right-1/7 w-2 h-2 bg-gradient-radial from-violet-300/20 to-transparent rounded-full" style={{ animation: 'shimmer 8s ease-in-out infinite' }}></div>
-        <div className="absolute bottom-2/5 right-1/9 w-1.5 h-1.5 bg-gradient-radial from-purple-300/25 to-transparent rounded-full" style={{ animation: 'shimmer 10s ease-in-out infinite reverse' }}></div>
+      {/* Subtle Modular Grid Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <defs>
+            <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+              <path d="M 10 0 L 0 0 0 10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
       </div>
-
-      {/* Soft vignette overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-white/20 pointer-events-none"></div>
+      
+      {/* Enhanced Floating Particles with Better Distribution */}
+      <div className="absolute top-1/4 left-1/5 w-3 h-3 bg-pulse-400 rounded-full animate-float opacity-40" style={{ animationDelay: '0s' }}></div>
+      <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-pulse-500 rounded-full animate-float opacity-30" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-pulse-600 rounded-full animate-float opacity-35" style={{ animationDelay: '4s' }}></div>
+      <div className="absolute top-2/3 right-1/3 w-3 h-3 bg-blue-400 rounded-full animate-float opacity-25" style={{ animationDelay: '3s' }}></div>
+      <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-purple-400 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
+      
+      {/* Enhanced Curved Flow Lines */}
+      <svg className="absolute inset-0 w-full h-full opacity-15" viewBox="0 0 1200 800">
+        <path 
+          d="M0,400 Q300,200 600,400 T1200,400" 
+          stroke="url(#gradient1)" 
+          strokeWidth="1.5" 
+          fill="none"
+          className="animate-pulse-slow"
+        />
+        <path 
+          d="M0,600 Q400,300 800,500 T1200,400" 
+          stroke="url(#gradient2)" 
+          strokeWidth="1" 
+          fill="none"
+          className="animate-pulse-slow"
+          style={{ animationDelay: '1s' }}
+        />
+        <path 
+          d="M0,200 Q600,100 1200,300" 
+          stroke="url(#gradient3)" 
+          strokeWidth="0.8" 
+          fill="none"
+          className="animate-pulse-slow"
+          style={{ animationDelay: '3s' }}
+        />
+        <defs>
+          <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#a855f7" stopOpacity="0" />
+            <stop offset="50%" stopColor="#a855f7" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0" />
+            <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#8b5cf6" stopOpacity="0" />
+            <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+      </svg>
     </div>
   );
 };
