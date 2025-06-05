@@ -19,7 +19,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative bg-gradient-to-br from-pulse-50 via-white to-pulse-100 min-h-screen flex items-center" 
+      className="overflow-hidden relative bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 min-h-screen flex items-center" 
       id="hero"
     >
       <HeroBackground />
@@ -30,9 +30,9 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Enhanced Bottom Decorative Elements */}
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-pulse-200/20 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
-      <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-blue-200/20 rounded-full blur-3xl -z-10 parallax" data-speed="0.03"></div>
+      {/* Ambient Background Elements */}
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-purple-200/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-violet-200/15 rounded-full blur-3xl -z-10"></div>
     </section>
   );
 };

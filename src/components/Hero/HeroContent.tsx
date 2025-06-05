@@ -14,9 +14,9 @@ const HeroContent = () => {
         <span className="font-semibold">Modular AI-Powered Platforms</span>
       </div>
       
-      {/* Enhanced Headline with Better Typography */}
+      {/* Enhanced Headline with Better Typography and Responsive Sizing */}
       <div className="space-y-6">
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
           <div 
             className="opacity-0 animate-fade-in mb-4" 
             style={{ animationDelay: "0.3s" }}
@@ -58,14 +58,14 @@ const HeroContent = () => {
         We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
       </p>
       
-      {/* Enhanced CTAs with Better Spacing */}
+      {/* Enhanced CTAs with Improved Hover Effects and Compact Design */}
       <div 
         className="flex flex-col sm:flex-row gap-6 lg:gap-8 opacity-0 animate-fade-in justify-center items-center pt-4" 
         style={{ animationDelay: "1.1s" }}
       >
         <a 
           href="#contact" 
-          className="group relative inline-flex items-center justify-center px-10 py-5 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px]"
+          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[260px]"
         >
           <span className="relative z-10">Book a Consultation</span>
           <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-1 relative z-10" />
@@ -75,14 +75,15 @@ const HeroContent = () => {
         
         <a 
           href="#solutions" 
-          className="group relative inline-flex items-center justify-center px-10 py-5 text-lg lg:text-xl font-semibold text-pulse-600 bg-white/80 backdrop-blur-sm border-2 border-pulse-200 rounded-full hover:border-pulse-400 hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[280px]"
+          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg lg:text-xl font-semibold text-pulse-600 bg-white/80 backdrop-blur-sm border-2 border-pulse-200 rounded-full hover:border-pulse-400 hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[260px] hover:shadow-pulse-500/20"
         >
           <span className="relative z-10">Explore What We Build</span>
           <div className="absolute inset-0 bg-gradient-to-r from-pulse-50 to-pulse-100 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></div>
+          <div className="absolute inset-0 border-2 border-pulse-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
         </a>
       </div>
       
-      {/* Enhanced Scroll Indicator */}
+      {/* Enhanced Scroll Indicator with Pulse Animation */}
       <div 
         className="opacity-0 animate-fade-in pt-8" 
         style={{ animationDelay: "1.3s" }}
@@ -92,8 +93,9 @@ const HeroContent = () => {
           className="inline-flex flex-col items-center text-pulse-500 hover:text-pulse-600 transition-colors group"
         >
           <span className="text-base font-medium mb-3">Explore Solutions</span>
-          <div className="w-8 h-8 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-colors">
+          <div className="w-8 h-8 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-colors relative">
             <ChevronDown className="w-5 h-5 animate-bounce group-hover:translate-y-1 transition-transform" />
+            <div className="absolute inset-0 border-2 border-pulse-400 rounded-full animate-ping opacity-75"></div>
           </div>
         </a>
       </div>
