@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Wrench, Users, Heart, Globe, ArrowRight } from "lucide-react";
+import { Wrench, Users, Heart, Globe, ArrowRight, Search } from "lucide-react";
 
 const IndustriesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -12,29 +12,33 @@ const IndustriesSection = () => {
       icon: Wrench,
       title: "Manufacturing",
       description: "Streamline production workflows and quality control processes with real-time monitoring",
-      useCase: "Real-time equipment monitoring and predictive maintenance",
-      position: "top-left"
+      hoverInsight: "Reduced downtime by 40% through predictive maintenance systems",
+      iconBg: "from-purple-500 to-purple-600",
+      position: "stagger-1"
     },
     {
       icon: Users,
       title: "Government",
       description: "Secure access in critical infrastructure environments with multi-level clearance",
-      useCase: "Multi-level security clearance and audit trail systems",
-      position: "top-right"
+      hoverInsight: "Successfully deployed in 15+ federal agencies with zero security incidents",
+      iconBg: "from-purple-600 to-purple-700",
+      position: "stagger-2"
     },
     {
       icon: Heart,
       title: "Healthcare",
       description: "HIPAA-compliant systems for patient data and seamless care coordination",
-      useCase: "Integrated patient records with real-time collaboration",
-      position: "bottom-left"
+      hoverInsight: "Improved patient outcomes by 25% through integrated data systems",
+      iconBg: "from-purple-400 to-purple-500",
+      position: "stagger-3"
     },
     {
       icon: Globe,
       title: "Logistics",
       description: "Real-time tracking and supply chain optimization for global operations",
-      useCase: "End-to-end shipment visibility and route optimization",
-      position: "bottom-right"
+      hoverInsight: "Optimized delivery routes saving 30% in operational costs",
+      iconBg: "from-purple-500 to-purple-600",
+      position: "stagger-4"
     }
   ];
 
@@ -46,7 +50,7 @@ const IndustriesSection = () => {
             const cardIndex = parseInt(entry.target.getAttribute('data-index') || '0');
             setTimeout(() => {
               setVisibleCards(prev => [...prev, cardIndex]);
-            }, cardIndex * 200);
+            }, cardIndex * 150);
           }
         });
       },
@@ -59,222 +63,123 @@ const IndustriesSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  const getCardPosition = (position: string) => {
-    const positions = {
-      "top-left": "lg:absolute lg:top-0 lg:left-0",
-      "top-right": "lg:absolute lg:top-0 lg:right-0",
-      "bottom-left": "lg:absolute lg:bottom-0 lg:left-0",
-      "bottom-right": "lg:absolute lg:bottom-0 lg:right-0"
-    };
-    return positions[position as keyof typeof positions] || "";
-  };
-
   return (
     <section className="py-20 md:py-32 relative overflow-hidden min-h-screen flex items-center" ref={sectionRef}>
-      {/* Enhanced Flowing Background */}
+      {/* Dynamic Radial Gradient Background */}
       <div className="absolute inset-0">
-        {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-pulse-50/60 via-white to-pulse-100/40"></div>
+        {/* Main radial gradient */}
+        <div className="absolute inset-0 bg-gradient-radial from-purple-50/40 via-white to-violet-50/30"></div>
         
-        {/* Flowing mesh background */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <svg className="w-full h-full" viewBox="0 0 400 400" preserveAspectRatio="none">
+        {/* Animated circuit pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <svg className="w-full h-full animate-subtle-rotate" viewBox="0 0 400 400" preserveAspectRatio="none">
             <defs>
-              <pattern id="flowing-mesh" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M0 30h60M30 0v60" stroke="currentColor" strokeWidth="0.5" opacity="0.4"/>
-                <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.3"/>
+              <pattern id="circuit-pattern" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M0 40h80M40 0v80M20 20h40M60 60h20M20 60v20" stroke="currentColor" strokeWidth="0.5" opacity="0.6"/>
+                <circle cx="40" cy="40" r="2" fill="currentColor" opacity="0.4"/>
+                <circle cx="20" cy="20" r="1" fill="currentColor" opacity="0.3"/>
+                <circle cx="60" cy="60" r="1" fill="currentColor" opacity="0.3"/>
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill="url(#flowing-mesh)" />
+            <rect width="100%" height="100%" fill="url(#circuit-pattern)" />
           </svg>
         </div>
         
         {/* Floating gradient orbs */}
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-gradient-to-br from-pulse-200/15 to-pulse-300/8 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-br from-pulse-300/12 to-pulse-400/6 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-pulse-100/20 to-pulse-200/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '6s' }}></div>
+        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-gradient-to-br from-purple-200/10 to-purple-300/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-br from-violet-200/8 to-purple-400/4 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
       </div>
       
-      <div className="section-container relative z-10 w-full">
-        {/* Enhanced Header */}
+      <div className="section-container relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
         <div className="text-center mb-20">
-          <div className="pulse-chip mx-auto mb-8 hover:scale-105 transition-all duration-300 cursor-pointer backdrop-blur-md bg-pulse-100/80 border-pulse-300/30">
-            <span className="text-pulse-700 font-semibold">Industries</span>
+          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-8 hover:scale-105 transition-all duration-300 cursor-pointer">
+            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-3"></span>
+            <span>Industries</span>
           </div>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-8 leading-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-pulse-700 to-gray-900 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">
               Trusted Across Sectors
             </span>
           </h2>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
             Our modular approach adapts to the unique requirements and regulations of different industries, 
             delivering intelligent solutions that scale with your needs.
           </p>
         </div>
 
-        {/* Orbital Card Layout */}
-        <div className="max-w-7xl mx-auto relative">
-          {/* Desktop Orbital Layout */}
-          <div className="hidden lg:block relative h-[600px]">
-            {/* Central CTA Hub */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-              <div className="glass-morphism-card group relative overflow-hidden transition-all duration-700 hover:scale-105 w-96 h-96 flex items-center justify-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-pulse-100/70 to-pulse-200/50 backdrop-blur-xl border border-pulse-300/40 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-pulse-400/0 to-pulse-600/0 group-hover:from-pulse-400/20 group-hover:to-pulse-600/10 rounded-2xl transition-all duration-700"></div>
-                
-                <div className="relative z-10 text-center p-8 max-w-xs">
-                  <div className="w-20 h-20 bg-gradient-to-br from-pulse-500 to-pulse-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-pulse-500/40 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-                    <span className="text-3xl">🔍</span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
-                    Don't See Your Industry?
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed text-base">
-                    Our platform adapts to unique sector requirements. Let's discuss your specific needs.
-                  </p>
-                  
-                  <button className="button-primary group/btn w-full flex items-center justify-center gap-2 group-hover:scale-105 transition-all duration-300 py-3 px-6 text-sm font-medium">
-                    Let's Talk 
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
+        {/* Staggered Grid Layout */}
+        <div className="relative">
+          {/* Desktop Staggered Layout */}
+          <div className="hidden lg:block">
+            <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {/* Manufacturing - Top Left */}
+              <div className="col-start-1 row-start-1 transform rotate-[-1deg]">
+                <IndustryCard 
+                  industry={industries[0]} 
+                  index={0} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
+              </div>
+              
+              {/* Government - Top Right */}
+              <div className="col-start-3 row-start-1 transform rotate-[1deg] translate-y-8">
+                <IndustryCard 
+                  industry={industries[1]} 
+                  index={1} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
+              </div>
+              
+              {/* CTA Block - Center */}
+              <div className="col-start-2 row-start-1 row-span-2 flex items-center justify-center transform translate-y-12">
+                <CTABlock />
+              </div>
+              
+              {/* Healthcare - Bottom Left */}
+              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-16">
+                <IndustryCard 
+                  industry={industries[2]} 
+                  index={2} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
+              </div>
+              
+              {/* Logistics - Bottom Right */}
+              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-24">
+                <IndustryCard 
+                  industry={industries[3]} 
+                  index={3} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
               </div>
             </div>
-
-            {/* Orbital Industry Cards */}
-            {industries.map((industry, index) => (
-              <div 
-                key={industry.title}
-                data-index={index}
-                className={`industry-card ${getCardPosition(industry.position)} w-72 transition-all duration-700 ${
-                  visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                <div className="glass-morphism-card group relative overflow-hidden transition-all duration-700 hover:translate-y-[-8px] h-64">
-                  {/* Enhanced glassmorphism background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/85 to-white/60 backdrop-blur-xl border border-white/40 rounded-2xl"></div>
-                  
-                  {/* Dynamic hover glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br from-pulse-400/0 to-pulse-600/0 rounded-2xl transition-all duration-700 ${
-                    hoveredCard === index ? 'from-pulse-400/15 to-pulse-600/8' : ''
-                  }`}></div>
-                  
-                  <div className="relative z-10 p-6 h-full flex flex-col">
-                    {/* Icon and Title */}
-                    <div className="flex items-center mb-4">
-                      <div className="relative">
-                        <div className={`w-12 h-12 bg-gradient-to-br from-pulse-500 to-pulse-600 rounded-xl flex items-center justify-center shadow-lg transition-all duration-500 ${
-                          hoveredCard === index ? 'shadow-pulse-500/30 shadow-2xl scale-110' : ''
-                        }`}>
-                          <industry.icon className="w-6 h-6 text-white" />
-                        </div>
-                        {/* Animated ring on hover */}
-                        <div className={`absolute inset-0 rounded-xl border-2 border-pulse-400/0 transition-all duration-500 ${
-                          hoveredCard === index ? 'border-pulse-400/60 scale-125' : ''
-                        }`}></div>
-                      </div>
-                      <h3 className="text-xl font-bold ml-4 text-gray-900 group-hover:text-pulse-700 transition-colors">
-                        {industry.title}
-                      </h3>
-                    </div>
-                    
-                    <p className="text-gray-600 leading-relaxed text-sm mb-4 flex-grow">
-                      {industry.description}
-                    </p>
-
-                    {/* Use Case Reveal */}
-                    <div className={`transform transition-all duration-500 ${
-                      hoveredCard === index ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-                    }`}>
-                      <div className="bg-gradient-to-r from-pulse-50 to-pulse-100/50 rounded-lg p-3 border border-pulse-200/50 backdrop-blur-sm">
-                        <p className="text-xs text-pulse-700 font-medium">
-                          💼 {industry.useCase}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Decorative elements */}
-                  <div className={`absolute top-3 right-3 w-1.5 h-1.5 bg-pulse-400/40 rounded-full transition-opacity duration-300 ${
-                    hoveredCard === index ? 'opacity-100' : 'opacity-0'
-                  }`}></div>
-                </div>
-              </div>
-            ))}
           </div>
 
-          {/* Mobile/Tablet Stacked Layout */}
+          {/* Mobile/Tablet Responsive Layout */}
           <div className="lg:hidden space-y-8">
             {industries.map((industry, index) => (
-              <div 
+              <IndustryCard 
                 key={industry.title}
-                data-index={index}
-                className={`industry-card transition-all duration-700 ${
-                  visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="glass-morphism-card group relative overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/85 to-white/60 backdrop-blur-xl border border-white/40 rounded-2xl"></div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-pulse-400/0 to-pulse-600/0 group-hover:from-pulse-400/10 group-hover:to-pulse-600/5 rounded-2xl transition-all duration-500"></div>
-                  
-                  <div className="relative z-10 p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="relative flex-shrink-0">
-                        <div className="w-14 h-14 bg-gradient-to-br from-pulse-500 to-pulse-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-pulse-500/25 group-hover:shadow-2xl transition-all duration-500">
-                          <industry.icon className="w-7 h-7 text-white" />
-                        </div>
-                      </div>
-                      
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 text-gray-900 group-hover:text-pulse-700 transition-colors">
-                          {industry.title}
-                        </h3>
-                        <p className="text-gray-600 leading-relaxed mb-4">
-                          {industry.description}
-                        </p>
-                        
-                        <div className="bg-gradient-to-r from-pulse-50 to-pulse-100/50 rounded-xl p-4 border border-pulse-200/50 backdrop-blur-sm">
-                          <p className="text-sm text-pulse-700 font-medium">
-                            💼 {industry.useCase}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                industry={industry} 
+                index={index} 
+                visibleCards={visibleCards}
+                hoveredCard={hoveredCard}
+                setHoveredCard={setHoveredCard}
+              />
             ))}
-
-            {/* Mobile CTA Card */}
+            
+            {/* Mobile CTA */}
             <div className="mt-12">
-              <div className="glass-morphism-card group relative overflow-hidden transition-all duration-500 hover:translate-y-[-4px]">
-                <div className="absolute inset-0 bg-gradient-to-br from-pulse-100/70 to-pulse-200/50 backdrop-blur-xl border border-pulse-300/40 rounded-2xl"></div>
-                
-                <div className="relative z-10 p-8 text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-pulse-500 to-pulse-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-pulse-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-                    <span className="text-2xl">🔍</span>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
-                    Don't See Your Industry?
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    Our platform adapts to unique sector requirements. Let's discuss your specific needs.
-                  </p>
-                  
-                  <button className="button-primary group/btn w-full flex items-center justify-center gap-2 group-hover:scale-105 transition-all duration-300">
-                    Let's Talk 
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </div>
+              <CTABlock />
             </div>
           </div>
         </div>
@@ -282,5 +187,86 @@ const IndustriesSection = () => {
     </section>
   );
 };
+
+// Industry Card Component
+const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCard }: any) => (
+  <div 
+    data-index={index}
+    className={`industry-card transition-all duration-700 ${
+      visibleCards.includes(index) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+    }`}
+    onMouseEnter={() => setHoveredCard(index)}
+    onMouseLeave={() => setHoveredCard(null)}
+    style={{ animationDelay: `${index * 0.15}s` }}
+  >
+    <div className="relative group">
+      {/* Card Background with Glassmorphism */}
+      <div className="backdrop-blur-xl bg-white/85 border border-white/40 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
+        {/* Hover glow effect */}
+        <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl`}></div>
+        
+        <div className="relative z-10">
+          {/* Icon */}
+          <div className={`w-16 h-16 bg-gradient-to-br ${industry.iconBg} rounded-2xl flex items-center justify-center shadow-lg mb-6 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+            <industry.icon className="w-8 h-8 text-white" />
+          </div>
+          
+          {/* Content */}
+          <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-purple-700 transition-colors">
+            {industry.title}
+          </h3>
+          
+          {/* Description or Hover Insight */}
+          <div className="min-h-[4rem]">
+            <p className={`text-gray-600 leading-relaxed transition-opacity duration-300 ${
+              hoveredCard === index ? 'opacity-0' : 'opacity-100'
+            }`}>
+              {industry.description}
+            </p>
+            
+            <p className={`text-purple-700 font-medium leading-relaxed absolute inset-x-0 transition-opacity duration-300 ${
+              hoveredCard === index ? 'opacity-100' : 'opacity-0'
+            }`}>
+              ✨ {industry.hoverInsight}
+            </p>
+          </div>
+        </div>
+
+        {/* Subtle corner accent */}
+        <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+      </div>
+    </div>
+  </div>
+);
+
+// CTA Block Component
+const CTABlock = () => (
+  <div className="relative group max-w-sm">
+    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/80 to-violet-100/60 border border-purple-200/50 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-violet-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+      
+      <div className="relative z-10 text-center">
+        {/* Icon */}
+        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
+          <Search className="w-8 h-8 text-white" />
+        </div>
+        
+        <h3 className="text-2xl font-bold mb-4 text-gray-900 leading-tight">
+          Don't See Your Industry?
+        </h3>
+        
+        <p className="text-gray-600 mb-6 leading-relaxed">
+          Our platform adapts to unique sector requirements. Let's discuss your specific needs.
+        </p>
+        
+        <button className="inline-flex items-center gap-2 px-6 py-3 bg-white/90 backdrop-blur-sm border border-purple-200 rounded-full text-purple-600 font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-300 group-hover:scale-105 shadow-sm hover:shadow-md">
+          Let's Talk 
+          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
+    </div>
+  </div>
+);
 
 export default IndustriesSection;
