@@ -1,31 +1,70 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { ArrowRight, CheckCircle, Factory, Shield } from "lucide-react";
+import { ArrowRight, Factory, Building2, MapPin, MessageSquare, Shield, Users } from "lucide-react";
 
 const CaseStudiesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [visibleDevCards, setVisibleDevCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const devSectionRef = useRef<HTMLDivElement>(null);
 
-  const caseStudies = [
+  const solutions = [
     {
-      title: "Quote Management System",
-      industry: "Manufacturing",
-      outcome: "40% faster quoting process",
-      description: "Digitized approval workflows and automated quote generation for a leading manufacturing company, reducing processing time and improving accuracy.",
-      features: ["Automated workflow routing", "Digital approval system", "Real-time quote tracking", "Integration with existing ERP"],
+      title: "Manufacturing Efficiency System",
+      category: "Manufacturing",
+      description: "Automated quality control and predictive maintenance reduced downtime by 40% and increased output quality scores.",
+      status: "Deployed",
+      metrics: "40% reduction in downtime",
       icon: Factory,
-      gradient: "from-blue-500 to-blue-600",
-      slideDirection: "left"
+      gradient: "from-purple-500 to-purple-600"
     },
     {
-      title: "Biometric IAM System",
-      industry: "Secure Access / Smart Cities",
-      outcome: "300+ secured users with iris scanning",
-      description: "Multi-factor authentication system with biometric iris scanning for critical infrastructure access control.",
-      features: ["Iris scan authentication", "Multi-factor security layers", "Access audit trails", "Integration with existing ID systems"],
+      title: "Smart City Infrastructure",
+      category: "Smart Cities", 
+      description: "Integrated IoT sensors and AI analytics optimized traffic flow and reduced energy consumption across municipal systems.",
+      status: "Deployed",
+      metrics: "25% energy savings",
+      icon: Building2,
+      gradient: "from-purple-500 to-purple-600"
+    },
+    {
+      title: "Healthcare Data Platform",
+      category: "Healthcare",
+      description: "Secure patient data management with real-time analytics improved care coordination and compliance reporting.",
+      status: "Deployed", 
+      metrics: "99.9% uptime achieved",
+      icon: Users,
+      gradient: "from-purple-500 to-purple-600"
+    }
+  ];
+
+  const developmentSolutions = [
+    {
+      title: "Fleet Management Platform",
+      category: "Logistics",
+      description: "Real-time dispatch, field visibility, and location tracking for enterprise fleet operations.",
+      status: "In Development",
+      timeline: "Q3 2025",
+      icon: MapPin,
+      cta: "Get Early Access"
+    },
+    {
+      title: "AI Quote Assistant", 
+      category: "Sales Automation",
+      description: "Predictive quote generator using NLP and business logic for rapid proposal creation.",
+      status: "Pilot Available",
+      timeline: "Accepting Clients",
+      icon: MessageSquare,
+      cta: "Request Demo"
+    },
+    {
+      title: "IAM + RFID Integration",
+      category: "Security",
+      description: "Hybrid access control with physical + digital components for enterprise security.",
+      status: "Partner Build",
+      timeline: "Q4 2025",
       icon: Shield,
-      gradient: "from-purple-500 to-purple-600",
-      slideDirection: "right"
+      cta: "Learn More"
     }
   ];
 
@@ -36,105 +75,209 @@ const CaseStudiesSection = () => {
           if (entry.isIntersecting) {
             setTimeout(() => {
               setVisibleCards(prev => [...prev, index]);
-            }, index * 300);
+            }, index * 200);
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    const cards = sectionRef.current?.querySelectorAll('.case-study-card');
+    const cards = sectionRef.current?.querySelectorAll('.solution-card');
+    cards?.forEach(card => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              setVisibleDevCards(prev => [...prev, index]);
+            }, index * 150);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    const cards = devSectionRef.current?.querySelectorAll('.dev-card');
     cards?.forEach(card => observer.observe(card));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-purple-50 relative overflow-hidden" id="case-studies">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pulse-300 to-transparent"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-pulse-100 rounded-full blur-3xl opacity-30 -z-10"></div>
-      
-      <div className="section-container relative z-10" ref={sectionRef}>
-        <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-6 hover:scale-105 transition-transform cursor-pointer">
-            <span>Proven Results</span>
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-purple-300 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
+      {/* Diagonal SVG Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,50 600,20 C850,50 1050,50 1200,0 L1200,120 L0,120 Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div className="section-container relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div 
+            className="pulse-chip mx-auto mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            style={{ animationDelay: "0.1s" }}
+          >
+            <span>Real Solutions, Real Impact</span>
           </div>
-          <h2 className="section-title mb-6">
-            Real Solutions, Real Impact
+          <h2 className="section-title mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            What We've Delivered
           </h2>
-          <p className="section-subtitle mx-auto">
-            See how we've transformed operations for enterprise clients with custom-built platforms that deliver measurable results.
+          <p className="section-subtitle mx-auto opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            See how our modular technology platforms drive measurable results across industries.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {caseStudies.map((study, index) => (
-            <div 
-              key={study.title}
-              className={`case-study-card glass-card p-6 lg:p-8 hover:shadow-2xl transition-all duration-700 group relative overflow-hidden ${
+        {/* Deployed Solutions */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20" ref={sectionRef}>
+          {solutions.map((solution, index) => (
+            <div
+              key={solution.title}
+              className={`solution-card glass-card p-6 lg:p-8 group cursor-pointer transition-all duration-700 hover:shadow-2xl hover:scale-[1.03] relative overflow-hidden ${
                 visibleCards.includes(index) 
-                  ? 'opacity-100 translate-x-0' 
-                  : `opacity-0 ${study.slideDirection === 'left' ? '-translate-x-8' : 'translate-x-8'}`
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
               }`}
             >
+              {/* Status Badge */}
+              <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                {solution.status}
+              </div>
+
               {/* Background Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 group-hover:from-pulse-50/20 group-hover:to-pulse-100/10 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 group-hover:from-purple-50/20 group-hover:to-purple-100/10 transition-all duration-500"></div>
               
-              <div className="relative z-10">
+              <div className="relative z-10 mt-6">
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-sm font-medium text-white bg-gradient-to-r ${study.gradient} px-3 py-1 rounded-full shadow-md`}>
-                    {study.industry}
-                  </span>
-                  <div className={`w-10 h-10 bg-gradient-to-br ${study.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                    <study.icon className="w-5 h-5 text-white" />
+                  <div className={`w-12 h-12 bg-gradient-to-br ${solution.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                    <solution.icon className="w-6 h-6 text-white group-hover:animate-pulse" />
+                  </div>
+                  <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium border border-purple-200">
+                    <Factory className="w-3 h-3 inline mr-1" />
+                    {solution.category}
                   </div>
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-pulse-700 transition-colors">
-                  {study.title}
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">
+                  {solution.title}
                 </h3>
                 
-                <div className="text-lg font-semibold text-pulse-600 mb-4 flex items-center">
-                  <div className="w-2 h-2 bg-pulse-500 rounded-full mr-2 animate-pulse"></div>
-                  {study.outcome}
-                </div>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {study.description}
+                <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {solution.description}
                 </p>
-                
-                <div className="space-y-3 mb-6">
-                  {study.features.map((feature, idx) => (
-                    <div 
-                      key={idx} 
-                      className="flex items-center group-hover:translate-x-1 transition-transform"
-                      style={{ transitionDelay: `${idx * 50}ms` }}
-                    >
-                      <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                      <span className="text-gray-700">{feature}</span>
-                    </div>
-                  ))}
+
+                {/* Metrics */}
+                <div className="bg-purple-50 px-4 py-2 rounded-lg border border-purple-200 mb-4">
+                  <p className="text-sm font-semibold text-purple-700">{solution.metrics}</p>
                 </div>
                 
-                <button className="flex items-center text-pulse-600 hover:text-pulse-700 font-medium group-hover:translate-x-2 transition-all duration-300 bg-pulse-50 hover:bg-pulse-100 px-4 py-2 rounded-lg">
-                  View Full Solution
-                  <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                {/* CTA */}
+                <div className="flex items-center text-purple-600 font-medium group-hover:text-purple-700 transition-colors">
+                  <span className="mr-2">View Full Solution</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
               </div>
 
               {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-pulse-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12">
-          <div className="inline-flex items-center bg-white border border-pulse-200 rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-shadow group cursor-pointer">
-            <span className="text-gray-700 mr-2">Want to see your results here?</span>
-            <ArrowRight className="w-4 h-4 text-pulse-500 group-hover:translate-x-1 transition-transform" />
+        {/* Section Divider */}
+        <div className="flex items-center justify-center mb-16">
+          <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1 max-w-xs"></div>
+          <div className="px-6 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mx-4">
+            What We're Building Next
           </div>
+          <div className="h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent flex-1 max-w-xs"></div>
+        </div>
+
+        {/* In Development Solutions */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-gray-900">Solutions in Development</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" ref={devSectionRef}>
+            {developmentSolutions.map((solution, index) => (
+              <div
+                key={solution.title}
+                className={`dev-card glass-card p-6 lg:p-8 group cursor-pointer transition-all duration-700 hover:shadow-2xl hover:scale-[1.03] relative overflow-hidden ${
+                  visibleDevCards.includes(index) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}
+              >
+                {/* Status Badge */}
+                <div className="absolute top-4 left-4 bg-gradient-to-r from-purple-400 to-purple-500 text-white px-3 py-1 rounded-full text-xs font-semibold shadow-lg">
+                  {solution.status}
+                </div>
+
+                {/* Background Gradient Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 group-hover:from-purple-50/20 group-hover:to-purple-100/10 transition-all duration-500"></div>
+                
+                <div className="relative z-10 mt-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-500 rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
+                      <solution.icon className="w-6 h-6 text-white group-hover:animate-pulse" />
+                    </div>
+                    <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium border border-purple-200">
+                      {solution.category}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">
+                    {solution.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    {solution.description}
+                  </p>
+
+                  {/* Timeline */}
+                  <div className="bg-purple-50 px-4 py-2 rounded-lg border border-purple-200 mb-4">
+                    <p className="text-sm font-semibold text-purple-700">{solution.timeline}</p>
+                  </div>
+                  
+                  {/* CTA */}
+                  <div className="flex items-center text-purple-600 font-medium group-hover:text-purple-700 transition-colors">
+                    <span className="mr-2">{solution.cta}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+
+                {/* Decorative Corner */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Enhanced CTA Banner */}
+        <div className="text-center bg-gradient-to-r from-purple-50 to-white rounded-2xl p-8 shadow-lg border border-purple-100">
+          <h3 className="text-2xl font-bold mb-4 text-gray-900">Want to see your results here?</h3>
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            Join the companies already benefiting from our modular technology platform. 
+            Let's build something impactful together.
+          </p>
+          <a 
+            href="#contact" 
+            className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-purple-500 to-purple-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          >
+            Start Building With Us
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </a>
         </div>
       </div>
     </section>
