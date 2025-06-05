@@ -14,28 +14,28 @@ const ProcessSection = () => {
       title: "Discover",
       description: "Learn your goals, audit current systems, and identify opportunities for improvement and integration.",
       details: "1-2 week comprehensive analysis including stakeholder interviews and technical assessment.",
-      gradient: "from-blue-500 to-blue-600"
+      saturation: "500"
     },
     {
       icon: Wrench,
       title: "Design",
       description: "Develop architecture and prototypes that align with your workflows and technical requirements.",
       details: "Interactive prototypes and detailed technical specifications with your team's feedback incorporated.",
-      gradient: "from-purple-500 to-purple-600"
+      saturation: "600"
     },
     {
       icon: Code,
       title: "Develop",
       description: "Build secure, scalable software using modular components tailored to your specifications.",
       details: "Agile development sprints with weekly demos and continuous integration/deployment.",
-      gradient: "from-green-500 to-green-600"
+      saturation: "700"
     },
     {
       icon: Globe,
       title: "Deploy & Support",
       description: "Go live with comprehensive testing, then optimize and maintain for continued performance.",
       details: "24/7 monitoring, performance optimization, and ongoing feature enhancements.",
-      gradient: "from-orange-500 to-orange-600"
+      saturation: "800"
     }
   ];
 
@@ -49,7 +49,7 @@ const ProcessSection = () => {
               setTimeout(() => {
                 setVisibleSteps(prev => [...prev, index]);
                 setProgressWidth((index + 1) * 25);
-              }, index * 200);
+              }, index * 300);
             });
           }
         });
@@ -65,113 +65,189 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden" id="process" ref={sectionRef}>
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pulse-300 to-transparent"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-pulse-100 rounded-full blur-3xl opacity-20 -z-10"></div>
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-pulse-50/30 to-white relative overflow-hidden" id="process" ref={sectionRef}>
+      {/* Enhanced Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-pulse-400/50 to-transparent"></div>
+      <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-pulse-200/20 to-pulse-400/10 rounded-full blur-3xl opacity-60 -z-10"></div>
+      <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tl from-pulse-300/15 to-pulse-500/10 rounded-full blur-3xl opacity-50 -z-10"></div>
+      
+      {/* Floating geometric shapes */}
+      <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-pulse-400/20 rounded-full animate-float"></div>
+      <div className="absolute top-3/4 right-1/3 w-6 h-6 bg-pulse-500/15 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/2 left-3/4 w-3 h-3 bg-pulse-600/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
       
       <div className="section-container relative z-10">
-        <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-6 hover:scale-105 transition-transform cursor-pointer">
+        <div className="text-center mb-16">
+          <div className="pulse-chip mx-auto mb-6 hover:scale-105 transition-transform cursor-pointer shadow-lg">
             <span>Our Process</span>
           </div>
-          <h2 className="section-title mb-6">
+          <h2 className="section-title mb-6 bg-gradient-to-r from-gray-900 via-pulse-700 to-gray-900 bg-clip-text text-transparent">
             How We Build
           </h2>
-          <p className="section-subtitle mx-auto">
+          <p className="section-subtitle mx-auto text-gray-600">
             Our delivery approach balances speed with strategy, using modular frameworks to reduce risk and maximize customization.
           </p>
         </div>
 
-        {/* Progress Line - Desktop Only */}
-        <div className="hidden lg:block relative mb-12">
-          <div className="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gray-200 rounded-full">
-            <div 
-              className="h-full bg-gradient-to-r from-pulse-400 to-pulse-600 rounded-full transition-all duration-2000 ease-out"
-              style={{ width: `${progressWidth}%` }}
-            ></div>
+        {/* Enhanced Timeline - Desktop Only */}
+        <div className="hidden lg:block relative mb-16">
+          {/* Curved timeline path */}
+          <div className="absolute top-8 left-[8%] right-[8%] h-0.5">
+            <svg className="w-full h-24" viewBox="0 0 800 96" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="rgb(168, 85, 247)" stopOpacity="0.3" />
+                  <stop offset="25%" stopColor="rgb(147, 51, 234)" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="rgb(126, 34, 206)" stopOpacity="0.8" />
+                  <stop offset="75%" stopColor="rgb(107, 33, 168)" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="rgb(88, 28, 135)" stopOpacity="1" />
+                </linearGradient>
+                
+                <filter id="glow">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge> 
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
+              
+              {/* Curved path */}
+              <path 
+                d="M 50 48 Q 200 20, 400 48 Q 600 76, 750 48" 
+                stroke="url(#timelineGradient)" 
+                strokeWidth="3" 
+                fill="none" 
+                filter="url(#glow)"
+                className="opacity-80"
+              />
+              
+              {/* Animated progress line */}
+              <path 
+                d="M 50 48 Q 200 20, 400 48 Q 600 76, 750 48" 
+                stroke="rgb(124, 58, 237)" 
+                strokeWidth="4" 
+                fill="none" 
+                strokeDasharray="20 10"
+                className="animate-pulse opacity-60"
+                style={{
+                  strokeDashoffset: visibleSteps.length > 0 ? '0' : '100',
+                  transition: 'stroke-dashoffset 2s ease-out'
+                }}
+              />
+              
+              {/* Pulsing dots at step positions */}
+              {[165, 335, 505, 675].map((x, index) => (
+                <circle
+                  key={index}
+                  cx={x}
+                  cy={index % 2 === 0 ? 38 : 58}
+                  r="4"
+                  fill={`rgb(${index === 0 ? '168, 85, 247' : index === 1 ? '147, 51, 234' : index === 2 ? '126, 34, 206' : '107, 33, 168'})`}
+                  className={`${visibleSteps.includes(index) ? 'animate-pulse opacity-100' : 'opacity-30'} transition-all duration-500`}
+                  style={{ animationDelay: `${index * 0.3}s` }}
+                />
+              ))}
+            </svg>
           </div>
         </div>
 
-        {/* Steps Grid */}
+        {/* Enhanced Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {processSteps.map((step, index) => (
             <div 
               key={step.title}
-              className={`text-center group cursor-pointer transition-all duration-500 ${
-                visibleSteps.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`text-center group cursor-pointer transition-all duration-700 ${
+                visibleSteps.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ animationDelay: `${index * 0.2}s` }}
               onMouseEnter={() => setActiveStep(index)}
               onMouseLeave={() => setActiveStep(null)}
             >
-              <div className="relative mb-6">
-                {/* Main Icon Circle */}
-                <div className={`w-16 h-16 bg-gradient-to-br ${step.gradient} border-2 border-white rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-all duration-300 shadow-lg relative overflow-hidden`}>
-                  <step.icon className="w-8 h-8 text-white relative z-10" />
-                  <div className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-transform rounded-full"></div>
+              {/* Enhanced Step Card */}
+              <div className="relative mb-8 group">
+                {/* Glassmorphism Main Circle */}
+                <div className={`w-20 h-20 bg-gradient-to-br from-pulse-${step.saturation}/90 to-pulse-${step.saturation} backdrop-blur-xl border-2 border-white/40 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 group-hover:shadow-2xl group-hover:shadow-pulse-${step.saturation}/30 transition-all duration-500 relative overflow-hidden shadow-lg`}>
+                  {/* Glassmorphism overlay */}
+                  <div className="absolute inset-0 bg-white/20 rounded-full"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-full"></div>
+                  
+                  <step.icon className="w-9 h-9 text-white relative z-10 drop-shadow-sm" />
+                  
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-transform duration-500 rounded-full blur-sm"></div>
                 </div>
                 
                 {/* Step Number Badge */}
-                <div className={`absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br ${step.gradient} text-white rounded-full flex items-center justify-center text-sm font-bold shadow-md group-hover:scale-110 transition-transform`}>
-                  {index + 1}
+                <div className={`absolute -top-3 -right-3 w-8 h-8 bg-gradient-to-br from-pulse-${step.saturation} to-pulse-${step.saturation} text-white rounded-full flex items-center justify-center text-sm font-bold shadow-lg border-2 border-white group-hover:scale-110 transition-transform duration-300`}>
+                  {String(index + 1).padStart(2, '0')}
                 </div>
 
-                {/* Connection Line for Desktop - Only show between steps */}
+                {/* Progress indicator line */}
                 {index < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 -translate-x-8">
+                  <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 -translate-x-10 z-0">
                     <div className={`h-full transition-all duration-1000 ${
                       visibleSteps.includes(index + 1) 
-                        ? 'bg-gradient-to-r from-pulse-400 to-pulse-200' 
-                        : 'bg-gray-300'
+                        ? 'bg-gradient-to-r from-pulse-500/60 to-pulse-400/30' 
+                        : 'bg-gray-200'
                     }`}></div>
                   </div>
                 )}
               </div>
               
-              {/* Step Content */}
-              <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-pulse-700 transition-colors">
-                {step.title}
-              </h3>
-              
-              <p className="text-gray-600 leading-relaxed mb-4 text-sm">
-                {step.description}
-              </p>
+              {/* Enhanced Content Card */}
+              <div className="glass-morphism-card p-6 bg-white/80 backdrop-blur-sm border border-white/60 shadow-elegant hover:shadow-elegant-hover transition-all duration-500">
+                <h3 className={`text-xl font-semibold mb-3 transition-colors duration-300 ${
+                  activeStep === index ? `text-pulse-${step.saturation}` : 'text-gray-900'
+                }`}>
+                  {step.title}
+                </h3>
+                
+                <p className="text-gray-600 leading-relaxed mb-4 text-sm">
+                  {step.description}
+                </p>
 
-              {/* Expandable Details */}
-              <div className={`overflow-hidden transition-all duration-500 ${
-                activeStep === index ? 'max-h-20 opacity-100' : 'max-h-0 opacity-0'
-              }`}>
-                <div className="bg-pulse-50 rounded-lg p-3 text-sm text-pulse-700 font-medium border-l-3 border-pulse-400">
-                  {step.details}
+                {/* Enhanced Expandable Details */}
+                <div className={`overflow-hidden transition-all duration-500 ${
+                  activeStep === index ? 'max-h-24 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className={`bg-gradient-to-r from-pulse-50 to-pulse-100/50 rounded-lg p-4 text-sm text-pulse-${step.saturation} font-medium border-l-4 border-pulse-${step.saturation}/60 backdrop-blur-sm`}>
+                    {step.details}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-12">
-          <div className="inline-block">
+        {/* Enhanced CTA Section */}
+        <div className="text-center mt-16">
+          <div className="inline-block relative">
             <a 
               href="#contact" 
-              className="button-primary group relative overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              className="button-primary group relative overflow-hidden shadow-xl hover:shadow-2xl hover:shadow-pulse-500/20 transition-all duration-500 px-8 py-4"
             >
-              <span className="relative z-10">Schedule a Discovery Session</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-pulse-600 to-pulse-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+              <span className="relative z-10 font-semibold">Schedule a Discovery Session</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-pulse-600 to-pulse-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+              
+              {/* Ripple effect */}
+              <div className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-transform duration-300 rounded-full opacity-0 group-hover:opacity-100"></div>
             </a>
           </div>
         </div>
 
-        {/* Progress Dots */}
-        <div className="flex justify-center mt-8">
-          <div className="flex space-x-2">
+        {/* Enhanced Progress Dots */}
+        <div className="flex justify-center mt-12">
+          <div className="flex space-x-3">
             {processSteps.map((_, index) => (
               <div 
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  visibleSteps.includes(index) ? 'bg-pulse-500' : 'bg-gray-300'
+                className={`rounded-full transition-all duration-500 ${
+                  visibleSteps.includes(index) 
+                    ? `w-3 h-3 bg-gradient-to-r from-pulse-500 to-pulse-600 shadow-lg animate-pulse` 
+                    : 'w-2 h-2 bg-gray-300'
                 }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
               ></div>
             ))}
           </div>
