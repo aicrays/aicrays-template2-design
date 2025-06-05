@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-5xl space-y-10 lg:space-y-12">
+    <div className="w-full max-w-5xl space-y-12 lg:space-y-16">
       {/* Enhanced Context Header */}
       <div 
         className="pulse-chip opacity-0 animate-fade-in" 
@@ -15,16 +15,16 @@ const HeroContent = () => {
       </div>
       
       {/* Enhanced Headline with Better Typography and Spacing */}
-      <div className="space-y-8">
+      <div className="space-y-10 lg:space-y-12">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
           <div 
-            className="opacity-0 animate-fade-in mb-6" 
+            className="opacity-0 animate-fade-in mb-8 lg:mb-10" 
             style={{ animationDelay: "0.3s" }}
           >
             <span className="block text-gray-900">Empowering Enterprises</span>
           </div>
           <div 
-            className="opacity-0 animate-fade-in mb-6" 
+            className="opacity-0 animate-fade-in mb-8 lg:mb-10" 
             style={{ animationDelay: "0.5s" }}
           >
             <span className="block">
@@ -60,7 +60,7 @@ const HeroContent = () => {
       
       {/* Enhanced CTAs with Refined Styling */}
       <div 
-        className="flex flex-col sm:flex-row gap-6 lg:gap-8 opacity-0 animate-fade-in pt-4" 
+        className="flex flex-col sm:flex-row gap-6 lg:gap-8 opacity-0 animate-fade-in pt-6 lg:pt-8" 
         style={{ animationDelay: "1.1s" }}
       >
         <a 
@@ -81,19 +81,19 @@ const HeroContent = () => {
         </a>
       </div>
       
-      {/* Minimalist Scroll Indicator */}
+      {/* Clean Scroll Indicator */}
       <div 
-        className="opacity-0 animate-fade-in pt-12 flex justify-center" 
+        className="opacity-0 animate-fade-in pt-16 lg:pt-20 flex justify-center" 
         style={{ animationDelay: "1.3s" }}
       >
         <a 
           href="#solutions" 
           className="group flex flex-col items-center transition-all duration-300"
         >
-          <div className="w-10 h-10 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-all duration-300 group-hover:scale-110">
-            <ChevronDown className="w-5 h-5 text-pulse-500 animate-bounce group-hover:text-pulse-600" />
+          <div className="w-12 h-12 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-all duration-300 group-hover:scale-110 bg-white/50 backdrop-blur-sm">
+            <ChevronDown className="w-6 h-6 text-pulse-500 animate-bounce group-hover:text-pulse-600" />
           </div>
-          <div className="w-2 h-2 bg-pulse-400 rounded-full mt-2 animate-pulse group-hover:bg-pulse-600 transition-colors"></div>
+          <div className="w-1 h-8 bg-gradient-to-b from-pulse-400 to-transparent mt-2 opacity-60 group-hover:opacity-80 transition-opacity"></div>
         </a>
       </div>
     </div>

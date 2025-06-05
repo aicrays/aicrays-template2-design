@@ -139,6 +139,7 @@ export default {
 				'hero-gradient': 'linear-gradient(90deg, hsla(270, 91%, 85%, 1) 0%, hsla(280, 91%, 60%, 1) 100%)',
 				'hero-gradient-2': 'linear-gradient(90deg, hsla(280, 100%, 70%, 1) 0%, hsla(270, 90%, 50%, 1) 100%)',
 				'pulse-gradient': 'linear-gradient(180deg, rgba(124,58,237,0.8) 0%, rgba(124,58,237,0) 100%)',
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
