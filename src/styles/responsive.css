@@ -1,0 +1,91 @@
+
+/* Enhanced Mobile Optimizations */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .button-primary, .button-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  
+  .section-container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .nav-link, button, a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section-title {
+    font-size: 1.875rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem !important;
+  }
+
+  /* Disable complex animations on mobile for performance */
+  .card-3d:hover {
+    transform: none;
+  }
+  
+  .parallax {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Better form inputs on mobile */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+    padding: 0.75rem !important;
+  }
+  
+  /* Fix for mobile overflow issues */
+  .overflow-hidden {
+    overflow-x: hidden;
+  }
+  
+  /* Make rounded corners more subtle on mobile */
+  .rounded-3xl {
+    border-radius: 1rem !important;
+  }
+}
+
+/* Tablet optimizations */
+@media (max-width: 768px) {
+  .parallax {
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Optimize spacing in card layouts */
+  .card, .feature-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Dark mode preparations */
+@media (prefers-color-scheme: dark) {
+  .glass-card {
+    @apply bg-gray-900/80 border-gray-700/30;
+  }
+}
