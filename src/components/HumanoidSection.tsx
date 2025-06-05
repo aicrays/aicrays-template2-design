@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 
 const HumanoidSection = () => {
@@ -9,7 +8,6 @@ const HumanoidSection = () => {
   const ticking = useRef(false);
   const lastScrollY = useRef(0);
 
-  // More responsive timing function with shorter duration
   const cardStyle = {
     height: '60vh',
     maxHeight: '600px',
@@ -19,20 +17,18 @@ const HumanoidSection = () => {
   };
 
   useEffect(() => {
-    // Create intersection observer to detect when section is in view
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries;
         setIsIntersecting(entry.isIntersecting);
       },
-      { threshold: 0.1 } // Start observing when 10% of element is visible
+      { threshold: 0.1 }
     );
 
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
     
-    // Optimized scroll handler using requestAnimationFrame
     const handleScroll = () => {
       if (!ticking.current) {
         lastScrollY.current = window.scrollY;
@@ -44,13 +40,11 @@ const HumanoidSection = () => {
           const viewportHeight = window.innerHeight;
           const totalScrollDistance = viewportHeight * 2;
           
-          // Calculate the scroll progress
           let progress = 0;
           if (sectionRect.top <= 0) {
             progress = Math.min(1, Math.max(0, Math.abs(sectionRect.top) / totalScrollDistance));
           }
           
-          // Determine which card should be visible based on progress
           if (progress >= 0.66) {
             setActiveCardIndex(2);
           } else if (progress >= 0.33) {
@@ -67,7 +61,7 @@ const HumanoidSection = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Initial calculation
+    handleScroll();
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -77,7 +71,6 @@ const HumanoidSection = () => {
     };
   }, []);
 
-  // Card visibility based on active index instead of direct scroll progress
   const isFirstCardVisible = isIntersecting;
   const isSecondCardVisible = activeCardIndex >= 1;
   const isThirdCardVisible = activeCardIndex >= 2;
@@ -100,13 +93,12 @@ const HumanoidSection = () => {
               </div>
             </div>
             
-            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-1 md:mb-2">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
               Why Humanoid
             </h2>
           </div>
           
           <div ref={cardsContainerRef} className="relative flex-1 perspective-1000">
-            {/* First Card */}
             <div 
               className={`absolute inset-0 overflow-hidden shadow-xl ${isFirstCardVisible ? 'animate-card-enter' : ''}`} 
               style={{
@@ -141,7 +133,6 @@ const HumanoidSection = () => {
               </div>
             </div>
             
-            {/* Second Card */}
             <div 
               className={`absolute inset-0 overflow-hidden shadow-xl ${isSecondCardVisible ? 'animate-card-enter' : ''}`} 
               style={{
@@ -177,7 +168,6 @@ const HumanoidSection = () => {
               </div>
             </div>
             
-            {/* Third Card */}
             <div 
               className={`absolute inset-0 overflow-hidden shadow-xl ${isThirdCardVisible ? 'animate-card-enter' : ''}`} 
               style={{

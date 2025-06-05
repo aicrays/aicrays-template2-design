@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Search, Wrench, Code, Globe } from "lucide-react";
 
@@ -88,23 +87,22 @@ const ProcessSection = () => {
       </div>
       
       <div className="section-container relative z-10 py-8">
-        {/* Compact Header */}
+        {/* Standardized Header */}
         <div className="text-center mb-8">
-          <div className="pulse-chip mx-auto mb-4">
+          <div className="pulse-chip mx-auto mb-6">
             <span>Our Process</span>
           </div>
           <div className={`transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-700 to-purple-900 bg-clip-text text-transparent relative">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent relative">
               How We Build
               <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 rounded-full transition-all duration-1000 delay-500 ${titleVisible ? 'w-24 opacity-100' : 'w-0 opacity-0'}`}></div>
             </h2>
           </div>
-          <p className={`section-subtitle mx-auto text-gray-600 max-w-2xl font-medium transition-all duration-1000 delay-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className={`text-lg text-gray-600 mx-auto max-w-2xl font-medium transition-all duration-1000 delay-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             Our delivery approach balances speed with strategy, using modular frameworks to reduce risk.
           </p>
         </div>
 
-        {/* Desktop Process Flow - More Compact */}
         <div className="hidden lg:block">
           {/* Enhanced Gradient Timeline */}
           <div className="relative mb-8">

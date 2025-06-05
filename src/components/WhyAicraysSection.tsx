@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Code, Settings, Users, Wrench } from "lucide-react";
 
@@ -56,13 +55,12 @@ const WhyAicraysSection = () => {
 
   return (
     <section className="h-screen flex items-center justify-center bg-gradient-to-b from-white via-gray-50/30 to-white relative" id="about" ref={sectionRef}>
-      {/* Soft Abstract Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,58,237,0.06)_0%,transparent_50%)] pointer-events-none"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(124,58,237,0.04)_0%,transparent_60%)] pointer-events-none"></div>
       
       <div className="section-container relative z-10 py-8">
         <div className="text-center mb-8">
-          <h2 className="section-title mb-3">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
             Not Templates. Not Theoretical.<br />
             <span className="text-pulse-500 relative">
               Just Built for You.
@@ -70,19 +68,17 @@ const WhyAicraysSection = () => {
             </span>
           </h2>
           
-          {/* Subtle Wave Divider */}
           <div className="flex items-center justify-center my-4">
             <svg width="120" height="8" viewBox="0 0 120 8" className="text-pulse-300">
               <path d="M0 4 Q30 0 60 4 T120 4" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.6"/>
             </svg>
           </div>
           
-          <p className="section-subtitle mx-auto max-w-2xl">
+          <p className="text-lg text-gray-600 mx-auto max-w-2xl font-medium">
             We don't sell off-the-shelf products. Every solution is personalized to the workflows, systems, and goals of the client.
           </p>
         </div>
 
-        {/* Unified 2x2 Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-6">
           {valuePillars.map((pillar, index) => (
             <div 
@@ -91,13 +87,11 @@ const WhyAicraysSection = () => {
                 visibleItems.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
-              {/* Unified Purple Icon with Soft Glow */}
               <div className="flex items-start gap-4 mb-4">
                 <div className="relative">
                   <div className="w-12 h-12 bg-gradient-to-br from-pulse-400 to-pulse-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-md">
                     <pillar.icon className="w-6 h-6 text-white" />
                   </div>
-                  {/* Soft glow background */}
                   <div className="absolute -inset-1 bg-pulse-400/20 rounded-lg blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 
@@ -114,7 +108,6 @@ const WhyAicraysSection = () => {
           ))}
         </div>
 
-        {/* Minimal Pill-Style CTA */}
         <div className="text-center">
           <a 
             href="#contact" 
@@ -138,7 +131,6 @@ const WhyAicraysSection = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             
-            {/* Subtle hover pulse background */}
             <div className="absolute inset-0 bg-gradient-to-r from-pulse-100/30 via-pulse-200/30 to-pulse-100/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </a>
         </div>

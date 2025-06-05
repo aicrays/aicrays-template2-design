@@ -6,10 +6,10 @@ const ImageShowcaseSection = () => {
     <section className="w-full pt-0 pb-8 sm:pb-12 bg-white" id="showcase">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12 animate-on-scroll">
-          <h2 className="text-3xl sm:text-4xl font-display font-bold tracking-tight text-gray-900 mb-3 sm:mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent tracking-tight">
             Experience the Future Today
           </h2>
-          <p className="text-base sm:text-lg text-gray-600">
+          <p className="text-lg text-gray-600 font-medium">
             Our cutting-edge humanoid robot is designed to transform how we interact 
             with technology in everyday environments.
           </p>

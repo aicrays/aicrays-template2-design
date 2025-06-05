@@ -1,65 +1,69 @@
-
 import React, { useState } from "react";
 import { toast } from "sonner";
+
 const DetailsSection = () => {
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     company: ""
   });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {
-      name,
-      value
-    } = e.target;
+    const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
   };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simple validation
     if (!formData.fullName || !formData.email) {
       toast.error("Please fill in all required fields");
       return;
     }
 
-    // Demo form submission
     toast.success("Request submitted successfully!");
 
-    // Reset form
     setFormData({
       fullName: "",
       email: "",
       company: ""
     });
   };
-  return <section id="details" className="h-screen flex items-center justify-center bg-white py-0">
+
+  return (
+    <section id="details" className="h-screen flex items-center justify-center bg-white py-0">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-6xl">
+        <div className="text-center mb-8">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
+            Technical Specifications & Demo Access
+          </h2>
+          <p className="text-lg text-gray-600 font-medium max-w-2xl mx-auto">
+            Explore the technical details and request hands-on experience with Atlas.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2">
-          {/* Left Card - The Details */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
-            {/* Card Header with background image instead of gradient */}
             <div className="relative h-32 sm:h-40 p-4 sm:p-6 flex items-end" style={{
-            backgroundImage: "url('/background-section3.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}>
-              <h2 className="text-xl sm:text-2xl font-display text-white font-bold">
+              backgroundImage: "url('/background-section3.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}>
+              <h3 className="text-xl sm:text-2xl font-display text-white font-bold">
                 The details
-              </h2>
+              </h3>
             </div>
             
-            {/* Card Content */}
             <div className="bg-white p-4 sm:p-6" style={{
-            backgroundColor: "#FFFFFF",
-            border: "1px solid #ECECEC"
-          }}>
-              <h3 className="text-base sm:text-lg font-display mb-4 sm:mb-6">
+              backgroundColor: "#FFFFFF",
+              border: "1px solid #ECECEC"
+            }}>
+              <h4 className="text-base sm:text-lg font-display mb-4 sm:mb-6">
                 Precision engineering meets adaptive intelligence
-              </h3>
+              </h4>
 
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start gap-3">
@@ -130,27 +134,24 @@ const DetailsSection = () => {
             </div>
           </div>
 
-          {/* Right Card - Contact Form */}
           <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-elegant">
-            {/* Card Header with background image instead of gradient */}
             <div className="relative h-32 sm:h-40 p-4 sm:p-6 flex flex-col items-start" style={{
-            backgroundImage: "url('/background-section1.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}>
+              backgroundImage: "url('/background-section1.png')",
+              backgroundSize: "cover",
+              backgroundPosition: "center"
+            }}>
               <div className="inline-block px-3 sm:px-4 py-1.5 border border-white text-white rounded-full text-xs mb-3">
                 Request a demo
               </div>
-              <h2 className="text-xl sm:text-2xl font-display text-white font-bold mt-auto">
+              <h3 className="text-xl sm:text-2xl font-display text-white font-bold mt-auto">
                 See it for yourself
-              </h2>
+              </h3>
             </div>
             
-            {/* Card Content - Form */}
             <div className="bg-white p-4 sm:p-6" style={{
-            backgroundColor: "#FFFFFF",
-            border: "1px solid #ECECEC"
-          }}>
+              backgroundColor: "#FFFFFF",
+              border: "1px solid #ECECEC"
+            }}>
               <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                 <div>
                   <input 
@@ -200,6 +201,8 @@ const DetailsSection = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default DetailsSection;

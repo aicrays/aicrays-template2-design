@@ -1,11 +1,9 @@
-
 import React, { useRef, useEffect } from "react";
 
 const RobotShowcaseSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Simple animation when the section comes into view
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,14 +33,14 @@ const RobotShowcaseSection = () => {
       <div className="container px-6 lg:px-8 mx-auto">
         <div className="flex flex-col items-center opacity-0 translate-y-10 transition-all duration-1000">
           <div className="mb-12 text-center">
-            <div className="pulse-chip mb-4">
+            <div className="pulse-chip mb-6">
               <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">03</span>
               <span>Meet the Future</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent">
               Precision Engineering Meets <span className="text-[#FC4D0A]">Adaptive AI</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-medium">
               Our humanoid robot represents the perfect fusion of cutting-edge mechanical engineering and 
               state-of-the-art artificial intelligence, designed to seamlessly integrate into human environments.
             </p>
