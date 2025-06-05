@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-5xl space-y-12 lg:space-y-16">
+    <div className="w-full max-w-5xl space-y-12 lg:space-y-16 relative z-20">
       {/* Enhanced Context Header */}
       <div 
         className="pulse-chip opacity-0 animate-fade-in" 
@@ -15,23 +15,23 @@ const HeroContent = () => {
       </div>
       
       {/* Enhanced Headline with Better Typography and Spacing */}
-      <div className="space-y-10 lg:space-y-12">
+      <div className="space-y-12 lg:space-y-14">
         <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight tracking-tight">
           <div 
-            className="opacity-0 animate-fade-in mb-8 lg:mb-10" 
+            className="opacity-0 animate-fade-in mb-10 lg:mb-12" 
             style={{ animationDelay: "0.3s" }}
           >
-            <span className="block text-gray-900">Empowering Enterprises</span>
+            <span className="block text-gray-900 drop-shadow-sm">Empowering Enterprises</span>
           </div>
           <div 
-            className="opacity-0 animate-fade-in mb-8 lg:mb-10" 
+            className="opacity-0 animate-fade-in mb-10 lg:mb-12" 
             style={{ animationDelay: "0.5s" }}
           >
             <span className="block">
               Through{" "}
-              <span className="text-pulse-500 relative inline-block">
+              <span className="text-pulse-500 relative inline-block drop-shadow-sm">
                 Innovation
-                <div className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-pulse-400 to-pulse-600 animate-pulse-slow transform origin-left rounded-full"></div>
+                <div className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-pulse-400 to-pulse-600 animate-pulse-slow transform origin-left rounded-full shadow-lg"></div>
               </span>
             </span>
           </div>
@@ -41,19 +41,19 @@ const HeroContent = () => {
           >
             <span className="block">
               and{" "}
-              <span className="text-pulse-500 relative inline-block">
+              <span className="text-pulse-500 relative inline-block drop-shadow-sm">
                 Personalization
-                <div className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-pulse-400 to-pulse-600 animate-pulse-slow transform origin-left rounded-full" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-4 left-0 w-full h-2 bg-gradient-to-r from-pulse-400 to-pulse-600 animate-pulse-slow transform origin-left rounded-full shadow-lg" style={{ animationDelay: '1s' }}></div>
               </span>
             </span>
           </div>
         </h1>
       </div>
       
-      {/* Enhanced Subtitle with Better Proportions */}
+      {/* Enhanced Subtitle with Better Contrast */}
       <p 
         style={{ animationDelay: "0.9s" }} 
-        className="text-xl lg:text-2xl xl:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-4xl font-light"
+        className="text-xl lg:text-2xl xl:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-4xl font-light drop-shadow-sm bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20"
       >
         We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
       </p>
@@ -65,7 +65,7 @@ const HeroContent = () => {
       >
         <a 
           href="#contact" 
-          className="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[260px] hover:from-pulse-600 hover:to-pulse-700"
+          className="group relative inline-flex items-center justify-center px-10 py-4 text-lg font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[260px] hover:from-pulse-600 hover:to-pulse-700 backdrop-blur-sm"
         >
           <span className="relative z-10">Book a Consultation</span>
           <ArrowRight className="ml-3 w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" />
@@ -90,7 +90,7 @@ const HeroContent = () => {
           href="#solutions" 
           className="group flex flex-col items-center transition-all duration-300"
         >
-          <div className="w-12 h-12 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-all duration-300 group-hover:scale-110 bg-white/50 backdrop-blur-sm">
+          <div className="w-12 h-12 rounded-full border-2 border-pulse-400 flex items-center justify-center group-hover:border-pulse-600 transition-all duration-300 group-hover:scale-110 bg-white/50 backdrop-blur-sm shadow-lg">
             <ChevronDown className="w-6 h-6 text-pulse-500 animate-bounce group-hover:text-pulse-600" />
           </div>
           <div className="w-1 h-8 bg-gradient-to-b from-pulse-400 to-transparent mt-2 opacity-60 group-hover:opacity-80 transition-opacity"></div>
