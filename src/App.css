@@ -28,6 +28,26 @@
   }
 }
 
+/* Floating animation for background elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-8px) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(8px) translateX(3px) rotate(0.5deg);
+  }
+}
+
+.animate-float {
+  animation: float var(--float-duration, 20s) ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
@@ -113,6 +133,11 @@
   
   .section-subtitle {
     font-size: 1rem !important;
+  }
+  
+  /* Reduce motion on mobile for performance */
+  .animate-float {
+    animation: none;
   }
 }
 

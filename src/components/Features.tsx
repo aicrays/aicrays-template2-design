@@ -88,8 +88,21 @@ const Features = () => {
   }, []);
   
   return (
-    <section className="py-12 sm:py-16 md:py-20 pb-0 relative bg-gray-50" id="features" ref={sectionRef}>
-      <div className="section-container">
+    <section className="py-12 sm:py-16 md:py-20 pb-0 relative bg-gradient-to-br from-gray-50 via-purple-50/20 to-violet-50/30 overflow-hidden" id="features" ref={sectionRef}>
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating orbs */}
+        <div className="absolute top-[25%] right-[20%] w-36 h-36 bg-purple-200/12 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
+        <div className="absolute bottom-[15%] left-[15%] w-44 h-44 bg-violet-300/8 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[70%] right-[40%] w-28 h-28 bg-purple-300/15 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '4s', animationDuration: '16s' }}></div>
+        
+        {/* Particle dots */}
+        <div className="absolute top-[35%] left-[30%] w-2 h-2 bg-purple-400/40 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-[80%] right-[30%] w-1.5 h-1.5 bg-violet-400/50 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
+        <div className="absolute top-[50%] left-[80%] w-2.5 h-2.5 bg-purple-300/30 rounded-full animate-pulse" style={{ animationDelay: '9s' }}></div>
+      </div>
+      
+      <div className="section-container relative z-10">
         <div className="text-center mb-10 sm:mb-16">
           <div className="pulse-chip mx-auto mb-3 sm:mb-4 opacity-0 fade-in-element">
             <span>Features</span>
