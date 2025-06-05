@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Brain, Shield, Wifi, BarChart3, Cloud, Layout } from "lucide-react";
 
