@@ -2,6 +2,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import HeroBackground from "./Hero/HeroBackground";
 import HeroContent from "./Hero/HeroContent";
+import HeroVisual from "./Hero/HeroVisual";
 import { useMobileDetection } from "@/hooks/useMobileDetection";
 import { useScrollEffects } from "@/hooks/useScrollEffects";
 
@@ -25,14 +26,11 @@ const Hero = () => {
       <HeroBackground />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
-        <div className="flex justify-center items-center min-h-[85vh] py-16 lg:py-24">
+        <div className="flex flex-col lg:flex-row items-center justify-between min-h-[85vh] py-16 lg:py-24 gap-12 lg:gap-16">
           <HeroContent />
+          <HeroVisual />
         </div>
       </div>
-      
-      {/* Enhanced Bottom Decorative Elements */}
-      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-pulse-200/20 rounded-full blur-3xl -z-10 parallax" data-speed="0.05"></div>
-      <div className="absolute bottom-0 right-1/3 w-60 h-60 bg-blue-200/20 rounded-full blur-3xl -z-10 parallax" data-speed="0.03"></div>
     </section>
   );
 };

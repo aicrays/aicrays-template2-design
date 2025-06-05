@@ -8,123 +8,159 @@ const HeroVisual = () => {
       icon: Brain,
       title: "AI/ML",
       subtitle: "Intelligence",
-      benefit: "Automated decisioning and forecasting",
+      position: "top-4 left-8",
+      size: "w-16 h-16",
+      delay: "1.2s",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Shield,
       title: "Security",
       subtitle: "Protection",
-      benefit: "Enterprise-grade threat protection",
+      position: "top-1/3 right-4",
+      size: "w-14 h-14",
+      delay: "1.4s",
       gradient: "from-purple-600 to-purple-700"
     },
     {
       icon: Wifi,
       title: "IoT",
       subtitle: "Connectivity",
-      benefit: "Real-time operational visibility",
+      position: "bottom-1/3 left-4",
+      size: "w-12 h-12",
+      delay: "1.6s",
       gradient: "from-purple-400 to-purple-500"
     },
     {
       icon: BarChart3,
       title: "Data",
       subtitle: "Analytics",
-      benefit: "Insights from real-time dashboards",
+      position: "top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2",
+      size: "w-18 h-18",
+      delay: "1.8s",
       gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Cloud,
       title: "Cloud",
       subtitle: "DevOps",
-      benefit: "Scalable infrastructure deployment",
+      position: "bottom-4 right-8",
+      size: "w-14 h-14",
+      delay: "2.0s",
       gradient: "from-purple-600 to-purple-700"
     },
     {
       icon: Layout,
       title: "UX",
       subtitle: "Systems",
-      benefit: "Human-centered design interfaces",
+      position: "top-2/3 right-1/3",
+      size: "w-12 h-12",
+      delay: "2.2s",
       gradient: "from-purple-400 to-purple-500"
     }
   ];
 
-  const handleCTAClick = () => {
-    const solutionsSection = document.getElementById('solutions');
-    if (solutionsSection) {
-      solutionsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="w-full lg:w-1/2 relative">
       <div 
-        className="relative z-10 opacity-0 animate-fade-in" 
-        style={{ animationDelay: "1.2s" }}
+        className="relative h-96 lg:h-[500px] opacity-0 animate-fade-in" 
+        style={{ animationDelay: "1.0s" }}
       >
-        {/* Background with gradient and decorative elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/10 rounded-3xl -m-4"></div>
-        <div className="absolute top-1/4 right-1/4 w-3 h-3 bg-white/40 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-2 h-2 bg-white/30 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-
-        {/* 2x3 Grid Layout */}
-        <div className="grid grid-cols-2 gap-4 lg:gap-6 max-w-2xl relative">
-          {components.map((component, index) => (
-            <div
-              key={component.title}
-              className={`group bg-white/90 backdrop-blur-sm p-6 lg:p-8 cursor-pointer transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in rounded-2xl lg:rounded-3xl border border-white/20`}
-              style={{ animationDelay: `${1.4 + index * 0.1}s` }}
+        {/* Central Connection Hub */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-pulse-400 to-pulse-600 rounded-full animate-pulse opacity-60"></div>
+        
+        {/* Floating Modular Components */}
+        {components.map((component, index) => (
+          <div
+            key={component.title}
+            className={`absolute ${component.position} group cursor-pointer opacity-0 animate-fade-in`}
+            style={{ animationDelay: component.delay }}
+          >
+            {/* Connection Line to Center */}
+            <svg 
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity"
+              style={{ width: '400px', height: '400px', zIndex: -1 }}
             >
-              {/* Background Gradient Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-purple-100/30 group-hover:from-purple-100/60 group-hover:to-purple-200/40 transition-all duration-500 rounded-2xl lg:rounded-3xl"></div>
+              <line 
+                x1="200" 
+                y1="200" 
+                x2="200" 
+                y2="200" 
+                stroke="url(#gradient)" 
+                strokeWidth="1" 
+                className="animate-pulse-slow"
+              />
+              <defs>
+                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#a855f7" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#a855f7" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Floating Component */}
+            <div className={`${component.size} bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 animate-float border border-white/40 group`}
+                 style={{ animationDelay: `${index * 0.5}s` }}>
               
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${component.gradient} rounded-xl lg:rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all duration-300`}>
-                    <component.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
-                  </div>
+              {/* Background Gradient */}
+              <div className={`absolute inset-0 bg-gradient-to-br ${component.gradient} opacity-10 group-hover:opacity-20 transition-opacity rounded-2xl`}></div>
+              
+              <div className="relative z-10 h-full flex flex-col items-center justify-center p-3">
+                <div className={`w-8 h-8 bg-gradient-to-br ${component.gradient} rounded-xl flex items-center justify-center mb-2 group-hover:scale-110 transition-transform shadow-md`}>
+                  <component.icon className="w-4 h-4 text-white" />
                 </div>
                 
-                <div className="mb-3">
-                  <h3 className="text-lg lg:text-xl font-bold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
+                <div className="text-center">
+                  <h4 className="text-xs font-bold text-gray-900 group-hover:text-purple-700 transition-colors">
                     {component.title}
-                  </h3>
-                  <p className="text-sm lg:text-base text-gray-600 group-hover:text-purple-600 transition-colors font-medium">
+                  </h4>
+                  <p className="text-xs text-gray-600 group-hover:text-purple-600 transition-colors font-medium">
                     {component.subtitle}
                   </p>
                 </div>
-                
-                <p className="text-xs lg:text-sm text-gray-500 leading-relaxed group-hover:text-gray-600 transition-colors">
-                  {component.benefit}
-                </p>
-                
-                {/* CTA Link */}
-                <button
-                  onClick={handleCTAClick}
-                  className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 mt-3"
-                >
-                  <div className="text-xs font-medium text-purple-600 hover:text-purple-700 transition-colors flex items-center">
-                    Explore This →
-                  </div>
-                </button>
               </div>
 
-              {/* Decorative Corner */}
-              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-br-2xl lg:rounded-br-3xl"></div>
+              {/* Hover Tooltip */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                {component.title} {component.subtitle}
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "2s" }}>
-          <button
-            onClick={handleCTAClick}
-            className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors group"
-          >
-            <span className="text-sm font-medium mr-2">See How We Build These</span>
-            <div className="w-5 h-5 rounded-full border-2 border-purple-400 flex items-center justify-center group-hover:border-purple-600 transition-colors">
-              <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:bg-purple-600 transition-colors animate-pulse"></div>
-            </div>
-          </button>
+        {/* Orbital Animation Lines */}
+        <div className="absolute inset-0 pointer-events-none">
+          <svg className="w-full h-full opacity-10" viewBox="0 0 400 400">
+            <circle
+              cx="200"
+              cy="200"
+              r="120"
+              fill="none"
+              stroke="url(#orbital)"
+              strokeWidth="1"
+              strokeDasharray="5,5"
+              className="animate-pulse-slow"
+            />
+            <circle
+              cx="200"
+              cy="200"
+              r="180"
+              fill="none"
+              stroke="url(#orbital)"
+              strokeWidth="0.5"
+              strokeDasharray="3,3"
+              className="animate-pulse-slow"
+              style={{ animationDelay: '1s' }}
+            />
+            <defs>
+              <linearGradient id="orbital" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.2" />
+                <stop offset="50%" stopColor="#a855f7" stopOpacity="0.6" />
+                <stop offset="100%" stopColor="#a855f7" stopOpacity="0.2" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       </div>
     </div>
