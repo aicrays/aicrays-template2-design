@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-5xl text-center space-y-8 lg:space-y-12">
+    <div className="w-full max-w-5xl text-center space-y-8 px-4">
       {/* Enhanced Context Header */}
       <div 
         className="pulse-chip opacity-0 animate-fade-in mx-auto" 
@@ -15,17 +15,17 @@ const HeroContent = () => {
       </div>
       
       {/* Enhanced Headline with Better Typography and Responsive Sizing */}
-      <div className="space-y-6">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+      <div className="space-y-4">
+        <h1 className="font-bold leading-[1.4] tracking-tight text-5xl lg:text-6xl">
           <div 
             className="opacity-0 animate-fade-in mb-4" 
-            style={{ animationDelay: "0.3s" }}
+            style={{ animationDelay: "0.3s", animationDuration: "0.8s" }}
           >
             <span className="block text-gray-900">Empowering Enterprises</span>
           </div>
           <div 
             className="opacity-0 animate-fade-in mb-4" 
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.5s", animationDuration: "0.8s" }}
           >
             <span className="block">
               Through{" "}
@@ -37,7 +37,7 @@ const HeroContent = () => {
           </div>
           <div 
             className="opacity-0 animate-fade-in" 
-            style={{ animationDelay: "0.7s" }}
+            style={{ animationDelay: "0.7s", animationDuration: "0.8s" }}
           >
             <span className="block">
               and{" "}
@@ -51,31 +51,33 @@ const HeroContent = () => {
       </div>
       
       {/* Enhanced Subtitle with Better Spacing and Typography */}
-      <p 
-        style={{ animationDelay: "0.9s" }} 
-        className="text-xl lg:text-2xl xl:text-3xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-4xl mx-auto font-light"
-      >
-        We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
-      </p>
+      <div className="pt-8">
+        <p 
+          style={{ animationDelay: "0.9s", animationDuration: "0.8s" }} 
+          className="text-xl leading-[1.5] text-gray-700 opacity-0 animate-fade-in max-w-4xl mx-auto font-normal"
+        >
+          We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
+        </p>
+      </div>
       
       {/* Enhanced CTAs with Improved Hover Effects and Compact Design */}
       <div 
-        className="flex flex-col sm:flex-row gap-6 lg:gap-8 opacity-0 animate-fade-in justify-center items-center pt-4" 
-        style={{ animationDelay: "1.1s" }}
+        className="flex flex-col sm:flex-row gap-6 opacity-0 animate-fade-in justify-center items-center pt-10" 
+        style={{ animationDelay: "1.1s", animationDuration: "0.8s" }}
       >
         <a 
           href="#contact" 
-          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[260px]"
+          className="group relative inline-flex items-center justify-center px-7 py-3.5 text-lg font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[240px]"
         >
           <span className="relative z-10">Book a Consultation</span>
-          <ArrowRight className="ml-3 w-6 h-6 transition-transform group-hover:translate-x-1 relative z-10" />
+          <ArrowRight className="ml-3 w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" />
           <div className="absolute inset-0 bg-gradient-to-r from-pulse-600 to-pulse-700 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
           <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
         </a>
         
         <a 
           href="#solutions" 
-          className="group relative inline-flex items-center justify-center px-8 py-4 text-lg lg:text-xl font-semibold text-pulse-600 bg-white/80 backdrop-blur-sm border-2 border-pulse-200 rounded-full hover:border-pulse-400 hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[260px] hover:shadow-pulse-500/20"
+          className="group relative inline-flex items-center justify-center px-7 py-3.5 text-lg font-semibold text-pulse-600 bg-white/80 backdrop-blur-sm border-2 border-pulse-200 rounded-full hover:border-pulse-400 hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl min-w-[240px] hover:shadow-pulse-500/20"
         >
           <span className="relative z-10">Explore What We Build</span>
           <div className="absolute inset-0 bg-gradient-to-r from-pulse-50 to-pulse-100 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></div>
@@ -85,8 +87,8 @@ const HeroContent = () => {
       
       {/* Enhanced Scroll Indicator with Pulse Animation */}
       <div 
-        className="opacity-0 animate-fade-in pt-8" 
-        style={{ animationDelay: "1.3s" }}
+        className="opacity-0 animate-fade-in pt-7" 
+        style={{ animationDelay: "1.3s", animationDuration: "0.8s" }}
       >
         <a 
           href="#solutions" 
