@@ -1,52 +1,46 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Brain, Shield, Wifi, Database, Cloud, ArrowRight, BarChart3, Zap } from "lucide-react";
+import { Brain, Shield, Wifi, BarChart3, Cloud } from "lucide-react";
 
 const ModularTechSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const techModules = [
+  const components = [
     {
       icon: Brain,
-      title: "AI / Machine Learning",
-      description: "Intelligent automation and predictive analytics tailored to your business logic",
-      useCase: "Automates quote approvals using AI + analytics",
-      gradient: "from-violet-500 to-purple-600",
-      hoverGlow: "group-hover:shadow-violet-500/25"
+      title: "AI/ML Intelligence",
+      description: "Machine learning models and intelligent automation tailored to your business logic",
+      hoverText: "Automates decision-making using AI + analytics",
+      gradient: "from-purple-500 to-purple-600"
     },
     {
       icon: Shield,
       title: "Cybersecurity",
-      description: "Advanced threat detection and secure access control built into every layer",
-      useCase: "Blocks 99.8% of security threats in real-time",
-      gradient: "from-blue-500 to-indigo-600",
-      hoverGlow: "group-hover:shadow-blue-500/25"
+      description: "Enterprise-grade security protocols with multi-layered access control built into every layer",
+      hoverText: "Protects data with advanced threat detection",
+      gradient: "from-red-500 to-red-600"
     },
     {
       icon: Wifi,
-      title: "IoT / RFID",
-      description: "Connected device management and real-time tracking solutions",
-      useCase: "Tracks 10,000+ assets with meter-level precision",
-      gradient: "from-emerald-500 to-teal-600",
-      hoverGlow: "group-hover:shadow-emerald-500/25"
+      title: "IoT/RFID Systems",
+      description: "Connected device networks and tracking systems for real-time operational visibility",
+      hoverText: "Connects devices for seamless data flow",
+      gradient: "from-blue-500 to-blue-600"
     },
     {
       icon: BarChart3,
       title: "Data Intelligence",
       description: "Analytics and reporting tailored to your enterprise operations",
-      useCase: "Enables insights from real-time dashboards and workflows",
-      gradient: "from-orange-500 to-red-600",
-      hoverGlow: "group-hover:shadow-orange-500/25"
+      hoverText: "Enables insights from real-time dashboards and workflows",
+      gradient: "from-green-500 to-green-600"
     },
     {
       icon: Cloud,
       title: "Cloud DevOps",
       description: "Scalable infrastructure and seamless deployment pipelines",
-      useCase: "Delivers modular rollouts with performance monitoring",
-      gradient: "from-cyan-500 to-blue-600",
-      hoverGlow: "group-hover:shadow-cyan-500/25"
+      hoverText: "Delivers modular rollouts with performance monitoring",
+      gradient: "from-indigo-500 to-indigo-600"
     }
   ];
 
@@ -61,7 +55,7 @@ const ModularTechSection = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.2 }
     );
 
     const cards = sectionRef.current?.querySelectorAll('.tech-card');
@@ -71,106 +65,91 @@ const ModularTechSection = () => {
   }, []);
 
   return (
-    <section className="py-16 md:py-20 bg-gradient-to-b from-white via-gray-50/30 to-white relative overflow-hidden" id="solutions" ref={sectionRef}>
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 opacity-40">
-        <div className="absolute inset-0 bg-[linear-gradient(30deg,transparent_24%,rgba(139,92,246,0.03)_25%,rgba(139,92,246,0.03)_26%,transparent_27%,transparent_74%,rgba(139,92,246,0.03)_75%,rgba(139,92,246,0.03)_76%,transparent_77%)] bg-[length:60px_60px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(139,92,246,0.1)_0%,transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,rgba(59,130,246,0.08)_0%,transparent_50%)]"></div>
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 via-white to-pulse-50 relative overflow-hidden" id="solutions">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-pulse-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-blue-400 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
       
-      {/* Top Section Divider */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-violet-400/30 to-transparent"></div>
-      
-      <div className="section-container relative z-10">
-        <div className="text-center mb-16">
-          <div className="pulse-chip mx-auto mb-8 hover:scale-105 transition-all duration-300 cursor-pointer animate-fade-in">
-            <Zap className="w-4 h-4 mr-2 text-violet-600" />
+      {/* Diagonal SVG Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden">
+        <svg className="relative block w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,50 350,50 600,20 C850,50 1050,50 1200,0 L1200,120 L0,120 Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div className="section-container relative z-10" ref={sectionRef}>
+        <div className="text-center mb-12">
+          <div 
+            className="pulse-chip mx-auto mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            style={{ animationDelay: "0.1s" }}
+          >
             <span>Modular Technology</span>
           </div>
-          <h2 className="section-title mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h2 className="section-title mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             Built from Proven Components
           </h2>
-          <p className="section-subtitle mx-auto animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            Every platform we create combines these foundational technologies, customized for your specific needs and integrated seamlessly with your existing systems.
+          <p className="section-subtitle mx-auto opacity-0 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+            Every platform we build combines these core technologies, tailored to your specific enterprise needs and integrated seamlessly with your existing systems.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-          {techModules.map((module, index) => (
-            <div 
-              key={module.title}
-              className={`tech-card group relative overflow-hidden transition-all duration-700 cursor-pointer ${
-                visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {components.map((component, index) => (
+            <div
+              key={component.title}
+              className={`tech-card glass-card p-6 lg:p-8 group cursor-pointer transition-all duration-700 hover:shadow-2xl hover:scale-[1.03] relative overflow-hidden ${
+                visibleCards.includes(index) 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-8'
               }`}
-              style={{ animationDelay: `${index * 0.15}s` }}
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Card Background with Enhanced Hover */}
-              <div className={`relative p-8 bg-white border border-gray-200 rounded-3xl transition-all duration-500 transform group-hover:scale-[1.03] group-hover:border-violet-200 shadow-lg group-hover:shadow-2xl ${module.hoverGlow}`}>
-                
-                {/* Background Gradient on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-violet-50/0 to-purple-50/0 group-hover:from-violet-50/60 group-hover:to-purple-50/40 rounded-3xl transition-all duration-500"></div>
-                
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 w-0 h-0 border-l-[24px] border-l-transparent border-t-[24px] border-t-violet-100 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-tr-3xl"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${module.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl`}>
-                      <module.icon className="w-7 h-7 text-white group-hover:animate-pulse" />
-                    </div>
-                    <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                      <ArrowRight className="w-5 h-5 text-violet-500" />
-                    </div>
+              {/* Background Gradient Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 group-hover:from-pulse-50/20 group-hover:to-pulse-100/10 transition-all duration-500"></div>
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${component.gradient} rounded-lg flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                    <component.icon className="w-6 h-6 text-white group-hover:animate-pulse" />
                   </div>
-                  
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-violet-700 transition-colors duration-300">
-                    {module.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                    {module.description}
-                  </p>
-                  
-                  {/* Enhanced Use Case Reveal */}
-                  <div className={`bg-gradient-to-r from-violet-50 to-purple-50 rounded-xl p-4 border border-violet-100 transition-all duration-500 transform ${
-                    hoveredCard === index ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-4 scale-95'
-                  }`}>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-violet-400 mt-2 flex-shrink-0"></div>
-                      <p className="text-sm text-violet-700 font-medium leading-relaxed">
-                        {module.useCase}
-                      </p>
-                    </div>
-                    <button className="mt-3 text-xs text-violet-600 hover:text-violet-700 font-medium flex items-center gap-1 transition-colors">
-                      See real-world use
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
+                  <div className="w-2 h-2 bg-pulse-400 rounded-full animate-pulse group-hover:scale-150 transition-transform"></div>
                 </div>
                 
-                {/* Hover Ripple Effect */}
-                <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-violet-400/0 via-violet-400/10 to-violet-400/0 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-pulse-700 transition-colors">
+                  {component.title}
+                </h3>
+                
+                <p className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-700 transition-colors">
+                  {component.description}
+                </p>
+                
+                {/* Hover Text */}
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  <div className="text-sm text-pulse-600 font-medium bg-pulse-50 px-3 py-2 rounded-lg border border-pulse-200">
+                    {component.hoverText}
+                  </div>
                 </div>
               </div>
+
+              {/* Decorative Corner */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-pulse-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
           ))}
         </div>
 
-        {/* Enhanced Bottom Section */}
-        <div className="mt-20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-violet-200/50 to-transparent h-px"></div>
-          <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-gradient-to-r from-violet-500 to-purple-500 rounded-full shadow-lg"></div>
-          <div className="text-center pt-12">
-            <p className="text-sm text-gray-500 mb-4">Ready to see these components in action?</p>
-            <button className="button-primary group">
-              Schedule Discovery Session
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
+        {/* Call to Action */}
+        <div className="text-center mt-12 opacity-0 animate-fade-in" style={{ animationDelay: "1s" }}>
+          <p className="text-lg text-gray-600 mb-6">
+            Ready to see these components in action?
+          </p>
+          <a 
+            href="#contact" 
+            className="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-pulse-500 to-pulse-600 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+          >
+            Schedule Discovery Session
+          </a>
         </div>
       </div>
     </section>
