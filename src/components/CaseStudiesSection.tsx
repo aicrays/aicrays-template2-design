@@ -100,29 +100,29 @@ const CaseStudiesSection = () => {
   }, []);
 
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden" id="case-studies">
+    <section className="h-screen flex items-center justify-center relative overflow-hidden" id="case-studies">
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <div 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/60 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/60 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-4 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
             style={{ animationDelay: "0.1s" }}
           >
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-green-600 mr-3"></span>
             <span>Live Deployments</span>
           </div>
           
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight text-gray-900 mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-gray-900 mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             Built and Running
           </h2>
           
-          <p className="text-xl lg:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-4xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-lg lg:text-xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light mb-6" style={{ animationDelay: "0.5s" }}>
             Explore the platforms we've already deployed—custom-built, scalable, and evolving.
           </p>
         </div>
 
         {/* Solutions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
           {solutions.map((solution, index) => (
             <div
               key={solution.title}
@@ -134,19 +134,19 @@ const CaseStudiesSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {/* Enhanced Glassmorphic Card */}
-              <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-3xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
+              <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
                 {/* Background Glow on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 
                 {/* Card Content */}
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Header with Icon and Badges */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${solution.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                      <solution.icon className="w-6 h-6 text-white" strokeWidth={2} />
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`w-10 h-10 bg-gradient-to-br ${solution.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                      <solution.icon className="w-5 h-5 text-white" strokeWidth={2} />
                     </div>
                     
-                    <div className="flex flex-col gap-2 items-end">
+                    <div className="flex flex-col gap-1 items-end">
                       <Badge 
                         variant="outline" 
                         className={`text-xs transition-colors ${getIndustryColor(solution.industry)}`}
@@ -163,21 +163,21 @@ const CaseStudiesSection = () => {
                   
                   {/* Content */}
                   <div className="flex-1">
-                    <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
+                    <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
                       {solution.title}
                     </h3>
                     
-                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors text-sm">
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors text-xs">
                       {solution.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Subtle Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 
                 {/* Hover Glow Effect */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           ))}
@@ -185,10 +185,10 @@ const CaseStudiesSection = () => {
 
         {/* CTA Section */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
-          <p className="text-gray-600 mb-6 text-lg">Let's build your custom platform next.</p>
+          <p className="text-gray-600 mb-3 text-base">Let's build your custom platform next.</p>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105 font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105 font-medium text-sm"
           >
             Talk to Us
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
