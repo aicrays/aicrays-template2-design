@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-4 overflow-hidden">
+    <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-2 overflow-hidden">
       {/* Floating Background Elements - reduced number and size */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large floating orbs - fewer and smaller */}
@@ -27,9 +27,9 @@ const Footer = () => {
       
       <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content - minimal spacing */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-2">
           {/* Left Column - Brand */}
-          <div className="space-y-2">
+          <div className="space-y-1">
             <div className="text-lg font-bold text-gray-900 mb-1">Aicrays</div>
             <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
               Building custom AI-powered digital platforms that integrate cybersecurity, data intelligence, and IoT/RFID systems.
@@ -44,7 +44,7 @@ const Footer = () => {
           {/* Middle Column - Quick Links */}
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <h4 className="font-semibold mb-2 text-gray-900 text-xs">Solutions</h4>
+              <h4 className="font-semibold mb-1 text-gray-900 text-xs">Solutions</h4>
               <ul className="space-y-1">
                 <li><a href="#solutions" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">What We Build</a></li>
                 <li><a href="#process" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">How We Build</a></li>
@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
             
             <div>
-              <h4 className="font-semibold mb-2 text-gray-900 text-xs">Connect</h4>
+              <h4 className="font-semibold mb-1 text-gray-900 text-xs">Connect</h4>
               <ul className="space-y-1">
                 <li><a href="#contact" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Get in Touch</a></li>
                 <li><a href="mailto:hello@aicrays.com" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">hello@aicrays.com</a></li>
@@ -63,7 +63,7 @@ const Footer = () => {
           </div>
           
           {/* Right Column - Social & Copyright */}
-          <div className="space-y-2">
+          <div className="space-y-1">
             {/* Social Links */}
             <div className="flex space-x-2">
               <a 
@@ -96,7 +96,7 @@ const Footer = () => {
         aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5 group-hover:translate-y-[-2px] transition-transform" />
-      </a>
+      </button>
     </footer>
   );
 };
