@@ -9,20 +9,20 @@ const Footer = () => {
 
   return (
     <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-2 overflow-hidden">
-      {/* Floating Background Elements - reduced number and size */}
+      {/* Floating Background Elements with much darker colors for visibility */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large floating orbs - fewer and smaller */}
-        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-300/20 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-violet-400/18 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-indigo-400/22 rounded-full blur-3xl animate-float-vertical opacity-40" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
+        {/* Large floating orbs - much darker */}
+        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-400/40 rounded-full blur-3xl animate-float-vertical opacity-80" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-violet-500/38 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-indigo-500/42 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
         
-        {/* Medium floating orbs - reduced */}
-        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-indigo-300/25 rounded-full blur-2xl animate-float-vertical opacity-45" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-violet-300/20 rounded-full blur-2xl animate-float-vertical opacity-50" style={{ animationDelay: '7s', animationDuration: '19s' }}></div>
+        {/* Medium floating orbs - much darker */}
+        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-indigo-400/45 rounded-full blur-2xl animate-float-vertical opacity-65" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
+        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-violet-400/40 rounded-full blur-2xl animate-float-vertical opacity-70" style={{ animationDelay: '7s', animationDuration: '19s' }}></div>
         
-        {/* Small floating orbs - minimal */}
-        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-violet-400/25 rounded-full blur-xl animate-float-vertical opacity-40" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
-        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-purple-300/23 rounded-full blur-xl animate-float-vertical opacity-45" style={{ animationDelay: '9s', animationDuration: '13s' }}></div>
+        {/* Small floating orbs - much darker */}
+        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-violet-500/45 rounded-full blur-xl animate-float-vertical opacity-60" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
+        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-purple-400/43 rounded-full blur-xl animate-float-vertical opacity-65" style={{ animationDelay: '9s', animationDuration: '13s' }}></div>
       </div>
       
       <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
