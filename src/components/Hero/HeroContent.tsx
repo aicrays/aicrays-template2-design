@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full lg:w-1/2 text-left space-y-8">
+    <div className="w-full lg:w-1/2 text-left space-y-10">
       {/* Context Badge */}
       <div 
         className="pulse-chip opacity-0 animate-fade-in" 
@@ -14,17 +14,17 @@ const HeroContent = () => {
         <span className="font-semibold">Modular AI-Powered Platforms</span>
       </div>
       
-      {/* Main Headline */}
-      <div className="space-y-4">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+      {/* Main Headline with improved spacing */}
+      <div className="space-y-6">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">
           <div 
-            className="opacity-0 animate-fade-in mb-3" 
+            className="opacity-0 animate-fade-in mb-4" 
             style={{ animationDelay: "0.3s" }}
           >
             <span className="block text-gray-900">Modular Platforms.</span>
           </div>
           <div 
-            className="opacity-0 animate-fade-in mb-3" 
+            className="opacity-0 animate-fade-in mb-4" 
             style={{ animationDelay: "0.5s" }}
           >
             <span className="block">
@@ -38,17 +38,17 @@ const HeroContent = () => {
         </h1>
       </div>
       
-      {/* Subheadline */}
+      {/* Subheadline with better spacing */}
       <p 
         style={{ animationDelay: "0.7s" }} 
-        className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl font-light"
+        className="text-lg lg:text-xl xl:text-2xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-2xl font-light mt-8"
       >
         We build modular digital platforms tailored to your systems — intelligent, adaptive, and built to help your business evolve with precision and scale.
       </p>
       
-      {/* CTA Buttons */}
+      {/* CTA Buttons with increased top margin */}
       <div 
-        className="flex flex-col sm:flex-row gap-4 lg:gap-6 opacity-0 animate-fade-in pt-2" 
+        className="flex flex-col sm:flex-row gap-4 lg:gap-6 opacity-0 animate-fade-in pt-6" 
         style={{ animationDelay: "0.9s" }}
       >
         <a 
@@ -68,9 +68,9 @@ const HeroContent = () => {
         </a>
       </div>
       
-      {/* Scroll Indicator */}
+      {/* Scroll Indicator with more space */}
       <div 
-        className="opacity-0 animate-fade-in pt-6" 
+        className="opacity-0 animate-fade-in pt-8" 
         style={{ animationDelay: "1.1s" }}
       >
         <a 
