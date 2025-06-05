@@ -18,7 +18,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-28 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100 relative overflow-hidden" id="contact">
+    <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100 relative overflow-hidden min-h-screen flex items-center" id="contact">
       {/* Enhanced Background with Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated floating orbs */}
@@ -33,13 +33,13 @@ const Newsletter = () => {
         <div className="absolute top-[45%] left-[70%] w-2.5 h-2.5 bg-purple-300/30 rounded-full animate-pulse" style={{ animationDelay: '5s' }}></div>
       </div>
       
-      <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         {/* Updated Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-purple-600 to-gray-800 bg-clip-text text-transparent">
+        <div className="text-center mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-600 to-gray-800 bg-clip-text text-transparent">
             Let's Build What's Next — Together
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Tell us about your goals, and we'll show you how our modular AI-powered platforms can make it real.
           </p>
         </div>
@@ -52,35 +52,35 @@ const Newsletter = () => {
             
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Left Side - Glassmorphism Value Proposition */}
-              <div className="p-8 md:p-10 lg:p-12 bg-white/30 backdrop-blur-lg relative overflow-hidden border-r border-white/20">
+              <div className="p-6 md:p-8 lg:p-10 bg-white/30 backdrop-blur-lg relative overflow-hidden border-r border-white/20">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 to-violet-100/20"></div>
                 <div className="absolute top-6 right-6 w-12 h-12 border-2 border-purple-200/30 rounded-full"></div>
                 <div className="absolute bottom-6 left-6 w-8 h-8 border-2 border-purple-300/20 rounded-full"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-tight text-gray-800">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-tight text-gray-800">
                     Why Choose Our<br />Modular Approach?
                   </h3>
                   
                   {/* Enhanced feature list with check icons */}
-                  <div className="space-y-5 mb-8">
+                  <div className="space-y-3 mb-6">
                     {[
                       "AI-powered, modular, secure",
                       "Tailored for your workflows", 
                       "Built to scale with your business"
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center group">
-                        <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-200">
-                          <CheckCircle className="w-4 h-4 text-white" />
+                        <div className="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <CheckCircle className="w-3 h-3 text-white" />
                         </div>
-                        <span className="text-gray-700 font-medium text-lg">{feature}</span>
+                        <span className="text-gray-700 font-medium text-base lg:text-lg">{feature}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* Trust badge */}
-                  <div className="bg-white/50 backdrop-blur-sm border border-purple-200/50 rounded-xl p-4">
+                  <div className="bg-white/50 backdrop-blur-sm border border-purple-200/50 rounded-xl p-3">
                     <p className="text-sm text-gray-600 font-medium">
                       ✨ Trusted by forward-thinking companies to deliver custom platforms that transform operations
                     </p>
@@ -89,16 +89,16 @@ const Newsletter = () => {
               </div>
 
               {/* Right Side - Enhanced Form */}
-              <div className="p-8 md:p-10 lg:p-12 bg-white/60 backdrop-blur-sm">
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="p-6 md:p-8 lg:p-10 bg-white/60 backdrop-blur-sm">
+                <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Name and Email grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="relative group">
-                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
                         Name
                       </label>
                       <div className="relative">
-                        <User className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-all duration-200 ${
+                        <User className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
                           focusedField === 'name' ? 'text-purple-500 scale-110' : 'text-gray-400'
                         }`} />
                         <input
@@ -106,7 +106,7 @@ const Newsletter = () => {
                           id="name"
                           name="name"
                           placeholder="John Doe"
-                          className="w-full pl-12 pr-4 py-4 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm"
+                          className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                           onFocus={() => setFocusedField('name')}
                           onBlur={() => setFocusedField(null)}
                           required
@@ -115,11 +115,11 @@ const Newsletter = () => {
                     </div>
                     
                     <div className="relative group">
-                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
                         Email
                       </label>
                       <div className="relative">
-                        <Mail className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-all duration-200 ${
+                        <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
                           focusedField === 'email' ? 'text-purple-500 scale-110' : 'text-gray-400'
                         }`} />
                         <input
@@ -127,7 +127,7 @@ const Newsletter = () => {
                           id="email"
                           name="email"
                           placeholder="john@company.com"
-                          className="w-full pl-12 pr-4 py-4 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm"
+                          className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
                           required
@@ -137,11 +137,11 @@ const Newsletter = () => {
                   </div>
                   
                   <div className="relative group">
-                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-1">
                       Company
                     </label>
                     <div className="relative">
-                      <Building className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-all duration-200 ${
+                      <Building className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
                         focusedField === 'company' ? 'text-purple-500 scale-110' : 'text-gray-400'
                       }`} />
                       <input
@@ -149,7 +149,7 @@ const Newsletter = () => {
                         id="company"
                         name="company"
                         placeholder="Acme Corporation"
-                        className="w-full pl-12 pr-4 py-4 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm"
+                        className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                         onFocus={() => setFocusedField('company')}
                         onBlur={() => setFocusedField(null)}
                       />
@@ -157,18 +157,18 @@ const Newsletter = () => {
                   </div>
                   
                   <div className="relative group">
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
                       Project Details
                     </label>
                     <div className="relative">
-                      <MessageSquare className={`absolute left-4 top-4 w-5 h-5 transition-all duration-200 ${
+                      <MessageSquare className={`absolute left-3 top-3 w-4 h-4 transition-all duration-200 ${
                         focusedField === 'message' ? 'text-purple-500 scale-110' : 'text-gray-400'
                       }`} />
                       <textarea
                         id="message"
                         name="message"
-                        rows={4}
-                        className="w-full pl-12 pr-4 py-4 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm"
+                        rows={3}
+                        className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                         placeholder="Tell us about your project goals, timeline, and specific needs..."
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
@@ -178,11 +178,11 @@ const Newsletter = () => {
                   </div>
                   
                   {/* Enhanced CTA Button */}
-                  <div className="pt-2">
+                  <div className="pt-1">
                     <button
                       type="submit"
                       disabled={formState === 'submitting'}
-                      className={`w-full group relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
+                      className={`w-full group relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
                         formState === 'submitting' ? 'scale-95 cursor-not-allowed' : ''
                       }`}
                     >
@@ -190,19 +190,19 @@ const Newsletter = () => {
                       <div className="relative z-10 flex items-center justify-center">
                         {formState === 'idle' && (
                           <>
-                            <Rocket className="w-5 h-5 mr-3 group-hover:translate-x-1 transition-transform duration-200" />
+                            <Rocket className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
                             Let's Start Building
                           </>
                         )}
                         {formState === 'submitting' && (
                           <>
-                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-3"></div>
+                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                             Sending Message...
                           </>
                         )}
                         {formState === 'success' && (
                           <>
-                            <CheckCircle className="w-5 h-5 mr-3" />
+                            <CheckCircle className="w-4 h-4 mr-2" />
                             Message Sent Successfully!
                           </>
                         )}
@@ -214,7 +214,7 @@ const Newsletter = () => {
                   </div>
                   
                   {/* Enhanced footer contact */}
-                  <div className="text-center pt-4 border-t border-gray-200/50">
+                  <div className="text-center pt-2 border-t border-gray-200/50">
                     <p className="text-sm text-gray-500">
                       Prefer email? Contact us at{' '}
                       <a 
