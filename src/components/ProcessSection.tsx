@@ -61,17 +61,30 @@ const ProcessSection = () => {
 
   return (
     <section 
-      className="py-20 bg-gradient-to-b from-white via-purple-50/20 to-white relative overflow-hidden" 
+      className="py-20 bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden" 
       id="process" 
       ref={sectionRef}
     >
       {/* Dynamic Floating Orbs Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-purple-300/15 to-purple-500/10 rounded-full blur-3xl animate-float opacity-60"></div>
-        <div className="absolute top-32 right-20 w-80 h-80 bg-gradient-to-tl from-purple-400/12 to-purple-600/8 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 left-1/3 w-72 h-72 bg-gradient-to-r from-purple-200/10 to-purple-400/15 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-40 left-1/2 w-96 h-96 bg-gradient-to-br from-purple-100/8 to-purple-300/12 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 right-10 w-60 h-60 bg-gradient-to-l from-purple-500/10 to-purple-200/15 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '3s' }}></div>
+        {/* Large floating orb - top left */}
+        <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-purple-400/15 rounded-full blur-3xl animate-float opacity-40"></div>
+        
+        {/* Medium floating orb - top right */}
+        <div className="absolute top-20 right-16 w-64 h-64 bg-gradient-to-tl from-purple-300/18 to-purple-500/12 rounded-full blur-3xl animate-float opacity-35" style={{ animationDelay: '2s' }}></div>
+        
+        {/* Large floating orb - center */}
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-purple-100/15 to-purple-300/20 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
+        
+        {/* Small floating orb - bottom left */}
+        <div className="absolute bottom-24 left-20 w-48 h-48 bg-gradient-to-br from-purple-400/12 to-purple-200/18 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Medium floating orb - bottom right */}
+        <div className="absolute bottom-16 right-12 w-72 h-72 bg-gradient-to-l from-purple-500/15 to-purple-300/20 rounded-full blur-3xl animate-float opacity-38" style={{ animationDelay: '3s' }}></div>
+        
+        {/* Extra small accent orbs */}
+        <div className="absolute top-40 left-1/4 w-32 h-32 bg-gradient-to-br from-purple-300/25 to-purple-400/15 rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-40 right-1/3 w-40 h-40 bg-gradient-to-tl from-purple-200/20 to-purple-500/10 rounded-full blur-2xl animate-float opacity-42" style={{ animationDelay: '2.5s' }}></div>
       </div>
       
       <div className="section-container relative z-10">
