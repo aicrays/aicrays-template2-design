@@ -116,14 +116,14 @@ const ProcessSection = () => {
                 className="opacity-90"
               />
               
-              {/* Step circles positioned on the curve */}
+              {/* Step circles positioned on the curve - REMOVED NUMBERS */}
               {[
-                { x: 100, y: 64, step: 1 },
-                { x: 350, y: 48, step: 2 },
-                { x: 650, y: 80, step: 3 },
-                { x: 900, y: 64, step: 4 }
-              ].map(({ x, y, step }, index) => (
-                <g key={step}>
+                { x: 100, y: 64 },
+                { x: 350, y: 48 },
+                { x: 650, y: 80 },
+                { x: 900, y: 64 }
+              ].map(({ x, y }, index) => (
+                <g key={index}>
                   {/* Step circle background */}
                   <circle
                     cx={x}
@@ -133,17 +133,6 @@ const ProcessSection = () => {
                     className={`${visibleSteps.includes(index) ? 'opacity-100' : 'opacity-30'} transition-all duration-500`}
                     style={{ animationDelay: `${index * 0.3}s` }}
                   />
-                  
-                  {/* Step number */}
-                  <text
-                    x={x}
-                    y={y + 2}
-                    textAnchor="middle"
-                    dominantBaseline="middle"
-                    className="fill-white text-sm font-bold"
-                  >
-                    {String(step).padStart(2, '0')}
-                  </text>
                   
                   {/* Pulsing dot */}
                   <circle
