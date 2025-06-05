@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,19 +62,19 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Updated colors for Purple/Violet theme
+				// Updated colors for Darker Purple theme
 				pulse: {
-					"50": "#faf5ff",
-					"100": "#f3e8ff",
-					"200": "#e9d5ff",
-					"300": "#d8b4fe",
-					"400": "#c084fc",
-					"500": "#a855f7", // Primary purple
-					"600": "#9333ea",
-					"700": "#7c3aed",
-					"800": "#6b21a8",
-					"900": "#581c87",
-					"950": "#3b0764",
+					"50": "#f3e8ff",
+					"100": "#e9d5ff",
+					"200": "#d8b4fe",
+					"300": "#c084fc",
+					"400": "#a855f7",
+					"500": "#7c3aed", // Darker primary purple
+					"600": "#6b21a8",
+					"700": "#581c87",
+					"800": "#4c1d95",
+					"900": "#3b0764",
+					"950": "#2e1065",
 				},
 				dark: {
 					"900": "#121212", // Almost black
@@ -137,9 +136,9 @@ export default {
 				'float': 'float 6s ease-in-out infinite'
 			},
 			backgroundImage: {
-				'hero-gradient': 'linear-gradient(90deg, hsla(262, 91%, 90%, 1) 0%, hsla(270, 91%, 68%, 1) 100%)',
-				'hero-gradient-2': 'linear-gradient(90deg, hsla(270, 100%, 77%, 1) 0%, hsla(262, 90%, 57%, 1) 100%)',
-				'pulse-gradient': 'linear-gradient(180deg, rgba(168,85,247,0.8) 0%, rgba(168,85,247,0) 100%)',
+				'hero-gradient': 'linear-gradient(90deg, hsla(270, 91%, 85%, 1) 0%, hsla(280, 91%, 60%, 1) 100%)',
+				'hero-gradient-2': 'linear-gradient(90deg, hsla(280, 100%, 70%, 1) 0%, hsla(270, 90%, 50%, 1) 100%)',
+				'pulse-gradient': 'linear-gradient(180deg, rgba(124,58,237,0.8) 0%, rgba(124,58,237,0) 100%)',
 			},
 			fontFamily: {
 				'sans': ['Inter', 'sans-serif'],
