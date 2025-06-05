@@ -1,6 +1,6 @@
 
 import React from "react";
-import { Wrench, Gear, Users, Code } from "lucide-react";
+import { Wrench, Settings, Users, Code } from "lucide-react";
 
 const WhyAicraysSection = () => {
   const valuePillars = [
@@ -10,7 +10,7 @@ const WhyAicraysSection = () => {
       description: "No templates or one-size-fits-all solutions. Every platform is architected specifically for your workflows and requirements."
     },
     {
-      icon: Gear,
+      icon: Settings,
       title: "Modular, rapid development",
       description: "Proven components accelerate delivery while maintaining the flexibility to adapt and scale as your needs evolve."
     },
