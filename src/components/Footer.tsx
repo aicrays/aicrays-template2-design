@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-8 overflow-hidden">
+    <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-4 overflow-hidden">
       {/* Floating Background Elements - reduced number and size */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large floating orbs - fewer and smaller */}
@@ -26,62 +26,62 @@ const Footer = () => {
       </div>
       
       <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content - reduced spacing */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+        {/* Main Footer Content - minimal spacing */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
           {/* Left Column - Brand */}
-          <div className="space-y-3">
-            <div className="text-xl font-bold text-gray-900 mb-2">Aicrays</div>
-            <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
+          <div className="space-y-2">
+            <div className="text-lg font-bold text-gray-900 mb-1">Aicrays</div>
+            <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
               Building custom AI-powered digital platforms that integrate cybersecurity, data intelligence, and IoT/RFID systems.
             </p>
             <div className="inline-block">
-              <span className="text-sm font-medium text-pulse-600 tracking-wide">
+              <span className="text-xs font-medium text-pulse-600 tracking-wide">
                 Modular. Intelligent. Secure.
               </span>
             </div>
           </div>
           
           {/* Middle Column - Quick Links */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-3">
             <div>
-              <h4 className="font-semibold mb-3 text-gray-900 text-sm">Solutions</h4>
-              <ul className="space-y-1.5">
-                <li><a href="#solutions" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">What We Build</a></li>
-                <li><a href="#process" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">How We Build</a></li>
-                <li><a href="#about" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">Case Studies</a></li>
+              <h4 className="font-semibold mb-2 text-gray-900 text-xs">Solutions</h4>
+              <ul className="space-y-1">
+                <li><a href="#solutions" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">What We Build</a></li>
+                <li><a href="#process" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">How We Build</a></li>
+                <li><a href="#about" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Case Studies</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-3 text-gray-900 text-sm">Connect</h4>
-              <ul className="space-y-1.5">
-                <li><a href="#contact" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">Get in Touch</a></li>
-                <li><a href="mailto:hello@aicrays.com" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">hello@aicrays.com</a></li>
-                <li><a href="#partnership" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-sm">Partnership</a></li>
+              <h4 className="font-semibold mb-2 text-gray-900 text-xs">Connect</h4>
+              <ul className="space-y-1">
+                <li><a href="#contact" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Get in Touch</a></li>
+                <li><a href="mailto:hello@aicrays.com" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">hello@aicrays.com</a></li>
+                <li><a href="#partnership" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Partnership</a></li>
               </ul>
             </div>
           </div>
           
           {/* Right Column - Social & Copyright */}
-          <div className="space-y-3">
+          <div className="space-y-2">
             {/* Social Links */}
             <div className="flex space-x-2">
               <a 
                 href="#" 
-                className="group p-2.5 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group p-2 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Linkedin className="w-4 h-4 text-gray-600 group-hover:text-pulse-600 transition-colors" />
+                <Linkedin className="w-3 h-3 text-gray-600 group-hover:text-pulse-600 transition-colors" />
               </a>
               <a 
                 href="#" 
-                className="group p-2.5 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group p-2 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Github className="w-4 h-4 text-gray-600 group-hover:text-pulse-600 transition-colors" />
+                <Github className="w-3 h-3 text-gray-600 group-hover:text-pulse-600 transition-colors" />
               </a>
             </div>
             
             {/* Copyright */}
-            <div className="text-sm space-y-0.5">
+            <div className="text-xs space-y-0">
               <p className="text-gray-600">© 2025 Aicrays. All rights reserved.</p>
               <p className="text-gray-500">Crafted with precision. Powered by partnership.</p>
             </div>
@@ -96,7 +96,7 @@ const Footer = () => {
         aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5 group-hover:translate-y-[-2px] transition-transform" />
-      </button>
+      </a>
     </footer>
   );
 };
