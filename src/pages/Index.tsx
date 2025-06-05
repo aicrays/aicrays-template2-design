@@ -7,7 +7,6 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import WhyAicraysSection from "@/components/WhyAicraysSection";
 import ProcessSection from "@/components/ProcessSection";
 import IndustriesSection from "@/components/IndustriesSection";
-import DetailsSection from "@/components/DetailsSection";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
@@ -60,14 +59,13 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <main>
+      <main className="space-y-4 sm:space-y-8">
         <Hero />
         <ModularTechSection />
         <CaseStudiesSection />
         <WhyAicraysSection />
         <ProcessSection />
         <IndustriesSection />
-        <DetailsSection />
         <Newsletter />
       </main>
       <Footer />

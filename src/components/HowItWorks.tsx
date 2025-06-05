@@ -108,40 +108,23 @@ const HowItWorks = () => {
   }, []);
   
   return (
-    <section className="py-16 lg:py-20 min-h-screen flex items-center bg-gradient-to-br from-purple-50/40 via-violet-50/30 to-white relative overflow-hidden" id="how-it-works" ref={sectionRef}>
-      {/* Enhanced Background with Floating Orbs */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large floating orbs */}
-        <div className="absolute top-[20%] right-[15%] w-40 h-40 bg-purple-300/15 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '0s', animationDuration: '18s' }}></div>
-        <div className="absolute bottom-[25%] left-[10%] w-48 h-48 bg-violet-400/12 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[60%] right-[30%] w-32 h-32 bg-purple-400/20 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
-        
-        {/* Medium floating orbs */}
-        <div className="absolute top-[40%] left-[20%] w-28 h-28 bg-indigo-300/18 rounded-full blur-2xl animate-float opacity-55" style={{ animationDelay: '8s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[50%] right-[20%] w-36 h-36 bg-violet-300/15 rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
-        
-        {/* Small floating orbs */}
-        <div className="absolute top-[75%] left-[30%] w-20 h-20 bg-violet-400/18 rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
-        <div className="absolute top-[35%] right-[40%] w-24 h-24 bg-purple-300/16 rounded-full blur-xl animate-float opacity-55" style={{ animationDelay: '7s', animationDuration: '17s' }}></div>
-        
-        {/* Particle dots */}
-        <div className="absolute top-[30%] left-[25%] w-2 h-2 bg-purple-400/50 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-[70%] right-[25%] w-1.5 h-1.5 bg-violet-400/45 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
-        <div className="absolute top-[50%] left-[70%] w-2.5 h-2.5 bg-purple-300/40 rounded-full animate-pulse" style={{ animationDelay: '9s' }}></div>
-      </div>
+    <section className="py-20 bg-white relative" id="how-it-works" ref={sectionRef}>
+      {/* Background decorative elements */}
+      <div className="absolute -top-20 right-0 w-72 h-72 bg-pulse-50 rounded-full opacity-60 blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 left-10 w-64 h-64 bg-gray-50 rounded-full opacity-70 blur-3xl -z-10"></div>
       
-      <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <div className="pulse-chip mx-auto mb-4 opacity-0 fade-in-stagger">
+      <div className="section-container">
+        <div className="text-center mb-16 opacity-0 fade-in-stagger">
+          <div className="pulse-chip mx-auto mb-4">
             <span>Process</span>
           </div>
-          <h2 className="section-title mb-4 opacity-0 fade-in-stagger">How Atlas Integrates Into Your Life</h2>
-          <p className="section-subtitle mx-auto opacity-0 fade-in-stagger">
+          <h2 className="section-title mb-4">How Atlas Integrates Into Your Life</h2>
+          <p className="section-subtitle mx-auto">
             A seamless four-step process from request to full integration.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-4 order-2 lg:order-1 opacity-0 fade-in-stagger">
             {stepsData.map((step, index) => (
               <StepCard
