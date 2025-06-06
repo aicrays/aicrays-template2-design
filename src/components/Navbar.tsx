@@ -54,7 +54,9 @@ const Navbar = () => {
           }}
           aria-label="Aicrays"
         >
-          <div className="text-2xl font-bold text-purple-600 hover:text-purple-700 transition-colors">Aicrays</div>
+          <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent hover:from-purple-700 hover:via-purple-800 hover:to-purple-900 transition-all duration-300">
+            Aicrays
+          </div>
         </a>
 
         {/* Desktop Navigation */}
