@@ -19,13 +19,13 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative min-h-screen flex items-center justify-center py-32 lg:py-32" 
+      className="overflow-hidden relative h-screen flex items-center justify-center" 
       id="hero"
     >
       <HeroBackground />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
-        <div className="flex justify-center items-center min-h-[70vh]">
+        <div className="flex justify-center items-center h-full">
           <HeroContent />
         </div>
       </div>
