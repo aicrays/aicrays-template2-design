@@ -8,103 +8,82 @@ const Footer = () => {
   };
 
   return (
-    <footer className="relative w-full bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-900 text-white py-8 overflow-hidden">
-      {/* Enhanced Background Elements */}
+    <footer className="relative w-full bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 text-gray-800 py-2 overflow-hidden">
+      {/* Floating Background Elements with much darker colors for visibility */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large floating orbs with enhanced visibility */}
-        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-400/30 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-violet-500/25 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-indigo-400/35 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
+        {/* Large floating orbs - much darker */}
+        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-400/40 rounded-full blur-3xl animate-float-vertical opacity-80" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-violet-500/38 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-indigo-500/42 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
         
-        {/* Medium floating orbs */}
-        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-indigo-300/40 rounded-full blur-2xl animate-float-vertical opacity-55" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-violet-300/30 rounded-full blur-2xl animate-float-vertical opacity-60" style={{ animationDelay: '7s', animationDuration: '19s' }}></div>
+        {/* Medium floating orbs - much darker */}
+        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-indigo-400/45 rounded-full blur-2xl animate-float-vertical opacity-65" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
+        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-violet-400/40 rounded-full blur-2xl animate-float-vertical opacity-70" style={{ animationDelay: '7s', animationDuration: '19s' }}></div>
         
-        {/* Small floating orbs */}
-        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-violet-400/35 rounded-full blur-xl animate-float-vertical opacity-50" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
-        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-purple-300/40 rounded-full blur-xl animate-float-vertical opacity-55" style={{ animationDelay: '9s', animationDuration: '13s' }}></div>
+        {/* Small floating orbs - much darker */}
+        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-violet-500/45 rounded-full blur-xl animate-float-vertical opacity-60" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
+        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-purple-400/43 rounded-full blur-xl animate-float-vertical opacity-65" style={{ animationDelay: '9s', animationDuration: '13s' }}></div>
       </div>
       
       <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        {/* Main Footer Content - minimal spacing */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-2">
           {/* Left Column - Brand */}
-          <div className="space-y-4">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-200 to-pink-200 bg-clip-text text-transparent mb-3">
-              Aicrays
-            </div>
-            <p className="text-purple-200 text-sm leading-relaxed max-w-xs">
+          <div className="space-y-1">
+            <div className="text-lg font-bold text-gray-900 mb-1">Aicrays</div>
+            <p className="text-gray-600 text-xs leading-relaxed max-w-xs">
               Building custom AI-powered digital platforms that integrate cybersecurity, data intelligence, and IoT/RFID systems.
             </p>
             <div className="inline-block">
-              <span className="text-sm font-medium text-purple-300 tracking-wide">
+              <span className="text-xs font-medium text-pulse-600 tracking-wide">
                 Modular. Intelligent. Secure.
               </span>
             </div>
           </div>
           
           {/* Middle Column - Quick Links */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-3">
             <div>
-              <h4 className="font-semibold mb-3 text-white text-sm">Solutions</h4>
-              <ul className="space-y-2">
-                <li><a href="#solutions" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">What We Build</a></li>
-                <li><a href="#process" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">How We Build</a></li>
-                <li><a href="#about" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">Case Studies</a></li>
+              <h4 className="font-semibold mb-1 text-gray-900 text-xs">Solutions</h4>
+              <ul className="space-y-1">
+                <li><a href="#solutions" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">What We Build</a></li>
+                <li><a href="#process" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">How We Build</a></li>
+                <li><a href="#about" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Case Studies</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-3 text-white text-sm">Connect</h4>
-              <ul className="space-y-2">
-                <li><a href="#contact" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">Get in Touch</a></li>
-                <li><a href="mailto:hello@aicrays.com" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">hello@aicrays.com</a></li>
-                <li><a href="#partnership" className="text-purple-200 hover:text-white transition-colors duration-200 text-sm">Partnership</a></li>
+              <h4 className="font-semibold mb-1 text-gray-900 text-xs">Connect</h4>
+              <ul className="space-y-1">
+                <li><a href="#contact" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Get in Touch</a></li>
+                <li><a href="mailto:hello@aicrays.com" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">hello@aicrays.com</a></li>
+                <li><a href="#partnership" className="text-gray-600 hover:text-pulse-600 transition-colors duration-200 text-xs">Partnership</a></li>
               </ul>
             </div>
           </div>
           
-          {/* Right Column - Social & CTA */}
-          <div className="space-y-4">
-            <h4 className="font-semibold text-white text-sm">Follow Us</h4>
+          {/* Right Column - Social & Copyright */}
+          <div className="space-y-1">
             {/* Social Links */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-2">
               <a 
                 href="#" 
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="group p-2 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Linkedin className="w-4 h-4 text-purple-200 group-hover:text-white transition-colors" />
+                <Linkedin className="w-3 h-3 text-gray-600 group-hover:text-pulse-600 transition-colors" />
               </a>
               <a 
                 href="#" 
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-white/20 hover:border-white/30 transition-all duration-300 shadow-sm hover:shadow-lg"
+                className="group p-2 bg-white/60 backdrop-blur-sm rounded-full hover:bg-white/80 border border-gray-200/50 hover:border-pulse-300 transition-all duration-300 shadow-sm hover:shadow-md"
               >
-                <Github className="w-4 h-4 text-purple-200 group-hover:text-white transition-colors" />
+                <Github className="w-3 h-3 text-gray-600 group-hover:text-pulse-600 transition-colors" />
               </a>
             </div>
             
-            {/* CTA Button */}
-            <div className="pt-2">
-              <a 
-                href="#contact" 
-                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-sm"
-              >
-                Start Your Project
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        {/* Bottom Bar */}
-        <div className="border-t border-purple-700/50 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm space-y-1 text-center md:text-left">
-              <p className="text-purple-200">© 2025 Aicrays. All rights reserved.</p>
-              <p className="text-purple-300">Crafted with precision. Powered by partnership.</p>
-            </div>
-            <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-purple-200 hover:text-white transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="text-purple-200 hover:text-white transition-colors duration-200">Terms of Service</a>
+            {/* Copyright */}
+            <div className="text-xs space-y-0">
+              <p className="text-gray-600">© 2025 Aicrays. All rights reserved.</p>
+              <p className="text-gray-500">Crafted with precision. Powered by partnership.</p>
             </div>
           </div>
         </div>
@@ -113,7 +92,7 @@ const Footer = () => {
       {/* Back to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 p-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 group"
+        className="fixed bottom-6 right-6 z-50 p-3 bg-pulse-500/90 backdrop-blur-sm hover:bg-pulse-500 text-white rounded-full shadow-lg hover:shadow-pulse-500/25 transition-all duration-300 transform hover:scale-110 group"
         aria-label="Back to top"
       >
         <ArrowUp className="w-5 h-5 group-hover:translate-y-[-2px] transition-transform" />
