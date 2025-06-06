@@ -4,12 +4,12 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-5xl text-center space-y-8 px-4 mt-16">
-      {/* Significantly Larger Header */}
-      <div className="space-y-2">
-        <h1 className="font-bold leading-[1.05] tracking-tight text-5xl lg:text-7xl xl:text-8xl">
+    <div className="w-full max-w-5xl text-center space-y-10 px-4 mt-20">
+      {/* Significantly Larger Header with Better Spacing */}
+      <div className="space-y-4">
+        <h1 className="font-bold leading-[1.15] tracking-tight text-5xl lg:text-7xl xl:text-8xl">
           <div 
-            className="opacity-0 animate-fade-in mb-3" 
+            className="opacity-0 animate-fade-in mb-6" 
             style={{ animationDelay: "0.2s", animationDuration: "0.8s" }}
           >
             <span className="block text-gray-900">Empowering Enterprises</span>
@@ -22,31 +22,33 @@ const HeroContent = () => {
               Through{" "}
               <span className="text-purple-700 relative inline-block">
                 Innovation
-                <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-purple-700 animate-pulse-slow transform origin-left"></div>
+                <div className="absolute -bottom-4 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-purple-700 animate-pulse-slow transform origin-left"></div>
               </span>
-              {" "}and{" "}
+            </span>
+            <span className="block mt-2">
+              and{" "}
               <span className="text-purple-700 relative inline-block">
                 Personalization
-                <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse-slow transform origin-left" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-4 left-0 w-full h-1.5 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse-slow transform origin-left" style={{ animationDelay: '1s' }}></div>
               </span>
             </span>
           </div>
         </h1>
       </div>
       
-      {/* Smaller Subtitle */}
-      <div className="pt-6">
+      {/* Smaller Subtitle with Better Spacing */}
+      <div className="pt-8">
         <p 
           style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} 
-          className="text-base lg:text-lg leading-[1.4] text-gray-700 opacity-0 animate-fade-in max-w-2xl mx-auto font-normal"
+          className="text-base lg:text-lg leading-[1.5] text-gray-700 opacity-0 animate-fade-in max-w-2xl mx-auto font-normal"
         >
           We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
         </p>
       </div>
       
-      {/* Fixed CTAs with Proper Sizing */}
+      {/* CTAs with Better Spacing */}
       <div 
-        className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in justify-center items-center pt-8" 
+        className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in justify-center items-center pt-10" 
         style={{ animationDelay: "0.8s", animationDuration: "0.8s" }}
       >
         <a 
@@ -68,9 +70,9 @@ const HeroContent = () => {
         </a>
       </div>
       
-      {/* Fixed Scroll Indicator */}
+      {/* Scroll Indicator with Better Spacing */}
       <div 
-        className="opacity-0 animate-fade-in pt-8" 
+        className="opacity-0 animate-fade-in pt-10" 
         style={{ animationDelay: "1.0s", animationDuration: "0.8s" }}
       >
         <a 
