@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -39,16 +40,15 @@ const FeatureCard = ({ icon, title, description, index }: FeatureCardProps) => {
     <div 
       ref={cardRef}
       className={cn(
-        "feature-card glass-card opacity-0 p-4 sm:p-6",
-        "lg:hover:bg-gradient-to-br lg:hover:from-white lg:hover:to-pulse-50",
-        "transition-all duration-300"
+        "feature-card opacity-0 p-4 sm:p-6 bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/90",
+        "lg:hover:bg-gradient-to-br lg:hover:from-white lg:hover:to-purple-50"
       )}
       style={{ animationDelay: `${0.1 * index}s` }}
     >
-      <div className="rounded-full bg-pulse-50 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-pulse-500 mb-4 sm:mb-5">
+      <div className="rounded-full bg-purple-100 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-purple-600 mb-4 sm:mb-5">
         {icon}
       </div>
-      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3">{title}</h3>
+      <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-900">{title}</h3>
       <p className="text-gray-600 text-sm sm:text-base">{description}</p>
     </div>
   );
@@ -87,17 +87,17 @@ const Features = () => {
   }, []);
   
   return (
-    <section className="h-screen flex items-center justify-center relative bg-gradient-to-br from-gray-50 via-purple-50/20 to-violet-50/30 overflow-hidden" id="features" ref={sectionRef}>
-      {/* ... keep existing code (background elements) */}
+    <section className="h-screen flex items-center justify-center relative bg-gradient-to-br from-white via-purple-50/40 to-blue-50/30 overflow-hidden" id="features" ref={sectionRef}>
+      {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[25%] right-[20%] w-36 h-36 bg-purple-200/22 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
-        <div className="absolute bottom-[15%] left-[15%] w-44 h-44 bg-violet-300/18 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[70%] right-[40%] w-28 h-28 bg-purple-300/25 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '4s', animationDuration: '16s' }}></div>
+        <div className="absolute top-[25%] right-[20%] w-36 h-36 bg-purple-300/25 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
+        <div className="absolute bottom-[15%] left-[15%] w-44 h-44 bg-blue-300/20 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[70%] right-[40%] w-28 h-28 bg-purple-400/30 rounded-full blur-3xl animate-float opacity-55" style={{ animationDelay: '4s', animationDuration: '16s' }}></div>
         
-        {/* Particle dots with better visibility */}
-        <div className="absolute top-[35%] left-[30%] w-2 h-2 bg-purple-400/50 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-[80%] right-[30%] w-1.5 h-1.5 bg-violet-400/60 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
-        <div className="absolute top-[50%] left-[80%] w-2.5 h-2.5 bg-purple-300/40 rounded-full animate-pulse" style={{ animationDelay: '9s' }}></div>
+        {/* Particle dots */}
+        <div className="absolute top-[35%] left-[30%] w-2 h-2 bg-purple-500/60 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-[80%] right-[30%] w-1.5 h-1.5 bg-blue-400/70 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
+        <div className="absolute top-[50%] left-[80%] w-2.5 h-2.5 bg-purple-400/50 rounded-full animate-pulse" style={{ animationDelay: '9s' }}></div>
       </div>
       
       <div className="section-container relative z-10 py-8">
@@ -113,7 +113,6 @@ const Features = () => {
           </p>
         </div>
         
-        {/* ... keep existing code (feature cards grid) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           <FeatureCard
             icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 1 1-4-4"></path><path d="M12 8a4 4 0 1 0 4 4"></path><circle cx="12" cy="12" r="1"></circle></svg>}
@@ -134,7 +133,7 @@ const Features = () => {
             index={2}
           />
           <FeatureCard
-            icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="21 12 16.5 14.6 16.5 19.79"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>}
+            icon={<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 sm:w-6 sm:h-6"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline><polyline points="7.5 19.79 7.5 14.6 3 12"></polyline><polyline points="16.5 14.6 16.5 19.79 21 12"></polyline><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" x2="12" y1="22.08" y2="12"></line></svg>}
             title="Spatial Awareness"
             description="Advanced sensors and mapping technology allow Atlas to navigate complex environments with ease."
             index={3}

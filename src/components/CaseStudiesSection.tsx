@@ -98,11 +98,23 @@ const CaseStudiesSection = () => {
   }, []);
 
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden" id="case-studies">
+    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-purple-50/40" id="case-studies">
+      {/* Floating Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[15%] right-[20%] w-44 h-44 bg-purple-300/20 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '0s', animationDuration: '22s' }}></div>
+        <div className="absolute bottom-[20%] left-[15%] w-52 h-52 bg-blue-300/15 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '4s', animationDuration: '26s' }}></div>
+        <div className="absolute top-[65%] right-[35%] w-36 h-36 bg-purple-400/25 rounded-full blur-3xl animate-float opacity-55" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+        
+        {/* Particle dots */}
+        <div className="absolute top-[25%] left-[25%] w-2 h-2 bg-purple-500/50 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-[80%] right-[25%] w-1.5 h-1.5 bg-blue-400/60 rounded-full animate-pulse" style={{ animationDelay: '5s' }}></div>
+        <div className="absolute top-[40%] left-[70%] w-2.5 h-2.5 bg-purple-400/40 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
+      </div>
+
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
         <div className="text-center mb-8">
           <div 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/60 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
             style={{ animationDelay: "0.1s" }}
           >
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-green-500 to-green-600 mr-3"></span>
@@ -129,8 +141,8 @@ const CaseStudiesSection = () => {
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="relative backdrop-blur-xl bg-white/80 border border-purple-100/50 rounded-2xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-blue-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-3">
@@ -165,7 +177,7 @@ const CaseStudiesSection = () => {
                 </div>
 
                 <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/5 to-violet-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
           ))}

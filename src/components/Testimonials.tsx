@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 
 interface TestimonialProps {
@@ -38,10 +39,10 @@ const testimonials: TestimonialProps[] = [
 
 const TestimonialCard = ({ content, author, role, backgroundImage = "/background-section1.png" }: TestimonialProps) => {
   return (
-    <div className="bg-cover bg-center rounded-lg p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden" style={{
+    <div className="bg-cover bg-center rounded-2xl p-8 h-full flex flex-col justify-between text-white transform transition-transform duration-300 hover:-translate-y-2 relative overflow-hidden shadow-xl" style={{
       backgroundImage: `url('${backgroundImage}')`
     }}>
-      <div className="absolute top-0 right-0 w-24 h-24 bg-white z-10"></div>
+      <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 backdrop-blur-sm z-10 rounded-bl-2xl"></div>
       
       <div className="relative z-0">
         <p className="text-xl mb-8 font-medium leading-relaxed pr-20">{`"${content}"`}</p>
@@ -58,11 +59,23 @@ const Testimonials = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-12 bg-white relative" id="testimonials" ref={sectionRef}>
-      <div className="section-container opacity-0 animate-on-scroll">
+    <section className="py-12 bg-gradient-to-br from-purple-50/30 via-blue-50/20 to-purple-50/40 relative overflow-hidden" id="testimonials" ref={sectionRef}>
+      {/* Floating Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-[25%] right-[20%] w-40 h-40 bg-purple-300/20 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '1s', animationDuration: '20s' }}></div>
+        <div className="absolute bottom-[30%] left-[15%] w-48 h-48 bg-blue-300/15 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '5s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[70%] right-[40%] w-32 h-32 bg-purple-400/25 rounded-full blur-3xl animate-float opacity-55" style={{ animationDelay: '3s', animationDuration: '18s' }}></div>
+        
+        {/* Particle dots */}
+        <div className="absolute top-[20%] left-[25%] w-2 h-2 bg-purple-500/50 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-[85%] right-[25%] w-1.5 h-1.5 bg-blue-400/60 rounded-full animate-pulse" style={{ animationDelay: '6s' }}></div>
+        <div className="absolute top-[55%] left-[70%] w-2.5 h-2.5 bg-purple-400/40 rounded-full animate-pulse" style={{ animationDelay: '8s' }}></div>
+      </div>
+
+      <div className="section-container opacity-0 animate-on-scroll relative z-10">
         <div className="flex items-center gap-4 mb-6">
           <div className="pulse-chip">
-            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-pulse-500 text-white mr-2">04</span>
+            <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-purple-600 text-white mr-2">04</span>
             <span>Testimonials</span>
           </div>
         </div>

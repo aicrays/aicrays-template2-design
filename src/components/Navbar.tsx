@@ -40,8 +40,8 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 py-2 sm:py-3 md:py-4 transition-all duration-300",
         isScrolled 
-          ? "bg-white/80 backdrop-blur-md shadow-sm" 
-          : "bg-transparent"
+          ? "bg-white/90 backdrop-blur-md shadow-sm border-b border-purple-100/20" 
+          : "bg-gradient-to-r from-white/80 via-purple-50/60 to-blue-50/40 backdrop-blur-sm"
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ const Navbar = () => {
           }}
           aria-label="Aicrays"
         >
-          <div className="text-2xl font-bold text-pulse-500">Aicrays</div>
+          <div className="text-2xl font-bold text-purple-600 hover:text-purple-700 transition-colors">Aicrays</div>
         </a>
 
         {/* Desktop Navigation */}
@@ -79,7 +79,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a 
             href="#contact" 
-            className="button-primary"
+            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 hover:scale-105"
           >
             Book Consultation
           </a>
@@ -87,7 +87,7 @@ const Navbar = () => {
 
         {/* Mobile menu button */}
         <button 
-          className="md:hidden text-gray-700 p-3 focus:outline-none" 
+          className="md:hidden text-gray-700 p-3 focus:outline-none hover:text-purple-600 transition-colors" 
           onClick={toggleMenu}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
@@ -97,13 +97,13 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={cn(
-        "fixed inset-0 z-40 bg-white flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
+        "fixed inset-0 z-40 bg-gradient-to-br from-white via-purple-50/30 to-blue-50/20 backdrop-blur-sm flex flex-col pt-16 px-6 md:hidden transition-all duration-300 ease-in-out",
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
           <a 
             href="#" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
             onClick={(e) => {
               e.preventDefault();
               scrollToTop();
@@ -115,7 +115,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#solutions" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -125,7 +125,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#process" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -135,7 +135,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#about" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -145,7 +145,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#contact" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-gray-100" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';
@@ -155,7 +155,7 @@ const Navbar = () => {
           </a>
           <a 
             href="#contact" 
-            className="button-primary w-full text-center mt-4"
+            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-full w-full text-center mt-4 hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
             onClick={() => {
               setIsMenuOpen(false);
               document.body.style.overflow = '';

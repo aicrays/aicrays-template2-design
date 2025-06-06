@@ -139,7 +139,7 @@
   }
 
   .pulse-chip {
-    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-pulse-100 text-pulse-600 border border-pulse-200 transition-all duration-300 hover:bg-pulse-200 hover:shadow-md;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-700 border border-purple-200 transition-all duration-300 hover:bg-purple-200 hover:shadow-md;
   }
   
   .section-container {
@@ -155,7 +155,7 @@
   }
 
   .glass-card {
-    @apply bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl shadow-elegant transition-all duration-500 hover:shadow-elegant-hover hover:bg-white/90;
+    @apply bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-xl hover:bg-white/90;
   }
 
   .feature-card {
@@ -163,15 +163,15 @@
   }
   
   .button-primary {
-    @apply bg-pulse-500 hover:bg-pulse-600 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium py-3 px-6 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
   }
 
   .button-secondary {
-    @apply bg-transparent border-2 border-gray-300 hover:border-pulse-500 text-gray-800 hover:text-pulse-500 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg;
+    @apply bg-transparent border-2 border-purple-300 hover:border-purple-500 text-gray-800 hover:text-purple-600 font-medium py-3 px-6 rounded-full transition-all duration-300 hover:shadow-lg hover:bg-purple-50;
   }
   
   .nav-link {
-    @apply relative text-gray-800 hover:text-pulse-500 py-2 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-pulse-500 after:transition-all hover:after:w-full;
+    @apply relative text-gray-800 hover:text-purple-600 py-2 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-purple-500 after:transition-all hover:after:w-full;
   }
 
   /* Enhanced Interactive Elements */
@@ -184,7 +184,7 @@
   }
 
   .border-gradient {
-    @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-gradient-to-r before:from-pulse-400 before:to-pulse-600 before:p-[2px] before:mask-composite-exclude before:mask-[linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)];
+    @apply relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-gradient-to-r before:from-purple-400 before:to-purple-600 before:p-[2px] before:mask-composite-exclude before:mask-[linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)];
   }
 }
 
@@ -193,12 +193,33 @@
   .shadow-3xl {
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
   }
+  
+  /* Floating animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-vertical {
+    animation: float-vertical 8s ease-in-out infinite;
+  }
 }
 
 /* Enhanced Animations */
 @keyframes shimmer {
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(-20px) translateX(0px); }
+  75% { transform: translateY(-10px) translateX(-5px); }
+}
+
+@keyframes float-vertical {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
 }
 
 .shimmer-effect {
@@ -224,7 +245,7 @@
 
 /* Floating Action Button */
 .floating-cta {
-  @apply fixed bottom-6 right-6 z-50 bg-pulse-500 hover:bg-pulse-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 md:hidden;
+  @apply fixed bottom-6 right-6 z-50 bg-purple-600 hover:bg-purple-700 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110 md:hidden;
 }
 
 /* Enhanced Card Hover Effects */
@@ -243,7 +264,7 @@
 }
 
 .progress-dot.active {
-  @apply bg-pulse-500 scale-125 shadow-lg;
+  @apply bg-purple-500 scale-125 shadow-lg;
 }
 
 .progress-dot.inactive {
