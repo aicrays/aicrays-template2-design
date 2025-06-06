@@ -57,37 +57,43 @@ const WhyAicraysSection = () => {
   }, []);
 
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden" id="why-aicrays">
-      {/* Background with Floating Orbs - slightly darker than hero */}
+    <section className="min-h-screen py-16 lg:py-24 flex items-center justify-center relative overflow-hidden" id="why-aicrays">
+      {/* Enhanced Dynamic Background with Moving Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Main gradient background - slightly darker than hero */}
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-100/70 via-purple-200/60 to-purple-300/80"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-300/60 via-purple-200/50 to-transparent"></div>
+        {/* Base gradient layers */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-100/80 via-purple-200/70 to-purple-300/90"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-300/70 via-purple-200/60 to-transparent"></div>
         
-        {/* Edge gradients for depth */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/40 via-transparent to-violet-400/45"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-indigo-300/40 via-transparent to-purple-400/45"></div>
+        {/* Diagonal gradients for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/50 via-transparent to-violet-400/55"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-indigo-300/50 via-transparent to-purple-400/55"></div>
         
-        {/* Large floating orbs - matching hero animation with different positions */}
-        <div className="absolute top-[15%] right-[12%] w-56 h-56 bg-purple-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[30%] left-[10%] w-64 h-64 bg-violet-500/35 rounded-full blur-3xl animate-float-vertical opacity-85" style={{ animationDelay: '10s', animationDuration: '28s' }}></div>
-        <div className="absolute bottom-[25%] right-[20%] w-48 h-48 bg-indigo-600/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '7s', animationDuration: '22s' }}></div>
-        <div className="absolute bottom-[15%] left-[18%] w-44 h-44 bg-purple-700/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '16s', animationDuration: '20s' }}></div>
+        {/* Large moving orbs - enhanced with more variety */}
+        <div className="absolute top-[10%] right-[8%] w-72 h-72 bg-purple-500/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '2s', animationDuration: '26s' }}></div>
+        <div className="absolute top-[25%] left-[5%] w-80 h-80 bg-violet-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '8s', animationDuration: '30s' }}></div>
+        <div className="absolute bottom-[20%] right-[15%] w-60 h-60 bg-indigo-600/50 rounded-full blur-3xl animate-float-vertical opacity-100" style={{ animationDelay: '5s', animationDuration: '24s' }}></div>
+        <div className="absolute bottom-[10%] left-[12%] w-56 h-56 bg-purple-700/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '14s', animationDuration: '22s' }}></div>
         
-        {/* Medium orbs */}
-        <div className="absolute top-[55%] right-[35%] w-36 h-36 bg-indigo-500/50 rounded-full blur-2xl animate-float-vertical opacity-80" style={{ animationDelay: '6s', animationDuration: '18s' }}></div>
-        <div className="absolute bottom-[45%] left-[30%] w-32 h-32 bg-purple-500/45 rounded-full blur-2xl animate-float-vertical opacity-85" style={{ animationDelay: '11s', animationDuration: '21s' }}></div>
-        <div className="absolute top-[75%] left-[45%] w-28 h-28 bg-violet-600/48 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '9s', animationDuration: '19s' }}></div>
+        {/* Medium orbs for layering */}
+        <div className="absolute top-[45%] right-[30%] w-44 h-44 bg-indigo-500/55 rounded-full blur-2xl animate-float-vertical opacity-85" style={{ animationDelay: '4s', animationDuration: '16s' }}></div>
+        <div className="absolute bottom-[40%] left-[25%] w-40 h-40 bg-purple-500/50 rounded-full blur-2xl animate-float-vertical opacity-90" style={{ animationDelay: '9s', animationDuration: '19s' }}></div>
+        <div className="absolute top-[70%] left-[40%] w-36 h-36 bg-violet-600/53 rounded-full blur-2xl animate-float-vertical opacity-80" style={{ animationDelay: '7s', animationDuration: '17s' }}></div>
+        <div className="absolute top-[35%] left-[70%] w-48 h-48 bg-purple-400/40 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '12s', animationDuration: '21s' }}></div>
         
-        {/* Small orbs for depth */}
-        <div className="absolute top-[40%] right-[70%] w-24 h-24 bg-purple-400/35 rounded-full blur-md animate-float-vertical opacity-60" style={{ animationDelay: '20s', animationDuration: '9s' }}></div>
-        <div className="absolute top-[85%] left-[60%] w-20 h-20 bg-blue-400/38 rounded-full blur-md animate-float-vertical opacity-65" style={{ animationDelay: '22s', animationDuration: '8s' }}></div>
-        <div className="absolute top-[25%] right-[85%] w-16 h-16 bg-violet-600/45 rounded-full blur-md animate-float-vertical opacity-70" style={{ animationDelay: '28s', animationDuration: '11s' }}></div>
+        {/* Small accent orbs */}
+        <div className="absolute top-[60%] right-[60%] w-32 h-32 bg-purple-400/40 rounded-full blur-xl animate-float-vertical opacity-70" style={{ animationDelay: '18s', animationDuration: '10s' }}></div>
+        <div className="absolute top-[80%] left-[55%] w-28 h-28 bg-blue-400/43 rounded-full blur-xl animate-float-vertical opacity-75" style={{ animationDelay: '20s', animationDuration: '12s' }}></div>
+        <div className="absolute top-[20%] right-[75%] w-24 h-24 bg-violet-600/50 rounded-full blur-xl animate-float-vertical opacity-80" style={{ animationDelay: '25s', animationDuration: '14s' }}></div>
+        <div className="absolute bottom-[60%] right-[50%] w-20 h-20 bg-indigo-400/45 rounded-full blur-md animate-float-vertical opacity-65" style={{ animationDelay: '30s', animationDuration: '8s' }}></div>
+        
+        {/* Micro orbs for texture */}
+        <div className="absolute top-[15%] left-[80%] w-16 h-16 bg-purple-300/35 rounded-full blur-sm animate-float-vertical opacity-50" style={{ animationDelay: '35s', animationDuration: '6s' }}></div>
+        <div className="absolute bottom-[75%] right-[85%] w-12 h-12 bg-violet-400/40 rounded-full blur-sm animate-float-vertical opacity-55" style={{ animationDelay: '40s', animationDuration: '7s' }}></div>
       </div>
 
-      <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto py-8" ref={sectionRef}>
-        {/* Section Header - matching hero style */}
-        <div className="text-center mb-12">
+      <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
+        {/* Section Header */}
+        <div className="text-center mb-16 lg:mb-20">
           <div 
             className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
             style={{ animationDelay: "0.1s" }}
@@ -96,7 +102,7 @@ const WhyAicraysSection = () => {
             <span>Why Choose Us</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight tracking-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">
               Not Templates. Not Theoretical.
             </span>
@@ -106,14 +112,14 @@ const WhyAicraysSection = () => {
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-4xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
             We don't sell off-the-shelf products. Every solution is personalized to the workflows, systems, and goals of the client.
           </p>
         </div>
 
-        {/* Features Grid - 2x2 layout matching the image */}
-        <div className="relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+        {/* Features Grid - Enhanced spacing and sizing */}
+        <div className="relative mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
             {features.map((feature, index) => {
               return (
                 <div
@@ -125,33 +131,33 @@ const WhyAicraysSection = () => {
                   }`}
                   style={{ animationDelay: `${0.7 + index * 0.1}s` }}
                 >
-                  {/* Card with glassmorphism - matching hero visual */}
-                  <div className="relative backdrop-blur-xl bg-white/85 border border-white/40 rounded-2xl p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden h-full flex flex-col">
+                  {/* Enhanced Card with better spacing */}
+                  <div className="relative backdrop-blur-xl bg-white/85 border border-white/40 rounded-3xl p-8 lg:p-10 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-3 overflow-hidden h-full flex flex-col min-h-[280px]">
                     {/* Hover glow effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                     
                     <div className="relative z-10 flex flex-col h-full">
-                      {/* Icon */}
-                      <div className="mb-6">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                          <feature.icon className="w-8 h-8 text-white" strokeWidth={2} />
+                      {/* Icon with enhanced spacing */}
+                      <div className="mb-6 lg:mb-8">
+                        <div className={`w-18 h-18 lg:w-20 lg:h-20 bg-gradient-to-br ${feature.gradient} rounded-3xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                          <feature.icon className="w-9 h-9 lg:w-10 lg:h-10 text-white" strokeWidth={2} />
                         </div>
                       </div>
                       
-                      {/* Content */}
+                      {/* Content with improved typography and spacing */}
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-4 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
+                        <h3 className="text-xl lg:text-2xl font-bold mb-4 lg:mb-6 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
                           {feature.title}
                         </h3>
                         
-                        <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                        <p className="text-gray-600 leading-relaxed lg:text-lg group-hover:text-gray-700 transition-colors font-light">
                           {feature.description}
                         </p>
                       </div>
                     </div>
 
-                    {/* Corner accent */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    {/* Enhanced corner accent */}
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                   </div>
                 </div>
               );
@@ -159,15 +165,15 @@ const WhyAicraysSection = () => {
           </div>
         </div>
 
-        {/* CTA - matching hero style */}
+        {/* CTA with improved spacing */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
-          <p className="text-gray-600 mb-6 text-lg font-light">Still stuck with generic software?</p>
+          <p className="text-gray-600 mb-8 text-lg lg:text-xl font-light">Still stuck with generic software?</p>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px] hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800"
+            className="inline-flex items-center gap-2 px-8 py-4 lg:px-10 lg:py-5 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px] hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group"
           >
             <span className="relative z-10">Let's Talk</span>
-            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
