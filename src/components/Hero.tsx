@@ -19,7 +19,7 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative h-screen flex items-center justify-center" 
+      className="overflow-hidden relative h-screen max-h-screen flex items-center justify-center" 
       id="hero"
     >
       <HeroBackground />
