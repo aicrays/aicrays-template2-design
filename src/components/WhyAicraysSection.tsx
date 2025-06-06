@@ -1,49 +1,62 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Server, Palette, Lock, TrendingUp, Radio } from "lucide-react";
+import { Server, Palette, Radio, TrendingUp } from "lucide-react";
+
 const WhyAicraysSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const features = [{
-    icon: Server,
-    title: "Custom-built for your systems",
-    description: "No templates or one-size-fits-all solutions. Every platform is architected specifically for your workflows and requirements.",
-    gradient: "from-purple-500 to-purple-600"
-  }, {
-    icon: Palette,
-    title: "Modular, rapid development",
-    description: "Proven components accelerate delivery while maintaining the flexibility to adapt and scale as your needs evolve.",
-    gradient: "from-purple-600 to-indigo-600"
-  }, {
-    icon: Radio,
-    title: "Designed for long-term impact",
-    description: "Our platforms evolve with your business to avoid costly rebuilds and ensure future growth.",
-    gradient: "from-indigo-500 to-purple-500"
-  }, {
-    icon: TrendingUp,
-    title: "Personalized to enterprise workflows",
-    description: "Tailored to your exact roles, processes, and goals — we enhance without disrupting what works.",
-    gradient: "from-purple-500 to-pink-500"
-  }];
+
+  const features = [
+    {
+      icon: Server,
+      title: "Custom-built for your systems",
+      description: "No templates or one-size-fits-all solutions. Every platform is architected specifically for your workflows and requirements.",
+      gradient: "from-purple-500 to-purple-600"
+    },
+    {
+      icon: Palette,
+      title: "Modular, rapid development",
+      description: "Proven components accelerate delivery while maintaining the flexibility to adapt and scale as your needs evolve.",
+      gradient: "from-purple-600 to-indigo-600"
+    },
+    {
+      icon: Radio,
+      title: "Designed for long-term impact",
+      description: "Our platforms evolve with your business to avoid costly rebuilds and ensure future growth.",
+      gradient: "from-indigo-500 to-purple-500"
+    },
+    {
+      icon: TrendingUp,
+      title: "Personalized to enterprise workflows",
+      description: "Tailored to your exact roles, processes, and goals — we enhance without disrupting what works.",
+      gradient: "from-purple-500 to-pink-500"
+    }
+  ];
+
   useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          features.forEach((_, index) => {
-            setTimeout(() => {
-              setVisibleCards(prev => [...prev, index]);
-            }, index * 150);
-          });
-        }
-      });
-    }, {
-      threshold: 0.2
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            features.forEach((_, index) => {
+              setTimeout(() => {
+                setVisibleCards(prev => [...prev, index]);
+              }, index * 150);
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => observer.disconnect();
   }, []);
-  return <section className="py-4 lg:py-6 relative overflow-hidden h-screen flex flex-col justify-center" id="why-aicrays">
+
+  return (
+    <section className="py-4 lg:py-6 relative overflow-hidden h-screen flex flex-col justify-center" id="why-aicrays">
       {/* Enhanced Dynamic Background with More Orbs and Color Splashes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Base gradient layers with more vibrant purple tones */}
@@ -167,18 +180,15 @@ const WhyAicraysSection = () => {
       </div>
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto" ref={sectionRef}>
-        {/* Section Header - Reduced spacing */}
+        {/* Section Header - Updated title size to match other sections */}
         <div className="text-center mb-4 lg:mb-6">
-          <div className="inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-2 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{
-          animationDelay: "0.1s"
-        }}>
+          <div className="inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-2 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{ animationDelay: "0.1s" }}>
             <span className="inline-flex items-center justify-center w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-2"></span>
             <span>Why Choose Us</span>
           </div>
           
-          <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold leading-tight tracking-tight mb-2 opacity-0 animate-fade-in" style={{
-          animationDelay: "0.3s"
-        }}>
+          {/* Updated title size to match other sections like "Built and Running" */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">Custom. Real. Yours.</span>
             <br />
             <span className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 bg-clip-text text-transparent">
@@ -186,32 +196,35 @@ const WhyAicraysSection = () => {
             </span>
           </h2>
           
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{
-          animationDelay: "0.5s"
-        }}>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
             Every platform we build combines these core technologies, tailored to your specific enterprise needs.
           </p>
         </div>
 
-        {/* Features Grid - Reduced spacing */}
+        {/* Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-4">
           {features.map((feature, index) => {
-          return <div key={feature.title} className={`group cursor-pointer transition-all duration-700 ${visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
-            animationDelay: `${0.7 + index * 0.1}s`
-          }}>
+            return (
+              <div
+                key={feature.title}
+                className={`group cursor-pointer transition-all duration-700 ${
+                  visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ animationDelay: `${0.7 + index * 0.1}s` }}
+              >
                 <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-4 lg:p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden h-full flex flex-col min-h-[180px]">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   
                   <div className="relative z-10 flex flex-col h-full">
-                    {/* Icon - Smaller */}
+                    {/* Icon */}
                     <div className="mb-3 lg:mb-4">
                       <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
                         <feature.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" strokeWidth={2} />
                       </div>
                     </div>
                     
-                    {/* Content - Smaller text */}
+                    {/* Content */}
                     <div className="flex-1">
                       <h3 className="text-base lg:text-lg xl:text-xl font-bold mb-2 lg:mb-3 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
                         {feature.title}
@@ -226,16 +239,15 @@ const WhyAicraysSection = () => {
                   {/* Enhanced corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 </div>
-              </div>;
-        })}
+              </div>
+            );
+          })}
         </div>
 
         {/* CTA - Smaller button */}
-        <div className="text-center opacity-0 animate-fade-in" style={{
-        animationDelay: "1.4s"
-      }}>
+        <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
           <p className="text-gray-600 mb-2 text-sm lg:text-base font-light">Still stuck with generic software?</p>
-          <a href="#contact" className="inline-flex items-center gap-2 px-3 py-2 lg:px-4 lg:py-2.5 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group">
+          <a href="#contact" className="inline-flex items-center gap-2 px-2 py-1.5 lg:px-3 lg:py-2 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group">
             <span className="relative z-10">Schedule Discovery Session</span>
             <svg className="w-3 h-3 lg:w-4 lg:h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -245,6 +257,8 @@ const WhyAicraysSection = () => {
           </a>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default WhyAicraysSection;
