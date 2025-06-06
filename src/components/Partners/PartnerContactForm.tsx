@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { User, Mail, Building, MessageSquare, Rocket, CheckCircle, Target, Lightbulb, Users } from "lucide-react";
 
-const ProductInquiry = () => {
+const PartnerContactForm = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
@@ -78,16 +78,21 @@ const ProductInquiry = () => {
         {/* Section Header - matching hero font styling */}
         <div className="text-center mb-6 lg:mb-8">
           <h2 className="font-bold leading-tight tracking-tight text-3xl md:text-4xl lg:text-5xl mb-3">
-            <span className="block text-gray-900">Have a Use Case</span>
+            <span className="block text-gray-900">Ready to</span>
             <span className="block">
               <span className="text-purple-700 relative inline-block">
-                in Mind?
+                Partner
                 <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
+              </span>
+              {" "}
+              <span className="text-purple-700 relative inline-block">
+                With Us?
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{animationDelay: '1s'}}></div>
               </span>
             </span>
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto font-normal">
-            Looking for a similar solution—or something custom? Send us your details, and we'll get in touch.
+            Let's explore how we can collaborate to create innovative solutions together.
           </p>
         </div>
 
@@ -107,15 +112,15 @@ const ProductInquiry = () => {
                 
                 <div className="relative z-10">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-gray-900">
-                    Why Choose Our<br />Modular Approach?
+                    Why Partner<br />With Aicrays?
                   </h3>
                   
                   {/* Feature list with unique icons */}
                   <div className="space-y-2.5 mb-5">
                     {[
-                      { icon: Target, text: "Custom AI-powered solutions tailored to your industry" },
-                      { icon: Lightbulb, text: "Modular architecture for scalable deployment" }, 
-                      { icon: Users, text: "Partnership opportunities for co-development" }
+                      { icon: Target, text: "Shared expertise in AI and innovative technology" },
+                      { icon: Lightbulb, text: "Collaborative approach to solving complex challenges" }, 
+                      { icon: Users, text: "Mutual growth through strategic partnerships" }
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center group">
                         <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
@@ -129,7 +134,7 @@ const ProductInquiry = () => {
                   {/* Trust badge */}
                   <div className="bg-white/60 backdrop-blur-sm border border-purple-200/60 rounded-2xl p-2.5">
                     <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                      ✨ Trusted by forward-thinking companies to deliver custom platforms that transform operations
+                      🤝 Join our network of innovative partners creating the future of technology together
                     </p>
                   </div>
                 </div>
@@ -142,7 +147,7 @@ const ProductInquiry = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                     <div className="relative group">
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Full Name
+                        Name
                       </label>
                       <div className="relative">
                         <User className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
@@ -163,7 +168,7 @@ const ProductInquiry = () => {
                     
                     <div className="relative group">
                       <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
-                        Business Email
+                        Email
                       </label>
                       <div className="relative">
                         <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
@@ -185,7 +190,7 @@ const ProductInquiry = () => {
                   
                   <div className="relative group">
                     <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-1">
-                      Company Name
+                      Company
                     </label>
                     <div className="relative">
                       <Building className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
@@ -199,14 +204,13 @@ const ProductInquiry = () => {
                         className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                         onFocus={() => setFocusedField('company')}
                         onBlur={() => setFocusedField(null)}
-                        required
                       />
                     </div>
                   </div>
                   
                   <div className="relative group">
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
-                      Your Needs or Use Case
+                      Partnership Interest
                     </label>
                     <div className="relative">
                       <MessageSquare className={`absolute left-3 top-3 w-4 h-4 transition-all duration-200 ${
@@ -217,7 +221,7 @@ const ProductInquiry = () => {
                         name="message"
                         rows={2}
                         className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
-                        placeholder="Tell us about your project requirements, industry challenges, or collaboration ideas..."
+                        placeholder="Tell us about your partnership goals, areas of collaboration, or mutual opportunities..."
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
                         required
@@ -239,7 +243,7 @@ const ProductInquiry = () => {
                         {formState === 'idle' && (
                           <>
                             <Rocket className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                            Let's Collaborate
+                            Let's Partner Together
                           </>
                         )}
                         {formState === 'submitting' && (
@@ -267,10 +271,10 @@ const ProductInquiry = () => {
                     <p className="text-sm text-gray-500">
                       Prefer email? Contact us at{' '}
                       <a 
-                        href="mailto:hello@aicrays.com" 
+                        href="mailto:partnerships@aicrays.com" 
                         className="text-purple-600 hover:text-purple-700 font-medium transition-all duration-200 hover:underline hover:underline-offset-2"
                       >
-                        hello@aicrays.com
+                        partnerships@aicrays.com
                       </a>
                     </p>
                   </div>
@@ -284,4 +288,4 @@ const ProductInquiry = () => {
   );
 };
 
-export default ProductInquiry;
+export default PartnerContactForm;
