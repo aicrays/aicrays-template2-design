@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -21,19 +22,11 @@ const StepCard = ({ number, title, description, isActive, onClick }: StepCardPro
       onClick={onClick}
     >
       <div className="flex items-start">
-        {/* Updated icon design to match reference */}
-        <div className="icon-container-sm mr-4 flex-shrink-0">
-          <div className={cn(
-            "icon-inner-sm transition-colors duration-300",
-            isActive ? "icon-gradient-purple" : "bg-gray-100"
-          )}>
-            <span className={cn(
-              "text-sm font-semibold",
-              isActive ? "text-white" : "text-gray-500"
-            )}>
-              {number}
-            </span>
-          </div>
+        <div className={cn(
+          "flex items-center justify-center rounded-full w-10 h-10 mr-4 flex-shrink-0 transition-colors duration-300",
+          isActive ? "bg-pulse-500 text-white" : "bg-gray-100 text-gray-500"
+        )}>
+          {number}
         </div>
         <div>
           <h3 className={cn(

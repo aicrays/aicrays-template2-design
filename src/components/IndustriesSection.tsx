@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef, useState } from "react";
-import { Factory, Shield, HeartPulse, Truck, ArrowRight, Search } from "lucide-react";
+import { Building2, ShieldCheck, Heart, Truck, ArrowRight, Search } from "lucide-react";
 
 const IndustriesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -9,27 +10,30 @@ const IndustriesSection = () => {
 
   const industries = [
     {
-      icon: Factory,
+      icon: Building2,
       title: "Manufacturing",
       description: "Streamline production workflows and quality control processes with real-time monitoring",
       hoverInsight: "Reduced downtime by 40% through predictive maintenance systems",
-      iconBg: "icon-gradient-purple",
+      iconBg: "from-purple-500 to-violet-600",
+      iconGlow: "shadow-purple-500/30",
       position: "stagger-1"
     },
     {
-      icon: Shield,
+      icon: ShieldCheck,
       title: "Government",
       description: "Secure access in critical infrastructure environments with multi-level clearance",
       hoverInsight: "Successfully deployed in 15+ federal agencies with zero security incidents",
-      iconBg: "icon-gradient-indigo",
+      iconBg: "from-indigo-500 to-purple-600",
+      iconGlow: "shadow-indigo-500/30",
       position: "stagger-2"
     },
     {
-      icon: HeartPulse,
+      icon: Heart,
       title: "Healthcare",
       description: "HIPAA-compliant systems for patient data and seamless care coordination",
       hoverInsight: "Improved patient outcomes by 25% through integrated data systems",
-      iconBg: "icon-gradient-pink",
+      iconBg: "from-pink-500 to-purple-500",
+      iconGlow: "shadow-pink-500/30",
       position: "stagger-3"
     },
     {
@@ -37,7 +41,8 @@ const IndustriesSection = () => {
       title: "Logistics",
       description: "Real-time tracking and supply chain optimization for global operations",
       hoverInsight: "Optimized delivery routes saving 30% in operational costs",
-      iconBg: "icon-gradient-violet",
+      iconBg: "from-violet-500 to-purple-600",
+      iconGlow: "shadow-violet-500/30",
       position: "stagger-4"
     }
   ];
@@ -265,7 +270,7 @@ const IndustriesSection = () => {
   );
 };
 
-// Industry Card Component with updated icon design
+// Industry Card Component
 const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCard }: any) => (
   <div 
     data-index={index}
@@ -283,11 +288,9 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
         <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/40 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
         
         <div className="relative z-10 flex-1 flex flex-col">
-          {/* Updated icon design using new classes */}
-          <div className="icon-container mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-            <div className={`icon-inner ${industry.iconBg}`}>
-              <industry.icon className="w-6 h-6 text-white" strokeWidth={2} />
-            </div>
+          {/* Icon with unique styling similar to How We Build page */}
+          <div className={`w-14 h-14 bg-gradient-to-br ${industry.iconBg} rounded-xl flex items-center justify-center shadow-lg ${industry.iconGlow} mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 border border-white/20`}>
+            <industry.icon className="w-7 h-7 text-white" strokeWidth={2} />
           </div>
           
           {/* Content */}
@@ -318,7 +321,7 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
   </div>
 );
 
-// CTA Block Component with updated icon design
+// CTA Block Component
 const CTABlock = () => (
   <div className="relative group max-w-xs">
     <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/95 to-violet-100/80 border border-purple-200/70 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden min-h-[200px] flex flex-col">
@@ -326,11 +329,9 @@ const CTABlock = () => (
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-violet-200/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
       <div className="relative z-10 text-center flex-1 flex flex-col">
-        {/* Updated icon design using new classes */}
-        <div className="icon-container mx-auto mb-4 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-          <div className="icon-inner icon-gradient-purple">
-            <Search className="w-6 h-6 text-white" strokeWidth={2} />
-          </div>
+        {/* Icon with gradient styling */}
+        <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 border border-white/20">
+          <Search className="w-7 h-7 text-white" strokeWidth={2} />
         </div>
         
         <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight">
