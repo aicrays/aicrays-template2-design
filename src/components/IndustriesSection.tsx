@@ -72,11 +72,21 @@ const IndustriesSection = () => {
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-purple-50/30 to-purple-50/50" 
       ref={sectionRef}
     >
-      {/* Enhanced Dynamic Background with Floating Orbs - Slightly darker than ProcessSection */}
+      {/* Enhanced Dynamic Background with More Orbs and Color Splotches */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Base gradient layers */}
         <div className="absolute inset-0 bg-gradient-to-b from-purple-50/70 via-purple-100/50 to-purple-50/80"></div>
         <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-100/70 via-purple-50/40 to-transparent"></div>
+        
+        {/* Extra Large floating orbs */}
+        <div className="absolute top-[15%] right-[8%] w-96 h-96 bg-gradient-radial from-purple-300/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-85" style={{
+          animationDelay: '2s',
+          animationDuration: '28s'
+        }}></div>
+        <div className="absolute bottom-[20%] left-[5%] w-80 h-80 bg-gradient-radial from-indigo-400/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-75" style={{
+          animationDelay: '8s',
+          animationDuration: '32s'
+        }}></div>
         
         {/* Large floating orbs */}
         <div className="absolute top-[20%] right-[12%] w-72 h-72 bg-gradient-radial from-purple-300/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-80" style={{
@@ -96,6 +106,16 @@ const IndustriesSection = () => {
           animationDuration: '28s'
         }}></div>
         
+        {/* Additional Large Orbs */}
+        <div className="absolute top-[10%] left-[15%] w-60 h-60 bg-gradient-radial from-violet-400/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
+          animationDelay: '12s',
+          animationDuration: '25s'
+        }}></div>
+        <div className="absolute bottom-[10%] right-[40%] w-72 h-72 bg-gradient-radial from-purple-200/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-65" style={{
+          animationDelay: '19s',
+          animationDuration: '29s'
+        }}></div>
+        
         {/* Medium floating orbs */}
         <div className="absolute top-[50%] right-[40%] w-40 h-40 bg-purple-300/30 rounded-full blur-2xl animate-float-vertical opacity-65" style={{
           animationDelay: '7s',
@@ -109,6 +129,14 @@ const IndustriesSection = () => {
           animationDelay: '20s',
           animationDuration: '16s'
         }}></div>
+        <div className="absolute top-[80%] left-[60%] w-36 h-36 bg-purple-300/30 rounded-full blur-2xl animate-float-vertical opacity-55" style={{
+          animationDelay: '5s',
+          animationDuration: '20s'
+        }}></div>
+        <div className="absolute bottom-[70%] right-[15%] w-44 h-44 bg-indigo-300/28 rounded-full blur-2xl animate-float-vertical opacity-65" style={{
+          animationDelay: '16s',
+          animationDuration: '24s'
+        }}></div>
         
         {/* Small accent orbs */}
         <div className="absolute top-[30%] left-[75%] w-24 h-24 bg-purple-500/30 rounded-full blur-xl animate-float-vertical opacity-55" style={{
@@ -119,6 +147,14 @@ const IndustriesSection = () => {
           animationDelay: '27s',
           animationDuration: '20s'
         }}></div>
+        <div className="absolute top-[45%] left-[5%] w-32 h-32 bg-violet-400/25 rounded-full blur-xl animate-float-vertical opacity-50" style={{
+          animationDelay: '11s',
+          animationDuration: '17s'
+        }}></div>
+        <div className="absolute bottom-[60%] right-[75%] w-20 h-20 bg-purple-400/35 rounded-full blur-xl animate-float-vertical opacity-60" style={{
+          animationDelay: '23s',
+          animationDuration: '15s'
+        }}></div>
         
         {/* Extra small floating elements for depth */}
         <div className="absolute top-[75%] left-[20%] w-16 h-16 bg-violet-400/25 rounded-full blur-lg animate-float-vertical opacity-50" style={{
@@ -128,6 +164,28 @@ const IndustriesSection = () => {
         <div className="absolute top-[90%] right-[30%] w-12 h-12 bg-purple-400/30 rounded-full blur-lg animate-float-vertical opacity-45" style={{
           animationDelay: '22s',
           animationDuration: '14s'
+        }}></div>
+        <div className="absolute top-[25%] left-[85%] w-18 h-18 bg-indigo-400/20 rounded-full blur-lg animate-float-vertical opacity-40" style={{
+          animationDelay: '6s',
+          animationDuration: '12s'
+        }}></div>
+        <div className="absolute bottom-[45%] left-[90%] w-14 h-14 bg-violet-300/30 rounded-full blur-lg animate-float-vertical opacity-55" style={{
+          animationDelay: '18s',
+          animationDuration: '11s'
+        }}></div>
+        
+        {/* Color Splotches */}
+        <div className="absolute top-[60%] left-[10%] w-52 h-52 bg-gradient-to-br from-purple-200/20 via-violet-200/15 to-transparent rounded-full blur-2xl opacity-60" style={{
+          animationDelay: '3s',
+          animationDuration: '35s'
+        }}></div>
+        <div className="absolute bottom-[35%] right-[20%] w-48 h-48 bg-gradient-to-br from-indigo-200/25 via-purple-200/20 to-transparent rounded-full blur-2xl opacity-50" style={{
+          animationDelay: '15s',
+          animationDuration: '40s'
+        }}></div>
+        <div className="absolute top-[40%] right-[5%] w-64 h-64 bg-gradient-to-br from-violet-200/18 via-purple-100/22 to-transparent rounded-full blur-3xl opacity-55" style={{
+          animationDelay: '25s',
+          animationDuration: '33s'
         }}></div>
       </div>
       
@@ -157,7 +215,7 @@ const IndustriesSection = () => {
         <div className="relative">
           {/* Desktop Staggered Layout */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
               {/* Manufacturing - Top Left */}
               <div className="col-start-1 row-start-1 transform rotate-[-1deg]">
                 <IndustryCard 
@@ -186,7 +244,7 @@ const IndustriesSection = () => {
               </div>
               
               {/* Healthcare - Bottom Left */}
-              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-12">
+              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-16">
                 <IndustryCard 
                   industry={industries[2]} 
                   index={2} 
@@ -197,7 +255,7 @@ const IndustriesSection = () => {
               </div>
               
               {/* Logistics - Bottom Right */}
-              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-18">
+              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-24">
                 <IndustryCard 
                   industry={industries[3]} 
                   index={3} 
