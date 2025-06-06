@@ -4,12 +4,12 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-4xl text-center space-y-6 px-4 mt-8">
-      {/* Fixed Headline with Proper Spacing */}
-      <div className="space-y-1">
-        <h1 className="font-bold leading-[1.1] tracking-tight text-4xl lg:text-5xl xl:text-6xl">
+    <div className="w-full max-w-5xl text-center space-y-8 px-4 mt-16">
+      {/* Significantly Larger Header */}
+      <div className="space-y-2">
+        <h1 className="font-bold leading-[1.05] tracking-tight text-5xl lg:text-7xl xl:text-8xl">
           <div 
-            className="opacity-0 animate-fade-in mb-2" 
+            className="opacity-0 animate-fade-in mb-3" 
             style={{ animationDelay: "0.2s", animationDuration: "0.8s" }}
           >
             <span className="block text-gray-900">Empowering Enterprises</span>
@@ -22,23 +22,23 @@ const HeroContent = () => {
               Through{" "}
               <span className="text-purple-700 relative inline-block">
                 Innovation
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-purple-700 animate-pulse-slow transform origin-left"></div>
+                <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-purple-700 animate-pulse-slow transform origin-left"></div>
               </span>
               {" "}and{" "}
               <span className="text-purple-700 relative inline-block">
                 Personalization
-                <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse-slow transform origin-left" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-3 left-0 w-full h-1.5 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse-slow transform origin-left" style={{ animationDelay: '1s' }}></div>
               </span>
             </span>
           </div>
         </h1>
       </div>
       
-      {/* Properly Sized Subtitle */}
-      <div className="pt-4">
+      {/* Smaller Subtitle */}
+      <div className="pt-6">
         <p 
           style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} 
-          className="text-lg lg:text-xl leading-[1.4] text-gray-700 opacity-0 animate-fade-in max-w-3xl mx-auto font-normal"
+          className="text-base lg:text-lg leading-[1.4] text-gray-700 opacity-0 animate-fade-in max-w-2xl mx-auto font-normal"
         >
           We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
         </p>
