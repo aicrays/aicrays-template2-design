@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Building2, ShieldCheck, Heart, Truck, ArrowRight, Search } from "lucide-react";
+import { Factory, Shield, HeartPulse, Truck, ArrowRight, Search } from "lucide-react";
 
 const IndustriesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -10,7 +10,7 @@ const IndustriesSection = () => {
 
   const industries = [
     {
-      icon: Building2,
+      icon: Factory,
       title: "Manufacturing",
       description: "Streamline production workflows and quality control processes with real-time monitoring",
       hoverInsight: "Reduced downtime by 40% through predictive maintenance systems",
@@ -19,7 +19,7 @@ const IndustriesSection = () => {
       position: "stagger-1"
     },
     {
-      icon: ShieldCheck,
+      icon: Shield,
       title: "Government",
       description: "Secure access in critical infrastructure environments with multi-level clearance",
       hoverInsight: "Successfully deployed in 15+ federal agencies with zero security incidents",
@@ -28,7 +28,7 @@ const IndustriesSection = () => {
       position: "stagger-2"
     },
     {
-      icon: Heart,
+      icon: HeartPulse,
       title: "Healthcare",
       description: "HIPAA-compliant systems for patient data and seamless care coordination",
       hoverInsight: "Improved patient outcomes by 25% through integrated data systems",
@@ -288,9 +288,11 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
         <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/40 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
         
         <div className="relative z-10 flex-1 flex flex-col">
-          {/* Icon with unique styling similar to How We Build page */}
-          <div className={`w-14 h-14 bg-gradient-to-br ${industry.iconBg} rounded-xl flex items-center justify-center shadow-lg ${industry.iconGlow} mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 border border-white/20`}>
-            <industry.icon className="w-7 h-7 text-white" strokeWidth={2} />
+          {/* Icon with circular background - matching reference image style */}
+          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 border border-purple-100/50">
+            <div className={`w-12 h-12 bg-gradient-to-br ${industry.iconBg} rounded-full flex items-center justify-center ${industry.iconGlow}`}>
+              <industry.icon className="w-6 h-6 text-white" strokeWidth={2} />
+            </div>
           </div>
           
           {/* Content */}
@@ -329,9 +331,11 @@ const CTABlock = () => (
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-violet-200/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
       <div className="relative z-10 text-center flex-1 flex flex-col">
-        {/* Icon with gradient styling */}
-        <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 border border-white/20">
-          <Search className="w-7 h-7 text-white" strokeWidth={2} />
+        {/* Icon with circular background - matching reference image style */}
+        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 border border-purple-100/50">
+          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-purple-500/30">
+            <Search className="w-6 h-6 text-white" strokeWidth={2} />
+          </div>
         </div>
         
         <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight">
