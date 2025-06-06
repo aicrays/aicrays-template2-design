@@ -1,28 +1,48 @@
-
 import React from "react";
 import { ArrowUp, Linkedin, Github } from "lucide-react";
-
 const Footer = () => {
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   };
-
-  return (
-    <footer className="relative w-full bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 text-white py-8 overflow-hidden">
+  return <footer className="relative w-full bg-gradient-to-br from-purple-900 via-purple-800 to-blue-900 text-white py-8 overflow-hidden">
       {/* Floating Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large floating orbs */}
-        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-300/15 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-blue-300/12 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-purple-400/18 rounded-full blur-3xl animate-float-vertical opacity-40" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
+        <div className="absolute top-[20%] right-[15%] w-32 h-32 bg-purple-300/15 rounded-full blur-3xl animate-float-vertical opacity-60" style={{
+        animationDelay: '2s',
+        animationDuration: '20s'
+      }}></div>
+        <div className="absolute bottom-[30%] left-[10%] w-36 h-36 bg-blue-300/12 rounded-full blur-3xl animate-float-vertical opacity-50" style={{
+        animationDelay: '8s',
+        animationDuration: '24s'
+      }}></div>
+        <div className="absolute top-[60%] right-[35%] w-24 h-24 bg-purple-400/18 rounded-full blur-3xl animate-float-vertical opacity-40" style={{
+        animationDelay: '5s',
+        animationDuration: '18s'
+      }}></div>
         
         {/* Medium floating orbs */}
-        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-blue-300/20 rounded-full blur-2xl animate-float-vertical opacity-45" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-purple-300/15 rounded-full blur-2xl animate-float-vertical opacity-50" style={{ animationDelay: '7s', animationDuration: '19s' }}></div>
+        <div className="absolute top-[45%] left-[20%] w-20 h-20 bg-blue-300/20 rounded-full blur-2xl animate-float-vertical opacity-45" style={{
+        animationDelay: '3s',
+        animationDuration: '16s'
+      }}></div>
+        <div className="absolute bottom-[50%] right-[20%] w-28 h-28 bg-purple-300/15 rounded-full blur-2xl animate-float-vertical opacity-50" style={{
+        animationDelay: '7s',
+        animationDuration: '19s'
+      }}></div>
         
         {/* Small floating orbs */}
-        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-purple-400/20 rounded-full blur-xl animate-float-vertical opacity-35" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
-        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-blue-300/18 rounded-full blur-xl animate-float-vertical opacity-40" style={{ animationDelay: '9s', animationDuration: '13s' }}></div>
+        <div className="absolute top-[80%] left-[30%] w-16 h-16 bg-purple-400/20 rounded-full blur-xl animate-float-vertical opacity-35" style={{
+        animationDelay: '4s',
+        animationDuration: '14s'
+      }}></div>
+        <div className="absolute top-[35%] right-[10%] w-18 h-18 bg-blue-300/18 rounded-full blur-xl animate-float-vertical opacity-40" style={{
+        animationDelay: '9s',
+        animationDuration: '13s'
+      }}></div>
       </div>
       
       <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,16 +86,10 @@ const Footer = () => {
           <div className="space-y-3">
             {/* Social Links */}
             <div className="flex space-x-3">
-              <a 
-                href="#" 
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-purple-300/30 hover:border-purple-200/50 transition-all duration-300 shadow-sm hover:shadow-md"
-              >
+              <a href="#" className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-purple-300/30 hover:border-purple-200/50 transition-all duration-300 shadow-sm hover:shadow-md">
                 <Linkedin className="w-4 h-4 text-purple-100 group-hover:text-white transition-colors" />
               </a>
-              <a 
-                href="#" 
-                className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-purple-300/30 hover:border-purple-200/50 transition-all duration-300 shadow-sm hover:shadow-md"
-              >
+              <a href="#" className="group p-3 bg-white/10 backdrop-blur-sm rounded-full hover:bg-white/20 border border-purple-300/30 hover:border-purple-200/50 transition-all duration-300 shadow-sm hover:shadow-md">
                 <Github className="w-4 h-4 text-purple-100 group-hover:text-white transition-colors" />
               </a>
             </div>
@@ -90,15 +104,7 @@ const Footer = () => {
       </div>
       
       {/* Back to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 p-3 bg-purple-600/90 backdrop-blur-sm hover:bg-purple-600 text-white rounded-full shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-110 group"
-        aria-label="Back to top"
-      >
-        <ArrowUp className="w-5 h-5 group-hover:translate-y-[-2px] transition-transform" />
-      </button>
-    </footer>
-  );
+      
+    </footer>;
 };
-
 export default Footer;

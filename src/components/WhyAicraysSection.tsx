@@ -1,62 +1,49 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Server, Palette, Radio, TrendingUp } from "lucide-react";
-
 const WhyAicraysSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const features = [
-    {
-      icon: Server,
-      title: "Custom-built for your systems",
-      description: "No templates or one-size-fits-all solutions. Every platform is architected specifically for your workflows and requirements.",
-      gradient: "from-purple-500 to-purple-600"
-    },
-    {
-      icon: Palette,
-      title: "Modular, rapid development",
-      description: "Proven components accelerate delivery while maintaining the flexibility to adapt and scale as your needs evolve.",
-      gradient: "from-purple-600 to-indigo-600"
-    },
-    {
-      icon: Radio,
-      title: "Designed for long-term impact",
-      description: "Our platforms evolve with your business to avoid costly rebuilds and ensure future growth.",
-      gradient: "from-indigo-500 to-purple-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Personalized to enterprise workflows",
-      description: "Tailored to your exact roles, processes, and goals — we enhance without disrupting what works.",
-      gradient: "from-purple-500 to-pink-500"
-    }
-  ];
-
+  const features = [{
+    icon: Server,
+    title: "Custom-built for your systems",
+    description: "No templates or one-size-fits-all solutions. Every platform is architected specifically for your workflows and requirements.",
+    gradient: "from-purple-500 to-purple-600"
+  }, {
+    icon: Palette,
+    title: "Modular, rapid development",
+    description: "Proven components accelerate delivery while maintaining the flexibility to adapt and scale as your needs evolve.",
+    gradient: "from-purple-600 to-indigo-600"
+  }, {
+    icon: Radio,
+    title: "Designed for long-term impact",
+    description: "Our platforms evolve with your business to avoid costly rebuilds and ensure future growth.",
+    gradient: "from-indigo-500 to-purple-500"
+  }, {
+    icon: TrendingUp,
+    title: "Personalized to enterprise workflows",
+    description: "Tailored to your exact roles, processes, and goals — we enhance without disrupting what works.",
+    gradient: "from-purple-500 to-pink-500"
+  }];
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            features.forEach((_, index) => {
-              setTimeout(() => {
-                setVisibleCards(prev => [...prev, index]);
-              }, index * 150);
-            });
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          features.forEach((_, index) => {
+            setTimeout(() => {
+              setVisibleCards(prev => [...prev, index]);
+            }, index * 150);
+          });
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-
     return () => observer.disconnect();
   }, []);
-
-  return (
-    <section className="py-4 lg:py-6 relative overflow-hidden h-screen flex flex-col justify-center" id="why-aicrays">
+  return <section className="py-4 lg:py-6 relative overflow-hidden h-screen flex flex-col justify-center" id="why-aicrays">
       {/* Enhanced Dynamic Background with More Orbs and Color Splashes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Base gradient layers with more vibrant purple tones */}
@@ -182,21 +169,25 @@ const WhyAicraysSection = () => {
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto" ref={sectionRef}>
         {/* Section Header - Updated title size to match other sections */}
         <div className="text-center mb-4 lg:mb-6">
-          <div className="inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-2 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{ animationDelay: "0.1s" }}>
+          <div className="inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-2 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{
+          animationDelay: "0.1s"
+        }}>
             <span className="inline-flex items-center justify-center w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-2"></span>
             <span>Why Choose Us</span>
           </div>
           
           {/* Updated title size to match other sections like "Built and Running" */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight mb-2 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight mb-2 opacity-0 animate-fade-in" style={{
+          animationDelay: "0.3s"
+        }}>
             <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">Custom. Real. Yours.</span>
             <br />
-            <span className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 bg-clip-text text-transparent">
-              Just Built for You.
-            </span>
+            
           </h2>
           
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{
+          animationDelay: "0.5s"
+        }}>
             Every platform we build combines these core technologies, tailored to your specific enterprise needs.
           </p>
         </div>
@@ -204,14 +195,9 @@ const WhyAicraysSection = () => {
         {/* Features Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6 mb-4">
           {features.map((feature, index) => {
-            return (
-              <div
-                key={feature.title}
-                className={`group cursor-pointer transition-all duration-700 ${
-                  visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ animationDelay: `${0.7 + index * 0.1}s` }}
-              >
+          return <div key={feature.title} className={`group cursor-pointer transition-all duration-700 ${visibleCards.includes(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{
+            animationDelay: `${0.7 + index * 0.1}s`
+          }}>
                 <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-4 lg:p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden h-full flex flex-col min-h-[180px]">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
@@ -239,13 +225,14 @@ const WhyAicraysSection = () => {
                   {/* Enhanced corner accent */}
                   <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                 </div>
-              </div>
-            );
-          })}
+              </div>;
+        })}
         </div>
 
         {/* CTA - Smaller button */}
-        <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
+        <div className="text-center opacity-0 animate-fade-in" style={{
+        animationDelay: "1.4s"
+      }}>
           <p className="text-gray-600 mb-2 text-sm lg:text-base font-light">Still stuck with generic software?</p>
           <a href="#contact" className="inline-flex items-center gap-2 px-2 py-1.5 lg:px-3 lg:py-2 text-xs lg:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group">
             <span className="relative z-10">Schedule Discovery Session</span>
@@ -257,8 +244,6 @@ const WhyAicraysSection = () => {
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default WhyAicraysSection;
