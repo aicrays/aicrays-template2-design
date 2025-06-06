@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -53,7 +54,7 @@ const Navbar = () => {
           }}
           aria-label="Aicrays"
         >
-          <div className="text-2xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-purple-900 bg-clip-text text-transparent hover:from-gray-700 hover:via-purple-600 hover:to-purple-800 transition-all duration-300">
+          <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-purple-950 bg-clip-text text-transparent hover:from-gray-800 hover:via-purple-700 hover:to-purple-900 transition-all duration-300">
             Aicrays
           </div>
         </a>
@@ -71,9 +72,6 @@ const Navbar = () => {
             Home
           </a>
           <a href="/products" className="nav-link">Products</a>
-          <a href="#solutions" className="nav-link">What We Build</a>
-          <a href="#process" className="nav-link">How We Build</a>
-          <a href="#about" className="nav-link">About</a>
           <a href="#contact" className="nav-link">Contact</a>
         </nav>
 
@@ -124,36 +122,6 @@ const Navbar = () => {
             }}
           >
             Products
-          </a>
-          <a 
-            href="#solutions" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            What We Build
-          </a>
-          <a 
-            href="#process" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            How We Build
-          </a>
-          <a 
-            href="#about" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
-            onClick={() => {
-              setIsMenuOpen(false);
-              document.body.style.overflow = '';
-            }}
-          >
-            About
           </a>
           <a 
             href="#contact" 
