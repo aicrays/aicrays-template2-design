@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -54,7 +53,7 @@ const Navbar = () => {
           }}
           aria-label="Aicrays"
         >
-          <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-purple-900 bg-clip-text text-transparent hover:from-gray-800 hover:via-purple-700 hover:to-purple-800 transition-all duration-300">
+          <div className="text-2xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-purple-900 bg-clip-text text-transparent hover:from-gray-700 hover:via-purple-600 hover:to-purple-800 transition-all duration-300">
             Aicrays
           </div>
         </a>

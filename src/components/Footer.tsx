@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Linkedin, Github } from "lucide-react";
 
@@ -55,9 +54,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-3">
           {/* Left Column - Brand */}
           <div className="space-y-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-purple-900 bg-clip-text text-transparent mb-2">
+            <div className="text-2xl font-bold bg-gradient-to-r from-gray-800 via-purple-700 to-purple-900 bg-clip-text text-transparent mb-2">
               Aicrays
             </div>
+            {/* description and tagline */}
             <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
               Building custom AI-powered digital platforms that integrate cybersecurity, data intelligence, and IoT/RFID systems.
             </p>
@@ -68,7 +68,7 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Middle Column - Quick Links */}
+          {/* Middle Column - Quick Links and Right Column - Social & Copyright */}
           <div className="grid grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2 text-gray-800 text-sm">Solutions</h4>
@@ -89,7 +89,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Right Column - Social & Copyright */}
           <div className="space-y-3">
             {/* Social Links */}
             <div className="flex space-x-3">
