@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -72,6 +71,7 @@ const Navbar = () => {
             Home
           </a>
           <a href="/products" className="nav-link">Products</a>
+          <a href="/partners" className="nav-link">Partners</a>
           <a href="#contact" className="nav-link">Contact</a>
         </nav>
 
@@ -122,6 +122,16 @@ const Navbar = () => {
             }}
           >
             Products
+          </a>
+          <a 
+            href="/partners" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Partners
           </a>
           <a 
             href="#contact" 
