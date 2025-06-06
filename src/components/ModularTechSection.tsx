@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Brain, Shield, Wifi, BarChart3, Cloud, Layout } from "lucide-react";
+import { Cpu, Lock, Radio, TrendingUp, Server, Palette } from "lucide-react";
 
 const ModularTechSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -8,46 +8,40 @@ const ModularTechSection = () => {
 
   const components = [
     {
-      icon: Brain,
+      icon: Cpu,
       title: "AI/ML Intelligence",
       description: "Machine learning models and intelligent automation tailored to your business logic",
-      gradient: "from-purple-500 to-purple-600",
-      iconBg: "from-purple-400 via-purple-500 to-purple-600"
+      iconBg: "from-purple-500 to-purple-600"
     },
     {
-      icon: Shield,
+      icon: Lock,
       title: "Cybersecurity",
       description: "Enterprise-grade security protocols with multi-layered access control",
-      gradient: "from-purple-600 to-purple-700",
-      iconBg: "from-purple-500 via-purple-600 to-purple-700"
+      iconBg: "from-purple-600 to-indigo-600"
     },
     {
-      icon: Wifi,
+      icon: Radio,
       title: "IoT/RFID Systems",
       description: "Connected device networks for real-time operational visibility",
-      gradient: "from-blue-500 to-purple-500",
-      iconBg: "from-blue-400 via-purple-400 to-purple-500"
+      iconBg: "from-indigo-500 to-purple-500"
     },
     {
-      icon: BarChart3,
+      icon: TrendingUp,
       title: "Data Intelligence",
       description: "Analytics and reporting tailored to your enterprise operations",
-      gradient: "from-purple-500 to-blue-500",
-      iconBg: "from-purple-400 via-purple-500 to-blue-500"
+      iconBg: "from-purple-500 to-pink-500"
     },
     {
-      icon: Cloud,
+      icon: Server,
       title: "Cloud DevOps",
       description: "Scalable infrastructure and seamless deployment pipelines",
-      gradient: "from-purple-600 to-blue-600",
-      iconBg: "from-purple-500 via-purple-600 to-blue-600"
+      iconBg: "from-indigo-600 to-purple-700"
     },
     {
-      icon: Layout,
+      icon: Palette,
       title: "Human-Centered UX",
       description: "Intuitive interfaces designed to enhance productivity and user experience",
-      gradient: "from-blue-400 to-purple-500",
-      iconBg: "from-blue-400 via-purple-400 to-purple-500"
+      iconBg: "from-purple-400 to-indigo-500"
     }
   ];
 
@@ -75,47 +69,59 @@ const ModularTechSection = () => {
   }, []);
 
   return (
-    <section className="h-screen flex items-center justify-center bg-gradient-to-br from-white via-purple-50/30 to-violet-50/40 relative overflow-hidden" id="solutions">
-      {/* Enhanced Background with Floating Orbs */}
+    <section className="h-screen flex items-center justify-center relative overflow-hidden" id="solutions">
+      {/* Background with Floating Orbs - matching hero style */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Dynamic Gradient Mesh */}
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-violet-400/8 to-blue-400/12 animate-gradient-shift"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-purple-600/8 via-transparent to-violet-500/6 animate-gradient-shift" style={{ animationDelay: '3s', animationDuration: '12s' }}></div>
+        {/* Main gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-100/50 to-purple-200/60"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-300/40 via-purple-200/30 to-transparent"></div>
         
-        {/* Floating Glow Orbs */}
-        <div className="absolute top-[20%] left-[10%] w-32 h-32 bg-purple-200/15 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '0s', animationDuration: '8s' }}></div>
-        <div className="absolute top-[60%] right-[15%] w-24 h-24 bg-violet-300/12 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
-        <div className="absolute bottom-[30%] left-[30%] w-40 h-40 bg-blue-200/10 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
+        {/* Edge gradients for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/20 via-transparent to-violet-400/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-indigo-300/20 via-transparent to-purple-400/25"></div>
         
-        {/* Micro Particles */}
-        <div className="absolute top-[25%] right-[25%] w-2 h-2 bg-purple-400 rounded-full animate-pulse opacity-30"></div>
-        <div className="absolute bottom-[40%] right-[40%] w-1 h-1 bg-violet-500 rounded-full animate-pulse opacity-40" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-[70%] left-[20%] w-1.5 h-1.5 bg-purple-300 rounded-full animate-pulse opacity-35" style={{ animationDelay: '1s' }}></div>
+        {/* Large floating orbs - matching hero animation */}
+        <div className="absolute top-[10%] left-[5%] w-56 h-56 bg-purple-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+        <div className="absolute top-[20%] right-[8%] w-64 h-64 bg-violet-500/35 rounded-full blur-3xl animate-float-vertical opacity-85" style={{ animationDelay: '8s', animationDuration: '24s' }}></div>
+        <div className="absolute bottom-[25%] left-[12%] w-48 h-48 bg-indigo-600/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
+        <div className="absolute bottom-[15%] right-[15%] w-44 h-44 bg-purple-700/40 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '14s', animationDuration: '16s' }}></div>
+        
+        {/* Medium orbs */}
+        <div className="absolute top-[45%] left-[20%] w-36 h-36 bg-indigo-500/50 rounded-full blur-2xl animate-float-vertical opacity-80" style={{ animationDelay: '4s', animationDuration: '14s' }}></div>
+        <div className="absolute bottom-[35%] right-[25%] w-32 h-32 bg-purple-500/45 rounded-full blur-2xl animate-float-vertical opacity-85" style={{ animationDelay: '9s', animationDuration: '17s' }}></div>
+        <div className="absolute top-[65%] right-[35%] w-28 h-28 bg-violet-600/48 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '7s', animationDuration: '15s' }}></div>
+        
+        {/* Small orbs for depth */}
+        <div className="absolute top-[30%] left-[60%] w-24 h-24 bg-purple-400/35 rounded-full blur-md animate-float-vertical opacity-55" style={{ animationDelay: '18s', animationDuration: '7s' }}></div>
+        <div className="absolute top-[75%] right-[50%] w-20 h-20 bg-blue-400/38 rounded-full blur-md animate-float-vertical opacity-60" style={{ animationDelay: '20s', animationDuration: '6s' }}></div>
+        <div className="absolute top-[25%] left-[75%] w-16 h-16 bg-violet-600/45 rounded-full blur-md animate-float-vertical opacity-65" style={{ animationDelay: '26s', animationDuration: '9s' }}></div>
       </div>
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto py-8" ref={sectionRef}>
-        {/* Compact Section Header */}
-        <div className="text-center mb-8">
+        {/* Section Header - matching hero style */}
+        <div className="text-center mb-12">
           <div 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/60 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-4 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
             style={{ animationDelay: "0.1s" }}
           >
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-3"></span>
             <span>Proven Capabilities</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-gray-900 mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Built from Proven Components
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">
+              Built from Proven Components
+            </span>
           </h2>
           
-          <p className="text-lg lg:text-xl text-gray-700 leading-relaxed opacity-0 animate-fade-in max-w-4xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
             Every platform we build combines these core technologies, tailored to your specific enterprise needs.
           </p>
         </div>
 
-        {/* Enhanced Component Grid */}
+        {/* Component Grid - matching hero visual style */}
         <div className="relative">
-          {/* Desktop Layout - 3 columns, more compact */}
+          {/* Desktop Layout - 3 columns */}
           <div className="hidden lg:grid grid-cols-3 gap-6 max-w-6xl mx-auto">
             {components.map((component, index) => {
               return (
@@ -123,28 +129,20 @@ const ModularTechSection = () => {
                   key={component.title}
                   className={`component-card group cursor-pointer transition-all duration-700 ${
                     visibleCards.includes(index) 
-                      ? 'opacity-100 translate-x-0' 
-                      : 'opacity-0 translate-x-8'
+                      ? 'opacity-100 translate-y-0' 
+                      : 'opacity-0 translate-y-8'
                   }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  style={{ animationDelay: `${0.7 + index * 0.1}s` }}
                 >
-                  {/* Enhanced 3D Card with Gradient Shadow */}
-                  <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden group-hover:shadow-purple-200/30">
-                    {/* Enhanced Background Glow on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  {/* Card with glassmorphism - matching hero visual */}
+                  <div className="relative backdrop-blur-xl bg-white/85 border border-white/40 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                     
-                    {/* Soft Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 via-transparent to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                    
-                    {/* Card Content */}
                     <div className="relative z-10">
-                      {/* Enhanced 3D Icon with Gradient Background */}
-                      <div className={`w-16 h-16 bg-gradient-to-br ${component.iconBg} rounded-2xl flex items-center justify-center shadow-2xl mb-5 group-hover:scale-110 group-hover:shadow-purple-300/40 transition-all duration-300 relative overflow-hidden`}>
-                        {/* Inner glow effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-2xl"></div>
-                        {/* Soft highlight on top */}
-                        <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-2xl"></div>
-                        <component.icon className="w-7 h-7 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
+                      {/* Icon - matching hero visual style */}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${component.iconBg} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                        <component.icon className="w-6 h-6 text-white" />
                       </div>
                       
                       {/* Content */}
@@ -152,21 +150,21 @@ const ModularTechSection = () => {
                         {component.title}
                       </h3>
                       
-                      <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                      <p className="text-gray-600 leading-relaxed transition-colors text-sm group-hover:text-gray-700">
                         {component.description}
                       </p>
                     </div>
 
-                    {/* Enhanced Corner Accent */}
-                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/40 via-purple-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    {/* Corner accent */}
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   </div>
                 </div>
               );
             })}
           </div>
 
-          {/* Tablet Layout - 2 Columns */}
-          <div className="hidden md:grid lg:hidden grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Mobile/Tablet Responsive Layout */}
+          <div className="lg:hidden space-y-6">
             {components.map((component, index) => (
               <div
                 key={component.title}
@@ -175,58 +173,21 @@ const ModularTechSection = () => {
                     ? 'opacity-100 translate-y-0' 
                     : 'opacity-0 translate-y-8'
                 }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${0.7 + index * 0.1}s` }}
               >
-                <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-3 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="relative backdrop-blur-xl bg-white/85 border border-white/40 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   
                   <div className="relative z-10">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${component.iconBg} rounded-xl flex items-center justify-center shadow-xl mb-4 group-hover:scale-110 transition-all duration-300 relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-xl"></div>
-                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-xl"></div>
-                      <component.icon className="w-6 h-6 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
+                    <div className={`w-12 h-12 bg-gradient-to-br ${component.iconBg} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                      <component.icon className="w-6 h-6 text-white" />
                     </div>
                     
-                    <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors">
+                    <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">
                       {component.title}
                     </h3>
                     
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                      {component.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mobile Layout - Single Column */}
-          <div className="md:hidden grid grid-cols-1 gap-4 max-w-md mx-auto">
-            {components.map((component, index) => (
-              <div
-                key={component.title}
-                className={`component-card group cursor-pointer transition-all duration-700 ${
-                  visibleCards.includes(index) 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-8'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    <div className={`w-12 h-12 bg-gradient-to-br ${component.iconBg} rounded-lg flex items-center justify-center shadow-xl mb-3 mx-auto group-hover:scale-110 transition-all duration-300 relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-lg"></div>
-                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-lg"></div>
-                      <component.icon className="w-5 h-5 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
-                    </div>
-                    
-                    <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors">
-                      {component.title}
-                    </h3>
-                    
-                    <p className="text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                    <p className="text-gray-600 leading-relaxed transition-colors text-sm group-hover:text-gray-700">
                       {component.description}
                     </p>
                   </div>
@@ -236,16 +197,18 @@ const ModularTechSection = () => {
           </div>
         </div>
 
-        {/* Enhanced CTA */}
-        <div className="text-center mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
+        {/* CTA - matching hero style */}
+        <div className="text-center mt-12 opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105 hover:shadow-purple-300/30"
+            className="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px] hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800"
           >
-            Schedule Discovery Session
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <span className="relative z-10">Schedule Discovery Session</span>
+            <svg className="w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+            <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           </a>
         </div>
       </div>
