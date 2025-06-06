@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { Server, Palette, Lock, TrendingUp, Radio } from "lucide-react";
 
@@ -56,7 +57,7 @@ const WhyAicraysSection = () => {
   }, []);
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden" id="why-aicrays">
+    <section className="py-8 lg:py-12 relative overflow-hidden min-h-screen flex flex-col justify-center" id="why-aicrays">
       {/* Enhanced Dynamic Background with Moving Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Base gradient layers with light purple tones */}
@@ -96,16 +97,16 @@ const WhyAicraysSection = () => {
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto" ref={sectionRef}>
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-10">
           <div 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
+            className="inline-flex items-center justify-center px-3 py-1.5 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-4 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
             style={{ animationDelay: "0.1s" }}
           >
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-3"></span>
+            <span className="inline-flex items-center justify-center w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-2"></span>
             <span>Why Choose Us</span>
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-display font-bold leading-tight tracking-tight mb-6 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold leading-tight tracking-tight mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">
               Not Templates. Not Theoretical.
             </span>
@@ -115,13 +116,13 @@ const WhyAicraysSection = () => {
             </span>
           </h2>
           
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-4xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
             Every platform we build combines these core technologies, tailored to your specific enterprise needs.
           </p>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8">
           {features.map((feature, index) => {
             return (
               <div
@@ -133,25 +134,25 @@ const WhyAicraysSection = () => {
                 }`}
                 style={{ animationDelay: `${0.7 + index * 0.1}s` }}
               >
-                <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-8 lg:p-10 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden h-full flex flex-col min-h-[280px]">
+                <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-6 lg:p-8 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden h-full flex flex-col min-h-[220px]">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   
                   <div className="relative z-10 flex flex-col h-full">
                     {/* Icon */}
-                    <div className="mb-6 lg:mb-8">
-                      <div className={`w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                        <feature.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" strokeWidth={2} />
+                    <div className="mb-4 lg:mb-5">
+                      <div className={`w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                        <feature.icon className="w-6 h-6 lg:w-8 lg:h-8 text-white" strokeWidth={2} />
                       </div>
                     </div>
                     
                     {/* Content */}
                     <div className="flex-1">
-                      <h3 className="text-xl lg:text-2xl xl:text-3xl font-bold mb-4 lg:mb-6 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
+                      <h3 className="text-lg lg:text-xl xl:text-2xl font-bold mb-3 lg:mb-4 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
                         {feature.title}
                       </h3>
                       
-                      <p className="text-gray-600 leading-relaxed text-base lg:text-lg xl:text-xl group-hover:text-gray-700 transition-colors font-light">
+                      <p className="text-gray-600 leading-relaxed text-sm lg:text-base xl:text-lg group-hover:text-gray-700 transition-colors font-light">
                         {feature.description}
                       </p>
                     </div>
@@ -167,13 +168,13 @@ const WhyAicraysSection = () => {
 
         {/* CTA */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.4s" }}>
-          <p className="text-gray-600 mb-8 text-lg lg:text-xl font-light">Still stuck with generic software?</p>
+          <p className="text-gray-600 mb-4 text-base lg:text-lg font-light">Still stuck with generic software?</p>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-3 px-8 py-4 lg:px-10 lg:py-5 text-lg lg:text-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[280px] hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group"
+            className="inline-flex items-center gap-2 px-4 py-2.5 lg:px-6 lg:py-3 text-sm lg:text-base font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group"
           >
             <span className="relative z-10">Schedule Discovery Session</span>
-            <svg className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 lg:w-5 lg:h-5 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
