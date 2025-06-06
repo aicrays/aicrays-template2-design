@@ -211,13 +211,13 @@ const IndustriesSection = () => {
           </p>
         </div>
 
-        {/* Staggered Grid Layout */}
+        {/* Fixed Grid Layout to prevent cut-off */}
         <div className="relative">
-          {/* Desktop Staggered Layout */}
+          {/* Desktop Layout - Adjusted positioning to prevent cut-off */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
               {/* Manufacturing - Top Left */}
-              <div className="col-start-1 row-start-1 transform rotate-[-1deg]">
+              <div className="transform rotate-[-1deg]">
                 <IndustryCard 
                   industry={industries[0]} 
                   index={0} 
@@ -228,7 +228,7 @@ const IndustriesSection = () => {
               </div>
               
               {/* Government - Top Right */}
-              <div className="col-start-3 row-start-1 transform rotate-[1deg] translate-y-6">
+              <div className="transform rotate-[1deg]">
                 <IndustryCard 
                   industry={industries[1]} 
                   index={1} 
@@ -238,13 +238,8 @@ const IndustriesSection = () => {
                 />
               </div>
               
-              {/* CTA Block - Center */}
-              <div className="col-start-2 row-start-1 row-span-2 flex items-center justify-center transform translate-y-8">
-                <CTABlock />
-              </div>
-              
               {/* Healthcare - Bottom Left */}
-              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-16">
+              <div className="transform rotate-[1deg]">
                 <IndustryCard 
                   industry={industries[2]} 
                   index={2} 
@@ -255,7 +250,7 @@ const IndustriesSection = () => {
               </div>
               
               {/* Logistics - Bottom Right */}
-              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-24">
+              <div className="transform rotate-[-1deg]">
                 <IndustryCard 
                   industry={industries[3]} 
                   index={3} 
@@ -264,6 +259,11 @@ const IndustriesSection = () => {
                   setHoveredCard={setHoveredCard}
                 />
               </div>
+            </div>
+
+            {/* CTA Block - Centered below the grid */}
+            <div className="flex justify-center mt-12">
+              <CTABlock />
             </div>
           </div>
 
