@@ -59,28 +59,33 @@ const OurPartners = () => {
 
   return (
     <section className="relative bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40 py-16 md:py-24">
-      {/* Section-specific splotches for partner cards area - enhanced visibility */}
+      {/* Section-specific splotches for partner cards area - dramatically enhanced visibility */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Partners section large splotches - more prominent */}
-        <div className="absolute top-[10%] left-[18%] w-[350px] h-[350px] bg-gradient-to-br from-purple-300/45 to-violet-400/40 rounded-full blur-3xl animate-float opacity-65" style={{ animationDelay: '3s', animationDuration: '25s' }}></div>
-        <div className="absolute top-[20%] right-[12%] w-[320px] h-[320px] bg-gradient-to-bl from-indigo-300/50 to-purple-300/45 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '9s', animationDuration: '29s' }}></div>
-        <div className="absolute top-[40%] left-[8%] w-[280px] h-[280px] bg-gradient-to-tr from-violet-200/55 to-blue-300/50 rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '15s', animationDuration: '27s' }}></div>
-        <div className="absolute top-[60%] right-[20%] w-[340px] h-[340px] bg-gradient-to-tl from-purple-400/45 to-indigo-200/50 rounded-full blur-3xl animate-float opacity-75" style={{ animationDelay: '21s', animationDuration: '31s' }}></div>
-        <div className="absolute bottom-[15%] left-[25%] w-[260px] h-[260px] bg-gradient-to-br from-blue-200/50 to-violet-300/45 rounded-full blur-2xl animate-float opacity-55" style={{ animationDelay: '6s', animationDuration: '23s' }}></div>
+        {/* Partners section large splotches - significantly more prominent */}
+        <div className="absolute top-[10%] left-[18%] w-[450px] h-[450px] bg-gradient-to-br from-purple-300/65 to-violet-400/60 rounded-full blur-3xl animate-float opacity-80" style={{ animationDelay: '3s', animationDuration: '25s' }}></div>
+        <div className="absolute top-[20%] right-[12%] w-[420px] h-[420px] bg-gradient-to-bl from-indigo-300/70 to-purple-300/65 rounded-full blur-2xl animate-float opacity-85" style={{ animationDelay: '9s', animationDuration: '29s' }}></div>
+        <div className="absolute top-[40%] left-[8%] w-[380px] h-[380px] bg-gradient-to-tr from-violet-200/75 to-blue-300/70 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '15s', animationDuration: '27s' }}></div>
+        <div className="absolute top-[60%] right-[20%] w-[440px] h-[440px] bg-gradient-to-tl from-purple-400/65 to-indigo-200/70 rounded-full blur-3xl animate-float opacity-90" style={{ animationDelay: '21s', animationDuration: '31s' }}></div>
+        <div className="absolute bottom-[15%] left-[25%] w-[360px] h-[360px] bg-gradient-to-br from-blue-200/70 to-violet-300/65 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '6s', animationDuration: '23s' }}></div>
         
-        {/* Medium accent splotches - increased size and opacity */}
-        <div className="absolute top-[30%] left-[40%] w-[220px] h-[220px] bg-gradient-to-tl from-purple-200/45 to-indigo-300/50 rounded-full blur-xl animate-float opacity-65" style={{ animationDelay: '12s', animationDuration: '33s' }}></div>
-        <div className="absolute top-[70%] left-[15%] w-[200px] h-[200px] bg-gradient-to-bl from-violet-300/50 to-blue-200/45 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '18s', animationDuration: '28s' }}></div>
-        <div className="absolute top-[80%] right-[35%] w-[240px] h-[240px] bg-gradient-to-tr from-indigo-200/55 to-purple-300/45 rounded-full blur-xl animate-float opacity-70" style={{ animationDelay: '24s', animationDuration: '26s' }}></div>
+        {/* Medium accent splotches - dramatically increased size and opacity */}
+        <div className="absolute top-[30%] left-[40%] w-[320px] h-[320px] bg-gradient-to-tl from-purple-200/65 to-indigo-300/70 rounded-full blur-xl animate-float opacity-80" style={{ animationDelay: '12s', animationDuration: '33s' }}></div>
+        <div className="absolute top-[70%] left-[15%] w-[300px] h-[300px] bg-gradient-to-bl from-violet-300/70 to-blue-200/65 rounded-full blur-xl animate-float opacity-75" style={{ animationDelay: '18s', animationDuration: '28s' }}></div>
+        <div className="absolute top-[80%] right-[35%] w-[340px] h-[340px] bg-gradient-to-tr from-indigo-200/75 to-purple-300/65 rounded-full blur-xl animate-float opacity-85" style={{ animationDelay: '24s', animationDuration: '26s' }}></div>
         
-        {/* Small texture splotches - more visible */}
-        <div className="absolute top-[50%] left-[70%] w-[140px] h-[140px] bg-gradient-to-br from-purple-300/40 to-violet-200/50 rounded-full blur-lg animate-float opacity-50" style={{ animationDelay: '7s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[85%] left-[60%] w-[160px] h-[160px] bg-gradient-to-tl from-blue-300/45 to-indigo-200/50 rounded-full blur-lg animate-float opacity-55" style={{ animationDelay: '13s', animationDuration: '24s' }}></div>
+        {/* Small texture splotches - significantly more visible */}
+        <div className="absolute top-[50%] left-[70%] w-[240px] h-[240px] bg-gradient-to-br from-purple-300/60 to-violet-200/70 rounded-full blur-lg animate-float opacity-65" style={{ animationDelay: '7s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[85%] left-[60%] w-[260px] h-[260px] bg-gradient-to-tl from-blue-300/65 to-indigo-200/70 rounded-full blur-lg animate-float opacity-70" style={{ animationDelay: '13s', animationDuration: '24s' }}></div>
 
-        {/* Additional coverage splotches */}
-        <div className="absolute top-[25%] right-[50%] w-[300px] h-[300px] bg-gradient-to-br from-violet-400/40 to-purple-200/45 rounded-full blur-2xl animate-float opacity-55" style={{ animationDelay: '10s', animationDuration: '30s' }}></div>
-        <div className="absolute top-[55%] left-[50%] w-[280px] h-[280px] bg-gradient-to-tl from-indigo-400/45 to-blue-300/40 rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '16s', animationDuration: '28s' }}></div>
-        <div className="absolute bottom-[25%] right-[50%] w-[320px] h-[320px] bg-gradient-to-bl from-purple-300/50 to-violet-400/45 rounded-full blur-2xl animate-float opacity-65" style={{ animationDelay: '22s', animationDuration: '32s' }}></div>
+        {/* Additional coverage splotches - enhanced visibility */}
+        <div className="absolute top-[25%] right-[50%] w-[400px] h-[400px] bg-gradient-to-br from-violet-400/60 to-purple-200/65 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '10s', animationDuration: '30s' }}></div>
+        <div className="absolute top-[55%] left-[50%] w-[380px] h-[380px] bg-gradient-to-tl from-indigo-400/65 to-blue-300/60 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '16s', animationDuration: '28s' }}></div>
+        <div className="absolute bottom-[25%] right-[50%] w-[420px] h-[420px] bg-gradient-to-bl from-purple-300/70 to-violet-400/65 rounded-full blur-2xl animate-float opacity-80" style={{ animationDelay: '22s', animationDuration: '32s' }}></div>
+
+        {/* Extra scattered splotches for maximum coverage */}
+        <div className="absolute top-[35%] left-[75%] w-[220px] h-[220px] bg-gradient-to-tr from-purple-500/65 to-violet-300/70 rounded-full blur-lg animate-float opacity-65" style={{ animationDelay: '5s', animationDuration: '25s' }}></div>
+        <div className="absolute top-[65%] right-[5%] w-[200px] h-[200px] bg-gradient-to-bl from-indigo-500/70 to-blue-400/65 rounded-full blur-lg animate-float opacity-70" style={{ animationDelay: '11s', animationDuration: '27s' }}></div>
+        <div className="absolute bottom-[35%] left-[5%] w-[240px] h-[240px] bg-gradient-to-br from-violet-400/75 to-purple-500/70 rounded-full blur-lg animate-float opacity-75" style={{ animationDelay: '17s', animationDuration: '29s' }}></div>
       </div>
 
       {/* Section-specific orbs distributed throughout partner cards area */}

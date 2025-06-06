@@ -12,23 +12,28 @@ const PartnersHero = () => {
 
   return (
     <section className="overflow-hidden relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40" id="partners-hero">
-      {/* Section-specific splotches for hero content area - more visible */}
+      {/* Section-specific splotches for hero content area - dramatically more visible */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Hero-specific large splotches - enhanced visibility */}
-        <div className="absolute top-[15%] left-[20%] w-[320px] h-[320px] bg-gradient-to-br from-purple-300/45 to-violet-400/40 rounded-full blur-2xl animate-float opacity-65" style={{ animationDelay: '2s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[25%] right-[15%] w-[280px] h-[280px] bg-gradient-to-bl from-indigo-300/50 to-purple-300/45 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '8s', animationDuration: '26s' }}></div>
-        <div className="absolute bottom-[20%] left-[25%] w-[300px] h-[300px] bg-gradient-to-tr from-violet-200/55 to-blue-300/50 rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '14s', animationDuration: '24s' }}></div>
-        <div className="absolute bottom-[30%] right-[20%] w-[260px] h-[260px] bg-gradient-to-tl from-purple-400/45 to-indigo-200/50 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '20s', animationDuration: '28s' }}></div>
+        {/* Hero-specific large splotches - significantly enhanced visibility */}
+        <div className="absolute top-[15%] left-[20%] w-[420px] h-[420px] bg-gradient-to-br from-purple-300/65 to-violet-400/60 rounded-full blur-2xl animate-float opacity-80" style={{ animationDelay: '2s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[25%] right-[15%] w-[380px] h-[380px] bg-gradient-to-bl from-indigo-300/70 to-purple-300/65 rounded-full blur-2xl animate-float opacity-85" style={{ animationDelay: '8s', animationDuration: '26s' }}></div>
+        <div className="absolute bottom-[20%] left-[25%] w-[400px] h-[400px] bg-gradient-to-tr from-violet-200/75 to-blue-300/70 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '14s', animationDuration: '24s' }}></div>
+        <div className="absolute bottom-[30%] right-[20%] w-[360px] h-[360px] bg-gradient-to-tl from-purple-400/65 to-indigo-200/70 rounded-full blur-2xl animate-float opacity-90" style={{ animationDelay: '20s', animationDuration: '28s' }}></div>
         
-        {/* Medium accent splotches - increased size and opacity */}
-        <div className="absolute top-[40%] left-[10%] w-[200px] h-[200px] bg-gradient-to-br from-blue-200/50 to-violet-300/45 rounded-full blur-xl animate-float opacity-55" style={{ animationDelay: '5s', animationDuration: '20s' }}></div>
-        <div className="absolute top-[60%] right-[25%] w-[220px] h-[220px] bg-gradient-to-tl from-purple-200/45 to-indigo-300/50 rounded-full blur-xl animate-float opacity-65" style={{ animationDelay: '11s', animationDuration: '30s' }}></div>
-        <div className="absolute top-[70%] left-[15%] w-[180px] h-[180px] bg-gradient-to-bl from-violet-300/50 to-blue-200/45 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '17s', animationDuration: '25s' }}></div>
+        {/* Medium accent splotches - dramatically increased size and opacity */}
+        <div className="absolute top-[40%] left-[10%] w-[300px] h-[300px] bg-gradient-to-br from-blue-200/70 to-violet-300/65 rounded-full blur-xl animate-float opacity-70" style={{ animationDelay: '5s', animationDuration: '20s' }}></div>
+        <div className="absolute top-[60%] right-[25%] w-[320px] h-[320px] bg-gradient-to-tl from-purple-200/65 to-indigo-300/70 rounded-full blur-xl animate-float opacity-80" style={{ animationDelay: '11s', animationDuration: '30s' }}></div>
+        <div className="absolute top-[70%] left-[15%] w-[280px] h-[280px] bg-gradient-to-bl from-violet-300/70 to-blue-200/65 rounded-full blur-xl animate-float opacity-75" style={{ animationDelay: '17s', animationDuration: '25s' }}></div>
 
         {/* Additional mid-size splotches for better coverage */}
-        <div className="absolute top-[35%] right-[40%] w-[240px] h-[240px] bg-gradient-to-br from-purple-400/40 to-violet-200/45 rounded-full blur-xl animate-float opacity-50" style={{ animationDelay: '9s', animationDuration: '27s' }}></div>
-        <div className="absolute top-[55%] left-[45%] w-[200px] h-[200px] bg-gradient-to-tl from-indigo-300/45 to-purple-300/40 rounded-full blur-xl animate-float opacity-55" style={{ animationDelay: '15s', animationDuration: '29s' }}></div>
-        <div className="absolute bottom-[15%] right-[45%] w-[220px] h-[220px] bg-gradient-to-bl from-blue-300/50 to-violet-400/45 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '21s', animationDuration: '31s' }}></div>
+        <div className="absolute top-[35%] right-[40%] w-[340px] h-[340px] bg-gradient-to-br from-purple-400/60 to-violet-200/65 rounded-full blur-xl animate-float opacity-65" style={{ animationDelay: '9s', animationDuration: '27s' }}></div>
+        <div className="absolute top-[55%] left-[45%] w-[300px] h-[300px] bg-gradient-to-tl from-indigo-300/65 to-purple-300/60 rounded-full blur-xl animate-float opacity-70" style={{ animationDelay: '15s', animationDuration: '29s' }}></div>
+        <div className="absolute bottom-[15%] right-[45%] w-[320px] h-[320px] bg-gradient-to-bl from-blue-300/70 to-violet-400/65 rounded-full blur-xl animate-float opacity-75" style={{ animationDelay: '21s', animationDuration: '31s' }}></div>
+
+        {/* Extra coverage for maximum dynamics */}
+        <div className="absolute top-[10%] left-[60%] w-[260px] h-[260px] bg-gradient-to-tr from-violet-500/60 to-purple-400/65 rounded-full blur-lg animate-float opacity-65" style={{ animationDelay: '4s', animationDuration: '23s' }}></div>
+        <div className="absolute top-[80%] right-[10%] w-[280px] h-[280px] bg-gradient-to-bl from-indigo-400/65 to-blue-300/60 rounded-full blur-lg animate-float opacity-70" style={{ animationDelay: '12s', animationDuration: '26s' }}></div>
+        <div className="absolute bottom-[10%] left-[50%] w-[240px] h-[240px] bg-gradient-to-br from-purple-500/65 to-violet-300/70 rounded-full blur-lg animate-float opacity-75" style={{ animationDelay: '18s', animationDuration: '24s' }}></div>
       </div>
 
       {/* Section-specific orbs distributed throughout the hero content area */}
