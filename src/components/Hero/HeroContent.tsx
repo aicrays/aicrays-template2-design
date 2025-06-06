@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-4xl text-center space-y-8 px-4 pt-20 pb-12">
+    <div className="w-full lg:w-1/2 text-left space-y-6 lg:space-y-8">
       {/* Main Header with Standard SaaS Spacing */}
       <div className="space-y-4">
         <h1 className="font-bold leading-tight tracking-tight text-4xl md:text-5xl lg:text-6xl">
@@ -22,14 +22,14 @@ const HeroContent = () => {
               Through{" "}
               <span className="text-purple-700 relative inline-block">
                 Innovation
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
               </span>
             </span>
             <span className="block mt-2">
               and{" "}
               <span className="text-purple-700 relative inline-block">
                 Personalization
-                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-full h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{ animationDelay: '1s' }}></div>
               </span>
             </span>
           </div>
@@ -37,10 +37,10 @@ const HeroContent = () => {
       </div>
       
       {/* Subtitle with Standard SaaS Spacing */}
-      <div className="pt-4">
+      <div className="pt-2">
         <p 
           style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} 
-          className="text-lg md:text-xl leading-relaxed text-gray-700 opacity-0 animate-fade-in max-w-3xl mx-auto font-normal"
+          className="text-lg md:text-xl leading-relaxed text-gray-700 opacity-0 animate-fade-in max-w-2xl font-normal"
         >
           We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
         </p>
@@ -48,7 +48,7 @@ const HeroContent = () => {
       
       {/* CTAs with Standard SaaS Spacing */}
       <div 
-        className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in justify-center items-center pt-8" 
+        className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in pt-6" 
         style={{ animationDelay: "0.8s", animationDuration: "0.8s" }}
       >
         <a 
@@ -72,12 +72,12 @@ const HeroContent = () => {
       
       {/* Scroll Indicator with Standard SaaS Spacing */}
       <div 
-        className="opacity-0 animate-fade-in pt-12" 
+        className="opacity-0 animate-fade-in pt-8" 
         style={{ animationDelay: "1.0s", animationDuration: "0.8s" }}
       >
         <a 
           href="#solutions" 
-          className="inline-flex flex-col items-center text-purple-600 hover:text-purple-700 transition-colors group"
+          className="inline-flex flex-col items-start text-purple-600 hover:text-purple-700 transition-colors group"
         >
           <span className="text-sm font-medium mb-2">Explore Solutions</span>
           <div className="w-6 h-6 rounded-full border-2 border-purple-500 flex items-center justify-center group-hover:border-purple-600 transition-colors relative animate-pulse">
