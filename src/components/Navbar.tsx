@@ -70,6 +70,7 @@ const Navbar = () => {
           >
             Home
           </a>
+          <a href="/products" className="nav-link">Products</a>
           <a href="#solutions" className="nav-link">What We Build</a>
           <a href="#process" className="nav-link">How We Build</a>
           <a href="#about" className="nav-link">About</a>
@@ -113,6 +114,16 @@ const Navbar = () => {
             }}
           >
             Home
+          </a>
+          <a 
+            href="/products" 
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              document.body.style.overflow = '';
+            }}
+          >
+            Products
           </a>
           <a 
             href="#solutions" 
