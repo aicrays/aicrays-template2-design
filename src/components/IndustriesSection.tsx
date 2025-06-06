@@ -338,7 +338,7 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
 // CTA Block Component with consistent sizing
 const CTABlock = () => (
   <div className="relative group max-w-sm w-full">
-    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden h-[220px] flex flex-col">
+    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden h-[220px] flex flex-col">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/40 to-violet-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
@@ -356,7 +356,26 @@ const CTABlock = () => (
           Our platform adapts to unique sector requirements. Let's discuss your specific needs.
         </p>
         
-        <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-sm border border-purple-200 rounded-full text-purple-600 font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-300 group-hover:scale-105 shadow-sm hover:shadow-md text-sm mt-auto">
+        {/* Centralized badges section with smaller sizing */}
+        <div className="flex flex-wrap justify-center gap-1.5 mb-4 px-2">
+          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+            Education
+          </span>
+          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+            Legal
+          </span>
+          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+            Real Estate
+          </span>
+          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+            Agriculture
+          </span>
+          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+            Media
+          </span>
+        </div>
+        
+        <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-sm border border-purple-200 rounded-full text-purple-600 font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-300 group-hover:scale-105 shadow-sm hover:shadow-md text-sm">
           Let's Talk 
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </button>
