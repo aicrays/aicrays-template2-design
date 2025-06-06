@@ -4,12 +4,12 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 
 const HeroContent = () => {
   return (
-    <div className="w-full max-w-5xl text-center space-y-8 px-4 -mt-12">
-      {/* Enhanced Headline with Better Typography and Improved Stacking */}
-      <div className="space-y-1">
-        <h1 className="font-bold leading-[0.95] tracking-tight text-5xl lg:text-6xl xl:text-7xl">
+    <div className="w-full max-w-5xl text-center space-y-8 px-4 mt-16">
+      {/* Enhanced Headline with Fixed Spacing and Improved Stacking */}
+      <div className="space-y-2">
+        <h1 className="font-bold leading-[1.25] tracking-tight text-5xl lg:text-6xl xl:text-7xl">
           <div 
-            className="opacity-0 animate-fade-in mb-3" 
+            className="opacity-0 animate-fade-in mb-4" 
             style={{ animationDelay: "0.2s", animationDuration: "0.8s" }}
           >
             <span className="block text-gray-900">Empowering Enterprises</span>
@@ -34,19 +34,19 @@ const HeroContent = () => {
         </h1>
       </div>
       
-      {/* Enhanced Subtitle with Better Spacing and Typography */}
+      {/* Resized Subtitle with Better Spacing and Typography */}
       <div className="pt-8">
         <p 
           style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} 
-          className="text-2xl lg:text-3xl leading-[1.4] text-gray-700 opacity-0 animate-fade-in max-w-4xl mx-auto font-normal"
+          className="text-xl lg:text-2xl leading-[1.5] text-gray-600 opacity-0 animate-fade-in max-w-4xl mx-auto font-normal"
         >
           We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
         </p>
       </div>
       
-      {/* Enhanced CTAs with Improved Hover Effects and Better Positioning */}
+      {/* Enhanced CTAs with Improved Positioning */}
       <div 
-        className="flex flex-col sm:flex-row gap-8 opacity-0 animate-fade-in justify-center items-center pt-10" 
+        className="flex flex-col sm:flex-row gap-6 opacity-0 animate-fade-in justify-center items-center pt-12" 
         style={{ animationDelay: "0.8s", animationDuration: "0.8s" }}
       >
         <a 
@@ -72,7 +72,7 @@ const HeroContent = () => {
       
       {/* Enhanced Scroll Indicator with Smaller Size and Better Animation */}
       <div 
-        className="opacity-0 animate-fade-in pt-8" 
+        className="opacity-0 animate-fade-in pt-10" 
         style={{ animationDelay: "1.0s", animationDuration: "0.8s" }}
       >
         <a 
@@ -80,8 +80,8 @@ const HeroContent = () => {
           className="inline-flex flex-col items-center text-purple-700 hover:text-purple-800 transition-colors group"
         >
           <span className="text-sm font-medium mb-2">Explore Solutions</span>
-          <div className="w-5 h-5 rounded-full border-2 border-purple-500 flex items-center justify-center group-hover:border-purple-700 transition-colors relative animate-pulse">
-            <ChevronDown className="w-3 h-3 animate-bounce group-hover:translate-y-1 transition-transform" />
+          <div className="w-4 h-4 rounded-full border-2 border-purple-500 flex items-center justify-center group-hover:border-purple-700 transition-colors relative animate-pulse">
+            <ChevronDown className="w-2.5 h-2.5 animate-bounce group-hover:translate-y-1 transition-transform" />
             <div className="absolute inset-0 border-2 border-purple-500 rounded-full animate-ping opacity-50"></div>
             <div className="absolute inset-0 rounded-full bg-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
