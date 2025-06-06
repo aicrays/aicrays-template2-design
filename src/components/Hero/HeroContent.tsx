@@ -20,16 +20,16 @@ const HeroContent = () => {
           >
             <span className="block">
               Through{" "}
-              <span className="text-purple-700 relative inline-block">
+              <span className="text-purple-700 relative inline-block pb-6">
                 Innovation
-                <div className="absolute -bottom-4 left-0 w-full h-1.5 bg-gradient-to-r from-blue-600 to-purple-700 animate-pulse-slow transform origin-left"></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[90%] h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
               </span>
             </span>
             <span className="block mt-2">
               and{" "}
-              <span className="text-purple-700 relative inline-block">
+              <span className="text-purple-700 relative inline-block pb-6">
                 Personalization
-                <div className="absolute -bottom-4 left-0 w-full h-1.5 bg-gradient-to-r from-purple-700 to-blue-600 animate-pulse-slow transform origin-left" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-[95%] h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{ animationDelay: '1s' }}></div>
               </span>
             </span>
           </div>
