@@ -59,44 +59,32 @@ const OurPartners = () => {
 
   return (
     <section className="relative bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40 py-16 md:py-24">
-      {/* Section-specific orbs distributed across center areas */}
+      {/* Section-specific orbs distributed throughout partner cards area */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Small scattered orbs in center regions */}
-        <div className="absolute top-[30%] right-[45%] w-4 h-4 bg-purple-400/22 rounded-full blur-sm animate-float opacity-60" style={{ animationDelay: '3s', animationDuration: '15s' }}></div>
-        <div className="absolute bottom-[40%] left-[35%] w-5 h-5 bg-violet-300/18 rounded-full blur-md animate-float opacity-55" style={{ animationDelay: '7s', animationDuration: '20s' }}></div>
-        <div className="absolute top-[55%] right-[25%] w-3 h-3 bg-purple-500/25 rounded-full blur-sm animate-float opacity-50" style={{ animationDelay: '1s', animationDuration: '18s' }}></div>
-        <div className="absolute bottom-[25%] right-[60%] w-5 h-5 bg-indigo-400/18 rounded-full blur-md animate-float opacity-45" style={{ animationDelay: '9s', animationDuration: '22s' }}></div>
-
-        {/* Medium tiny orbs in center viewport */}
-        <div className="absolute top-[15%] left-[50%] w-3 h-3 bg-purple-600/28 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '5s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[15%] right-[35%] w-4 h-4 bg-violet-400/32 rounded-full blur-sm animate-float opacity-70" style={{ animationDelay: '11s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[45%] left-[65%] w-2 h-2 bg-purple-300/38 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '4s', animationDuration: '19s' }}></div>
-        <div className="absolute top-[75%] right-[55%] w-3 h-3 bg-indigo-300/42 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '13s', animationDuration: '17s' }}></div>
-        <div className="absolute bottom-[70%] left-[45%] w-2 h-2 bg-violet-200/48 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '8s', animationDuration: '21s' }}></div>
-
-        {/* Small accent orbs distributed centrally */}
-        <div className="absolute top-[20%] right-[70%] w-4 h-4 bg-blue-400/35 rounded-full blur-sm animate-float opacity-75" style={{ animationDelay: '15s', animationDuration: '14s' }}></div>
-        <div className="absolute bottom-[60%] left-[25%] w-2 h-2 bg-purple-500/32 rounded-full blur-xs animate-float opacity-70" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
-        <div className="absolute top-[85%] right-[40%] w-3 h-3 bg-indigo-500/45 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '17s', animationDuration: '12s' }}></div>
-        <div className="absolute bottom-[85%] left-[60%] w-1 h-1 bg-violet-600/42 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '6s', animationDuration: '16s' }}></div>
-
-        {/* Tiny detail orbs in center areas */}
-        <div className="absolute top-[35%] left-[40%] w-1 h-1 bg-purple-700/52 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '10s', animationDuration: '11s' }}></div>
-        <div className="absolute bottom-[35%] right-[45%] w-2 h-2 bg-blue-600/38 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '19s', animationDuration: '13s' }}></div>
-        <div className="absolute top-[65%] left-[30%] w-1 h-1 bg-indigo-700/58 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '14s', animationDuration: '10s' }}></div>
-        <div className="absolute bottom-[45%] right-[80%] w-2 h-2 bg-violet-500/48 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '3s', animationDuration: '15s' }}></div>
-
-        {/* Micro orbs for subtle detail in center viewport */}
-        <div className="absolute top-[25%] left-[75%] w-1 h-1 bg-purple-800/60 rounded-full blur-xs animate-float opacity-90" style={{ animationDelay: '12s', animationDuration: '8s' }}></div>
-        <div className="absolute bottom-[55%] right-[25%] w-1 h-1 bg-blue-700/55 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '21s', animationDuration: '9s' }}></div>
-        <div className="absolute top-[50%] left-[20%] w-1 h-1 bg-indigo-800/65 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '16s', animationDuration: '7s' }}></div>
-        <div className="absolute bottom-[20%] right-[70%] w-2 h-2 bg-violet-700/45 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '18s', animationDuration: '12s' }}></div>
-
-        {/* Additional scattered micro orbs in center regions */}
-        <div className="absolute top-[80%] left-[55%] w-1 h-1 bg-purple-600/68 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '20s', animationDuration: '9s' }}></div>
-        <div className="absolute bottom-[80%] right-[50%] w-2 h-2 bg-blue-500/48 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '22s', animationDuration: '11s' }}></div>
-        <div className="absolute top-[90%] left-[40%] w-1 h-1 bg-indigo-700/75 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '24s', animationDuration: '8s' }}></div>
-        <div className="absolute bottom-[90%] right-[35%] w-2 h-2 bg-violet-600/58 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '26s', animationDuration: '10s' }}></div>
+        {/* Partners section orbs - spread across content area */}
+        <div className="absolute top-[15%] left-[12%] w-2 h-2 bg-purple-400/35 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '1s', animationDuration: '20s' }}></div>
+        <div className="absolute top-[20%] left-[35%] w-3 h-3 bg-violet-500/30 rounded-full blur-sm animate-float opacity-70" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[25%] left-[60%] w-2 h-2 bg-indigo-400/40 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '7s', animationDuration: '18s' }}></div>
+        <div className="absolute top-[30%] left-[85%] w-1 h-1 bg-purple-600/45 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '10s', animationDuration: '22s' }}></div>
+        
+        <div className="absolute top-[40%] left-[20%] w-3 h-3 bg-blue-500/30 rounded-full blur-sm animate-float opacity-75" style={{ animationDelay: '13s', animationDuration: '26s' }}></div>
+        <div className="absolute top-[45%] left-[45%] w-2 h-2 bg-violet-300/40 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '16s', animationDuration: '19s' }}></div>
+        <div className="absolute top-[50%] left-[70%] w-4 h-4 bg-purple-500/25 rounded-full blur-sm animate-float opacity-65" style={{ animationDelay: '19s', animationDuration: '25s' }}></div>
+        <div className="absolute top-[55%] left-[8%] w-2 h-2 bg-indigo-600/35 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '22s', animationDuration: '21s' }}></div>
+        
+        <div className="absolute top-[65%] left-[30%] w-2 h-2 bg-violet-600/40 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '25s', animationDuration: '23s' }}></div>
+        <div className="absolute top-[70%] left-[55%] w-3 h-3 bg-purple-400/35 rounded-full blur-sm animate-float opacity-70" style={{ animationDelay: '28s', animationDuration: '27s' }}></div>
+        <div className="absolute top-[75%] left-[80%] w-1 h-1 bg-blue-700/50 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '31s', animationDuration: '17s' }}></div>
+        <div className="absolute top-[80%] left-[15%] w-2 h-2 bg-indigo-500/40 rounded-full blur-xs animate-float opacity-75" style={{ animationDelay: '34s', animationDuration: '20s' }}></div>
+        
+        <div className="absolute top-[85%] left-[40%] w-2 h-2 bg-purple-700/30 rounded-full blur-xs animate-float opacity-70" style={{ animationDelay: '37s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[90%] left-[65%] w-3 h-3 bg-violet-500/35 rounded-full blur-sm animate-float opacity-75" style={{ animationDelay: '40s', animationDuration: '18s' }}></div>
+        
+        {/* Additional micro orbs scattered throughout partners area */}
+        <div className="absolute top-[12%] left-[50%] w-1 h-1 bg-purple-800/60 rounded-full blur-xs animate-float opacity-90" style={{ animationDelay: '43s', animationDuration: '15s' }}></div>
+        <div className="absolute top-[35%] left-[25%] w-1 h-1 bg-violet-700/55 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '46s', animationDuration: '16s' }}></div>
+        <div className="absolute top-[60%] left-[75%] w-2 h-2 bg-blue-600/45 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '49s', animationDuration: '18s' }}></div>
+        <div className="absolute top-[88%] left-[25%] w-1 h-1 bg-purple-600/65 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '52s', animationDuration: '14s' }}></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
