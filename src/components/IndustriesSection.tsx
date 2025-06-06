@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Factory, Shield, HeartPulse, Truck, ArrowRight, Search } from "lucide-react";
 
@@ -14,8 +13,7 @@ const IndustriesSection = () => {
       title: "Manufacturing",
       description: "Streamline production workflows and quality control processes with real-time monitoring",
       hoverInsight: "Reduced downtime by 40% through predictive maintenance systems",
-      iconBg: "from-purple-500 to-violet-600",
-      iconGlow: "shadow-purple-500/30",
+      iconBg: "icon-gradient-purple",
       position: "stagger-1"
     },
     {
@@ -23,8 +21,7 @@ const IndustriesSection = () => {
       title: "Government",
       description: "Secure access in critical infrastructure environments with multi-level clearance",
       hoverInsight: "Successfully deployed in 15+ federal agencies with zero security incidents",
-      iconBg: "from-indigo-500 to-purple-600",
-      iconGlow: "shadow-indigo-500/30",
+      iconBg: "icon-gradient-indigo",
       position: "stagger-2"
     },
     {
@@ -32,8 +29,7 @@ const IndustriesSection = () => {
       title: "Healthcare",
       description: "HIPAA-compliant systems for patient data and seamless care coordination",
       hoverInsight: "Improved patient outcomes by 25% through integrated data systems",
-      iconBg: "from-pink-500 to-purple-500",
-      iconGlow: "shadow-pink-500/30",
+      iconBg: "icon-gradient-pink",
       position: "stagger-3"
     },
     {
@@ -41,8 +37,7 @@ const IndustriesSection = () => {
       title: "Logistics",
       description: "Real-time tracking and supply chain optimization for global operations",
       hoverInsight: "Optimized delivery routes saving 30% in operational costs",
-      iconBg: "from-violet-500 to-purple-600",
-      iconGlow: "shadow-violet-500/30",
+      iconBg: "icon-gradient-violet",
       position: "stagger-4"
     }
   ];
@@ -270,7 +265,7 @@ const IndustriesSection = () => {
   );
 };
 
-// Industry Card Component
+// Industry Card Component with updated icon design
 const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCard }: any) => (
   <div 
     data-index={index}
@@ -288,9 +283,9 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
         <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/40 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
         
         <div className="relative z-10 flex-1 flex flex-col">
-          {/* Icon with circular background - matching reference image style */}
-          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300 border border-purple-100/50">
-            <div className={`w-12 h-12 bg-gradient-to-br ${industry.iconBg} rounded-full flex items-center justify-center ${industry.iconGlow}`}>
+          {/* Updated icon design using new classes */}
+          <div className="icon-container mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
+            <div className={`icon-inner ${industry.iconBg}`}>
               <industry.icon className="w-6 h-6 text-white" strokeWidth={2} />
             </div>
           </div>
@@ -323,7 +318,7 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
   </div>
 );
 
-// CTA Block Component
+// CTA Block Component with updated icon design
 const CTABlock = () => (
   <div className="relative group max-w-xs">
     <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/95 to-violet-100/80 border border-purple-200/70 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden min-h-[200px] flex flex-col">
@@ -331,9 +326,9 @@ const CTABlock = () => (
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-violet-200/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
       <div className="relative z-10 text-center flex-1 flex flex-col">
-        {/* Icon with circular background - matching reference image style */}
-        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500 border border-purple-100/50">
-          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center shadow-purple-500/30">
+        {/* Updated icon design using new classes */}
+        <div className="icon-container mx-auto mb-4 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
+          <div className="icon-inner icon-gradient-purple">
             <Search className="w-6 h-6 text-white" strokeWidth={2} />
           </div>
         </div>

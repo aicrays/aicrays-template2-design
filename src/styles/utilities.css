@@ -1,4 +1,3 @@
-
 /* Enhanced Glassmorphism Effects */
 .glass-morphism-card {
   @apply relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl shadow-xl transition-all duration-500;
@@ -89,4 +88,50 @@
 
 .gradient-text-subtle {
   @apply bg-gradient-to-r from-gray-800 to-pulse-600 bg-clip-text text-transparent;
+}
+
+/* Icon Design System - Matching Reference Image */
+.icon-container {
+  @apply w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 border border-purple-100/50;
+}
+
+.icon-container:hover {
+  @apply shadow-xl scale-110;
+}
+
+.icon-inner {
+  @apply w-12 h-12 rounded-full flex items-center justify-center;
+}
+
+.icon-gradient-purple {
+  @apply bg-gradient-to-br from-purple-500 to-purple-600 shadow-purple-500/30;
+}
+
+.icon-gradient-indigo {
+  @apply bg-gradient-to-br from-indigo-500 to-purple-600 shadow-indigo-500/30;
+}
+
+.icon-gradient-pink {
+  @apply bg-gradient-to-br from-pink-500 to-purple-500 shadow-pink-500/30;
+}
+
+.icon-gradient-violet {
+  @apply bg-gradient-to-br from-violet-500 to-purple-600 shadow-violet-500/30;
+}
+
+/* Small icon containers for smaller contexts */
+.icon-container-sm {
+  @apply w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-md transition-all duration-300 border border-purple-100/50;
+}
+
+.icon-inner-sm {
+  @apply w-8 h-8 rounded-full flex items-center justify-center;
+}
+
+.icon-container-lg {
+  @apply w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl transition-all duration-300 border border-purple-100/50;
+}
+
+.icon-inner-lg {
+  @apply w-16 h-16 rounded-full flex items-center justify-center;
 }
