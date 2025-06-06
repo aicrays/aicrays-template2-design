@@ -26,11 +26,34 @@ const ProductInquiry = () => {
 
   return (
     <section className="relative py-16 overflow-hidden">
-      {/* Background Elements */}
+      {/* Section-specific enhanced background splotches for inquiry section */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[15%] left-[5%] w-72 h-72 bg-purple-500/15 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '0s', animationDuration: '30s' }}></div>
-        <div className="absolute bottom-[20%] right-[5%] w-64 h-64 bg-blue-400/12 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '7s', animationDuration: '25s' }}></div>
-        <div className="absolute top-[50%] right-[70%] w-40 h-40 bg-violet-600/18 rounded-full blur-3xl animate-float-vertical opacity-45" style={{ animationDelay: '14s', animationDuration: '20s' }}></div>
+        {/* Large dramatic splotches */}
+        <div className="absolute top-[8%] left-[5%] w-[520px] h-[520px] bg-gradient-to-br from-purple-400/75 to-violet-500/70 rounded-full blur-3xl animate-float opacity-80" style={{ animationDelay: '0s', animationDuration: '30s' }}></div>
+        <div className="absolute top-[40%] right-[5%] w-[480px] h-[480px] bg-gradient-to-tl from-indigo-400/80 to-blue-400/75 rounded-full blur-3xl animate-float opacity-75" style={{ animationDelay: '8s', animationDuration: '28s' }}></div>
+        <div className="absolute bottom-[5%] left-[30%] w-[460px] h-[460px] bg-gradient-to-tr from-violet-300/85 to-purple-400/80 rounded-full blur-3xl animate-float opacity-85" style={{ animationDelay: '16s', animationDuration: '32s' }}></div>
+        
+        {/* Medium accent splotches */}
+        <div className="absolute top-[25%] left-[70%] w-[380px] h-[380px] bg-gradient-to-bl from-blue-300/75 to-indigo-300/80 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '4s', animationDuration: '25s' }}></div>
+        <div className="absolute top-[65%] left-[10%] w-[360px] h-[360px] bg-gradient-to-tr from-purple-300/80 to-violet-200/75 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '12s', animationDuration: '27s' }}></div>
+        <div className="absolute top-[50%] right-[70%] w-[340px] h-[340px] bg-gradient-to-bl from-indigo-200/75 to-blue-400/70 rounded-full blur-2xl animate-float opacity-65" style={{ animationDelay: '20s', animationDuration: '24s' }}></div>
+        
+        {/* Texture splotches for depth */}
+        <div className="absolute top-[15%] left-[45%] w-[280px] h-[280px] bg-gradient-to-br from-violet-400/65 to-purple-300/70 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[80%] right-[25%] w-[300px] h-[300px] bg-gradient-to-tl from-blue-400/70 to-indigo-200/65 rounded-full blur-xl animate-float opacity-70" style={{ animationDelay: '14s', animationDuration: '26s' }}></div>
+        <div className="absolute top-[35%] left-[20%] w-[260px] h-[260px] bg-gradient-to-bl from-purple-500/60 to-violet-300/65 rounded-full blur-xl animate-float opacity-65" style={{ animationDelay: '22s', animationDuration: '23s' }}></div>
+      </div>
+
+      {/* Section-specific orbs for inquiry section */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Contact/inquiry themed orbs */}
+        <div className="absolute top-[12%] left-[30%] w-2 h-2 bg-purple-600/55 rounded-full blur-xs animate-float opacity-90" style={{ animationDelay: '2s', animationDuration: '20s' }}></div>
+        <div className="absolute top-[22%] left-[80%] w-1 h-1 bg-violet-700/65 rounded-full blur-xs animate-float opacity-95" style={{ animationDelay: '7s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[38%] left-[15%] w-2 h-2 bg-indigo-600/50 rounded-full blur-xs animate-float opacity-85" style={{ animationDelay: '12s', animationDuration: '18s' }}></div>
+        <div className="absolute top-[48%] left-[85%] w-1 h-1 bg-blue-700/60 rounded-full blur-xs animate-float opacity-100" style={{ animationDelay: '17s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[58%] left-[45%] w-2 h-2 bg-purple-800/45 rounded-full blur-xs animate-float opacity-80" style={{ animationDelay: '22s', animationDuration: '26s' }}></div>
+        <div className="absolute top-[72%] left-[70%] w-1 h-1 bg-violet-600/70 rounded-full blur-xs animate-float opacity-100" style={{ animationDelay: '27s', animationDuration: '19s' }}></div>
+        <div className="absolute top-[85%] left-[25%] w-2 h-2 bg-indigo-500/55 rounded-full blur-xs animate-float opacity-90" style={{ animationDelay: '32s', animationDuration: '21s' }}></div>
       </div>
 
       <div className="section-container relative z-10">
