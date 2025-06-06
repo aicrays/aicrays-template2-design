@@ -163,7 +163,7 @@ const ProcessSection = () => {
               ></div>
             )}
 
-            {/* Process Cards */}
+            {/* Process Cards - Ensuring equal sizing */}
             <div className="grid grid-cols-4 gap-8">
               {processSteps.map((step, index) => {
                 const isVisible = visibleSteps.includes(index);
@@ -191,13 +191,13 @@ const ProcessSection = () => {
                       </div>
                     </div>
 
-                    {/* Process Card */}
-                    <div className={`bg-white/95 backdrop-blur-xl border border-purple-100/60 rounded-2xl p-6 shadow-xl transition-all duration-500 ${
+                    {/* Process Card - Fixed height to ensure equal sizing */}
+                    <div className={`bg-white/95 backdrop-blur-xl border border-purple-100/60 rounded-2xl p-6 shadow-xl transition-all duration-500 h-64 flex flex-col ${
                       hoveredStep === index 
                         ? 'shadow-2xl transform -translate-y-2 border-purple-200/80 bg-white' 
                         : 'hover:shadow-2xl hover:-translate-y-1'
                     }`}>
-                      <div className="text-center">
+                      <div className="text-center flex-1 flex flex-col">
                         <div className="flex items-center justify-center mb-4">
                           <span className="text-sm font-bold text-purple-700 bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 rounded-full border border-purple-200/60">
                             Step {index + 1}
@@ -206,7 +206,7 @@ const ProcessSection = () => {
                         <h3 className="text-xl font-bold text-gray-900 mb-3 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
                           {step.title}
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed mb-4 font-normal">
+                        <p className="text-sm text-gray-600 leading-relaxed mb-4 font-normal flex-1">
                           {step.description}
                         </p>
                         
@@ -247,8 +247,8 @@ const ProcessSection = () => {
                       </div>
                     </div>
 
-                    {/* Mobile Card */}
-                    <div className="bg-white/95 backdrop-blur-xl border border-purple-100/60 rounded-2xl p-6 shadow-xl">
+                    {/* Mobile Card - Fixed min-height for consistency */}
+                    <div className="bg-white/95 backdrop-blur-xl border border-purple-100/60 rounded-2xl p-6 shadow-xl min-h-[280px] flex flex-col">
                       <div className="flex items-center justify-center gap-3 mb-3">
                         <span className="text-sm font-bold text-purple-700 bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 rounded-full border border-purple-200/60">
                           Step {index + 1}
@@ -257,10 +257,10 @@ const ProcessSection = () => {
                       <h3 className="text-lg font-bold text-gray-900 mb-3 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed mb-4 font-normal">
+                      <p className="text-sm text-gray-600 leading-relaxed mb-4 font-normal flex-1">
                         {step.description}
                       </p>
-                      <div className="text-sm text-purple-700 font-semibold bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 rounded-lg border border-purple-200/60 inline-block">
+                      <div className="text-sm text-purple-700 font-semibold bg-gradient-to-r from-purple-50 to-purple-100 px-4 py-2 rounded-lg border border-purple-200/60 inline-block mt-auto">
                         ✨ {step.stat}
                       </div>
                     </div>
