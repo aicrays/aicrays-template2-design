@@ -18,34 +18,45 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-white via-purple-50/20 to-violet-50/30 relative overflow-hidden" id="contact">
-      {/* Enhanced Background with Floating Orbs - matching hero style */}
+    <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden" id="contact">
+      {/* Background matching hero style with slight variation in orb placement */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large floating orbs - matching hero opacity and colors */}
-        <div className="absolute top-[10%] right-[15%] w-40 h-40 bg-purple-400/40 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '0s', animationDuration: '18s' }}></div>
-        <div className="absolute bottom-[20%] left-[10%] w-48 h-48 bg-violet-300/35 rounded-full blur-3xl animate-float-vertical opacity-60" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[60%] right-[30%] w-32 h-32 bg-purple-500/45 rounded-full blur-3xl animate-float-vertical opacity-50" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[10%] right-[20%] w-36 h-36 bg-violet-200/40 rounded-full blur-3xl animate-float-vertical opacity-65" style={{ animationDelay: '12s', animationDuration: '28s' }}></div>
+        {/* Enhanced Background with Darker Tones - matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-100/50 to-purple-200/60"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-300/40 via-purple-200/30 to-transparent"></div>
         
-        {/* Medium floating orbs */}
-        <div className="absolute top-[35%] left-[15%] w-28 h-28 bg-indigo-400/40 rounded-full blur-2xl animate-float-vertical opacity-70" style={{ animationDelay: '8s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[45%] right-[12%] w-24 h-24 bg-violet-400/35 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[25%] right-[45%] w-20 h-20 bg-purple-300/42 rounded-full blur-2xl animate-float-vertical opacity-55" style={{ animationDelay: '10s', animationDuration: '14s' }}></div>
+        {/* Darker Edge Gradients for More Depth - matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/20 via-transparent to-violet-400/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-indigo-300/20 via-transparent to-purple-400/25"></div>
         
-        {/* Small floating orbs */}
-        <div className="absolute top-[70%] left-[25%] w-16 h-16 bg-violet-500/38 rounded-full blur-xl animate-float-vertical opacity-60" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
-        <div className="absolute top-[45%] right-[35%] w-18 h-18 bg-purple-400/40 rounded-full blur-xl animate-float-vertical opacity-65" style={{ animationDelay: '7s', animationDuration: '17s' }}></div>
+        {/* Soft Violet Fog Behind Text Area - matching hero */}
+        <div className="absolute top-[20%] left-[10%] right-[10%] bottom-[30%] bg-gradient-radial from-violet-400/15 via-purple-300/10 to-transparent blur-3xl"></div>
         
-        {/* Particle dots for depth */}
+        {/* Large floating orbs - matching hero opacity and colors with different positions */}
+        <div className="absolute top-[10%] right-[15%] w-40 h-40 bg-purple-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '0s', animationDuration: '18s' }}></div>
+        <div className="absolute bottom-[20%] left-[10%] w-48 h-48 bg-violet-600/35 rounded-full blur-3xl animate-float-vertical opacity-80" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
+        <div className="absolute top-[60%] right-[30%] w-32 h-32 bg-indigo-600/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
+        <div className="absolute bottom-[10%] right-[20%] w-36 h-36 bg-purple-700/40 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '12s', animationDuration: '28s' }}></div>
+        
+        {/* Medium floating orbs - matching hero */}
+        <div className="absolute top-[35%] left-[15%] w-28 h-28 bg-indigo-500/50 rounded-full blur-2xl animate-float-vertical opacity-80" style={{ animationDelay: '8s', animationDuration: '20s' }}></div>
+        <div className="absolute bottom-[45%] right-[12%] w-24 h-24 bg-purple-500/45 rounded-full blur-2xl animate-float-vertical opacity-85" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[25%] right-[45%] w-20 h-20 bg-violet-600/48 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '10s', animationDuration: '14s' }}></div>
+        
+        {/* Small floating orbs - matching hero */}
+        <div className="absolute top-[70%] left-[25%] w-16 h-16 bg-purple-500/48 rounded-full blur-xl animate-float-vertical opacity-70" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
+        <div className="absolute top-[45%] right-[35%] w-18 h-18 bg-blue-400/52 rounded-full blur-xl animate-float-vertical opacity-85" style={{ animationDelay: '7s', animationDuration: '17s' }}></div>
+        
+        {/* Particle dots for depth - matching hero */}
         <div className="absolute top-[30%] left-[20%] w-2 h-2 bg-purple-600/60 rounded-full animate-float-vertical" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
         <div className="absolute top-[75%] right-[20%] w-1.5 h-1.5 bg-violet-600/55 rounded-full animate-float-vertical" style={{ animationDelay: '5s', animationDuration: '10s' }}></div>
         <div className="absolute top-[40%] left-[75%] w-3 h-3 bg-purple-500/50 rounded-full animate-float-vertical" style={{ animationDelay: '8s', animationDuration: '12s' }}></div>
       </div>
       
       <div className="section-container relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        {/* Compact Section Header - matching hero font styling */}
-        <div className="text-center mb-8 lg:mb-10">
-          <h2 className="font-bold leading-tight tracking-tight text-3xl md:text-4xl lg:text-5xl mb-4">
+        {/* Section Header - matching hero font styling */}
+        <div className="text-center mb-6 lg:mb-8">
+          <h2 className="font-bold leading-tight tracking-tight text-3xl md:text-4xl lg:text-5xl mb-3">
             <span className="block text-gray-900">Let's Build</span>
             <span className="block">
               <span className="text-purple-700 relative inline-block">
@@ -64,27 +75,27 @@ const Newsletter = () => {
           </p>
         </div>
 
-        {/* Compact Glassmorphism Container */}
+        {/* Glassmorphism Container */}
         <div className="relative max-w-6xl mx-auto">
           <div className="bg-white/60 backdrop-blur-xl border border-white/40 rounded-3xl shadow-2xl overflow-hidden relative">
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-white/20 to-violet-50/30 opacity-70"></div>
             
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Left Side - Compact Value Proposition */}
-              <div className="p-6 md:p-8 lg:p-10 bg-white/40 backdrop-blur-lg relative overflow-hidden border-r border-white/30">
+              {/* Left Side - Value Proposition */}
+              <div className="p-5 md:p-6 lg:p-8 bg-white/40 backdrop-blur-lg relative overflow-hidden border-r border-white/30">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-100/40 to-violet-100/30"></div>
-                <div className="absolute top-6 right-6 w-12 h-12 border-2 border-purple-200/40 rounded-full"></div>
-                <div className="absolute bottom-6 left-6 w-8 h-8 border-2 border-purple-300/30 rounded-full"></div>
+                <div className="absolute top-4 right-4 w-8 h-8 border-2 border-purple-200/40 rounded-full"></div>
+                <div className="absolute bottom-4 left-4 w-6 h-6 border-2 border-purple-300/30 rounded-full"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-tight text-gray-900">
+                  <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-gray-900">
                     Why Choose Our<br />Modular Approach?
                   </h3>
                   
-                  {/* Compact feature list with unique icons */}
-                  <div className="space-y-3 mb-6">
+                  {/* Feature list with unique icons */}
+                  <div className="space-y-2.5 mb-5">
                     {[
                       { icon: Target, text: "AI-powered, modular, secure" },
                       { icon: Lightbulb, text: "Tailored for your workflows" }, 
@@ -99,8 +110,8 @@ const Newsletter = () => {
                     ))}
                   </div>
 
-                  {/* Compact trust badge */}
-                  <div className="bg-white/60 backdrop-blur-sm border border-purple-200/60 rounded-2xl p-3">
+                  {/* Trust badge */}
+                  <div className="bg-white/60 backdrop-blur-sm border border-purple-200/60 rounded-2xl p-2.5">
                     <p className="text-sm text-gray-600 font-medium leading-relaxed">
                       ✨ Trusted by forward-thinking companies to deliver custom platforms that transform operations
                     </p>
@@ -108,11 +119,11 @@ const Newsletter = () => {
                 </div>
               </div>
 
-              {/* Right Side - Compact Form */}
-              <div className="p-6 md:p-8 lg:p-10 bg-white/70 backdrop-blur-sm">
-                <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Right Side - Form */}
+              <div className="p-5 md:p-6 lg:p-8 bg-white/70 backdrop-blur-sm">
+                <form onSubmit={handleSubmit} className="space-y-3">
                   {/* Name and Email grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                     <div className="relative group">
                       <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
                         Name
@@ -126,7 +137,7 @@ const Newsletter = () => {
                           id="name"
                           name="name"
                           placeholder="John Doe"
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                          className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                           onFocus={() => setFocusedField('name')}
                           onBlur={() => setFocusedField(null)}
                           required
@@ -147,7 +158,7 @@ const Newsletter = () => {
                           id="email"
                           name="email"
                           placeholder="john@company.com"
-                          className="w-full pl-10 pr-4 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                          className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                           onFocus={() => setFocusedField('email')}
                           onBlur={() => setFocusedField(null)}
                           required
@@ -169,7 +180,7 @@ const Newsletter = () => {
                         id="company"
                         name="company"
                         placeholder="Acme Corporation"
-                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                        className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                         onFocus={() => setFocusedField('company')}
                         onBlur={() => setFocusedField(null)}
                       />
@@ -181,14 +192,14 @@ const Newsletter = () => {
                       Project Details
                     </label>
                     <div className="relative">
-                      <MessageSquare className={`absolute left-3 top-3.5 w-4 h-4 transition-all duration-200 ${
+                      <MessageSquare className={`absolute left-3 top-3 w-4 h-4 transition-all duration-200 ${
                         focusedField === 'message' ? 'text-purple-500 scale-110' : 'text-gray-400'
                       }`} />
                       <textarea
                         id="message"
                         name="message"
-                        rows={3}
-                        className="w-full pl-10 pr-4 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                        rows={2}
+                        className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
                         placeholder="Tell us about your project goals, timeline, and specific needs..."
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
@@ -197,12 +208,12 @@ const Newsletter = () => {
                     </div>
                   </div>
                   
-                  {/* Compact CTA Button - matching hero style */}
+                  {/* CTA Button - matching hero style */}
                   <div className="pt-1">
                     <button
                       type="submit"
                       disabled={formState === 'submitting'}
-                      className={`w-full group relative inline-flex items-center justify-center px-8 py-3.5 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 ${
+                      className={`w-full group relative inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 ${
                         formState === 'submitting' ? 'scale-95 cursor-not-allowed' : ''
                       }`}
                     >
@@ -234,8 +245,8 @@ const Newsletter = () => {
                     </button>
                   </div>
                   
-                  {/* Compact footer contact */}
-                  <div className="text-center pt-3 border-t border-gray-200/50">
+                  {/* Footer contact */}
+                  <div className="text-center pt-2 border-t border-gray-200/50">
                     <p className="text-sm text-gray-500">
                       Prefer email? Contact us at{' '}
                       <a 

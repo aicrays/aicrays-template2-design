@@ -73,96 +73,90 @@ const IndustriesSection = () => {
 
   return (
     <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-white via-purple-50/30 to-purple-50/50" 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden" 
       ref={sectionRef}
     >
-      {/* Enhanced Dynamic Background with More Orbs and Color Splotches */}
+      {/* Background matching hero style with different orb positions */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base gradient layers for smooth transition */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-purple-50/60 to-purple-50/80"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-100/60 via-purple-50/40 to-transparent"></div>
+        {/* Enhanced Background with Darker Tones - matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-100/50 to-purple-200/60"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-300/40 via-purple-200/30 to-transparent"></div>
         
-        {/* Extra Large floating orbs */}
-        <div className="absolute top-[10%] right-[5%] w-96 h-96 bg-gradient-radial from-purple-300/25 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
+        {/* Darker Edge Gradients for More Depth - matching hero */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-300/20 via-transparent to-violet-400/25"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-indigo-300/20 via-transparent to-purple-400/25"></div>
+        
+        {/* Soft Violet Fog Behind Text Area - matching hero */}
+        <div className="absolute top-[20%] left-[10%] right-[10%] bottom-[30%] bg-gradient-radial from-violet-400/15 via-purple-300/10 to-transparent blur-3xl"></div>
+        
+        {/* Extra Large floating orbs - matching hero with different positions */}
+        <div className="absolute top-[10%] right-[5%] w-96 h-96 bg-purple-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{
           animationDelay: '1s',
           animationDuration: '28s'
         }}></div>
-        <div className="absolute bottom-[15%] left-[3%] w-80 h-80 bg-gradient-radial from-indigo-300/30 to-transparent rounded-full blur-3xl animate-float-vertical opacity-65" style={{
+        <div className="absolute bottom-[15%] left-[3%] w-80 h-80 bg-violet-600/35 rounded-full blur-3xl animate-float-vertical opacity-80" style={{
           animationDelay: '6s',
           animationDuration: '32s'
         }}></div>
         
-        {/* Large floating orbs */}
-        <div className="absolute top-[25%] right-[15%] w-72 h-72 bg-gradient-radial from-violet-300/20 to-transparent rounded-full blur-3xl animate-float-vertical opacity-60" style={{
+        {/* Large floating orbs - matching hero */}
+        <div className="absolute top-[25%] right-[15%] w-72 h-72 bg-indigo-600/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{
           animationDelay: '3s',
           animationDuration: '26s'
         }}></div>
-        <div className="absolute bottom-[20%] left-[10%] w-64 h-64 bg-gradient-radial from-purple-300/25 to-transparent rounded-full blur-3xl animate-float-vertical opacity-55" style={{
+        <div className="absolute bottom-[20%] left-[10%] w-64 h-64 bg-purple-700/40 rounded-full blur-3xl animate-float-vertical opacity-95" style={{
           animationDelay: '8s',
           animationDuration: '30s'
         }}></div>
-        <div className="absolute top-[40%] left-[25%] w-56 h-56 bg-gradient-radial from-pink-300/20 to-transparent rounded-full blur-3xl animate-float-vertical opacity-65" style={{
+        <div className="absolute top-[40%] left-[25%] w-56 h-56 bg-violet-600/35 rounded-full blur-3xl animate-float-vertical opacity-80" style={{
           animationDelay: '12s',
           animationDuration: '23s'
         }}></div>
-        <div className="absolute bottom-[35%] right-[20%] w-48 h-48 bg-gradient-radial from-indigo-300/25 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
+        <div className="absolute bottom-[35%] right-[20%] w-48 h-48 bg-indigo-500/42 rounded-full blur-3xl animate-float-vertical opacity-75" style={{
           animationDelay: '18s',
           animationDuration: '28s'
         }}></div>
         
-        {/* Medium floating orbs */}
-        <div className="absolute top-[60%] right-[35%] w-40 h-40 bg-gradient-radial from-purple-400/20 to-transparent rounded-full blur-2xl animate-float-vertical opacity-50" style={{
+        {/* Medium floating orbs - matching hero */}
+        <div className="absolute top-[60%] right-[35%] w-40 h-40 bg-indigo-500/50 rounded-full blur-2xl animate-float-vertical opacity-80" style={{
           animationDelay: '5s',
           animationDuration: '18s'
         }}></div>
-        <div className="absolute bottom-[50%] left-[30%] w-44 h-44 bg-gradient-radial from-violet-300/22 to-transparent rounded-full blur-2xl animate-float-vertical opacity-55" style={{
+        <div className="absolute bottom-[50%] left-[30%] w-44 h-44 bg-purple-500/45 rounded-full blur-2xl animate-float-vertical opacity-85" style={{
           animationDelay: '11s',
           animationDuration: '22s'
         }}></div>
-        <div className="absolute top-[70%] right-[60%] w-36 h-36 bg-gradient-radial from-pink-400/18 to-transparent rounded-full blur-2xl animate-float-vertical opacity-60" style={{
+        <div className="absolute top-[70%] right-[60%] w-36 h-36 bg-violet-600/48 rounded-full blur-2xl animate-float-vertical opacity-75" style={{
           animationDelay: '15s',
           animationDuration: '16s'
         }}></div>
-        <div className="absolute top-[80%] left-[55%] w-32 h-32 bg-gradient-radial from-indigo-400/20 to-transparent rounded-full blur-2xl animate-float-vertical opacity-45" style={{
+        <div className="absolute top-[80%] left-[55%] w-32 h-32 bg-indigo-600/43 rounded-full blur-2xl animate-float-vertical opacity-90" style={{
           animationDelay: '4s',
           animationDuration: '20s'
         }}></div>
-        <div className="absolute bottom-[65%] right-[10%] w-38 h-38 bg-gradient-radial from-purple-300/25 to-transparent rounded-full blur-2xl animate-float-vertical opacity-55" style={{
+        <div className="absolute bottom-[65%] right-[10%] w-38 h-38 bg-purple-600/40 rounded-full blur-2xl animate-float-vertical opacity-80" style={{
           animationDelay: '13s',
           animationDuration: '24s'
         }}></div>
         
-        {/* Color Splotches for more dynamic background */}
-        <div className="absolute top-[15%] left-[5%] w-60 h-60 bg-gradient-to-br from-purple-200/15 via-violet-100/20 to-transparent rounded-full blur-3xl opacity-50 animate-float-vertical" style={{
-          animationDelay: '2s',
-          animationDuration: '35s'
-        }}></div>
-        <div className="absolute bottom-[25%] right-[25%] w-52 h-52 bg-gradient-to-br from-indigo-200/18 via-purple-100/15 to-transparent rounded-full blur-3xl opacity-45 animate-float-vertical" style={{
-          animationDelay: '9s',
-          animationDuration: '40s'
-        }}></div>
-        <div className="absolute top-[50%] right-[8%] w-48 h-48 bg-gradient-to-br from-pink-200/12 via-purple-100/18 to-transparent rounded-full blur-3xl opacity-50 animate-float-vertical" style={{
-          animationDelay: '16s',
-          animationDuration: '33s'
-        }}></div>
-        <div className="absolute bottom-[40%] left-[40%] w-44 h-44 bg-gradient-to-br from-violet-200/15 via-indigo-100/20 to-transparent rounded-full blur-3xl opacity-40 animate-float-vertical" style={{
-          animationDelay: '7s',
-          animationDuration: '29s'
-        }}></div>
-        
-        {/* Additional small accent orbs */}
-        <div className="absolute top-[35%] left-[70%] w-28 h-28 bg-gradient-radial from-purple-400/15 to-transparent rounded-full blur-xl animate-float-vertical opacity-45" style={{
+        {/* Small floating orbs - matching hero */}
+        <div className="absolute top-[35%] left-[70%] w-28 h-28 bg-purple-500/48 rounded-full blur-xl animate-float-vertical opacity-70" style={{
           animationDelay: '10s',
           animationDuration: '15s'
         }}></div>
-        <div className="absolute bottom-[55%] right-[45%] w-24 h-24 bg-gradient-radial from-indigo-400/20 to-transparent rounded-full blur-xl animate-float-vertical opacity-50" style={{
+        <div className="absolute bottom-[55%] right-[45%] w-24 h-24 bg-blue-400/52 rounded-full blur-xl animate-float-vertical opacity-85" style={{
           animationDelay: '20s',
           animationDuration: '18s'
         }}></div>
-        <div className="absolute top-[85%] left-[15%] w-30 h-30 bg-gradient-radial from-pink-400/18 to-transparent rounded-full blur-xl animate-float-vertical opacity-40" style={{
+        <div className="absolute top-[85%] left-[15%] w-30 h-30 bg-violet-600/45 rounded-full blur-xl animate-float-vertical opacity-65" style={{
           animationDelay: '14s',
           animationDuration: '21s'
         }}></div>
+        
+        {/* Enhanced particle dots - matching hero */}
+        <div className="absolute top-[30%] left-[20%] w-3 h-3 bg-purple-600/90 rounded-full animate-float-vertical" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
+        <div className="absolute top-[75%] right-[20%] w-2.5 h-2.5 bg-violet-600/85 rounded-full animate-float-vertical" style={{ animationDelay: '5s', animationDuration: '10s' }}></div>
+        <div className="absolute top-[40%] left-[75%] w-4 h-4 bg-purple-500/80 rounded-full animate-float-vertical" style={{ animationDelay: '8s', animationDuration: '12s' }}></div>
       </div>
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto py-12">
