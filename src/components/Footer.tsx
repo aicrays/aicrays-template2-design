@@ -55,7 +55,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-3">
           {/* Left Column - Brand */}
           <div className="space-y-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent mb-2">
+            <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-purple-900 bg-clip-text text-transparent mb-2">
               Aicrays
             </div>
             <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
