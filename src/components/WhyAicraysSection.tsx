@@ -57,7 +57,7 @@ const WhyAicraysSection = () => {
   }, []);
 
   return (
-    <section className="py-4 lg:py-6 relative overflow-hidden h-screen flex flex-col justify-center" id="why-aicrays">
+    <section className="py-16 lg:py-20 relative overflow-hidden min-h-screen flex flex-col justify-center" id="why-aicrays">
       {/* Enhanced Dynamic Background with More Orbs and Color Splashes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Base gradient layers with more vibrant purple tones */}
@@ -182,13 +182,13 @@ const WhyAicraysSection = () => {
 
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto" ref={sectionRef}>
         {/* Section Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center px-2 py-1 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-3 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{ animationDelay: "0.1s" }}>
+        <div className="text-center mb-12 lg:mb-16">
+          <div className="inline-flex items-center justify-center px-3 py-1.5 rounded-full text-xs font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-4 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{ animationDelay: "0.1s" }}>
             <span className="inline-flex items-center justify-center w-1.5 h-1.5 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-2"></span>
             <span>Why Choose Us</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight tracking-tight mb-3 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-tight tracking-tight mb-4 opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">Custom. Real. Yours.</span>
             <br />
             <span className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 bg-clip-text text-transparent">
@@ -196,19 +196,19 @@ const WhyAicraysSection = () => {
             </span>
           </h2>
           
-          <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-2xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
+          <p className="text-base lg:text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-2xl mx-auto font-light" style={{ animationDelay: "0.5s" }}>
             Every platform we build combines these core technologies, tailored to your specific enterprise needs.
           </p>
         </div>
 
         {/* Circular Feature Layout */}
-        <div className="relative flex items-center justify-center mb-8">
+        <div className="relative flex items-center justify-center mb-12 lg:mb-16">
           {/* Central Hub */}
           <div className="relative z-20">
-            <div className="w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.7s" }}>
+            <div className="w-36 h-36 lg:w-44 lg:h-44 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-2xl border-4 border-white/30 backdrop-blur-xl opacity-0 animate-fade-in" style={{ animationDelay: "0.7s" }}>
               <div className="text-center">
-                <div className="text-white font-bold text-lg lg:text-xl font-display">AICRAYS</div>
-                <div className="text-purple-100 text-xs lg:text-sm font-light">Platform</div>
+                <div className="text-white font-bold text-xl lg:text-2xl font-display">AICRAYS</div>
+                <div className="text-purple-100 text-sm lg:text-base font-light">Platform</div>
               </div>
             </div>
           </div>
@@ -216,9 +216,9 @@ const WhyAicraysSection = () => {
           {/* Feature Cards in Circle */}
           <div className="absolute inset-0 flex items-center justify-center">
             {features.map((feature, index) => {
-              // Calculate position for circular layout
+              // Calculate position for circular layout with increased radius
               const angle = (index * 90) - 45; // 90 degrees apart, starting from top-right
-              const radius = 180; // Distance from center
+              const radius = window.innerWidth < 1024 ? 200 : 240; // Responsive radius
               const x = Math.cos((angle * Math.PI) / 180) * radius;
               const y = Math.sin((angle * Math.PI) / 180) * radius;
 
@@ -234,25 +234,25 @@ const WhyAicraysSection = () => {
                   }}
                 >
                   <div className="group cursor-pointer">
-                    <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-4 lg:p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden w-56 lg:w-64">
+                    <div className="relative backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-5 lg:p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden w-64 lg:w-72">
                       {/* Hover glow effect */}
                       <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                       
                       <div className="relative z-10">
                         {/* Icon */}
-                        <div className="mb-3 flex justify-center">
-                          <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                            <feature.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" strokeWidth={2} />
+                        <div className="mb-4 flex justify-center">
+                          <div className={`w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                            <feature.icon className="w-6 h-6 lg:w-7 lg:h-7 text-white" strokeWidth={2} />
                           </div>
                         </div>
                         
                         {/* Content */}
                         <div className="text-center">
-                          <h3 className="text-sm lg:text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
+                          <h3 className="text-base lg:text-lg font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight font-display">
                             {feature.title}
                           </h3>
                           
-                          <p className="text-gray-600 leading-relaxed text-xs lg:text-sm group-hover:text-gray-700 transition-colors font-light">
+                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base group-hover:text-gray-700 transition-colors font-light">
                             {feature.description}
                           </p>
                         </div>
@@ -270,8 +270,8 @@ const WhyAicraysSection = () => {
 
         {/* CTA */}
         <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.8s" }}>
-          <p className="text-gray-600 mb-3 text-sm lg:text-base font-light">Still stuck with generic software?</p>
-          <a href="#contact" className="inline-flex items-center gap-2 px-3 py-2 text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group">
+          <p className="text-gray-600 mb-4 text-base lg:text-lg font-light">Still stuck with generic software?</p>
+          <a href="#contact" className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800 group">
             <span className="relative z-10">Schedule Discovery Session</span>
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
