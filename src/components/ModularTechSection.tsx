@@ -11,37 +11,43 @@ const ModularTechSection = () => {
       icon: Brain,
       title: "AI/ML Intelligence",
       description: "Machine learning models and intelligent automation tailored to your business logic",
-      gradient: "from-purple-500 to-purple-600"
+      gradient: "from-purple-500 to-purple-600",
+      iconBg: "from-purple-400 via-purple-500 to-purple-600"
     },
     {
       icon: Shield,
       title: "Cybersecurity",
       description: "Enterprise-grade security protocols with multi-layered access control",
-      gradient: "from-purple-600 to-purple-700"
+      gradient: "from-purple-600 to-purple-700",
+      iconBg: "from-purple-500 via-purple-600 to-purple-700"
     },
     {
       icon: Wifi,
       title: "IoT/RFID Systems",
       description: "Connected device networks for real-time operational visibility",
-      gradient: "from-purple-400 to-purple-500"
+      gradient: "from-blue-500 to-purple-500",
+      iconBg: "from-blue-400 via-purple-400 to-purple-500"
     },
     {
       icon: BarChart3,
       title: "Data Intelligence",
       description: "Analytics and reporting tailored to your enterprise operations",
-      gradient: "from-purple-500 to-purple-600"
+      gradient: "from-purple-500 to-blue-500",
+      iconBg: "from-purple-400 via-purple-500 to-blue-500"
     },
     {
       icon: Cloud,
       title: "Cloud DevOps",
       description: "Scalable infrastructure and seamless deployment pipelines",
-      gradient: "from-purple-600 to-purple-700"
+      gradient: "from-purple-600 to-blue-600",
+      iconBg: "from-purple-500 via-purple-600 to-blue-600"
     },
     {
       icon: Layout,
       title: "Human-Centered UX",
       description: "Intuitive interfaces designed to enhance productivity and user experience",
-      gradient: "from-purple-400 to-purple-500"
+      gradient: "from-blue-400 to-purple-500",
+      iconBg: "from-blue-400 via-purple-400 to-purple-500"
     }
   ];
 
@@ -107,7 +113,7 @@ const ModularTechSection = () => {
           </p>
         </div>
 
-        {/* Compact Modular Layout */}
+        {/* Enhanced Component Grid */}
         <div className="relative">
           {/* Desktop Layout - 3 columns, more compact */}
           <div className="hidden lg:grid grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -122,16 +128,23 @@ const ModularTechSection = () => {
                   }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {/* Compact Card */}
-                  <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
-                    {/* Background Glow on Hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  {/* Enhanced 3D Card with Gradient Shadow */}
+                  <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-3 hover:scale-[1.02] overflow-hidden group-hover:shadow-purple-200/30">
+                    {/* Enhanced Background Glow on Hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    
+                    {/* Soft Glow Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-400/5 via-transparent to-blue-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                     
                     {/* Card Content */}
                     <div className="relative z-10">
-                      {/* Icon */}
-                      <div className={`w-12 h-12 bg-gradient-to-br ${component.gradient} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-                        <component.icon className="w-6 h-6 text-white" strokeWidth={2} />
+                      {/* Enhanced 3D Icon with Gradient Background */}
+                      <div className={`w-16 h-16 bg-gradient-to-br ${component.iconBg} rounded-2xl flex items-center justify-center shadow-2xl mb-5 group-hover:scale-110 group-hover:shadow-purple-300/40 transition-all duration-300 relative overflow-hidden`}>
+                        {/* Inner glow effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-2xl"></div>
+                        {/* Soft highlight on top */}
+                        <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-2xl"></div>
+                        <component.icon className="w-7 h-7 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
                       </div>
                       
                       {/* Content */}
@@ -144,8 +157,8 @@ const ModularTechSection = () => {
                       </p>
                     </div>
 
-                    {/* Subtle Corner Accent */}
-                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                    {/* Enhanced Corner Accent */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-purple-100/40 via-purple-50/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   </div>
                 </div>
               );
@@ -164,12 +177,14 @@ const ModularTechSection = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-3 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
                   
                   <div className="relative z-10">
-                    <div className={`w-10 h-10 bg-gradient-to-br ${component.gradient} rounded-lg flex items-center justify-center shadow-lg mb-3 group-hover:scale-110 transition-all duration-300`}>
-                      <component.icon className="w-5 h-5 text-white" strokeWidth={2} />
+                    <div className={`w-14 h-14 bg-gradient-to-br ${component.iconBg} rounded-xl flex items-center justify-center shadow-xl mb-4 group-hover:scale-110 transition-all duration-300 relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-xl"></div>
+                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-xl"></div>
+                      <component.icon className="w-6 h-6 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
                     </div>
                     
                     <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors">
@@ -197,12 +212,14 @@ const ModularTechSection = () => {
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="relative backdrop-blur-xl bg-white/80 border border-white/30 rounded-xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                <div className="relative backdrop-blur-xl bg-white/90 border border-white/40 rounded-xl p-4 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
                   
                   <div className="relative z-10 text-center">
-                    <div className={`w-10 h-10 bg-gradient-to-br ${component.gradient} rounded-lg flex items-center justify-center shadow-lg mb-3 mx-auto group-hover:scale-110 transition-all duration-300`}>
-                      <component.icon className="w-5 h-5 text-white" strokeWidth={2} />
+                    <div className={`w-12 h-12 bg-gradient-to-br ${component.iconBg} rounded-lg flex items-center justify-center shadow-xl mb-3 mx-auto group-hover:scale-110 transition-all duration-300 relative overflow-hidden`}>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent rounded-lg"></div>
+                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/30 to-transparent rounded-t-lg"></div>
+                      <component.icon className="w-5 h-5 text-white relative z-10 drop-shadow-sm" strokeWidth={2.5} />
                     </div>
                     
                     <h3 className="text-base font-bold mb-2 text-gray-900 group-hover:text-purple-700 transition-colors">
@@ -219,11 +236,11 @@ const ModularTechSection = () => {
           </div>
         </div>
 
-        {/* Compact CTA */}
+        {/* Enhanced CTA */}
         <div className="text-center mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "1.2s" }}>
           <a 
             href="#contact" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 transition-all duration-300 hover:scale-105 hover:shadow-purple-300/30"
           >
             Schedule Discovery Session
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
