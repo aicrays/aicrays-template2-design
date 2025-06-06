@@ -211,13 +211,13 @@ const IndustriesSection = () => {
           </p>
         </div>
 
-        {/* Fixed Grid Layout to prevent cut-off */}
+        {/* Centered Cross Layout to prevent cut-off */}
         <div className="relative">
-          {/* Desktop Layout - Adjusted positioning to prevent cut-off */}
+          {/* Desktop Cross Layout with CTA in center */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="relative max-w-5xl mx-auto">
               {/* Manufacturing - Top Left */}
-              <div className="transform rotate-[-1deg]">
+              <div className="absolute top-0 left-0 transform rotate-[-1deg] w-72">
                 <IndustryCard 
                   industry={industries[0]} 
                   index={0} 
@@ -228,7 +228,7 @@ const IndustriesSection = () => {
               </div>
               
               {/* Government - Top Right */}
-              <div className="transform rotate-[1deg]">
+              <div className="absolute top-0 right-0 transform rotate-[1deg] w-72">
                 <IndustryCard 
                   industry={industries[1]} 
                   index={1} 
@@ -238,8 +238,13 @@ const IndustriesSection = () => {
                 />
               </div>
               
+              {/* CTA Block - Center */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72">
+                <CTABlock />
+              </div>
+              
               {/* Healthcare - Bottom Left */}
-              <div className="transform rotate-[1deg]">
+              <div className="absolute bottom-0 left-0 transform rotate-[1deg] w-72">
                 <IndustryCard 
                   industry={industries[2]} 
                   index={2} 
@@ -249,8 +254,8 @@ const IndustriesSection = () => {
                 />
               </div>
               
-              {/* Logistics - Bottom Right */}
-              <div className="transform rotate-[-1deg]">
+              {/* Logistics - Bottom Right with enough space to prevent overlap */}
+              <div className="absolute bottom-0 right-0 transform rotate-[-1deg] w-72">
                 <IndustryCard 
                   industry={industries[3]} 
                   index={3} 
@@ -259,11 +264,9 @@ const IndustriesSection = () => {
                   setHoveredCard={setHoveredCard}
                 />
               </div>
-            </div>
-
-            {/* CTA Block - Centered below the grid */}
-            <div className="flex justify-center mt-12">
-              <CTABlock />
+              
+              {/* Spacer to ensure proper height for absolute positioned elements */}
+              <div className="h-[480px]"></div>
             </div>
           </div>
 
