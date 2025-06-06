@@ -19,7 +19,7 @@ const Newsletter = () => {
 
   return (
     <section className="py-8 md:py-12 lg:py-16 relative overflow-hidden" id="contact">
-      {/* Background matching hero style with slight variation in orb placement */}
+      {/* Enhanced Background with More Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Enhanced Background with Darker Tones - matching hero */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-100/50 to-purple-200/60"></div>
@@ -32,25 +32,46 @@ const Newsletter = () => {
         {/* Soft Violet Fog Behind Text Area - matching hero */}
         <div className="absolute top-[20%] left-[10%] right-[10%] bottom-[30%] bg-gradient-radial from-violet-400/15 via-purple-300/10 to-transparent blur-3xl"></div>
         
+        {/* Extra Large floating orbs with varying densities */}
+        <div className="absolute top-[5%] left-[1%] w-96 h-96 bg-purple-400/30 rounded-full blur-3xl animate-float-vertical opacity-75" style={{ animationDelay: '2s', animationDuration: '35s' }}></div>
+        <div className="absolute bottom-[2%] right-[3%] w-88 h-88 bg-violet-500/28 rounded-full blur-3xl animate-float-vertical opacity-70" style={{ animationDelay: '12s', animationDuration: '40s' }}></div>
+        <div className="absolute top-[50%] right-[85%] w-76 h-76 bg-indigo-400/32 rounded-full blur-3xl animate-float-vertical opacity-78" style={{ animationDelay: '22s', animationDuration: '37s' }}></div>
+        
         {/* Large floating orbs - matching hero opacity and colors with different positions */}
         <div className="absolute top-[10%] right-[15%] w-40 h-40 bg-purple-500/40 rounded-full blur-3xl animate-float-vertical opacity-90" style={{ animationDelay: '0s', animationDuration: '18s' }}></div>
         <div className="absolute bottom-[20%] left-[10%] w-48 h-48 bg-violet-600/35 rounded-full blur-3xl animate-float-vertical opacity-80" style={{ animationDelay: '6s', animationDuration: '22s' }}></div>
         <div className="absolute top-[60%] right-[30%] w-32 h-32 bg-indigo-600/45 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '3s', animationDuration: '16s' }}></div>
         <div className="absolute bottom-[10%] right-[20%] w-36 h-36 bg-purple-700/40 rounded-full blur-3xl animate-float-vertical opacity-95" style={{ animationDelay: '12s', animationDuration: '28s' }}></div>
+        <div className="absolute top-[75%] left-[65%] w-44 h-44 bg-violet-500/37 rounded-full blur-3xl animate-float-vertical opacity-82" style={{ animationDelay: '18s', animationDuration: '25s' }}></div>
+        <div className="absolute bottom-[55%] right-[70%] w-52 h-52 bg-purple-400/34 rounded-full blur-3xl animate-float-vertical opacity-77" style={{ animationDelay: '24s', animationDuration: '31s' }}></div>
         
         {/* Medium floating orbs - matching hero */}
         <div className="absolute top-[35%] left-[15%] w-28 h-28 bg-indigo-500/50 rounded-full blur-2xl animate-float-vertical opacity-80" style={{ animationDelay: '8s', animationDuration: '20s' }}></div>
         <div className="absolute bottom-[45%] right-[12%] w-24 h-24 bg-purple-500/45 rounded-full blur-2xl animate-float-vertical opacity-85" style={{ animationDelay: '4s', animationDuration: '24s' }}></div>
         <div className="absolute top-[25%] right-[45%] w-20 h-20 bg-violet-600/48 rounded-full blur-2xl animate-float-vertical opacity-75" style={{ animationDelay: '10s', animationDuration: '14s' }}></div>
+        <div className="absolute bottom-[70%] left-[50%] w-30 h-30 bg-indigo-400/46 rounded-full blur-2xl animate-float-vertical opacity-78" style={{ animationDelay: '15s', animationDuration: '19s' }}></div>
+        <div className="absolute top-[80%] right-[55%] w-26 h-26 bg-purple-600/43 rounded-full blur-2xl animate-float-vertical opacity-73" style={{ animationDelay: '20s', animationDuration: '17s' }}></div>
+        <div className="absolute bottom-[30%] left-[75%] w-34 h-34 bg-violet-500/47 rounded-full blur-2xl animate-float-vertical opacity-81" style={{ animationDelay: '26s', animationDuration: '23s' }}></div>
         
-        {/* Small floating orbs - matching hero */}
+        {/* Small floating orbs with varying shades */}
         <div className="absolute top-[70%] left-[25%] w-16 h-16 bg-purple-500/48 rounded-full blur-xl animate-float-vertical opacity-70" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
         <div className="absolute top-[45%] right-[35%] w-18 h-18 bg-blue-400/52 rounded-full blur-xl animate-float-vertical opacity-85" style={{ animationDelay: '7s', animationDuration: '17s' }}></div>
+        <div className="absolute bottom-[60%] left-[35%] w-22 h-22 bg-violet-600/45 rounded-full blur-xl animate-float-vertical opacity-65" style={{ animationDelay: '13s', animationDuration: '15s' }}></div>
+        <div className="absolute top-[15%] left-[80%] w-20 h-20 bg-indigo-500/49 rounded-full blur-xl animate-float-vertical opacity-72" style={{ animationDelay: '17s', animationDuration: '11s' }}></div>
+        <div className="absolute bottom-[85%] right-[60%] w-24 h-24 bg-purple-400/46 rounded-full blur-xl animate-float-vertical opacity-68" style={{ animationDelay: '21s', animationDuration: '16s' }}></div>
+        
+        {/* Micro orbs for texture */}
+        <div className="absolute top-[55%] left-[60%] w-14 h-14 bg-purple-350/35 rounded-full blur-md animate-float-vertical opacity-55" style={{ animationDelay: '5s', animationDuration: '9s' }}></div>
+        <div className="absolute bottom-[40%] right-[25%] w-12 h-12 bg-violet-400/38 rounded-full blur-md animate-float-vertical opacity-58" style={{ animationDelay: '11s', animationDuration: '7s' }}></div>
+        <div className="absolute top-[40%] left-[40%] w-16 h-16 bg-indigo-350/40 rounded-full blur-sm animate-float-vertical opacity-52" style={{ animationDelay: '16s', animationDuration: '10s' }}></div>
+        <div className="absolute bottom-[25%] right-[80%] w-10 h-10 bg-purple-400/42 rounded-full blur-sm animate-float-vertical opacity-56" style={{ animationDelay: '19s', animationDuration: '8s' }}></div>
         
         {/* Particle dots for depth - matching hero */}
         <div className="absolute top-[30%] left-[20%] w-2 h-2 bg-purple-600/60 rounded-full animate-float-vertical" style={{ animationDelay: '2s', animationDuration: '8s' }}></div>
         <div className="absolute top-[75%] right-[20%] w-1.5 h-1.5 bg-violet-600/55 rounded-full animate-float-vertical" style={{ animationDelay: '5s', animationDuration: '10s' }}></div>
         <div className="absolute top-[40%] left-[75%] w-3 h-3 bg-purple-500/50 rounded-full animate-float-vertical" style={{ animationDelay: '8s', animationDuration: '12s' }}></div>
+        <div className="absolute bottom-[50%] right-[40%] w-2.5 h-2.5 bg-indigo-600/65 rounded-full animate-float-vertical" style={{ animationDelay: '14s', animationDuration: '9s' }}></div>
+        <div className="absolute top-[85%] left-[50%] w-4 h-4 bg-violet-500/70 rounded-full animate-float-vertical" style={{ animationDelay: '23s', animationDuration: '13s' }}></div>
       </div>
       
       <div className="section-container relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
