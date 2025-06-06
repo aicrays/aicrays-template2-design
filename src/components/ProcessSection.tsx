@@ -1,43 +1,36 @@
-
 import React, { useEffect, useRef, useState } from "react";
-import { MessageSquare, Search, Wrench, Rocket, ArrowRight } from "lucide-react";
+import { Search, Wrench, Code, Globe } from "lucide-react";
 
 const ProcessSection = () => {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([]);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
+  const [titleVisible, setTitleVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  const steps = [
-    {
-      icon: MessageSquare,
-      number: "01",
-      title: "Discovery Session",
-      description: "We dive deep into your operations, challenges, and goals to understand exactly what you need.",
-      timeline: "Week 1",
-      gradient: "from-purple-500 via-purple-600 to-blue-600"
-    },
+  const processSteps = [
     {
       icon: Search,
-      number: "02", 
-      title: "Solution Architecture",
-      description: "Our team designs a custom platform blueprint tailored to your specific requirements and workflows.",
-      timeline: "Week 2",
-      gradient: "from-purple-600 via-blue-500 to-blue-600"
+      title: "Discover",
+      description: "Learn your goals, audit current systems, and identify opportunities for improvement.",
+      stat: "90% faster onboarding"
     },
     {
       icon: Wrench,
-      number: "03",
-      title: "Rapid Development",
-      description: "Using our modular components, we build and test your platform with regular feedback loops.",
-      timeline: "Weeks 3-6",
-      gradient: "from-blue-500 via-purple-500 to-purple-600"
+      title: "Design", 
+      description: "Develop architecture and prototypes that align with your workflows and requirements.",
+      stat: "3x faster iteration cycles"
     },
     {
-      icon: Rocket,
-      number: "04",
-      title: "Launch & Support",
-      description: "We deploy your platform, train your team, and provide ongoing support as you scale.",
-      timeline: "Week 7+",
-      gradient: "from-purple-600 via-blue-600 to-purple-700"
+      icon: Code,
+      title: "Develop",
+      description: "Build secure, scalable software using modular components tailored to your needs.",
+      stat: "50% reduced development time"
+    },
+    {
+      icon: Globe,
+      title: "Deploy & Support",
+      description: "Go live with comprehensive testing, then optimize and maintain for performance.",
+      stat: "99.9% uptime guaranteed"
     }
   ];
 
@@ -46,9 +39,10 @@ const ProcessSection = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            steps.forEach((_, index) => {
+            setTitleVisible(true);
+            processSteps.forEach((_, index) => {
               setTimeout(() => {
-                setVisibleCards(prev => [...prev, index]);
+                setVisibleSteps(prev => [...prev, index]);
               }, index * 150);
             });
           }
@@ -65,125 +59,178 @@ const ProcessSection = () => {
   }, []);
 
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-white via-purple-50/40 to-blue-50/30" id="process">
-      {/* Enhanced Floating Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large gradient orbs */}
-        <div className="absolute top-[12%] right-[18%] w-50 h-50 bg-gradient-to-br from-purple-400/40 to-blue-400/35 rounded-full blur-3xl animate-float opacity-65" style={{ animationDelay: '1s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[18%] left-[12%] w-56 h-56 bg-gradient-to-br from-blue-500/35 to-purple-400/40 rounded-full blur-3xl animate-float opacity-70" style={{ animationDelay: '7s', animationDuration: '24s' }}></div>
-        <div className="absolute top-[60%] right-[40%] w-42 h-42 bg-gradient-to-br from-purple-500/40 to-blue-500/35 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '4s', animationDuration: '18s' }}></div>
+    <section 
+      className="h-screen flex items-center justify-center bg-gradient-to-b from-white via-purple-50/30 to-white relative overflow-hidden" 
+      id="process" 
+      ref={sectionRef}
+    >
+      {/* Dynamic Floating Orbs Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large floating orb - top left */}
+        <div className="absolute top-10 left-10 w-80 h-80 bg-gradient-to-br from-purple-200/20 to-purple-400/15 rounded-full blur-3xl animate-float opacity-40"></div>
         
-        {/* Medium orbs with enhanced blue tones */}
-        <div className="absolute top-[30%] left-[25%] w-34 h-34 bg-gradient-to-br from-blue-400/45 to-purple-300/40 rounded-full blur-2xl animate-float opacity-55" style={{ animationDelay: '9s', animationDuration: '16s' }}></div>
-        <div className="absolute bottom-[45%] right-[25%] w-38 h-38 bg-gradient-to-br from-purple-400/40 to-blue-500/35 rounded-full blur-2xl animate-float opacity-75" style={{ animationDelay: '2s', animationDuration: '22s' }}></div>
-        <div className="absolute top-[75%] left-[45%] w-30 h-30 bg-gradient-to-br from-blue-300/40 to-purple-400/45 rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '11s', animationDuration: '19s' }}></div>
+        {/* Medium floating orb - top right */}
+        <div className="absolute top-20 right-16 w-64 h-64 bg-gradient-to-tl from-purple-300/18 to-purple-500/12 rounded-full blur-3xl animate-float opacity-35" style={{ animationDelay: '2s' }}></div>
         
-        {/* Small detailed orbs */}
-        <div className="absolute top-[40%] right-[55%] w-22 h-22 bg-gradient-to-br from-purple-500/40 to-blue-400/45 rounded-full blur-xl animate-float opacity-65" style={{ animationDelay: '6s', animationDuration: '14s' }}></div>
-        <div className="absolute bottom-[30%] left-[65%] w-26 h-26 bg-gradient-to-br from-blue-400/45 to-purple-300/40 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '8s', animationDuration: '17s' }}></div>
-        <div className="absolute top-[85%] right-[70%] w-20 h-20 bg-gradient-to-br from-purple-400/35 to-blue-500/40 rounded-full blur-lg animate-float opacity-55" style={{ animationDelay: '5s', animationDuration: '21s' }}></div>
+        {/* Large floating orb - center */}
+        <div className="absolute top-32 left-1/2 transform -translate-x-1/2 w-96 h-96 bg-gradient-to-r from-purple-100/15 to-purple-300/20 rounded-full blur-3xl animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
         
-        {/* Enhanced particle effects */}
-        <div className="absolute top-[25%] left-[35%] w-3.5 h-3.5 bg-purple-600/70 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
-        <div className="absolute top-[70%] right-[30%] w-3 h-3 bg-blue-500/65 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
-        <div className="absolute top-[50%] left-[80%] w-4 h-4 bg-purple-500/60 rounded-full animate-pulse" style={{ animationDelay: '10s' }}></div>
-        <div className="absolute bottom-[35%] right-[65%] w-2.5 h-2.5 bg-blue-400/70 rounded-full animate-pulse" style={{ animationDelay: '5s' }}></div>
-        <div className="absolute top-[15%] left-[60%] w-2 h-2 bg-purple-400/60 rounded-full animate-pulse" style={{ animationDelay: '12s' }}></div>
+        {/* Small floating orb - bottom left */}
+        <div className="absolute bottom-24 left-20 w-48 h-48 bg-gradient-to-br from-purple-400/12 to-purple-200/18 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '4s' }}></div>
+        
+        {/* Medium floating orb - bottom right */}
+        <div className="absolute bottom-16 right-12 w-72 h-72 bg-gradient-to-l from-purple-500/15 to-purple-300/20 rounded-full blur-3xl animate-float opacity-38" style={{ animationDelay: '3s' }}></div>
+        
+        {/* Extra small accent orbs */}
+        <div className="absolute top-40 left-1/4 w-32 h-32 bg-gradient-to-br from-purple-300/25 to-purple-400/15 rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute bottom-40 right-1/3 w-40 h-40 bg-gradient-to-tl from-purple-200/20 to-purple-500/10 rounded-full blur-2xl animate-float opacity-42" style={{ animationDelay: '2.5s' }}></div>
       </div>
-
-      <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto" ref={sectionRef}>
+      
+      <div className="section-container relative z-10 py-8">
+        {/* Standardized Header */}
         <div className="text-center mb-8">
-          <div 
-            className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer"
-            style={{ animationDelay: "0.1s" }}
-          >
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mr-3"></span>
+          <div className="pulse-chip mx-auto mb-6">
             <span>Our Process</span>
           </div>
-          
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-700 bg-clip-text text-transparent leading-tight tracking-tight opacity-0 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            From Concept to Launch in Weeks
-          </h2>
-          
-          <p className="text-lg text-gray-600 leading-relaxed opacity-0 animate-fade-in max-w-3xl mx-auto font-medium mb-6" style={{ animationDelay: "0.5s" }}>
-            Our proven methodology gets you from idea to production-ready platform faster than traditional development.
+          <div className={`transition-all duration-1000 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 bg-clip-text text-transparent relative">
+              How We Build
+              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 bg-gradient-to-r from-purple-400 via-purple-600 to-purple-800 rounded-full transition-all duration-1000 delay-500 ${titleVisible ? 'w-24 opacity-100' : 'w-0 opacity-0'}`}></div>
+            </h2>
+          </div>
+          <p className={`text-lg text-gray-600 mx-auto max-w-2xl font-medium transition-all duration-1000 delay-300 ${titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            Our delivery approach balances speed with strategy, using modular frameworks to reduce risk.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          {steps.map((step, index) => (
-            <div
-              key={step.title}
-              className={`group cursor-pointer transition-all duration-700 ${
-                visibleCards.includes(index) 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative backdrop-blur-xl bg-white/85 border border-white/50 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-3 overflow-hidden h-full flex flex-col group-hover:scale-[1.02]">
-                {/* Enhanced background glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/60 via-blue-50/40 to-purple-50/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                
-                {/* Inner shimmer effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/8 via-purple-400/8 to-blue-500/8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                
-                <div className="relative z-10 flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    {/* Enhanced 3D icon */}
-                    <div className={`w-12 h-12 bg-gradient-to-br ${step.gradient} rounded-xl flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:shadow-2xl transition-all duration-300 relative overflow-hidden`}>
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent rounded-xl"></div>
-                      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/40 to-transparent rounded-t-xl"></div>
-                      <step.icon className="w-6 h-6 text-white relative z-10" strokeWidth={2.5} />
-                    </div>
-                    
-                    <div className="text-2xl font-bold text-purple-300/60 group-hover:text-purple-400/80 transition-colors">
-                      {step.number}
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1">
-                    <div className="inline-block px-2 py-1 bg-purple-50 text-purple-600 rounded-full text-xs font-medium mb-2 group-hover:bg-purple-100 transition-colors">
-                      {step.timeline}
-                    </div>
-                    
-                    <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors leading-tight">
-                      {step.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors text-sm">
-                      {step.description}
-                    </p>
-                  </div>
-                  
-                  {/* Arrow connector for desktop */}
-                  {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute -right-3 top-1/2 transform -translate-y-1/2 z-20">
-                      <div className="w-6 h-6 bg-white rounded-full shadow-md flex items-center justify-center group-hover:bg-purple-50 transition-colors">
-                        <ArrowRight className="w-3 h-3 text-purple-400" />
+        <div className="hidden lg:block">
+          {/* Enhanced Gradient Timeline */}
+          <div className="relative mb-8">
+            <div className="absolute top-1/2 left-8 right-8 h-1 bg-gradient-to-r from-purple-200 via-purple-400 to-purple-600 transform -translate-y-1/2 rounded-full opacity-80"></div>
+            
+            {/* Animated Progress Trail */}
+            {hoveredStep !== null && (
+              <div 
+                className="absolute top-1/2 h-1.5 bg-gradient-to-r from-purple-500 to-purple-700 transform -translate-y-1/2 transition-all duration-500 rounded-full shadow-lg"
+                style={{
+                  left: `${8 + (hoveredStep * 21)}%`,
+                  width: `${21}%`,
+                  boxShadow: '0 0 20px rgba(147, 51, 234, 0.5)',
+                }}
+              ></div>
+            )}
+
+            {/* Process Cards - More Compact */}
+            <div className="grid grid-cols-4 gap-6">
+              {processSteps.map((step, index) => {
+                const isVisible = visibleSteps.includes(index);
+                return (
+                  <div
+                    key={step.title}
+                    className={`relative transition-all duration-700 ${
+                      isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                    style={{ 
+                      animationDelay: `${index * 0.15}s`,
+                      transform: isVisible ? 'translateY(0)' : 'translateY(32px)'
+                    }}
+                    onMouseEnter={() => setHoveredStep(index)}
+                    onMouseLeave={() => setHoveredStep(null)}
+                  >
+                    {/* Compact Floating Icon */}
+                    <div className="flex justify-center mb-4">
+                      <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center transition-all duration-500 shadow-lg ${
+                        hoveredStep === index 
+                          ? 'scale-110 shadow-xl shadow-purple-500/30 border-purple-400' 
+                          : 'hover:scale-105 hover:shadow-xl hover:shadow-purple-400/20'
+                      }`}>
+                        <step.icon className="w-7 h-7 text-purple-700" strokeWidth={2.5} />
                       </div>
                     </div>
-                  )}
-                </div>
 
-                {/* Enhanced corner accent */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/40 via-blue-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-              </div>
+                    {/* Compact Process Card */}
+                    <div className={`bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-5 shadow-xl transition-all duration-500 ${
+                      hoveredStep === index 
+                        ? 'shadow-2xl transform -translate-y-2 border-purple-200' 
+                        : 'hover:shadow-2xl hover:-translate-y-1'
+                    }`}>
+                      <div className="text-center">
+                        <div className="flex items-center justify-center mb-3">
+                          <span className="text-xs font-bold text-purple-700 bg-gradient-to-r from-purple-100 to-purple-200 px-3 py-1 rounded-full border border-purple-200">
+                            Step {index + 1}
+                          </span>
+                        </div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
+                          {step.title}
+                        </h3>
+                        <p className="text-sm text-gray-600 leading-relaxed mb-3 font-medium">
+                          {step.description}
+                        </p>
+                        
+                        {/* Enhanced Hover Tooltip */}
+                        {hoveredStep === index && (
+                          <div className="text-xs text-purple-700 font-bold bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-2 rounded-xl border border-purple-200 transition-all duration-300 transform scale-105">
+                            ✨ {step.stat}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="text-center opacity-0 animate-fade-in" style={{ animationDelay: "1.0s" }}>
-          <p className="text-gray-600 mb-4 text-base">Ready to start your project?</p>
-          <a 
-            href="#contact" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105 font-medium text-sm"
-          >
-            Start Discovery Session
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
+        {/* Mobile Process Flow - More Compact */}
+        <div className="lg:hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {processSteps.map((step, index) => {
+              const isVisible = visibleSteps.includes(index);
+              
+              return (
+                <div
+                  key={step.title}
+                  className={`relative transition-all duration-700 ${
+                    isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
+                  }`}
+                  style={{ animationDelay: `${index * 0.15}s` }}
+                >
+                  {/* Mobile Connector for 2-column layout */}
+                  {index < processSteps.length - 1 && index % 2 === 0 && (
+                    <div className="hidden sm:block absolute right-0 top-1/2 w-8 h-0.5 bg-gradient-to-r from-purple-300 to-purple-500 transform translate-x-full -translate-y-1/2 opacity-60"></div>
+                  )}
+
+                  <div className="text-center">
+                    {/* Mobile Icon */}
+                    <div className="flex justify-center mb-3">
+                      <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 border-2 border-purple-300/50 flex items-center justify-center shadow-lg">
+                        <step.icon className="w-6 h-6 text-purple-700" strokeWidth={2.5} />
+                      </div>
+                    </div>
+
+                    {/* Mobile Card */}
+                    <div className="bg-white/95 backdrop-blur-md border border-purple-100/60 rounded-2xl p-5 shadow-xl">
+                      <div className="flex items-center justify-center gap-3 mb-2">
+                        <span className="text-xs font-bold text-purple-700 bg-gradient-to-r from-purple-100 to-purple-200 px-3 py-1 rounded-full border border-purple-200">
+                          Step {index + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-base font-bold text-gray-900 mb-2 bg-gradient-to-r from-gray-800 to-purple-800 bg-clip-text text-transparent">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-gray-600 leading-relaxed mb-3 font-medium">
+                        {step.description}
+                      </p>
+                      <div className="text-xs text-purple-700 font-bold bg-gradient-to-r from-purple-50 to-purple-100 px-3 py-2 rounded-lg border border-purple-200 inline-block">
+                        ✨ {step.stat}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

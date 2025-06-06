@@ -1,148 +1,232 @@
 
-import React, { useState, useRef, useEffect } from "react";
-import { toast } from "sonner";
+import React, { useState } from "react";
+import { User, Mail, Building, MessageSquare, Rocket, CheckCircle } from "lucide-react";
 
 const Newsletter = () => {
-  const [email, setEmail] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setFormState('submitting');
     
-    if (!email) {
-      toast.error("Please enter your email address");
-      return;
-    }
-
-    if (!/\S+@\S+\.\S+/.test(email)) {
-      toast.error("Please enter a valid email address");
-      return;
-    }
-
-    toast.success("Thank you for subscribing! We'll be in touch soon.");
-    setEmail("");
+    // Simulate form submission
+    setTimeout(() => {
+      setFormState('success');
+      setTimeout(() => setFormState('idle'), 3000);
+    }, 1500);
   };
 
   return (
-    <section className="py-16 relative overflow-hidden bg-gradient-to-br from-purple-50/40 via-blue-50/30 to-purple-50/50" id="contact" ref={sectionRef}>
-      {/* Enhanced Floating Background Elements */}
+    <section className="py-8 sm:py-10 md:py-12 bg-gradient-to-br from-purple-50 via-violet-50 to-purple-100 relative overflow-hidden min-h-screen flex items-center" id="contact">
+      {/* Enhanced Background with Floating Orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large gradient orbs */}
-        <div className="absolute top-[20%] right-[15%] w-48 h-48 bg-gradient-to-br from-purple-400/35 to-blue-400/30 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '2s', animationDuration: '22s' }}></div>
-        <div className="absolute bottom-[25%] left-[10%] w-52 h-52 bg-gradient-to-br from-blue-500/30 to-purple-500/35 rounded-full blur-3xl animate-float opacity-55" style={{ animationDelay: '8s', animationDuration: '26s' }}></div>
-        <div className="absolute top-[60%] right-[40%] w-40 h-40 bg-gradient-to-br from-purple-500/40 to-blue-400/30 rounded-full blur-3xl animate-float opacity-65" style={{ animationDelay: '5s', animationDuration: '18s' }}></div>
+        {/* Animated floating orbs */}
+        <div className="absolute top-[10%] right-[15%] w-32 h-32 bg-purple-200/20 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '0s', animationDuration: '12s' }}></div>
+        <div className="absolute bottom-[20%] left-[10%] w-40 h-40 bg-violet-300/15 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '4s', animationDuration: '15s' }}></div>
+        <div className="absolute top-[60%] right-[30%] w-24 h-24 bg-purple-300/25 rounded-full blur-3xl animate-float opacity-40" style={{ animationDelay: '2s', animationDuration: '10s' }}></div>
+        <div className="absolute bottom-[10%] right-[20%] w-28 h-28 bg-violet-200/20 rounded-full blur-3xl animate-float opacity-45" style={{ animationDelay: '6s', animationDuration: '14s' }}></div>
         
-        {/* Medium orbs */}
-        <div className="absolute top-[40%] left-[20%] w-32 h-32 bg-gradient-to-br from-blue-400/40 to-purple-300/35 rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '10s', animationDuration: '20s' }}></div>
-        <div className="absolute bottom-[50%] right-[25%] w-36 h-36 bg-gradient-to-br from-purple-400/35 to-blue-500/30 rounded-full blur-2xl animate-float opacity-70" style={{ animationDelay: '3s', animationDuration: '24s' }}></div>
-        
-        {/* Small orbs */}
-        <div className="absolute top-[75%] left-[40%] w-24 h-24 bg-gradient-to-br from-blue-300/35 to-purple-400/40 rounded-full blur-xl animate-float opacity-45" style={{ animationDelay: '7s', animationDuration: '16s' }}></div>
-        <div className="absolute top-[30%] right-[70%] w-28 h-28 bg-gradient-to-br from-purple-500/35 to-blue-400/40 rounded-full blur-xl animate-float opacity-60" style={{ animationDelay: '12s', animationDuration: '19s' }}></div>
-        
-        {/* Particle effects */}
-        <div className="absolute top-[35%] left-[30%] w-3 h-3 bg-purple-600/60 rounded-full animate-pulse" style={{ animationDelay: '4s' }}></div>
-        <div className="absolute top-[70%] right-[35%] w-2.5 h-2.5 bg-blue-500/55 rounded-full animate-pulse" style={{ animationDelay: '8s' }}></div>
-        <div className="absolute top-[55%] left-[75%] w-4 h-4 bg-purple-500/50 rounded-full animate-pulse" style={{ animationDelay: '11s' }}></div>
-        <div className="absolute bottom-[40%] right-[60%] w-2 h-2 bg-blue-400/65 rounded-full animate-pulse" style={{ animationDelay: '6s' }}></div>
+        {/* Micro particles */}
+        <div className="absolute top-[25%] left-[25%] w-2 h-2 bg-purple-400/40 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-[75%] right-[25%] w-1.5 h-1.5 bg-violet-400/50 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-[45%] left-[70%] w-2.5 h-2.5 bg-purple-300/30 rounded-full animate-pulse" style={{ animationDelay: '5s' }}></div>
       </div>
-
-      <div className="container px-4 sm:px-6 lg:px-8 mx-auto max-w-4xl relative z-10">
-        <div 
-          className={`text-center transition-all duration-1000 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
-        >
-          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-lg mb-6 hover:scale-105 transition-transform cursor-pointer">
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mr-3"></span>
-            <span>Get Started</span>
-          </div>
-
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-700 bg-clip-text text-transparent leading-tight tracking-tight">
-            Ready to Transform Your Operations?
+      
+      <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        {/* Updated Section Header */}
+        <div className="text-center mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-purple-600 to-gray-800 bg-clip-text text-transparent">
+            Let's Build What's Next — Together
           </h2>
-          
-          <p className="text-lg text-gray-600 mb-8 font-medium max-w-2xl mx-auto">
-            Schedule a discovery session to explore how we can build your custom AI-powered platform.
+          <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+            Tell us about your goals, and we'll show you how our modular AI-powered platforms can make it real.
           </p>
+        </div>
 
-          <div className="max-w-md mx-auto">
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <div className="flex-1">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200 backdrop-blur-sm bg-white/90"
-                />
-              </div>
-              <button
-                type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-700 to-blue-600 text-white font-medium rounded-xl shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 hover:scale-105 whitespace-nowrap"
-              >
-                Schedule Discovery
-              </button>
-            </form>
-          </div>
+        {/* Glassmorphism Container */}
+        <div className="relative">
+          <div className="bg-white/40 backdrop-blur-xl border border-white/30 rounded-3xl shadow-2xl overflow-hidden relative">
+            {/* Subtle inner glow */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-50/20 via-white/10 to-violet-50/20 opacity-60"></div>
+            
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Left Side - Glassmorphism Value Proposition */}
+              <div className="p-6 md:p-8 lg:p-10 bg-white/30 backdrop-blur-lg relative overflow-hidden border-r border-white/20">
+                {/* Decorative elements */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-100/30 to-violet-100/20"></div>
+                <div className="absolute top-6 right-6 w-12 h-12 border-2 border-purple-200/30 rounded-full"></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 border-2 border-purple-300/20 rounded-full"></div>
+                
+                <div className="relative z-10">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 leading-tight text-gray-800">
+                    Why Choose Our<br />Modular Approach?
+                  </h3>
+                  
+                  {/* Enhanced feature list with check icons */}
+                  <div className="space-y-3 mb-6">
+                    {[
+                      "AI-powered, modular, secure",
+                      "Tailored for your workflows", 
+                      "Built to scale with your business"
+                    ].map((feature, index) => (
+                      <div key={index} className="flex items-center group">
+                        <div className="w-5 h-5 bg-purple-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200">
+                          <CheckCircle className="w-3 h-3 text-white" />
+                        </div>
+                        <span className="text-gray-700 font-medium text-base lg:text-lg">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
 
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 via-purple-600 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent rounded-xl"></div>
-                <svg className="w-6 h-6 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
+                  {/* Trust badge */}
+                  <div className="bg-white/50 backdrop-blur-sm border border-purple-200/50 rounded-xl p-3">
+                    <p className="text-sm text-gray-600 font-medium">
+                      ✨ Trusted by forward-thinking companies to deliver custom platforms that transform operations
+                    </p>
+                  </div>
+                </div>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Discovery Call</h3>
-              <p className="text-sm text-gray-600">30-minute consultation</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-purple-600 via-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent rounded-xl"></div>
-                <svg className="w-6 h-6 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+
+              {/* Right Side - Enhanced Form */}
+              <div className="p-6 md:p-8 lg:p-10 bg-white/60 backdrop-blur-sm">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Name and Email grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="relative group">
+                      <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Name
+                      </label>
+                      <div className="relative">
+                        <User className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
+                          focusedField === 'name' ? 'text-purple-500 scale-110' : 'text-gray-400'
+                        }`} />
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          placeholder="John Doe"
+                          className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                          onFocus={() => setFocusedField('name')}
+                          onBlur={() => setFocusedField(null)}
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="relative group">
+                      <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-1">
+                        Email
+                      </label>
+                      <div className="relative">
+                        <Mail className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
+                          focusedField === 'email' ? 'text-purple-500 scale-110' : 'text-gray-400'
+                        }`} />
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          placeholder="john@company.com"
+                          className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                          onFocus={() => setFocusedField('email')}
+                          onBlur={() => setFocusedField(null)}
+                          required
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700 mb-1">
+                      Company
+                    </label>
+                    <div className="relative">
+                      <Building className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 transition-all duration-200 ${
+                        focusedField === 'company' ? 'text-purple-500 scale-110' : 'text-gray-400'
+                      }`} />
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        placeholder="Acme Corporation"
+                        className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                        onFocus={() => setFocusedField('company')}
+                        onBlur={() => setFocusedField(null)}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="relative group">
+                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
+                      Project Details
+                    </label>
+                    <div className="relative">
+                      <MessageSquare className={`absolute left-3 top-3 w-4 h-4 transition-all duration-200 ${
+                        focusedField === 'message' ? 'text-purple-500 scale-110' : 'text-gray-400'
+                      }`} />
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={3}
+                        className="w-full pl-10 pr-3 py-3 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/80 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
+                        placeholder="Tell us about your project goals, timeline, and specific needs..."
+                        onFocus={() => setFocusedField('message')}
+                        onBlur={() => setFocusedField(null)}
+                        required
+                      ></textarea>
+                    </div>
+                  </div>
+                  
+                  {/* Enhanced CTA Button */}
+                  <div className="pt-1">
+                    <button
+                      type="submit"
+                      disabled={formState === 'submitting'}
+                      className={`w-full group relative overflow-hidden bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] ${
+                        formState === 'submitting' ? 'scale-95 cursor-not-allowed' : ''
+                      }`}
+                    >
+                      {/* Button content */}
+                      <div className="relative z-10 flex items-center justify-center">
+                        {formState === 'idle' && (
+                          <>
+                            <Rocket className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+                            Let's Start Building
+                          </>
+                        )}
+                        {formState === 'submitting' && (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                            Sending Message...
+                          </>
+                        )}
+                        {formState === 'success' && (
+                          <>
+                            <CheckCircle className="w-4 h-4 mr-2" />
+                            Message Sent Successfully!
+                          </>
+                        )}
+                      </div>
+                      
+                      {/* Hover effect overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-white/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out"></div>
+                    </button>
+                  </div>
+                  
+                  {/* Enhanced footer contact */}
+                  <div className="text-center pt-2 border-t border-gray-200/50">
+                    <p className="text-sm text-gray-500">
+                      Prefer email? Contact us at{' '}
+                      <a 
+                        href="mailto:hello@aicrays.com" 
+                        className="text-purple-600 hover:text-purple-700 font-medium transition-all duration-200 hover:underline hover:underline-offset-2"
+                      >
+                        hello@aicrays.com
+                      </a>
+                    </p>
+                  </div>
+                </form>
               </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Custom Proposal</h3>
-              <p className="text-sm text-gray-600">Tailored solution design</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 via-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent rounded-xl"></div>
-                <svg className="w-6 h-6 text-white relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-gray-900 mb-1">Rapid Launch</h3>
-              <p className="text-sm text-gray-600">Production in weeks</p>
             </div>
           </div>
         </div>
