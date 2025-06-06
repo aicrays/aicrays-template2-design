@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { Factory, Shield, Stethoscope, Truck, ArrowRight, Search } from "lucide-react";
+import { Factory, Shield, Stethoscope, Truck, ArrowRight, Search, Zap, Building2 } from "lucide-react";
 
 const IndustriesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
@@ -40,6 +40,22 @@ const IndustriesSection = () => {
       hoverInsight: "Optimized delivery routes saving 30% in operational costs",
       iconBg: "from-purple-500 to-purple-600",
       position: "stagger-4"
+    },
+    {
+      icon: Zap,
+      title: "Energy",
+      description: "Smart grid management and renewable energy optimization solutions",
+      hoverInsight: "Increased energy efficiency by 35% through AI-powered grid optimization",
+      iconBg: "from-purple-600 to-purple-700",
+      position: "stagger-5"
+    },
+    {
+      icon: Building2,
+      title: "Finance",
+      description: "Secure trading platforms and risk management systems with real-time analytics",
+      hoverInsight: "Reduced trading latency by 60% with advanced algorithmic solutions",
+      iconBg: "from-purple-400 to-purple-600",
+      position: "stagger-6"
     }
   ];
 
@@ -69,129 +85,87 @@ const IndustriesSection = () => {
 
   return (
     <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-50/40 via-purple-50/30 to-purple-50/50" 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-purple-50/50 via-purple-60/40 to-purple-70/60 py-20" 
       ref={sectionRef}
     >
       {/* Enhanced Dynamic Background with More Orbs and Color Splotches */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Base gradient layers */}
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-50/70 via-purple-100/50 to-purple-50/80"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-100/70 via-purple-50/40 to-transparent"></div>
+        {/* Base gradient layers - slightly darker than hero */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-60/80 via-purple-100/60 to-purple-70/90"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-3/4 bg-gradient-to-t from-purple-100/80 via-purple-60/50 to-transparent"></div>
         
         {/* Extra Large floating orbs */}
-        <div className="absolute top-[15%] right-[8%] w-96 h-96 bg-gradient-radial from-purple-300/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-85" style={{
+        <div className="absolute top-[15%] right-[8%] w-96 h-96 bg-gradient-radial from-purple-300/50 to-transparent rounded-full blur-3xl animate-float-vertical opacity-90" style={{
           animationDelay: '2s',
           animationDuration: '28s'
         }}></div>
-        <div className="absolute bottom-[20%] left-[5%] w-80 h-80 bg-gradient-radial from-indigo-400/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-75" style={{
+        <div className="absolute bottom-[20%] left-[5%] w-80 h-80 bg-gradient-radial from-indigo-400/45 to-transparent rounded-full blur-3xl animate-float-vertical opacity-85" style={{
           animationDelay: '8s',
           animationDuration: '32s'
         }}></div>
         
-        {/* Large floating orbs */}
-        <div className="absolute top-[20%] right-[12%] w-72 h-72 bg-gradient-radial from-purple-300/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-80" style={{
-          animationDelay: '4s',
-          animationDuration: '26s'
+        {/* Additional Large floating orbs */}
+        <div className="absolute top-[10%] left-[15%] w-72 h-72 bg-gradient-radial from-violet-400/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-75" style={{
+          animationDelay: '12s',
+          animationDuration: '25s'
         }}></div>
-        <div className="absolute bottom-[25%] left-[8%] w-88 h-88 bg-gradient-radial from-purple-400/30 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
-          animationDelay: '10s',
-          animationDuration: '30s'
+        <div className="absolute bottom-[15%] right-[40%] w-88 h-88 bg-gradient-radial from-purple-200/50 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
+          animationDelay: '19s',
+          animationDuration: '29s'
         }}></div>
-        <div className="absolute top-[35%] left-[30%] w-64 h-64 bg-gradient-radial from-indigo-300/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-75" style={{
+        <div className="absolute top-[35%] left-[30%] w-64 h-64 bg-gradient-radial from-indigo-300/50 to-transparent rounded-full blur-3xl animate-float-vertical opacity-80" style={{
           animationDelay: '17s',
           animationDuration: '23s'
         }}></div>
-        <div className="absolute bottom-[40%] right-[25%] w-56 h-56 bg-gradient-radial from-violet-300/45 to-transparent rounded-full blur-3xl animate-float-vertical opacity-85" style={{
+        <div className="absolute bottom-[45%] right-[25%] w-56 h-56 bg-gradient-radial from-violet-300/55 to-transparent rounded-full blur-3xl animate-float-vertical opacity-90" style={{
           animationDelay: '24s',
           animationDuration: '28s'
         }}></div>
         
-        {/* Additional Large Orbs */}
-        <div className="absolute top-[10%] left-[15%] w-60 h-60 bg-gradient-radial from-violet-400/35 to-transparent rounded-full blur-3xl animate-float-vertical opacity-70" style={{
-          animationDelay: '12s',
-          animationDuration: '25s'
-        }}></div>
-        <div className="absolute bottom-[10%] right-[40%] w-72 h-72 bg-gradient-radial from-purple-200/40 to-transparent rounded-full blur-3xl animate-float-vertical opacity-65" style={{
-          animationDelay: '19s',
-          animationDuration: '29s'
-        }}></div>
-        
-        {/* Medium floating orbs */}
-        <div className="absolute top-[50%] right-[40%] w-40 h-40 bg-purple-300/30 rounded-full blur-2xl animate-float-vertical opacity-65" style={{
+        {/* More Medium floating orbs */}
+        <div className="absolute top-[50%] right-[40%] w-48 h-48 bg-purple-300/40 rounded-full blur-2xl animate-float-vertical opacity-70" style={{
           animationDelay: '7s',
           animationDuration: '18s'
         }}></div>
-        <div className="absolute bottom-[55%] left-[35%] w-48 h-48 bg-indigo-400/25 rounded-full blur-2xl animate-float-vertical opacity-60" style={{
+        <div className="absolute bottom-[60%] left-[35%] w-52 h-52 bg-indigo-400/35 rounded-full blur-2xl animate-float-vertical opacity-65" style={{
           animationDelay: '14s',
           animationDuration: '22s'
         }}></div>
-        <div className="absolute top-[65%] right-[65%] w-32 h-32 bg-violet-400/35 rounded-full blur-2xl animate-float-vertical opacity-70" style={{
+        <div className="absolute top-[70%] right-[65%] w-40 h-40 bg-violet-400/45 rounded-full blur-2xl animate-float-vertical opacity-75" style={{
           animationDelay: '20s',
           animationDuration: '16s'
         }}></div>
-        <div className="absolute top-[80%] left-[60%] w-36 h-36 bg-purple-300/30 rounded-full blur-2xl animate-float-vertical opacity-55" style={{
+        <div className="absolute top-[85%] left-[60%] w-44 h-44 bg-purple-300/40 rounded-full blur-2xl animate-float-vertical opacity-60" style={{
           animationDelay: '5s',
           animationDuration: '20s'
         }}></div>
-        <div className="absolute bottom-[70%] right-[15%] w-44 h-44 bg-indigo-300/28 rounded-full blur-2xl animate-float-vertical opacity-65" style={{
+        <div className="absolute bottom-[75%] right-[15%] w-48 h-48 bg-indigo-300/38 rounded-full blur-2xl animate-float-vertical opacity-70" style={{
           animationDelay: '16s',
           animationDuration: '24s'
         }}></div>
         
-        {/* Small accent orbs */}
-        <div className="absolute top-[30%] left-[75%] w-24 h-24 bg-purple-500/30 rounded-full blur-xl animate-float-vertical opacity-55" style={{
-          animationDelay: '9s',
-          animationDuration: '13s'
-        }}></div>
-        <div className="absolute bottom-[20%] right-[50%] w-28 h-28 bg-indigo-300/35 rounded-full blur-xl animate-float-vertical opacity-60" style={{
-          animationDelay: '27s',
-          animationDuration: '20s'
-        }}></div>
-        <div className="absolute top-[45%] left-[5%] w-32 h-32 bg-violet-400/25 rounded-full blur-xl animate-float-vertical opacity-50" style={{
-          animationDelay: '11s',
-          animationDuration: '17s'
-        }}></div>
-        <div className="absolute bottom-[60%] right-[75%] w-20 h-20 bg-purple-400/35 rounded-full blur-xl animate-float-vertical opacity-60" style={{
-          animationDelay: '23s',
-          animationDuration: '15s'
-        }}></div>
-        
-        {/* Extra small floating elements for depth */}
-        <div className="absolute top-[75%] left-[20%] w-16 h-16 bg-violet-400/25 rounded-full blur-lg animate-float-vertical opacity-50" style={{
-          animationDelay: '12s',
-          animationDuration: '10s'
-        }}></div>
-        <div className="absolute top-[90%] right-[30%] w-12 h-12 bg-purple-400/30 rounded-full blur-lg animate-float-vertical opacity-45" style={{
-          animationDelay: '22s',
-          animationDuration: '14s'
-        }}></div>
-        <div className="absolute top-[25%] left-[85%] w-18 h-18 bg-indigo-400/20 rounded-full blur-lg animate-float-vertical opacity-40" style={{
-          animationDelay: '6s',
-          animationDuration: '12s'
-        }}></div>
-        <div className="absolute bottom-[45%] left-[90%] w-14 h-14 bg-violet-300/30 rounded-full blur-lg animate-float-vertical opacity-55" style={{
-          animationDelay: '18s',
-          animationDuration: '11s'
-        }}></div>
-        
-        {/* Color Splotches */}
-        <div className="absolute top-[60%] left-[10%] w-52 h-52 bg-gradient-to-br from-purple-200/20 via-violet-200/15 to-transparent rounded-full blur-2xl opacity-60" style={{
+        {/* Enhanced Color Splotches */}
+        <div className="absolute top-[25%] left-[10%] w-60 h-60 bg-gradient-to-br from-purple-200/30 via-violet-200/25 to-transparent rounded-full blur-2xl opacity-65" style={{
           animationDelay: '3s',
           animationDuration: '35s'
         }}></div>
-        <div className="absolute bottom-[35%] right-[20%] w-48 h-48 bg-gradient-to-br from-indigo-200/25 via-purple-200/20 to-transparent rounded-full blur-2xl opacity-50" style={{
+        <div className="absolute bottom-[30%] right-[20%] w-56 h-56 bg-gradient-to-br from-indigo-200/35 via-purple-200/30 to-transparent rounded-full blur-2xl opacity-55" style={{
           animationDelay: '15s',
           animationDuration: '40s'
         }}></div>
-        <div className="absolute top-[40%] right-[5%] w-64 h-64 bg-gradient-to-br from-violet-200/18 via-purple-100/22 to-transparent rounded-full blur-3xl opacity-55" style={{
+        <div className="absolute top-[40%] right-[5%] w-72 h-72 bg-gradient-to-br from-violet-200/28 via-purple-100/32 to-transparent rounded-full blur-3xl opacity-60" style={{
           animationDelay: '25s',
           animationDuration: '33s'
         }}></div>
+        <div className="absolute bottom-[50%] left-[20%] w-64 h-64 bg-gradient-to-br from-purple-300/25 via-indigo-200/20 to-transparent rounded-full blur-2xl opacity-50" style={{
+          animationDelay: '30s',
+          animationDuration: '38s'
+        }}></div>
       </div>
       
-      <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-6xl mx-auto py-12">
+      <div className="container px-4 sm:px-6 lg:px-8 relative z-10 max-w-7xl mx-auto">
         {/* Header Section - Matching Hero Style */}
-        <div className="text-center mb-12 lg:mb-16">
+        <div className="text-center mb-16 lg:mb-20">
           <div className="inline-flex items-center justify-center px-3 py-1.5 rounded-full text-sm font-medium bg-white/80 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-6 opacity-0 animate-fade-in hover:scale-105 transition-transform cursor-pointer" style={{ animationDelay: "0.1s" }}>
             <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-2"></span>
             <span>Industries</span>
@@ -211,13 +185,13 @@ const IndustriesSection = () => {
           </p>
         </div>
 
-        {/* Staggered Grid Layout */}
-        <div className="relative">
-          {/* Desktop Staggered Layout */}
+        {/* Improved Grid Layout */}
+        <div className="relative mb-16">
+          {/* Desktop Grid Layout */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {/* Manufacturing - Top Left */}
-              <div className="col-start-1 row-start-1 transform rotate-[-1deg]">
+            <div className="grid grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+              {/* Top Row - 3 cards */}
+              <div className="col-span-1 transform rotate-[-0.5deg]">
                 <IndustryCard 
                   industry={industries[0]} 
                   index={0} 
@@ -227,8 +201,7 @@ const IndustriesSection = () => {
                 />
               </div>
               
-              {/* Government - Top Right */}
-              <div className="col-start-3 row-start-1 transform rotate-[1deg] translate-y-6">
+              <div className="col-span-1 transform rotate-[0.5deg] translate-y-3">
                 <IndustryCard 
                   industry={industries[1]} 
                   index={1} 
@@ -238,13 +211,7 @@ const IndustriesSection = () => {
                 />
               </div>
               
-              {/* CTA Block - Center */}
-              <div className="col-start-2 row-start-1 row-span-2 flex items-center justify-center transform translate-y-8">
-                <CTABlock />
-              </div>
-              
-              {/* Healthcare - Bottom Left */}
-              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-16">
+              <div className="col-span-1 transform rotate-[-0.5deg] translate-y-1">
                 <IndustryCard 
                   industry={industries[2]} 
                   index={2} 
@@ -254,11 +221,37 @@ const IndustriesSection = () => {
                 />
               </div>
               
-              {/* Logistics - Bottom Right */}
-              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-24">
+              <div className="col-span-1 transform rotate-[0.5deg] translate-y-4">
                 <IndustryCard 
                   industry={industries[3]} 
                   index={3} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
+              </div>
+            </div>
+            
+            {/* Bottom Row - 2 cards + CTA */}
+            <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="col-span-1 transform rotate-[0.5deg] translate-y-2">
+                <IndustryCard 
+                  industry={industries[4]} 
+                  index={4} 
+                  visibleCards={visibleCards}
+                  hoveredCard={hoveredCard}
+                  setHoveredCard={setHoveredCard}
+                />
+              </div>
+              
+              <div className="col-span-1 flex items-center justify-center transform translate-y-4">
+                <CTABlock />
+              </div>
+              
+              <div className="col-span-1 transform rotate-[-0.5deg] translate-y-2">
+                <IndustryCard 
+                  industry={industries[5]} 
+                  index={5} 
                   visibleCards={visibleCards}
                   hoveredCard={hoveredCard}
                   setHoveredCard={setHoveredCard}
@@ -291,7 +284,7 @@ const IndustriesSection = () => {
   );
 };
 
-// Industry Card Component
+// Industry Card Component with improved sizing
 const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCard }: any) => (
   <div 
     data-index={index}
@@ -304,14 +297,14 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
   >
     <div className="relative group">
       {/* Card Background with Enhanced Glassmorphism */}
-      <div className="backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden min-h-[200px] flex flex-col">
+      <div className="backdrop-blur-xl bg-white/90 border border-white/50 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/95 hover:border-purple-200/60 hover:-translate-y-2 overflow-hidden h-[220px] flex flex-col">
         {/* Hover glow effect */}
         <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/60 to-violet-50/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
         
         <div className="relative z-10 flex-1 flex flex-col">
           {/* Icon */}
-          <div className={`w-12 h-12 bg-gradient-to-br ${industry.iconBg} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-            <industry.icon className="w-6 h-6 text-white" strokeWidth={2} />
+          <div className={`w-11 h-11 bg-gradient-to-br ${industry.iconBg} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+            <industry.icon className="w-5 h-5 text-white" strokeWidth={2} />
           </div>
           
           {/* Content */}
@@ -320,7 +313,7 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
           </h3>
           
           {/* Description or Hover Insight */}
-          <div className="min-h-[3rem] flex-1">
+          <div className="min-h-[3.5rem] flex-1">
             <p className={`text-gray-600 leading-relaxed transition-opacity duration-300 text-sm ${
               hoveredCard === index ? 'opacity-0' : 'opacity-100'
             }`}>
@@ -342,17 +335,17 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
   </div>
 );
 
-// CTA Block Component
+// CTA Block Component with consistent sizing
 const CTABlock = () => (
-  <div className="relative group max-w-xs">
-    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden min-h-[200px] flex flex-col">
+  <div className="relative group max-w-sm w-full">
+    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-5 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden h-[220px] flex flex-col">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/40 to-violet-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
       <div className="relative z-10 text-center flex-1 flex flex-col">
         {/* Icon */}
-        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-          <Search className="w-6 h-6 text-white" />
+        <div className="w-11 h-11 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
+          <Search className="w-5 h-5 text-white" />
         </div>
         
         <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight">
