@@ -17,7 +17,7 @@ const HeroVisual = () => {
       title: "Security Framework",
       status: "In Development",
       description: "Enterprise-grade threat detection and response system",
-      gradient: "from-purple-600 to-purple-700",
+      gradient: "from-purple-600 to-indigo-600",
       statusColor: "text-blue-600 bg-blue-50"
     },
     {
@@ -25,7 +25,7 @@ const HeroVisual = () => {
       title: "IoT Management Hub",
       status: "In Production",
       description: "Connected device monitoring and automation platform",
-      gradient: "from-purple-400 to-purple-500",
+      gradient: "from-indigo-500 to-purple-500",
       statusColor: "text-green-600 bg-green-50"
     },
     {
@@ -33,15 +33,15 @@ const HeroVisual = () => {
       title: "Data Visualization Suite",
       status: "Beta Testing",
       description: "Interactive dashboards and reporting tools",
-      gradient: "from-purple-500 to-purple-600",
-      statusColor: "text-amber-600 bg-amber-50"
+      gradient: "from-purple-500 to-pink-500",
+      statusColor: "text-purple-600 bg-purple-50"
     },
     {
       icon: Cloud,
       title: "Cloud Infrastructure",
       status: "In Production",
       description: "Scalable deployment and orchestration platform",
-      gradient: "from-purple-600 to-purple-700",
+      gradient: "from-indigo-600 to-purple-700",
       statusColor: "text-green-600 bg-green-50"
     },
     {
@@ -49,7 +49,7 @@ const HeroVisual = () => {
       title: "UX Design System",
       status: "In Development",
       description: "Modular component library and design tokens",
-      gradient: "from-purple-400 to-purple-500",
+      gradient: "from-purple-400 to-indigo-500",
       statusColor: "text-blue-600 bg-blue-50"
     }
   ];
@@ -79,7 +79,7 @@ const HeroVisual = () => {
               style={{ animationDelay: `${1.4 + index * 0.1}s` }}
             >
               {/* Background gradient on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-purple-100/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl lg:rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-indigo-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl lg:rounded-2xl"></div>
               
               <div className="relative z-10">
                 {/* Icon and Status */}
@@ -104,7 +104,7 @@ const HeroVisual = () => {
               </div>
 
               {/* Hover indicator */}
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-purple-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-b-xl lg:rounded-b-2xl"></div>
+              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-b-xl lg:rounded-b-2xl"></div>
             </div>
           ))}
         </div>
