@@ -1,257 +1,139 @@
 
-import React, { useEffect, useRef, useState } from "react";
-import { Wrench, Users, Heart, Globe, ArrowRight, Search } from "lucide-react";
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Building2, Heart, Factory, ShoppingCart, GraduationCap, Banknote } from "lucide-react";
 
 const IndustriesSection = () => {
-  const [visibleCards, setVisibleCards] = useState<number[]>([]);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
   const industries = [
     {
-      icon: Wrench,
-      title: "Manufacturing",
-      description: "Streamline production workflows and quality control processes with real-time monitoring",
-      hoverInsight: "Reduced downtime by 40% through predictive maintenance systems",
-      iconBg: "from-purple-500 to-purple-600",
-      position: "stagger-1"
-    },
-    {
-      icon: Users,
-      title: "Government",
-      description: "Secure access in critical infrastructure environments with multi-level clearance",
-      hoverInsight: "Successfully deployed in 15+ federal agencies with zero security incidents",
-      iconBg: "from-purple-600 to-purple-700",
-      position: "stagger-2"
-    },
-    {
-      icon: Heart,
+      icon: <Heart className="w-8 h-8 text-purple-600" />,
       title: "Healthcare",
-      description: "HIPAA-compliant systems for patient data and seamless care coordination",
-      hoverInsight: "Improved patient outcomes by 25% through integrated data systems",
-      iconBg: "from-purple-400 to-purple-500",
-      position: "stagger-3"
+      description: "Patient management systems, IoT monitoring, and HIPAA-compliant data analytics platforms.",
+      features: ["Patient data security", "IoT device integration", "Predictive analytics"]
     },
     {
-      icon: Globe,
-      title: "Logistics",
-      description: "Real-time tracking and supply chain optimization for global operations",
-      hoverInsight: "Optimized delivery routes saving 30% in operational costs",
-      iconBg: "from-purple-500 to-purple-600",
-      position: "stagger-4"
+      icon: <Factory className="w-8 h-8 text-purple-600" />,
+      title: "Manufacturing",
+      description: "Supply chain optimization, predictive maintenance, and automated quality control systems.",
+      features: ["Supply chain visibility", "Predictive maintenance", "Quality automation"]
+    },
+    {
+      icon: <Banknote className="w-8 h-8 text-purple-600" />,
+      title: "Financial Services",
+      description: "Secure transaction processing, fraud detection, and regulatory compliance platforms.",
+      features: ["Fraud detection", "Compliance automation", "Risk management"]
+    },
+    {
+      icon: <ShoppingCart className="w-8 h-8 text-purple-600" />,
+      title: "Retail & E-commerce",
+      description: "Inventory management, customer analytics, and personalized shopping experiences.",
+      features: ["Inventory optimization", "Customer insights", "Personalization"]
+    },
+    {
+      icon: <GraduationCap className="w-8 h-8 text-purple-600" />,
+      title: "Education",
+      description: "Learning management systems, student analytics, and campus security platforms.",
+      features: ["Learning analytics", "Campus security", "Student management"]
+    },
+    {
+      icon: <Building2 className="w-8 h-8 text-purple-600" />,
+      title: "Government",
+      description: "Citizen services, data management, and secure communication platforms.",
+      features: ["Citizen services", "Data security", "Compliance tools"]
     }
   ];
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardIndex = parseInt(entry.target.getAttribute('data-index') || '0');
-            setTimeout(() => {
-              setVisibleCards(prev => [...prev, cardIndex]);
-            }, cardIndex * 150);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const cards = sectionRef.current?.querySelectorAll('.industry-card');
-    cards?.forEach(card => observer.observe(card));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className="h-screen flex items-center justify-center relative overflow-hidden" ref={sectionRef}>
-      {/* Dynamic Radial Gradient Background - No Grid Pattern */}
-      <div className="absolute inset-0">
-        {/* Main radial gradient */}
-        <div className="absolute inset-0 bg-gradient-radial from-purple-50/40 via-white to-violet-50/30"></div>
+    <section className="relative py-16 md:py-20 bg-gradient-to-br from-white via-purple-50/40 to-violet-50/50 overflow-hidden">
+      {/* Enhanced Background with Floating Orbs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large floating orbs */}
+        <div className="absolute top-[18%] right-[8%] w-56 h-56 bg-gradient-to-r from-purple-400/35 to-violet-400/30 rounded-full blur-3xl animate-float opacity-70" style={{ animationDelay: '2s', animationDuration: '26s' }}></div>
+        <div className="absolute bottom-[22%] left-[10%] w-48 h-48 bg-gradient-to-r from-indigo-500/30 to-purple-500/35 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '8s', animationDuration: '20s' }}></div>
+        <div className="absolute top-[65%] right-[30%] w-44 h-44 bg-gradient-to-r from-violet-400/40 to-pink-400/25 rounded-full blur-3xl animate-float opacity-55" style={{ animationDelay: '5s', animationDuration: '22s' }}></div>
         
-        {/* Floating gradient orbs */}
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-gradient-to-br from-purple-200/10 to-purple-300/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-80 h-80 bg-gradient-to-br from-violet-200/8 to-purple-400/4 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        {/* Medium orbs */}
+        <div className="absolute top-[12%] left-[30%] w-36 h-36 bg-gradient-to-r from-purple-300/45 to-indigo-300/35 rounded-full blur-2xl animate-float opacity-50" style={{ animationDelay: '11s', animationDuration: '18s' }}></div>
+        <div className="absolute bottom-[38%] right-[45%] w-32 h-32 bg-gradient-to-r from-violet-300/40 to-purple-300/45 rounded-full blur-2xl animate-float opacity-60" style={{ animationDelay: '6s', animationDuration: '24s' }}></div>
+        <div className="absolute top-[45%] left-[8%] w-40 h-40 bg-gradient-to-r from-indigo-400/35 to-violet-400/40 rounded-full blur-2xl animate-float opacity-55" style={{ animationDelay: '14s', animationDuration: '16s' }}></div>
+        
+        {/* Small particle dots */}
+        <div className="absolute top-[28%] left-[60%] w-3 h-3 bg-purple-600/60 rounded-full animate-pulse" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-[82%] right-[20%] w-2.5 h-2.5 bg-violet-500/55 rounded-full animate-pulse" style={{ animationDelay: '7s' }}></div>
+        <div className="absolute top-[58%] left-[75%] w-4 h-4 bg-indigo-500/50 rounded-full animate-pulse" style={{ animationDelay: '12s' }}></div>
       </div>
-      
-      <div className="section-container relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div className="section-container relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center px-4 py-2 rounded-full text-sm font-medium bg-white/70 backdrop-blur-sm text-purple-700 border border-purple-200/50 shadow-sm mb-6 hover:scale-105 transition-all duration-300 cursor-pointer">
-            <span className="inline-flex items-center justify-center w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 mr-3"></span>
-            <span>Industries</span>
+          <div className="inline-flex items-center justify-center px-4 py-2 mb-6 bg-gradient-to-r from-purple-100/80 to-pink-100/70 backdrop-blur-sm border border-purple-200/50 rounded-full shadow-sm">
+            <span className="text-purple-600 font-semibold text-sm">Industries We Serve</span>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 leading-tight">
-            <span className="bg-gradient-to-r from-gray-900 via-purple-700 to-gray-900 bg-clip-text text-transparent">
-              Trusted Across Sectors
-            </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-purple-800 to-gray-900 bg-clip-text text-transparent">
+            Transforming Every Sector
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
-            Our modular approach adapts to the unique requirements and regulations of different industries, 
-            delivering intelligent solutions that scale with your needs.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto font-medium">
+            Our AI-powered platforms are designed to meet the unique challenges and requirements of diverse industries.
           </p>
         </div>
 
-        {/* Staggered Grid Layout */}
-        <div className="relative">
-          {/* Desktop Staggered Layout */}
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {/* Manufacturing - Top Left */}
-              <div className="col-start-1 row-start-1 transform rotate-[-1deg]">
-                <IndustryCard 
-                  industry={industries[0]} 
-                  index={0} 
-                  visibleCards={visibleCards}
-                  hoveredCard={hoveredCard}
-                  setHoveredCard={setHoveredCard}
-                />
-              </div>
+        {/* Industries Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {industries.map((industry, index) => (
+            <Card 
+              key={index} 
+              className="group relative bg-white/80 backdrop-blur-sm border border-purple-200/40 hover:border-purple-300/60 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+            >
+              {/* Card glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
-              {/* Government - Top Right */}
-              <div className="col-start-3 row-start-1 transform rotate-[1deg] translate-y-6">
-                <IndustryCard 
-                  industry={industries[1]} 
-                  index={1} 
-                  visibleCards={visibleCards}
-                  hoveredCard={hoveredCard}
-                  setHoveredCard={setHoveredCard}
-                />
-              </div>
-              
-              {/* CTA Block - Center */}
-              <div className="col-start-2 row-start-1 row-span-2 flex items-center justify-center transform translate-y-8">
-                <CTABlock />
-              </div>
-              
-              {/* Healthcare - Bottom Left */}
-              <div className="col-start-1 row-start-2 transform rotate-[1deg] translate-y-12">
-                <IndustryCard 
-                  industry={industries[2]} 
-                  index={2} 
-                  visibleCards={visibleCards}
-                  hoveredCard={hoveredCard}
-                  setHoveredCard={setHoveredCard}
-                />
-              </div>
-              
-              {/* Logistics - Bottom Right */}
-              <div className="col-start-3 row-start-2 transform rotate-[-1deg] translate-y-18">
-                <IndustryCard 
-                  industry={industries[3]} 
-                  index={3} 
-                  visibleCards={visibleCards}
-                  hoveredCard={hoveredCard}
-                  setHoveredCard={setHoveredCard}
-                />
-              </div>
-            </div>
-          </div>
+              <CardContent className="relative z-10 p-6">
+                <div className="flex items-center mb-4">
+                  <div className="p-3 bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg shadow-sm group-hover:shadow-md transition-shadow duration-300">
+                    {industry.icon}
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-700 transition-colors duration-300">
+                  {industry.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  {industry.description}
+                </p>
+                
+                {/* Features */}
+                <div className="space-y-2">
+                  {industry.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                      <span className="text-gray-700">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-          {/* Mobile/Tablet Responsive Layout */}
-          <div className="lg:hidden space-y-6">
-            {industries.map((industry, index) => (
-              <IndustryCard 
-                key={industry.title}
-                industry={industry} 
-                index={index} 
-                visibleCards={visibleCards}
-                hoveredCard={hoveredCard}
-                setHoveredCard={setHoveredCard}
-              />
-            ))}
-            
-            {/* Mobile CTA */}
-            <div className="mt-8">
-              <CTABlock />
-            </div>
+        {/* CTA Section */}
+        <div className="text-center mt-12">
+          <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-8 text-white shadow-xl">
+            <h3 className="text-2xl lg:text-3xl font-bold mb-4">
+              Don't See Your Industry?
+            </h3>
+            <p className="text-purple-100 mb-6 text-lg max-w-2xl mx-auto">
+              Our modular approach allows us to adapt to any industry's specific needs. Let's discuss how we can build a solution for your sector.
+            </p>
+            <a 
+              href="#contact" 
+              className="inline-flex items-center px-8 py-4 bg-white text-purple-600 hover:bg-gray-100 font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            >
+              Discuss Your Industry
+            </a>
           </div>
         </div>
       </div>
     </section>
   );
 };
-
-// Industry Card Component
-const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCard }: any) => (
-  <div 
-    data-index={index}
-    className={`industry-card transition-all duration-700 ${
-      visibleCards.includes(index) ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-    }`}
-    onMouseEnter={() => setHoveredCard(index)}
-    onMouseLeave={() => setHoveredCard(null)}
-    style={{ animationDelay: `${index * 0.15}s` }}
-  >
-    <div className="relative group">
-      {/* Card Background with Glassmorphism */}
-      <div className="backdrop-blur-xl bg-white/85 border border-white/40 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:bg-white/90 hover:border-purple-200/50 hover:-translate-y-2 overflow-hidden">
-        {/* Hover glow effect */}
-        <div className={`absolute inset-0 bg-gradient-to-br from-purple-50/50 to-violet-50/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`}></div>
-        
-        <div className="relative z-10">
-          {/* Icon */}
-          <div className={`w-12 h-12 bg-gradient-to-br ${industry.iconBg} rounded-xl flex items-center justify-center shadow-lg mb-4 group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
-            <industry.icon className="w-6 h-6 text-white" />
-          </div>
-          
-          {/* Content */}
-          <h3 className="text-lg font-bold mb-3 text-gray-900 group-hover:text-purple-700 transition-colors">
-            {industry.title}
-          </h3>
-          
-          {/* Description or Hover Insight */}
-          <div className="min-h-[3rem]">
-            <p className={`text-gray-600 leading-relaxed transition-opacity duration-300 text-sm ${
-              hoveredCard === index ? 'opacity-0' : 'opacity-100'
-            }`}>
-              {industry.description}
-            </p>
-            
-            <p className={`text-purple-700 font-medium leading-relaxed absolute inset-x-0 transition-opacity duration-300 text-sm ${
-              hoveredCard === index ? 'opacity-100' : 'opacity-0'
-            }`}>
-              ✨ {industry.hoverInsight}
-            </p>
-          </div>
-        </div>
-
-        {/* Subtle corner accent */}
-        <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-purple-100/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-      </div>
-    </div>
-  </div>
-);
-
-// CTA Block Component
-const CTABlock = () => (
-  <div className="relative group max-w-xs">
-    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/80 to-violet-100/60 border border-purple-200/50 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-200/30 to-violet-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-      
-      <div className="relative z-10 text-center">
-        {/* Icon */}
-        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-purple-500/30 group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
-          <Search className="w-6 h-6 text-white" />
-        </div>
-        
-        <h3 className="text-lg font-bold mb-3 text-gray-900 leading-tight">
-          Don't See Your Industry?
-        </h3>
-        
-        <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-          Our platform adapts to unique sector requirements. Let's discuss your specific needs.
-        </p>
-        
-        <button className="inline-flex items-center gap-2 px-4 py-2.5 bg-white/90 backdrop-blur-sm border border-purple-200 rounded-full text-purple-600 font-semibold hover:bg-purple-50 hover:border-purple-300 transition-all duration-300 group-hover:scale-105 shadow-sm hover:shadow-md text-sm">
-          Let's Talk 
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
-      </div>
-    </div>
-  </div>
-);
 
 export default IndustriesSection;
