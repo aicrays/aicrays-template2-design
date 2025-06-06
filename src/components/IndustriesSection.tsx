@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { Factory, Shield, Stethoscope, Truck, ArrowRight, Search, Zap, Building2 } from "lucide-react";
 
@@ -185,12 +184,12 @@ const IndustriesSection = () => {
           </p>
         </div>
 
-        {/* Improved Grid Layout */}
-        <div className="relative mb-16">
+        {/* Improved Grid Layout with proper spacing */}
+        <div className="relative mb-20">
           {/* Desktop Grid Layout */}
           <div className="hidden lg:block">
-            <div className="grid grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
-              {/* Top Row - 3 cards */}
+            <div className="grid grid-cols-4 gap-8 max-w-6xl mx-auto mb-12">
+              {/* Top Row - 4 cards */}
               <div className="col-span-1 transform rotate-[-0.5deg]">
                 <IndustryCard 
                   industry={industries[0]} 
@@ -232,8 +231,8 @@ const IndustriesSection = () => {
               </div>
             </div>
             
-            {/* Bottom Row - 2 cards + CTA */}
-            <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {/* Bottom Row - 2 cards + centered CTA */}
+            <div className="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="col-span-1 transform rotate-[0.5deg] translate-y-2">
                 <IndustryCard 
                   industry={industries[4]} 
@@ -335,10 +334,10 @@ const IndustryCard = ({ industry, index, visibleCards, hoveredCard, setHoveredCa
   </div>
 );
 
-// CTA Block Component with consistent sizing
+// CTA Block Component with proper spacing and centered badges
 const CTABlock = () => (
   <div className="relative group max-w-sm w-full">
-    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden h-[220px] flex flex-col">
+    <div className="backdrop-blur-xl bg-gradient-to-br from-purple-100/90 to-violet-100/70 border border-purple-200/60 rounded-2xl p-6 shadow-xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 overflow-hidden h-[240px] flex flex-col">
       {/* Background glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-purple-200/40 to-violet-200/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
       
@@ -356,21 +355,21 @@ const CTABlock = () => (
           Our platform adapts to unique sector requirements. Let's discuss your specific needs.
         </p>
         
-        {/* Centralized badges section with smaller sizing */}
-        <div className="flex flex-wrap justify-center gap-1.5 mb-4 px-2">
-          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+        {/* Properly centered badges section with controlled spacing */}
+        <div className="flex flex-wrap justify-center gap-1 mb-4 max-w-[200px] mx-auto">
+          <span className="inline-block px-2 py-0.5 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
             Education
           </span>
-          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+          <span className="inline-block px-2 py-0.5 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
             Legal
           </span>
-          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+          <span className="inline-block px-2 py-0.5 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
             Real Estate
           </span>
-          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+          <span className="inline-block px-2 py-0.5 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
             Agriculture
           </span>
-          <span className="inline-block px-2 py-1 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
+          <span className="inline-block px-2 py-0.5 bg-white/60 backdrop-blur-sm border border-purple-200/50 rounded-full text-xs text-purple-600 font-medium">
             Media
           </span>
         </div>
