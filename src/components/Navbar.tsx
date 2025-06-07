@@ -1,10 +1,14 @@
+
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,10 +26,37 @@ const Navbar = () => {
   };
 
   const scrollToTop = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+      return;
+    }
+    
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+    
+    // Close mobile menu if open
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
+    }
+  };
+
+  const handleContactClick = () => {
+    if (location.pathname !== '/') {
+      navigate('/#contact');
+      return;
+    }
+    
+    const contactElement = document.getElementById('contact');
+    if (contactElement) {
+      const offset = window.innerWidth < 768 ? 100 : 80;
+      window.scrollTo({
+        top: contactElement.offsetTop - offset,
+        behavior: 'smooth'
+      });
+    }
     
     // Close mobile menu if open
     if (isMenuOpen) {
@@ -44,45 +75,37 @@ const Navbar = () => {
       )}
     >
       <div className="container flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a 
-          href="#" 
+        <button 
+          onClick={scrollToTop}
           className="flex items-center space-x-2"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToTop();
-          }}
           aria-label="Aicrays"
         >
           <div className="text-2xl font-bold bg-gradient-to-r from-gray-900 via-purple-800 to-purple-950 bg-clip-text text-transparent hover:from-gray-800 hover:via-purple-700 hover:to-purple-900 transition-all duration-300">
             Aicrays
           </div>
-        </a>
+        </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
-          <a 
-            href="#" 
+          <button 
+            onClick={scrollToTop}
             className="nav-link"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToTop();
-            }}
           >
             Home
-          </a>
+          </button>
           <a href="/products" className="nav-link">Products</a>
           <a href="/partners" className="nav-link">Partners</a>
-          <a href="#contact" className="nav-link">Contact</a>
+          <button onClick={handleContactClick} className="nav-link">Contact</button>
         </nav>
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <a 
-            href="#contact" 
+          <button 
+            onClick={handleContactClick}
             className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-purple-800 hover:scale-105"
           >
             Book Consultation
-          </a>
+          </button>
         </div>
 
         {/* Mobile menu button */}
@@ -101,18 +124,16 @@ const Navbar = () => {
         isMenuOpen ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full pointer-events-none"
       )}>
         <nav className="flex flex-col space-y-8 items-center mt-8">
-          <a 
-            href="#" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
-            onClick={(e) => {
-              e.preventDefault();
+          <button 
+            onClick={() => {
               scrollToTop();
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors"
           >
             Home
-          </a>
+          </button>
           <a 
             href="/products" 
             className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
@@ -133,26 +154,26 @@ const Navbar = () => {
           >
             Partners
           </a>
-          <a 
-            href="#contact" 
-            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors" 
+          <button 
             onClick={() => {
+              handleContactClick();
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
+            className="text-xl font-medium py-3 px-6 w-full text-center rounded-lg hover:bg-purple-50 transition-colors"
           >
             Contact
-          </a>
-          <a 
-            href="#contact" 
-            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-full w-full text-center mt-4 hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
+          </button>
+          <button 
             onClick={() => {
+              handleContactClick();
               setIsMenuOpen(false);
               document.body.style.overflow = '';
             }}
+            className="px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-700 text-white font-medium rounded-full w-full text-center mt-4 hover:from-purple-700 hover:to-purple-800 transition-all duration-300"
           >
             Book Consultation
-          </a>
+          </button>
         </nav>
       </div>
     </header>
