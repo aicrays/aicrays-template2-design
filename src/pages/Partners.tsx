@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import PartnersHero from "@/components/Partners/PartnersHero";
@@ -54,7 +55,7 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-white via-purple-50/20 to-violet-50/30">
-      {/* Enhanced Global Background Elements with More Orbs */}
+      {/* Enhanced Global Background Elements with More Orbs - Copied from Hero */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
         {/* Enhanced Background with Darker Tones - matching hero */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-purple-100/50 to-purple-200/60"></div>
