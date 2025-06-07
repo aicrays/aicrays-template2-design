@@ -1,8 +1,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Zap, Shield, Cpu, Eye, Cloud, Layers } from "lucide-react";
+import { Brain, Shield, Wifi, BarChart3, Cloud, Layout } from "lucide-react";
 
 const ProductsHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -15,123 +13,176 @@ const ProductsHero = () => {
 
   const products = [
     {
-      icon: Zap,
-      name: "AI Analytics Platform",
-      description: "Real-time business intelligence with predictive modeling",
+      icon: Brain,
+      title: "AI Analytics Platform",
       status: "In Production",
-      statusColor: "bg-green-100 text-green-800"
+      description: "Real-time business intelligence with predictive modeling",
+      gradient: "from-purple-500 to-purple-600",
+      statusColor: "text-green-600 bg-green-50"
     },
     {
       icon: Shield,
-      name: "Security Framework",
-      description: "Enterprise-grade threat detection and response system",
+      title: "Security Framework",
       status: "In Development",
-      statusColor: "bg-purple-100 text-purple-800"
+      description: "Enterprise-grade threat detection and response system",
+      gradient: "from-purple-600 to-indigo-600",
+      statusColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Cpu,
-      name: "IoT Management Hub",
-      description: "Connected device monitoring and automation platform",
+      icon: Wifi,
+      title: "IoT Management Hub",
       status: "In Production",
-      statusColor: "bg-green-100 text-green-800"
+      description: "Connected device monitoring and automation platform",
+      gradient: "from-indigo-500 to-purple-500",
+      statusColor: "text-green-600 bg-green-50"
     },
     {
-      icon: Eye,
-      name: "Data Visualization Suite",
-      description: "Interactive dashboards and reporting tools",
+      icon: BarChart3,
+      title: "Data Visualization Suite",
       status: "Beta Testing",
-      statusColor: "bg-blue-100 text-blue-800"
+      description: "Interactive dashboards and reporting tools",
+      gradient: "from-purple-500 to-pink-500",
+      statusColor: "text-purple-600 bg-purple-50"
     },
     {
       icon: Cloud,
-      name: "Cloud Infrastructure",
-      description: "Scalable deployment and orchestration platform",
+      title: "Cloud Infrastructure",
       status: "In Production",
-      statusColor: "bg-green-100 text-green-800"
+      description: "Scalable deployment and orchestration platform",
+      gradient: "from-indigo-600 to-purple-700",
+      statusColor: "text-green-600 bg-green-50"
     },
     {
-      icon: Layers,
-      name: "UX Design System",
-      description: "Modular component library and design tokens",
+      icon: Layout,
+      title: "UX Design System",
       status: "In Development",
-      statusColor: "bg-purple-100 text-purple-800"
+      description: "Modular component library and design tokens",
+      gradient: "from-purple-400 to-indigo-500",
+      statusColor: "text-blue-600 bg-blue-50"
     }
   ];
 
   return (
-    <section className="overflow-hidden relative h-screen flex items-center justify-center" id="products-hero">
+    <section className="overflow-hidden relative min-h-screen flex items-center justify-center" id="products-hero">
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
         <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
             
-            {/* Left Side - Text Content */}
-            <div className={`flex-1 lg:max-w-[45%] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <div className="text-left">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight mb-6">
-                  <span className="bg-gradient-to-r from-gray-900 via-purple-800 to-purple-950 bg-clip-text text-transparent">
-                    Built to Scale.<br />
-                    Designed for Impact.
-                  </span>
-                </h1>
+            {/* Left Side - Content */}
+            <div className="w-full lg:w-1/2 text-left space-y-6 lg:space-y-8">
+              <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                <div className="space-y-4">
+                  <h1 className="font-bold leading-tight tracking-tight text-4xl md:text-5xl lg:text-6xl">
+                    <div className="opacity-0 animate-fade-in mb-4" style={{ animationDelay: "0.2s", animationDuration: "0.8s" }}>
+                      <span className="block text-gray-900">Empowering Enterprises</span>
+                    </div>
+                    <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationDuration: "0.8s" }}>
+                      <span className="block">
+                        Through{" "}
+                        <span className="text-purple-700 relative inline-block">
+                          Innovation
+                          <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
+                        </span>
+                      </span>
+                      <span className="block mt-2">
+                        and{" "}
+                        <span className="text-purple-700 relative inline-block">
+                          Personalization
+                          <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{ animationDelay: '1s' }}></div>
+                        </span>
+                      </span>
+                    </div>
+                  </h1>
+                </div>
                 
-                <p className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed">
-                  Explore our growing suite of AI-powered, cybersecurity-enhanced platforms built by engineers from top Fortune 500 companies. Every product is designed to scale securely and integrate modularly with your operations.
-                </p>
-
-                <p className="text-sm text-gray-600 font-medium">
-                  Trusted by teams from AWS, IBM, JP Morgan, Raytheon, and more.
-                </p>
+                <div className="pt-2">
+                  <p style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} className="text-lg md:text-xl leading-relaxed text-gray-700 opacity-0 animate-fade-in max-w-2xl font-normal">
+                    We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-in pt-6" style={{ animationDelay: "0.8s", animationDuration: "0.8s" }}>
+                  <a href="#contact" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-purple-600 to-purple-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden min-w-[220px] hover:shadow-purple-600/40 hover:from-purple-700 hover:to-purple-800">
+                    <span className="relative z-10">Book a Consultation</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-purple-800 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+                    <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                  </a>
+                  
+                  <a href="#built-and-delivered" className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-purple-700 bg-white/90 backdrop-blur-sm border-2 border-purple-300 rounded-full hover:border-purple-500 hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg min-w-[220px] hover:shadow-blue-500/20">
+                    <span className="relative z-10">Explore What We Build</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-purple-50 to-blue-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-full"></div>
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Right Side - Product Grid */}
-            <div className={`flex-1 lg:max-w-[55%] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ animationDelay: '200ms' }}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                {products.map((product, index) => {
-                  const IconComponent = product.icon;
-                  return (
-                    <Card 
-                      key={index} 
-                      className={`glass-morphism-card hover-lift relative p-6 transition-all duration-300 hover:shadow-xl stagger-${index + 1}`}
+            {/* Right Side - Products Grid */}
+            <div className="w-full lg:w-1/2 relative">
+              <div 
+                className="relative z-10 opacity-0 animate-fade-in" 
+                style={{ animationDelay: "1.2s" }}
+              >
+                {/* Header */}
+                <div className="mb-6">
+                  <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                    Current Products
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    What we're building and shipping right now
+                  </p>
+                </div>
+
+                {/* Products Grid - 2x3 layout */}
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 max-w-2xl">
+                  {products.map((product, index) => (
+                    <div
+                      key={product.title}
+                      className={`group bg-white/90 backdrop-blur-sm p-4 lg:p-5 rounded-xl lg:rounded-2xl border border-purple-100/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in`}
+                      style={{ animationDelay: `${1.4 + index * 0.1}s` }}
                     >
-                      <Badge 
-                        className={`absolute top-4 right-4 text-xs font-semibold ${product.statusColor}`}
-                        variant="outline"
-                      >
-                        {product.status}
-                      </Badge>
+                      {/* Background gradient on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-indigo-50/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl lg:rounded-2xl"></div>
                       
-                      <CardContent className="p-0">
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-shrink-0">
-                            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center">
-                              <IconComponent className="w-6 h-6 text-white" />
-                            </div>
+                      <div className="relative z-10">
+                        {/* Icon and Status */}
+                        <div className="flex items-start justify-between mb-3">
+                          <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${product.gradient} rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300`}>
+                            <product.icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
                           </div>
-                          
-                          <div className="flex-1 pt-1">
-                            <h3 className="font-bold text-gray-900 mb-2 pr-20">
-                              {product.name}
-                            </h3>
-                            <p className="text-sm text-gray-600 leading-relaxed">
-                              {product.description}
-                            </p>
-                          </div>
+                          <span className={`text-xs px-2 py-1 rounded-full font-medium ${product.statusColor}`}>
+                            {product.status}
+                          </span>
                         </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-              
-              {/* View All Solutions Link */}
-              <div className="flex justify-end">
-                <a 
-                  href="#built-and-delivered" 
-                  className="inline-flex items-center text-purple-600 hover:text-purple-700 font-medium text-sm transition-colors duration-200"
-                >
-                  View All Solutions →
-                </a>
+                        
+                        {/* Title */}
+                        <h4 className="text-sm lg:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight mb-2">
+                          {product.title}
+                        </h4>
+                        
+                        {/* Description */}
+                        <p className="text-xs lg:text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
+                          {product.description}
+                        </p>
+                      </div>
+
+                      {/* Hover indicator */}
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-purple-400 to-indigo-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-b-xl lg:rounded-b-2xl"></div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom CTA */}
+                <div className="text-center mt-6 opacity-0 animate-fade-in" style={{ animationDelay: "2s" }}>
+                  <a
+                    href="#built-and-delivered"
+                    className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors group text-sm"
+                  >
+                    <span className="font-medium mr-2">View All Solutions</span>
+                    <div className="w-4 h-4 rounded-full border-2 border-purple-400 flex items-center justify-center group-hover:border-purple-600 transition-colors">
+                      <div className="w-1.5 h-1.5 bg-purple-400 rounded-full group-hover:bg-purple-600 transition-colors"></div>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
