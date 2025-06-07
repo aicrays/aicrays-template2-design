@@ -1,56 +1,56 @@
 
 import React from "react";
-import { Brain, Shield, Wifi, BarChart3, Cloud, Layout } from "lucide-react";
+import { Building2, Shield, Database, Plane, Cpu, CreditCard } from "lucide-react";
 
 const HeroVisual = () => {
-  const products = [
+  const companies = [
     {
-      icon: Brain,
-      title: "AI Analytics Platform",
-      status: "In Production",
-      description: "Real-time business intelligence with predictive modeling",
-      gradient: "from-purple-500 to-purple-600",
-      statusColor: "text-green-600 bg-green-50"
-    },
-    {
-      icon: Shield,
-      title: "Security Framework",
-      status: "In Development",
-      description: "Enterprise-grade threat detection and response system",
-      gradient: "from-purple-600 to-indigo-600",
+      icon: Database,
+      title: "AWS",
+      status: "Legacy Experience",
+      description: "Cloud-native architecture & enterprise scalability.",
+      gradient: "from-orange-500 to-orange-600",
       statusColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Wifi,
-      title: "IoT Management Hub",
-      status: "In Production",
-      description: "Connected device monitoring and automation platform",
-      gradient: "from-indigo-500 to-purple-500",
-      statusColor: "text-green-600 bg-green-50"
+      icon: Building2,
+      title: "IBM",
+      status: "Trusted Expertise",
+      description: "Deep expertise in AI systems, security, and modular software.",
+      gradient: "from-blue-600 to-indigo-600",
+      statusColor: "text-purple-600 bg-purple-50"
     },
     {
-      icon: BarChart3,
-      title: "Data Visualization Suite",
-      status: "Beta Testing",
-      description: "Interactive dashboards and reporting tools",
+      icon: Building2,
+      title: "JP Morgan Chase",
+      status: "Legacy Experience",
+      description: "High-performance platforms built for fintech and data integrity.",
+      gradient: "from-indigo-500 to-purple-500",
+      statusColor: "text-blue-600 bg-blue-50"
+    },
+    {
+      icon: Plane,
+      title: "Raytheon (RTX)",
+      status: "Trusted Expertise",
+      description: "Mission-critical systems, aerospace-grade software engineering.",
       gradient: "from-purple-500 to-pink-500",
       statusColor: "text-purple-600 bg-purple-50"
     },
     {
-      icon: Cloud,
-      title: "Cloud Infrastructure",
-      status: "In Production",
-      description: "Scalable deployment and orchestration platform",
+      icon: Cpu,
+      title: "Texas Instruments",
+      status: "Legacy Experience",
+      description: "Embedded systems and hardware-software integration at scale.",
       gradient: "from-indigo-600 to-purple-700",
-      statusColor: "text-green-600 bg-green-50"
+      statusColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Layout,
-      title: "UX Design System",
-      status: "In Development",
-      description: "Modular component library and design tokens",
+      icon: CreditCard,
+      title: "Mastercard",
+      status: "Trusted Expertise",
+      description: "Secure digital platforms built for scale and reliability.",
       gradient: "from-purple-400 to-indigo-500",
-      statusColor: "text-blue-600 bg-blue-50"
+      statusColor: "text-purple-600 bg-purple-50"
     }
   ];
 
@@ -63,18 +63,21 @@ const HeroVisual = () => {
         {/* Header */}
         <div className="mb-6">
           <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
-            Current Products
+            Built and Trusted
           </h3>
+          <h4 className="text-lg lg:text-xl font-bold text-gray-900 mb-2">
+            by Engineers from Fortune 500 Companies
+          </h4>
           <p className="text-sm text-gray-600">
-            What we're building and shipping right now
+            Our platforms are designed by engineers who have led innovations at some of the world's most respected companies.
           </p>
         </div>
 
-        {/* Products Grid - 2x3 layout */}
+        {/* Companies Grid - 2x3 layout with homepage sizing */}
         <div className="grid grid-cols-2 gap-3 lg:gap-4 max-w-2xl">
-          {products.map((product, index) => (
+          {companies.map((company, index) => (
             <div
-              key={product.title}
+              key={company.title}
               className={`group bg-white/90 backdrop-blur-sm p-4 lg:p-5 rounded-xl lg:rounded-2xl border border-purple-100/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in`}
               style={{ animationDelay: `${1.4 + index * 0.1}s` }}
             >
@@ -84,22 +87,22 @@ const HeroVisual = () => {
               <div className="relative z-10">
                 {/* Icon and Status */}
                 <div className="flex items-start justify-between mb-3">
-                  <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${product.gradient} rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300`}>
-                    <product.icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+                  <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${company.gradient} rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300`}>
+                    <company.icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
                   </div>
-                  <span className={`text-xs px-2 py-1 rounded-full font-medium ${product.statusColor}`}>
-                    {product.status}
+                  <span className={`text-xs px-2 py-1 rounded-full font-medium ${company.statusColor}`}>
+                    {company.status}
                   </span>
                 </div>
                 
                 {/* Title */}
                 <h4 className="text-sm lg:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight mb-2">
-                  {product.title}
+                  {company.title}
                 </h4>
                 
                 {/* Description */}
                 <p className="text-xs lg:text-sm text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors">
-                  {product.description}
+                  {company.description}
                 </p>
               </div>
 
@@ -112,10 +115,10 @@ const HeroVisual = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-6 opacity-0 animate-fade-in" style={{ animationDelay: "2s" }}>
           <a
-            href="#solutions"
+            href="#built-and-delivered"
             className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors group text-sm"
           >
-            <span className="font-medium mr-2">View All Solutions</span>
+            <span className="font-medium mr-2">Learn About Our Team</span>
             <div className="w-4 h-4 rounded-full border-2 border-purple-400 flex items-center justify-center group-hover:border-purple-600 transition-colors">
               <div className="w-1.5 h-1.5 bg-purple-400 rounded-full group-hover:bg-purple-600 transition-colors"></div>
             </div>
