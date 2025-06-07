@@ -1,19 +1,11 @@
-
 import React, { useState } from "react";
 import { User, Mail, Building, MessageSquare, Rocket, CheckCircle, Target, Lightbulb, Users, Cog } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const ProductInquiry = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [focusedField, setFocusedField] = useState<string | null>(null);
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-
-  const handleServiceChange = (service: string) => {
-    setSelectedServices(prev => 
-      prev.includes(service) 
-        ? prev.filter(s => s !== service)
-        : [...prev, service]
-    );
-  };
+  const [selectedService, setSelectedService] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -219,43 +211,23 @@ const ProductInquiry = () => {
                     </div>
                   </div>
 
-                  {/* Multi-select checkboxes */}
+                  {/* Dropdown select instead of checkboxes */}
                   <div>
                     <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      What are you looking for? (Select all that apply)
+                      What are you looking for?
                     </label>
-                    <div className="grid grid-cols-1 gap-2">
-                      {[
-                        'Customizing a product',
-                        'Building something new', 
-                        'API/Integration',
-                        'Co-development',
-                        'White-labeling'
-                      ].map((service) => (
-                        <label key={service} className="flex items-center space-x-3 cursor-pointer group">
-                          <div className="relative">
-                            <input
-                              type="checkbox"
-                              checked={selectedServices.includes(service)}
-                              onChange={() => handleServiceChange(service)}
-                              className="sr-only"
-                            />
-                            <div className={`w-4 h-4 border-2 rounded transition-all duration-200 ${
-                              selectedServices.includes(service)
-                                ? 'bg-purple-500 border-purple-500'
-                                : 'border-gray-300 group-hover:border-purple-400'
-                            }`}>
-                              {selectedServices.includes(service) && (
-                                <CheckCircle className="w-3 h-3 text-white absolute top-0.5 left-0.5 transform -translate-x-0.5 -translate-y-0.5" />
-                              )}
-                            </div>
-                          </div>
-                          <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
-                            {service}
-                          </span>
-                        </label>
-                      ))}
-                    </div>
+                    <Select value={selectedService} onValueChange={setSelectedService}>
+                      <SelectTrigger className="w-full border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm">
+                        <SelectValue placeholder="Select a service..." />
+                      </SelectTrigger>
+                      <SelectContent className="bg-white border border-gray-200 rounded-xl shadow-lg z-50">
+                        <SelectItem value="customizing">Customizing a product</SelectItem>
+                        <SelectItem value="building">Building something new</SelectItem>
+                        <SelectItem value="api">API/Integration</SelectItem>
+                        <SelectItem value="codevelopment">Co-development</SelectItem>
+                        <SelectItem value="whitelabeling">White-labeling</SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                   
                   <div className="relative group">
