@@ -20,18 +20,18 @@ const Hero = () => {
   
   return (
     <section 
-      className="overflow-hidden relative h-screen max-h-screen flex items-center justify-center" 
+      className="overflow-hidden relative min-h-screen flex items-center justify-center py-12 lg:py-16" 
       id="hero"
     >
       <HeroBackground />
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
-        <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 w-full items-center">
-            <div className="w-full">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div className="lg:col-span-6 xl:col-span-5">
               <HeroContent />
             </div>
-            <div className="w-full">
+            <div className="lg:col-span-6 xl:col-span-7">
               <HeroVisual />
             </div>
           </div>
