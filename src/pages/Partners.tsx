@@ -1,10 +1,8 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import PartnersHero from "@/components/Partners/PartnersHero";
 import OurPartners from "@/components/Partners/OurPartners";
 import PartnerWithUs from "@/components/Partners/PartnerWithUs";
-import PartnerContactForm from "@/components/Partners/PartnerContactForm";
 import Footer from "@/components/Footer";
 
 const Partners = () => {
@@ -177,7 +175,6 @@ const Partners = () => {
           <PartnersHero />
           <OurPartners />
           <PartnerWithUs />
-          <PartnerContactForm />
         </main>
         <Footer />
       </div>
