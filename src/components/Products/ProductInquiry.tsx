@@ -1,10 +1,19 @@
 
 import React, { useState } from "react";
-import { User, Mail, Building, MessageSquare, Rocket, CheckCircle, Target, Lightbulb, Users } from "lucide-react";
+import { User, Mail, Building, MessageSquare, Rocket, CheckCircle, Target, Lightbulb, Users, Cog } from "lucide-react";
 
 const ProductInquiry = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+
+  const handleServiceChange = (service: string) => {
+    setSelectedServices(prev => 
+      prev.includes(service) 
+        ? prev.filter(s => s !== service)
+        : [...prev, service]
+    );
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,16 +87,16 @@ const ProductInquiry = () => {
         {/* Section Header - matching hero font styling */}
         <div className="text-center mb-6 lg:mb-8">
           <h2 className="font-bold leading-tight tracking-tight text-3xl md:text-4xl lg:text-5xl mb-3">
-            <span className="block text-gray-900">Have a Use Case</span>
+            <span className="block text-gray-900">Ready to Build</span>
             <span className="block">
               <span className="text-purple-700 relative inline-block">
-                in Mind?
+                Something Amazing?
                 <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
               </span>
             </span>
           </h2>
           <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto font-normal">
-            Looking for a similar solution—or something custom? Send us your details, and we'll get in touch.
+            From product customization to full co-development—let's turn your vision into reality.
           </p>
         </div>
 
@@ -98,7 +107,7 @@ const ProductInquiry = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-50/30 via-white/20 to-violet-50/30 opacity-70"></div>
             
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
-              {/* Left Side - Value Proposition */}
+              {/* Left Side - How We Work with Product Clients */}
               <div className="p-5 md:p-6 lg:p-8 bg-white/40 backdrop-blur-lg relative overflow-hidden border-r border-white/30">
                 {/* Decorative elements */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-100/40 to-violet-100/30"></div>
@@ -107,15 +116,16 @@ const ProductInquiry = () => {
                 
                 <div className="relative z-10">
                   <h3 className="text-xl md:text-2xl font-bold mb-3 leading-tight text-gray-900">
-                    Why Choose Our<br />Modular Approach?
+                    How We Work with<br />Product Clients
                   </h3>
                   
-                  {/* Feature list with unique icons */}
+                  {/* Feature list with product-focused icons */}
                   <div className="space-y-2.5 mb-5">
                     {[
-                      { icon: Target, text: "Custom AI-powered solutions tailored to your industry" },
-                      { icon: Lightbulb, text: "Modular architecture for scalable deployment" }, 
-                      { icon: Users, text: "Partnership opportunities for co-development" }
+                      { icon: Cog, text: "Rapid prototyping and iterative development cycles" },
+                      { icon: Target, text: "Technical feasibility assessment and architecture planning" }, 
+                      { icon: Users, text: "Embedded team integration with your product roadmap" },
+                      { icon: Lightbulb, text: "End-to-end delivery from MVP to market-ready solution" }
                     ].map((feature, index) => (
                       <div key={index} className="flex items-center group">
                         <div className="w-5 h-5 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-200 shadow-lg">
@@ -129,14 +139,19 @@ const ProductInquiry = () => {
                   {/* Trust badge */}
                   <div className="bg-white/60 backdrop-blur-sm border border-purple-200/60 rounded-2xl p-2.5">
                     <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                      ✨ Trusted by forward-thinking companies to deliver custom platforms that transform operations
+                      ✨ Partnered with product teams at startups and enterprises to launch innovative solutions faster
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Right Side - Form */}
+              {/* Right Side - Product-Focused Form */}
               <div className="p-5 md:p-6 lg:p-8 bg-white/70 backdrop-blur-sm">
+                <div className="mb-4">
+                  <h3 className="text-xl font-bold text-gray-900 mb-1">Tell Us What You're Building</h3>
+                  <p className="text-sm text-gray-600">Share your product vision and we'll explore how to bring it to life together.</p>
+                </div>
+
                 <form onSubmit={handleSubmit} className="space-y-3">
                   {/* Name and Email grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
@@ -203,10 +218,49 @@ const ProductInquiry = () => {
                       />
                     </div>
                   </div>
+
+                  {/* Multi-select checkboxes */}
+                  <div>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      What are you looking for? (Select all that apply)
+                    </label>
+                    <div className="grid grid-cols-1 gap-2">
+                      {[
+                        'Customizing a product',
+                        'Building something new', 
+                        'API/Integration',
+                        'Co-development',
+                        'White-labeling'
+                      ].map((service) => (
+                        <label key={service} className="flex items-center space-x-3 cursor-pointer group">
+                          <div className="relative">
+                            <input
+                              type="checkbox"
+                              checked={selectedServices.includes(service)}
+                              onChange={() => handleServiceChange(service)}
+                              className="sr-only"
+                            />
+                            <div className={`w-4 h-4 border-2 rounded transition-all duration-200 ${
+                              selectedServices.includes(service)
+                                ? 'bg-purple-500 border-purple-500'
+                                : 'border-gray-300 group-hover:border-purple-400'
+                            }`}>
+                              {selectedServices.includes(service) && (
+                                <CheckCircle className="w-3 h-3 text-white absolute top-0.5 left-0.5 transform -translate-x-0.5 -translate-y-0.5" />
+                              )}
+                            </div>
+                          </div>
+                          <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors">
+                            {service}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
                   
                   <div className="relative group">
                     <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-1">
-                      Your Needs or Use Case
+                      Your Product Needs or Vision
                     </label>
                     <div className="relative">
                       <MessageSquare className={`absolute left-3 top-3 w-4 h-4 transition-all duration-200 ${
@@ -215,9 +269,9 @@ const ProductInquiry = () => {
                       <textarea
                         id="message"
                         name="message"
-                        rows={2}
+                        rows={3}
                         className="w-full pl-10 pr-4 py-2.5 border-2 border-gray-200/80 rounded-xl focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 resize-vertical transition-all duration-300 bg-white/90 backdrop-blur-sm hover:border-purple-300 hover:shadow-sm text-sm"
-                        placeholder="Tell us about your project requirements, industry challenges, or collaboration ideas..."
+                        placeholder="Describe your product concept, technical challenges, timeline, or specific requirements..."
                         onFocus={() => setFocusedField('message')}
                         onBlur={() => setFocusedField(null)}
                         required
@@ -239,7 +293,7 @@ const ProductInquiry = () => {
                         {formState === 'idle' && (
                           <>
                             <Rocket className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-200" />
-                            Let's Collaborate
+                            Let's Build It Together
                           </>
                         )}
                         {formState === 'submitting' && (
