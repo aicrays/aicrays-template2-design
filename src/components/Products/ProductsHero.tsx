@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
-import { Brain, Shield, Wifi, BarChart3, Cloud, Layout } from "lucide-react";
+import { Brain, Shield, Wifi, BarChart3, Cloud, Layout, Factory, Heart, Truck, GraduationCap } from "lucide-react";
 
 const ProductsHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,52 +13,52 @@ const ProductsHero = () => {
 
   const products = [
     {
-      icon: Brain,
-      title: "AI Analytics Platform",
-      status: "In Production",
-      description: "Real-time business intelligence with predictive modeling",
+      icon: Shield,
+      title: "SecureFlow Analytics",
+      status: "Live",
+      description: "Real-time cybersecurity monitoring platform with advanced threat detection and automated response systems",
       gradient: "from-purple-500 to-purple-600",
       statusColor: "text-green-600 bg-green-50"
     },
     {
-      icon: Shield,
-      title: "Security Framework",
-      status: "In Development",
-      description: "Enterprise-grade threat detection and response system",
+      icon: Factory,
+      title: "SmartFactory Hub",
+      status: "In Production",
+      description: "IoT-enabled manufacturing optimization platform with predictive maintenance and quality control",
       gradient: "from-purple-600 to-indigo-600",
       statusColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Wifi,
-      title: "IoT Management Hub",
-      status: "In Production",
-      description: "Connected device monitoring and automation platform",
+      icon: Heart,
+      title: "HealthTrack Pro",
+      status: "Live",
+      description: "Patient data management system with AI-powered diagnostics and secure data handling",
       gradient: "from-indigo-500 to-purple-500",
       statusColor: "text-green-600 bg-green-50"
     },
     {
-      icon: BarChart3,
-      title: "Data Visualization Suite",
-      status: "Beta Testing",
-      description: "Interactive dashboards and reporting tools",
+      icon: Truck,
+      title: "AI Logistics Optimizer",
+      status: "Beta",
+      description: "Intelligent supply chain management platform with predictive analytics and route optimization",
       gradient: "from-purple-500 to-pink-500",
       statusColor: "text-purple-600 bg-purple-50"
     },
     {
-      icon: Cloud,
-      title: "Cloud Infrastructure",
-      status: "In Production",
-      description: "Scalable deployment and orchestration platform",
+      icon: Shield,
+      title: "CyberGuard Enterprise",
+      status: "Alpha",
+      description: "Next-generation cybersecurity suite with zero-trust architecture and automated threat response",
       gradient: "from-indigo-600 to-purple-700",
-      statusColor: "text-green-600 bg-green-50"
+      statusColor: "text-orange-600 bg-orange-50"
     },
     {
-      icon: Layout,
-      title: "UX Design System",
-      status: "In Development",
-      description: "Modular component library and design tokens",
+      icon: GraduationCap,
+      title: "EduTech Platform",
+      status: "Testing",
+      description: "Personalized learning management system with adaptive AI tutoring and progress tracking",
       gradient: "from-purple-400 to-indigo-500",
-      statusColor: "text-blue-600 bg-blue-50"
+      statusColor: "text-yellow-600 bg-yellow-50"
     }
   ];
 
