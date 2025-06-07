@@ -63,7 +63,10 @@ const ProductsHero = () => {
   ];
 
   return (
-    <section className="overflow-hidden relative min-h-screen flex items-center justify-center" id="products-hero">
+    <section className="overflow-hidden relative min-h-screen flex items-center justify-center pt-20 md:pt-24" id="products-hero">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-blue-50"></div>
+      
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
         <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
@@ -74,21 +77,14 @@ const ProductsHero = () => {
                 <div className="space-y-4">
                   <h1 className="font-bold leading-tight tracking-tight text-4xl md:text-5xl lg:text-6xl">
                     <div className="opacity-0 animate-fade-in mb-4" style={{ animationDelay: "0.2s", animationDuration: "0.8s" }}>
-                      <span className="block text-gray-900">Empowering Enterprises</span>
+                      <span className="block text-gray-900">Built to Scale.</span>
                     </div>
                     <div className="opacity-0 animate-fade-in" style={{ animationDelay: "0.4s", animationDuration: "0.8s" }}>
                       <span className="block">
-                        Through{" "}
+                        Designed for{" "}
                         <span className="text-purple-700 relative inline-block">
-                          Innovation
+                          Impact
                           <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-blue-500/80 via-purple-600/90 to-blue-500/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30"></div>
-                        </span>
-                      </span>
-                      <span className="block mt-2">
-                        and{" "}
-                        <span className="text-purple-700 relative inline-block">
-                          Personalization
-                          <div className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-purple-600/80 via-pink-500/90 to-purple-600/80 rounded-full animate-pulse-slow shadow-lg shadow-purple-500/30" style={{ animationDelay: '1s' }}></div>
                         </span>
                       </span>
                     </div>
@@ -97,7 +93,13 @@ const ProductsHero = () => {
                 
                 <div className="pt-2">
                   <p style={{ animationDelay: "0.6s", animationDuration: "0.8s" }} className="text-lg md:text-xl leading-relaxed text-gray-700 opacity-0 animate-fade-in max-w-2xl font-normal">
-                    We build modular digital platforms tailored to your systems — intelligent, adaptable, and built to help your business evolve with precision and scale.
+                    Explore our growing suite of AI-powered, cybersecurity-enhanced platforms built by engineers from top Fortune 500 companies. Every product is designed to scale securely and integrate modularly with your operations.
+                  </p>
+                </div>
+                
+                <div className="pt-2">
+                  <p style={{ animationDelay: "0.7s", animationDuration: "0.8s" }} className="text-sm text-gray-600 opacity-0 animate-fade-in font-medium">
+                    Trusted by teams from AWS, IBM, JP Morgan, Raytheon, and more.
                   </p>
                 </div>
                 
@@ -123,7 +125,7 @@ const ProductsHero = () => {
                 style={{ animationDelay: "1.2s" }}
               >
                 {/* Header */}
-                <div className="mb-6">
+                <div className="mb-8">
                   <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
                     Current Products
                   </h3>
@@ -133,11 +135,11 @@ const ProductsHero = () => {
                 </div>
 
                 {/* Products Grid - 2x3 layout */}
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 max-w-2xl">
+                <div className="grid grid-cols-2 gap-4 lg:gap-6 max-w-2xl">
                   {products.map((product, index) => (
                     <div
                       key={product.title}
-                      className={`group bg-white/90 backdrop-blur-sm p-4 lg:p-5 rounded-xl lg:rounded-2xl border border-purple-100/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in`}
+                      className={`group bg-white/90 backdrop-blur-sm p-4 lg:p-6 rounded-xl lg:rounded-2xl border border-purple-100/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden opacity-0 animate-fade-in`}
                       style={{ animationDelay: `${1.4 + index * 0.1}s` }}
                     >
                       {/* Background gradient on hover */}
@@ -146,8 +148,8 @@ const ProductsHero = () => {
                       <div className="relative z-10">
                         {/* Icon and Status */}
                         <div className="flex items-start justify-between mb-3">
-                          <div className={`w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br ${product.gradient} rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300`}>
-                            <product.icon className="w-4 h-4 lg:w-5 lg:h-5 text-white" />
+                          <div className={`w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br ${product.gradient} rounded-lg flex items-center justify-center shadow-sm group-hover:scale-110 transition-all duration-300`}>
+                            <product.icon className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                           </div>
                           <span className={`text-xs px-2 py-1 rounded-full font-medium ${product.statusColor}`}>
                             {product.status}
@@ -155,7 +157,7 @@ const ProductsHero = () => {
                         </div>
                         
                         {/* Title */}
-                        <h4 className="text-sm lg:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight mb-2">
+                        <h4 className="text-sm lg:text-base font-semibold text-gray-900 group-hover:text-purple-700 transition-colors leading-tight mb-3">
                           {product.title}
                         </h4>
                         
@@ -172,7 +174,7 @@ const ProductsHero = () => {
                 </div>
 
                 {/* Bottom CTA */}
-                <div className="text-center mt-6 opacity-0 animate-fade-in" style={{ animationDelay: "2s" }}>
+                <div className="text-center mt-8 opacity-0 animate-fade-in" style={{ animationDelay: "2s" }}>
                   <a
                     href="#built-and-delivered"
                     className="inline-flex items-center text-purple-600 hover:text-purple-700 transition-colors group text-sm"
