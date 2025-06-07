@@ -63,7 +63,7 @@ const ProductsHero = () => {
   ];
 
   return (
-    <section className="overflow-hidden relative min-h-screen flex items-center justify-center" id="products-hero">
+    <section className="overflow-hidden relative min-h-screen flex items-center justify-center pt-24 pb-16" id="products-hero">
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
         <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
@@ -132,8 +132,8 @@ const ProductsHero = () => {
                   </p>
                 </div>
 
-                {/* Products Grid - 2x3 layout */}
-                <div className="grid grid-cols-2 gap-3 lg:gap-4 max-w-2xl">
+                {/* Products Grid - 2x3 layout with better spacing */}
+                <div className="grid grid-cols-2 gap-4 lg:gap-5 max-w-2xl">
                   {products.map((product, index) => (
                     <div
                       key={product.title}
