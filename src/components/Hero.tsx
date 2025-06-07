@@ -27,9 +27,13 @@ const Hero = () => {
       
       <div className="container px-4 sm:px-6 lg:px-8 relative z-10 w-full" ref={containerRef}>
         <div className="flex items-center justify-between h-full max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 w-full">
-            <HeroContent />
-            <HeroVisual />
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 w-full">
+            <div className="w-full lg:w-1/2">
+              <HeroContent />
+            </div>
+            <div className="w-full lg:w-1/2">
+              <HeroVisual />
+            </div>
           </div>
         </div>
       </div>
