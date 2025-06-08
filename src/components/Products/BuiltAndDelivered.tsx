@@ -1,5 +1,6 @@
+
 import React from "react";
-import { Building2, ShoppingCart, Truck, Heart, Cog, Zap } from "lucide-react";
+import { Building2, Shield, Truck, Heart, Cog, Zap } from "lucide-react";
 
 const BuiltAndDelivered = () => {
   const products = [
@@ -13,7 +14,7 @@ const BuiltAndDelivered = () => {
       tags: ["AI/ML", "UI/UX", "Data Intelligence", "Built by Aicrays"]
     },
     {
-      icon: ShoppingCart,
+      icon: Shield,
       title: "IAM + IRIS Authentication",
       category: "Healthcare",
       status: "Built",
