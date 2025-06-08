@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { BarChart3, Shield, Fingerprint, Eye } from "lucide-react";
 
 const BuiltAndDelivered = () => {
   const products = [
@@ -10,7 +11,9 @@ const BuiltAndDelivered = () => {
       components: ["AI/ML", "UI/UX", "Data Intelligence"],
       industry: "Manufacturing",
       deliveryType: "Built by Aicrays",
-      status: "Live"
+      status: "Live",
+      icon: BarChart3,
+      iconGradient: "from-purple-500 to-violet-600"
     },
     {
       name: "IAM + IRIS Authentication",
@@ -18,7 +21,9 @@ const BuiltAndDelivered = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Healthcare",
       deliveryType: "Built with InfiSign",
-      status: "Built"
+      status: "Built",
+      icon: Eye,
+      iconGradient: "from-blue-500 to-indigo-600"
     },
     {
       name: "IAM + Fingerprint Authentication",
@@ -26,7 +31,9 @@ const BuiltAndDelivered = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Healthcare",
       deliveryType: "Built with InfiSign",
-      status: "Built"
+      status: "Built",
+      icon: Fingerprint,
+      iconGradient: "from-violet-500 to-purple-600"
     },
     {
       name: "IAM + Facial Recognition",
@@ -34,7 +41,9 @@ const BuiltAndDelivered = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Enterprise",
       deliveryType: "Built with InfiSign",
-      status: "Built"
+      status: "Built",
+      icon: Shield,
+      iconGradient: "from-indigo-500 to-blue-600"
     }
   ];
 
@@ -95,44 +104,53 @@ const BuiltAndDelivered = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <div 
-              key={index}
-              className="glass-card p-6 hover-lift group"
-            >
-              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-700 transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {product.description}
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  {product.components.map((component, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">
-                      {component}
+          {products.map((product, index) => {
+            const IconComponent = product.icon;
+            return (
+              <div 
+                key={index}
+                className="glass-card p-6 hover-lift group"
+              >
+                <div className="flex items-center mb-4">
+                  <div className={`p-3 rounded-xl bg-gradient-to-br ${product.iconGradient} shadow-lg`}>
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-700 transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {product.description}
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex flex-wrap gap-2">
+                    {product.components.map((component, idx) => (
+                      <Badge key={idx} variant="secondary" className="text-xs">
+                        {component}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs border-purple-200 text-purple-700">
+                      {product.industry}
                     </Badge>
-                  ))}
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-purple-200 text-purple-700">
-                    {product.industry}
-                  </Badge>
-                  <Badge variant="outline" className="text-xs border-gray-200 text-gray-700">
-                    {product.deliveryType}
-                  </Badge>
-                </div>
-                
-                <div>
-                  <Badge className={`text-xs ${getStatusColor(product.status)}`}>
-                    {product.status}
-                  </Badge>
+                    <Badge variant="outline" className="text-xs border-gray-200 text-gray-700">
+                      {product.deliveryType}
+                    </Badge>
+                  </div>
+                  
+                  <div>
+                    <Badge className={`text-xs ${getStatusColor(product.status)}`}>
+                      {product.status}
+                    </Badge>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

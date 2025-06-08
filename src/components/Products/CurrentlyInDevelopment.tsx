@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
+import { Truck, Package, Home, Shield, ShieldCheck, Database, Monitor, Zap } from "lucide-react";
 
 const CurrentlyInDevelopment = () => {
   const products = [
@@ -10,7 +11,9 @@ const CurrentlyInDevelopment = () => {
       components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
       industry: "Logistics",
       stage: "In Production",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: Truck,
+      iconGradient: "from-blue-500 to-cyan-600"
     },
     {
       name: "Inventory Management System",
@@ -18,7 +21,9 @@ const CurrentlyInDevelopment = () => {
       components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
       industry: "Manufacturing",
       stage: "In Production",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: Package,
+      iconGradient: "from-purple-500 to-pink-600"
     },
     {
       name: "Property Companion",
@@ -26,7 +31,9 @@ const CurrentlyInDevelopment = () => {
       components: ["UI/UX", "Data Intelligence", "AI/ML"],
       industry: "Real Estate",
       stage: "MVP",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: Home,
+      iconGradient: "from-green-500 to-emerald-600"
     },
     {
       name: "AI-Powered Detection",
@@ -34,7 +41,9 @@ const CurrentlyInDevelopment = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Cybersecurity",
       stage: "MVP",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: Shield,
+      iconGradient: "from-red-500 to-orange-600"
     },
     {
       name: "AI-Powered Prevention",
@@ -42,7 +51,9 @@ const CurrentlyInDevelopment = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Cybersecurity",
       stage: "MVP",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: ShieldCheck,
+      iconGradient: "from-orange-500 to-red-600"
     },
     {
       name: "AI-Powered Threat Intelligence",
@@ -50,7 +61,9 @@ const CurrentlyInDevelopment = () => {
       components: ["AI", "Cybersecurity"],
       industry: "Cybersecurity",
       stage: "MVP",
-      deliveryType: "Built by Aicrays"
+      deliveryType: "Built by Aicrays",
+      icon: Database,
+      iconGradient: "from-violet-500 to-purple-600"
     }
   ];
 
@@ -113,44 +126,53 @@ const CurrentlyInDevelopment = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product, index) => (
-            <div 
-              key={index}
-              className="glass-card p-6 hover-lift group border-dashed border-2 border-purple-200/50"
-            >
-              <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-700 transition-colors">
-                {product.name}
-              </h3>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                {product.description}
-              </p>
-              
-              <div className="space-y-3">
-                <div className="flex flex-wrap gap-2">
-                  {product.components.map((component, idx) => (
-                    <Badge key={idx} variant="secondary" className="text-xs">
-                      {component}
+          {products.map((product, index) => {
+            const IconComponent = product.icon;
+            return (
+              <div 
+                key={index}
+                className="glass-card p-6 hover-lift group border-dashed border-2 border-purple-200/50"
+              >
+                <div className="flex items-center mb-4">
+                  <div className={`p-3 rounded-xl bg-gradient-to-br ${product.iconGradient} shadow-lg`}>
+                    <IconComponent className="w-6 h-6 text-white" />
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-purple-700 transition-colors">
+                  {product.name}
+                </h3>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  {product.description}
+                </p>
+                
+                <div className="space-y-3">
+                  <div className="flex flex-wrap gap-2">
+                    {product.components.map((component, idx) => (
+                      <Badge key={idx} variant="secondary" className="text-xs">
+                        {component}
+                      </Badge>
+                    ))}
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="outline" className="text-xs border-purple-200 text-purple-700">
+                      {product.industry}
                     </Badge>
-                  ))}
-                </div>
-                
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline" className="text-xs border-purple-200 text-purple-700">
-                    {product.industry}
-                  </Badge>
-                  <Badge className={`text-xs ${getStageColor(product.stage)}`}>
-                    {product.stage}
-                  </Badge>
-                </div>
-                
-                <div>
-                  <Badge variant="outline" className="text-xs border-gray-200 text-gray-700">
-                    {product.deliveryType}
-                  </Badge>
+                    <Badge className={`text-xs ${getStageColor(product.stage)}`}>
+                      {product.stage}
+                    </Badge>
+                  </div>
+                  
+                  <div>
+                    <Badge variant="outline" className="text-xs border-gray-200 text-gray-700">
+                      {product.deliveryType}
+                    </Badge>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
