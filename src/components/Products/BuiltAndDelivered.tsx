@@ -1,12 +1,12 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, Shield, Fingerprint, Eye } from "lucide-react";
+import { BarChart3, Shield, Fingerprint, Eye, Heart, Truck, Zap, Settings } from "lucide-react";
 
 const BuiltAndDelivered = () => {
   const products = [
     {
-      name: "Quote Management System",
-      description: "A dynamic quote management platform engineered for a global industrial coil manufacturer. Seamlessly integrates pricing intelligence, automation, and data insights to streamline enterprise-level quotation workflows.",
+      name: "Enterprise Resource Planning",
+      description: "Unified dashboard for multi-location manufacturing operations with real-time analytics and predictive maintenance.",
       components: ["AI/ML", "UI/UX", "Data Intelligence"],
       industry: "Manufacturing",
       deliveryType: "Built by Aicrays",
@@ -15,34 +15,54 @@ const BuiltAndDelivered = () => {
       iconGradient: "from-purple-500 to-purple-600"
     },
     {
-      name: "IAM + IRIS Authentication",
-      description: "Biometric identity solution leveraging advanced IRIS scanning technology. Built for healthcare giants requiring frictionless, secure, and HIPAA-compliant access control at scale.",
-      components: ["AI", "Cybersecurity"],
-      industry: "Healthcare",
-      deliveryType: "Built with InfiSign",
-      status: "Built",
+      name: "Smart Retail Analytics",
+      description: "AI-powered inventory management and customer behavior analysis platform for retail chains.",
+      components: ["AI", "Data Intelligence"],
+      industry: "Retail",
+      deliveryType: "Built by Aicrays",
+      status: "Live",
       icon: Eye,
       iconGradient: "from-purple-600 to-violet-600"
     },
     {
-      name: "IAM + Fingerprint Authentication",
-      description: "Fingerprint-based authentication engine offering real-time verification with military-grade encryption. Designed for medical and critical infrastructure use cases.",
-      components: ["AI", "Cybersecurity"],
-      industry: "Healthcare",
-      deliveryType: "Built with InfiSign",
-      status: "Built",
-      icon: Fingerprint,
+      name: "Fleet Management System",
+      description: "IoT-enabled logistics platform with route optimization and real-time vehicle tracking capabilities.",
+      components: ["IoT", "AI"],
+      industry: "Logistics",
+      deliveryType: "Built by Aicrays",
+      status: "MVP",
+      icon: Truck,
       iconGradient: "from-violet-500 to-purple-600"
     },
     {
-      name: "IAM + Facial Recognition",
-      description: "Next-gen facial recognition system designed for enterprise identity access management, blending computer vision and deep learning for precision and speed.",
+      name: "Patient Care Coordination",
+      description: "HIPAA-compliant platform connecting care teams with automated workflow management and reporting.",
       components: ["AI", "Cybersecurity"],
-      industry: "Enterprise",
-      deliveryType: "Built with InfiSign",
-      status: "Built",
-      icon: Shield,
+      industry: "Healthcare",
+      deliveryType: "Built by Aicrays",
+      status: "Live",
+      icon: Heart,
       iconGradient: "from-purple-600 to-violet-700"
+    },
+    {
+      name: "Production Line Intelligence",
+      description: "Real-time monitoring and quality control system with machine learning-based anomaly detection.",
+      components: ["AI/ML", "IoT"],
+      industry: "Manufacturing",
+      deliveryType: "Built by Aicrays",
+      status: "In Progress",
+      icon: Settings,
+      iconGradient: "from-violet-600 to-purple-700"
+    },
+    {
+      name: "Energy Management Portal",
+      description: "Smart grid integration platform with consumption analytics and automated cost optimization.",
+      components: ["AI", "Data Intelligence"],
+      industry: "Energy",
+      deliveryType: "Built by Aicrays",
+      status: "MVP",
+      icon: Zap,
+      iconGradient: "from-purple-500 to-violet-600"
     }
   ];
 
@@ -50,7 +70,8 @@ const BuiltAndDelivered = () => {
     switch (status) {
       case "Live": return "bg-green-100 text-green-700 border-green-200";
       case "Built": return "bg-green-100 text-green-700 border-green-200";
-      case "In Production": return "bg-blue-100 text-blue-700 border-blue-200";
+      case "In Progress": return "bg-blue-100 text-blue-700 border-blue-200";
+      case "MVP": return "bg-purple-100 text-purple-700 border-purple-200";
       case "Archived": return "bg-gray-100 text-gray-700 border-gray-200";
       default: return "bg-purple-100 text-purple-700 border-purple-200";
     }
@@ -58,6 +79,7 @@ const BuiltAndDelivered = () => {
 
   return (
     <section className="relative py-16 overflow-hidden" id="built-and-delivered">
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large splotches with increased visibility */}
         <div className="absolute top-[10%] left-[15%] w-[550px] h-[550px] bg-gradient-to-br from-purple-300/85 to-violet-400/80 rounded-full blur-3xl animate-float opacity-90" style={{ animationDelay: '3s', animationDuration: '25s' }}></div>
@@ -74,9 +96,9 @@ const BuiltAndDelivered = () => {
         <div className="absolute top-[75%] left-[80%] w-[320px] h-[320px] bg-gradient-to-tl from-purple-300/75 to-indigo-300/70 rounded-full blur-xl animate-float opacity-80" style={{ animationDelay: '10s', animationDuration: '32s' }}></div>
       </div>
 
-      {/* Section-specific orbs */}
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Scattered orbs throughout the section with enhanced variety */}
+        
         <div className="absolute top-[15%] left-[20%] w-4 h-4 bg-purple-500/70 rounded-full blur-xs animate-float opacity-95" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
         <div className="absolute top-[25%] left-[60%] w-9 h-9 bg-violet-600/60 rounded-full blur-sm animate-float opacity-90" style={{ animationDelay: '7s', animationDuration: '22s' }}></div>
         <div className="absolute top-[35%] left-[85%] w-5 h-5 bg-indigo-500/65 rounded-full blur-xs animate-float opacity-100" style={{ animationDelay: '12s', animationDuration: '20s' }}></div>
@@ -93,11 +115,10 @@ const BuiltAndDelivered = () => {
       <div className="section-container relative z-10">
         <div className="text-center mb-12">
           <h2 className="section-title bg-gradient-to-r from-gray-800 via-purple-700 to-purple-900 bg-clip-text text-transparent mb-4">
-            Built and Delivered
+            Built and Running
           </h2>
           <p className="section-subtitle mx-auto">
-            Explore our flagship platforms—custom-built with precision and performance. 
-            Each solution is engineered using our modular components, designed for industry-specific outcomes.
+            Explore the platforms we've already deployed—custom-built, scalable, and evolving.
           </p>
         </div>
 
