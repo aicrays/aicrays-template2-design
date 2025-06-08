@@ -1,9 +1,7 @@
-
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ModularTechSection from "@/components/ModularTechSection";
-import CaseStudiesSection from "@/components/CaseStudiesSection";
 import WhyAicraysSection from "@/components/WhyAicraysSection";
 import ProcessSection from "@/components/ProcessSection";
 import IndustriesSection from "@/components/IndustriesSection";
@@ -179,7 +177,6 @@ const Index = () => {
         <main>
           <Hero />
           <ModularTechSection />
-          <CaseStudiesSection />
           <WhyAicraysSection />
           <ProcessSection />
           <IndustriesSection />
