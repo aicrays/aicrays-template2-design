@@ -1,9 +1,12 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Building2, ShoppingCart, Truck, Heart, Cog, Zap } from "lucide-react";
+
 const CaseStudiesSection = () => {
   const [visibleCards, setVisibleCards] = useState<number[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
+
   const solutions = [{
     icon: Building2,
     title: "Enterprise Resource Planning",
@@ -47,6 +50,7 @@ const CaseStudiesSection = () => {
     status: "MVP",
     gradient: "from-purple-400 to-indigo-500"
   }];
+
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Live":
@@ -59,9 +63,11 @@ const CaseStudiesSection = () => {
         return "bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100";
     }
   };
+
   const getIndustryColor = (industry: string) => {
     return "bg-purple-50 text-purple-700 border-purple-200 hover:bg-purple-100";
   };
+
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -76,11 +82,76 @@ const CaseStudiesSection = () => {
     }, {
       threshold: 0.2
     });
+
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
+
     return () => observer.disconnect();
   }, []);
-  return;
+
+  return (
+    <section ref={sectionRef} className="py-24 px-4 bg-gradient-to-b from-white to-purple-50/30">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Case Studies
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Real-world solutions that transform industries and drive measurable results
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {solutions.map((solution, index) => {
+            const IconComponent = solution.icon;
+            const isVisible = visibleCards.includes(index);
+            
+            return (
+              <div
+                key={index}
+                className={`group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-purple-100 hover:border-purple-200 ${
+                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                }`}
+                style={{ transitionDelay: `${index * 150}ms` }}
+              >
+                <div className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} opacity-0 group-hover:opacity-5 rounded-2xl transition-opacity duration-300`}></div>
+                
+                <div className="relative z-10">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${solution.gradient} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                    {solution.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {solution.description}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    <Badge 
+                      variant="outline" 
+                      className={`${getIndustryColor(solution.industry)} transition-colors duration-200`}
+                    >
+                      {solution.industry}
+                    </Badge>
+                    <Badge 
+                      variant="outline" 
+                      className={`${getStatusColor(solution.status)} transition-colors duration-200`}
+                    >
+                      {solution.status}
+                    </Badge>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
+
 export default CaseStudiesSection;
