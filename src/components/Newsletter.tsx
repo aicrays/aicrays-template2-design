@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { User, Mail, Building, MessageSquare, Rocket, CheckCircle, Target, Lightbulb, Users, Cog } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-
 const Newsletter = () => {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success'>('idle');
   const [formData, setFormData] = useState({
@@ -16,56 +14,51 @@ const Newsletter = () => {
     serviceType: "",
     message: ""
   });
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, serviceType: value }));
+    setFormData(prev => ({
+      ...prev,
+      serviceType: value
+    }));
   };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    
+
     // Simulate form submission
     setTimeout(() => {
       setFormState('success');
       setTimeout(() => setFormState('idle'), 3000);
     }, 1500);
   };
-
-  const benefits = [
-    {
-      icon: Cog,
-      title: "AI-powered, modular, secure",
-      description: "Iterative development cycles with quick turnaround times"
-    },
-    {
-      icon: Rocket,
-      title: "Tailored for your workflows",
-      description: "Feasibility analysis and architecture planning for your product"
-    },
-    {
-      icon: Users,
-      title: "Built to scale with your business",
-      description: "Integration with your product roadmap and development process"
-    }
-  ];
-
-  return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40" id="contact">
+  const benefits = [{
+    icon: Cog,
+    title: "AI-powered, modular, secure",
+    description: "Iterative development cycles with quick turnaround times"
+  }, {
+    icon: Rocket,
+    title: "Tailored for your workflows",
+    description: "Feasibility analysis and architecture planning for your product"
+  }, {
+    icon: Users,
+    title: "Built to scale with your business",
+    description: "Integration with your product roadmap and development process"
+  }];
+  return <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40" id="contact">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight bg-gradient-to-r from-gray-900 via-purple-800 to-purple-950 bg-clip-text text-transparent mb-4">
-            Let's Build What's Next — Together
-          </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
-            Tell us about your goals, and we'll show you how our modular AI-powered platforms can make it real.
-          </p>
+          
+          
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -77,9 +70,8 @@ const Newsletter = () => {
             
             <div className="space-y-6">
               {benefits.map((benefit, index) => {
-                const IconComponent = benefit.icon;
-                return (
-                  <div key={index} className="flex items-start space-x-4">
+              const IconComponent = benefit.icon;
+              return <div key={index} className="flex items-start space-x-4">
                     <div className="flex-shrink-0 w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center">
                       <IconComponent className="w-6 h-6 text-purple-600" />
                     </div>
@@ -91,9 +83,8 @@ const Newsletter = () => {
                         {benefit.description}
                       </p>
                     </div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
 
             {/* Trust badge */}
@@ -119,40 +110,17 @@ const Newsletter = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="name" className="text-gray-800">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="border-purple-200 focus:border-purple-500 bg-white/90"
-                    required
-                  />
+                  <Input id="name" name="name" type="text" value={formData.name} onChange={handleInputChange} className="border-purple-200 focus:border-purple-500 bg-white/90" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-gray-800">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="border-purple-200 focus:border-purple-500 bg-white/90"
-                    required
-                  />
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleInputChange} className="border-purple-200 focus:border-purple-500 bg-white/90" required />
                 </div>
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="company" className="text-gray-800">Company</Label>
-                <Input
-                  id="company"
-                  name="company"
-                  type="text"
-                  value={formData.company}
-                  onChange={handleInputChange}
-                  className="border-purple-200 focus:border-purple-500 bg-white/90"
-                />
+                <Input id="company" name="company" type="text" value={formData.company} onChange={handleInputChange} className="border-purple-200 focus:border-purple-500 bg-white/90" />
               </div>
 
               <div className="space-y-2">
@@ -173,22 +141,10 @@ const Newsletter = () => {
               
               <div className="space-y-2">
                 <Label htmlFor="message" className="text-gray-800">Project Details</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="border-purple-200 focus:border-purple-500 bg-white/90 min-h-[120px]"
-                  placeholder="Tell us about your project goals, timeline, and specific needs..."
-                  required
-                />
+                <Textarea id="message" name="message" value={formData.message} onChange={handleInputChange} className="border-purple-200 focus:border-purple-500 bg-white/90 min-h-[120px]" placeholder="Tell us about your project goals, timeline, and specific needs..." required />
               </div>
               
-              <Button
-                type="submit"
-                disabled={formState === 'submitting'}
-                className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
+              <Button type="submit" disabled={formState === 'submitting'} className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
                 {formState === 'idle' && 'Let\'s Start Building'}
                 {formState === 'submitting' && 'Sending Message...'}
                 {formState === 'success' && 'Message Sent Successfully!'}
@@ -198,10 +154,7 @@ const Newsletter = () => {
               <div className="text-center pt-4 border-t border-gray-200/50">
                 <p className="text-sm text-gray-500">
                   Prefer email? Contact us at{' '}
-                  <a 
-                    href="mailto:hello@aicrays.com" 
-                    className="text-purple-600 hover:text-purple-700 font-medium transition-all duration-200 hover:underline hover:underline-offset-2"
-                  >
+                  <a href="mailto:hello@aicrays.com" className="text-purple-600 hover:text-purple-700 font-medium transition-all duration-200 hover:underline hover:underline-offset-2">
                     hello@aicrays.com
                   </a>
                 </p>
@@ -210,8 +163,6 @@ const Newsletter = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Newsletter;
