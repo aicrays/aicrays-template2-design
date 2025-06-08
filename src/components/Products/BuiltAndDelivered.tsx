@@ -21,6 +21,14 @@ const BuiltAndDelivered = () => {
       status: "Built"
     },
     {
+      name: "Fleet Management System",
+      description: "An intelligent fleet orchestration platform for a Middle Eastern conglomerate, combining AI routing, real-time tracking, and predictive maintenance using IoT telemetry.",
+      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
+      industry: "Logistics",
+      deliveryType: "Built by Aicrays",
+      status: "In Production"
+    },
+    {
       name: "IAM + Fingerprint Authentication",
       description: "Fingerprint-based authentication engine offering real-time verification with military-grade encryption. Designed for medical and critical infrastructure use cases.",
       components: ["AI", "Cybersecurity"],
@@ -29,12 +37,20 @@ const BuiltAndDelivered = () => {
       status: "Built"
     },
     {
-      name: "IAM + Facial Recognition",
-      description: "Next-gen facial recognition system designed for enterprise identity access management, blending computer vision and deep learning for precision and speed.",
-      components: ["AI", "Cybersecurity"],
-      industry: "Enterprise",
-      deliveryType: "Built with InfiSign",
-      status: "Built"
+      name: "Inventory Management System",
+      description: "Smart inventory platform built for high-volume operations, using machine learning and IoT sensors to optimize stock levels, predict demand, and reduce wastage.",
+      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
+      industry: "Manufacturing",
+      deliveryType: "Built by Aicrays",
+      status: "In Production"
+    },
+    {
+      name: "Property Companion",
+      description: "A powerful tenant and property management tool for both private and public sectors. Offers real-time leasing data, rent automation, and unified digital records in one intuitive interface.",
+      components: ["UI/UX", "Data Intelligence", "AI/ML"],
+      industry: "Real Estate",
+      deliveryType: "Built by Aicrays",
+      status: "MVP"
     }
   ];
 
@@ -43,6 +59,7 @@ const BuiltAndDelivered = () => {
       case "Live": return "bg-green-100 text-green-700 border-green-200";
       case "Built": return "bg-green-100 text-green-700 border-green-200";
       case "In Production": return "bg-blue-100 text-blue-700 border-blue-200";
+      case "MVP": return "bg-purple-100 text-purple-700 border-purple-200";
       case "Archived": return "bg-gray-100 text-gray-700 border-gray-200";
       default: return "bg-purple-100 text-purple-700 border-purple-200";
     }
