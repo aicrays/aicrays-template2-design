@@ -13,52 +13,52 @@ const ProductsHero = () => {
 
   const products = [
     {
-      icon: Shield,
-      title: "SecureFlow Analytics",
+      icon: BarChart3,
+      title: "Quote Management System",
       status: "Live",
-      description: "Real-time cybersecurity monitoring platform with advanced threat detection and automated response systems",
+      description: "A dynamic quote management platform engineered for a global industrial coil manufacturer",
       gradient: "from-purple-500 to-purple-600",
       statusColor: "text-green-600 bg-green-50"
     },
     {
       icon: Factory,
-      title: "SmartFactory Hub",
+      title: "Fleet Management System",
       status: "In Production",
-      description: "IoT-enabled manufacturing optimization platform with predictive maintenance and quality control",
+      description: "An intelligent fleet orchestration platform combining AI routing, real-time tracking, and predictive maintenance",
       gradient: "from-purple-600 to-indigo-600",
       statusColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Heart,
-      title: "HealthTrack Pro",
-      status: "Live",
-      description: "Patient data management system with AI-powered diagnostics and secure data handling",
+      icon: Shield,
+      title: "IAM + IRIS Authentication",
+      status: "Built",
+      description: "Biometric identity solution leveraging advanced IRIS scanning technology for healthcare giants",
       gradient: "from-indigo-500 to-purple-500",
       statusColor: "text-green-600 bg-green-50"
     },
     {
       icon: Truck,
-      title: "AI Logistics Optimizer",
-      status: "Beta",
-      description: "Intelligent supply chain management platform with predictive analytics and route optimization",
+      title: "Inventory Management System",
+      status: "In Production",
+      description: "Smart inventory platform using machine learning and IoT sensors to optimize stock levels",
       gradient: "from-purple-500 to-pink-500",
-      statusColor: "text-purple-600 bg-purple-50"
+      statusColor: "text-blue-600 bg-blue-50"
     },
     {
       icon: Shield,
-      title: "CyberGuard Enterprise",
-      status: "Alpha",
-      description: "Next-generation cybersecurity suite with zero-trust architecture and automated threat response",
+      title: "AI-Powered Detection",
+      status: "MVP",
+      description: "Autonomous threat detection platform using GNNs, NLP, and time-series analytics",
       gradient: "from-indigo-600 to-purple-700",
-      statusColor: "text-orange-600 bg-orange-50"
+      statusColor: "text-purple-600 bg-purple-50"
     },
     {
-      icon: GraduationCap,
-      title: "EduTech Platform",
-      status: "Testing",
-      description: "Personalized learning management system with adaptive AI tutoring and progress tracking",
+      icon: Heart,
+      title: "Property Companion",
+      status: "MVP",
+      description: "A powerful tenant and property management tool for both private and public sectors",
       gradient: "from-purple-400 to-indigo-500",
-      statusColor: "text-yellow-600 bg-yellow-50"
+      statusColor: "text-purple-600 bg-purple-50"
     }
   ];
 
