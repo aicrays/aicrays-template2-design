@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { BarChart3, Shield, Fingerprint, Eye } from "lucide-react";
@@ -13,7 +12,7 @@ const BuiltAndDelivered = () => {
       deliveryType: "Built by Aicrays",
       status: "Live",
       icon: BarChart3,
-      iconGradient: "from-purple-500 to-violet-600"
+      iconGradient: "from-purple-500 to-purple-600"
     },
     {
       name: "IAM + IRIS Authentication",
@@ -23,7 +22,7 @@ const BuiltAndDelivered = () => {
       deliveryType: "Built with InfiSign",
       status: "Built",
       icon: Eye,
-      iconGradient: "from-blue-500 to-indigo-600"
+      iconGradient: "from-purple-600 to-violet-600"
     },
     {
       name: "IAM + Fingerprint Authentication",
@@ -43,7 +42,7 @@ const BuiltAndDelivered = () => {
       deliveryType: "Built with InfiSign",
       status: "Built",
       icon: Shield,
-      iconGradient: "from-indigo-500 to-blue-600"
+      iconGradient: "from-purple-600 to-violet-700"
     }
   ];
 
@@ -59,7 +58,6 @@ const BuiltAndDelivered = () => {
 
   return (
     <section className="relative py-16 overflow-hidden" id="built-and-delivered">
-      {/* Section-specific enhanced background splotches */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large splotches with increased visibility */}
         <div className="absolute top-[10%] left-[15%] w-[550px] h-[550px] bg-gradient-to-br from-purple-300/85 to-violet-400/80 rounded-full blur-3xl animate-float opacity-90" style={{ animationDelay: '3s', animationDuration: '25s' }}></div>
