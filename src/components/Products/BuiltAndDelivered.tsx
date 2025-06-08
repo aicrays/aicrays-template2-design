@@ -1,12 +1,13 @@
+
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, Shield, Fingerprint, Eye, Heart, Truck, Zap, Settings } from "lucide-react";
+import { BarChart3, Shield, Fingerprint, Eye, Truck, Zap } from "lucide-react";
 
 const BuiltAndDelivered = () => {
   const products = [
     {
-      name: "Enterprise Resource Planning",
-      description: "Unified dashboard for multi-location manufacturing operations with real-time analytics and predictive maintenance.",
+      name: "Quote Management System",
+      description: "A dynamic quote management platform engineered for a global industrial coil manufacturer. Seamlessly integrates pricing intelligence, automation, and data insights to streamline enterprise-level quotation workflows.",
       components: ["AI/ML", "UI/UX", "Data Intelligence"],
       industry: "Manufacturing",
       deliveryType: "Built by Aicrays",
@@ -15,50 +16,50 @@ const BuiltAndDelivered = () => {
       iconGradient: "from-purple-500 to-purple-600"
     },
     {
-      name: "Smart Retail Analytics",
-      description: "AI-powered inventory management and customer behavior analysis platform for retail chains.",
-      components: ["AI", "Data Intelligence"],
-      industry: "Retail",
-      deliveryType: "Built by Aicrays",
-      status: "Live",
+      name: "IAM + IRIS Authentication",
+      description: "Biometric identity solution leveraging advanced IRIS scanning technology. Built for healthcare giants requiring frictionless, secure, and HIPAA-compliant access control at scale.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Healthcare",
+      deliveryType: "Built with InfiSign",
+      status: "Built",
       icon: Eye,
       iconGradient: "from-purple-600 to-violet-600"
     },
     {
-      name: "Fleet Management System",
-      description: "IoT-enabled logistics platform with route optimization and real-time vehicle tracking capabilities.",
-      components: ["IoT", "AI"],
-      industry: "Logistics",
-      deliveryType: "Built by Aicrays",
-      status: "MVP",
-      icon: Truck,
+      name: "IAM + Fingerprint Authentication",
+      description: "Fingerprint-based authentication engine offering real-time verification with military-grade encryption. Designed for medical and critical infrastructure use cases.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Healthcare",
+      deliveryType: "Built with InfiSign",
+      status: "Built",
+      icon: Fingerprint,
       iconGradient: "from-violet-500 to-purple-600"
     },
     {
-      name: "Patient Care Coordination",
-      description: "HIPAA-compliant platform connecting care teams with automated workflow management and reporting.",
+      name: "IAM + Facial Recognition",
+      description: "Next-gen facial recognition system designed for enterprise identity access management, blending computer vision and deep learning for precision and speed.",
       components: ["AI", "Cybersecurity"],
-      industry: "Healthcare",
-      deliveryType: "Built by Aicrays",
-      status: "Live",
-      icon: Heart,
+      industry: "Enterprise",
+      deliveryType: "Built with InfiSign",
+      status: "Built",
+      icon: Shield,
       iconGradient: "from-purple-600 to-violet-700"
     },
     {
-      name: "Production Line Intelligence",
-      description: "Real-time monitoring and quality control system with machine learning-based anomaly detection.",
-      components: ["AI/ML", "IoT"],
-      industry: "Manufacturing",
+      name: "Fleet Management System",
+      description: "An intelligent fleet orchestration platform for a Middle Eastern conglomerate, combining AI routing, real-time tracking, and predictive maintenance using IoT telemetry.",
+      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
+      industry: "Logistics",
       deliveryType: "Built by Aicrays",
-      status: "In Progress",
-      icon: Settings,
+      status: "In Production",
+      icon: Truck,
       iconGradient: "from-violet-600 to-purple-700"
     },
     {
-      name: "Energy Management Portal",
-      description: "Smart grid integration platform with consumption analytics and automated cost optimization.",
-      components: ["AI", "Data Intelligence"],
-      industry: "Energy",
+      name: "AI-Powered Detection",
+      description: "Autonomous threat detection platform using GNNs, NLP, and time-series analytics to catch evolving anomalies in real time — before they become threats.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Security",
       deliveryType: "Built by Aicrays",
       status: "MVP",
       icon: Zap,
@@ -70,6 +71,7 @@ const BuiltAndDelivered = () => {
     switch (status) {
       case "Live": return "bg-green-100 text-green-700 border-green-200";
       case "Built": return "bg-green-100 text-green-700 border-green-200";
+      case "In Production": return "bg-green-100 text-green-700 border-green-200";
       case "In Progress": return "bg-blue-100 text-blue-700 border-blue-200";
       case "MVP": return "bg-purple-100 text-purple-700 border-purple-200";
       case "Archived": return "bg-gray-100 text-gray-700 border-gray-200";
