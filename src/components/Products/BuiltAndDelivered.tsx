@@ -5,34 +5,43 @@ import { Badge } from "@/components/ui/badge";
 const BuiltAndDelivered = () => {
   const products = [
     {
-      name: "SecureFlow Analytics",
-      description: "Real-time cybersecurity monitoring platform with advanced threat detection and automated response systems.",
-      components: ["AI/ML", "Cybersecurity", "Data Analytics"],
-      industry: "Finance",
-      deliveryType: "Built by Aicrays",
-      status: "Live"
-    },
-    {
-      name: "SmartFactory Hub",
-      description: "IoT-enabled manufacturing optimization platform with predictive maintenance and quality control.",
-      components: ["IoT", "RFID", "UX Systems"],
+      name: "Quote Management System",
+      description: "A dynamic quote management platform engineered for a global industrial coil manufacturer. Seamlessly integrates pricing intelligence, automation, and data insights to streamline enterprise-level quotation workflows.",
+      components: ["AI/ML", "UI/UX", "Data Intelligence"],
       industry: "Manufacturing",
-      deliveryType: "Co-Built with TechCorp",
-      status: "In Production"
-    },
-    {
-      name: "HealthTrack Pro",
-      description: "Patient data management system with AI-powered diagnostics and secure data handling.",
-      components: ["AI/ML", "Data Intelligence", "Cybersecurity"],
-      industry: "Healthcare",
       deliveryType: "Built by Aicrays",
       status: "Live"
+    },
+    {
+      name: "IAM + IRIS Authentication",
+      description: "Biometric identity solution leveraging advanced IRIS scanning technology. Built for healthcare giants requiring frictionless, secure, and HIPAA-compliant access control at scale.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Healthcare",
+      deliveryType: "Built with InfiSign",
+      status: "Built"
+    },
+    {
+      name: "IAM + Fingerprint Authentication",
+      description: "Fingerprint-based authentication engine offering real-time verification with military-grade encryption. Designed for medical and critical infrastructure use cases.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Healthcare",
+      deliveryType: "Built with InfiSign",
+      status: "Built"
+    },
+    {
+      name: "IAM + Facial Recognition",
+      description: "Next-gen facial recognition system designed for enterprise identity access management, blending computer vision and deep learning for precision and speed.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Enterprise",
+      deliveryType: "Built with InfiSign",
+      status: "Built"
     }
   ];
 
   const getStatusColor = (status: string) => {
     switch (status) {
       case "Live": return "bg-green-100 text-green-700 border-green-200";
+      case "Built": return "bg-green-100 text-green-700 border-green-200";
       case "In Production": return "bg-blue-100 text-blue-700 border-blue-200";
       case "Archived": return "bg-gray-100 text-gray-700 border-gray-200";
       default: return "bg-purple-100 text-purple-700 border-purple-200";

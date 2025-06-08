@@ -5,33 +5,59 @@ import { Badge } from "@/components/ui/badge";
 const CurrentlyInDevelopment = () => {
   const products = [
     {
-      name: "AI Logistics Optimizer",
-      description: "Intelligent supply chain management platform with predictive analytics and route optimization.",
-      components: ["AI/ML", "IoT", "Data Analytics"],
+      name: "Fleet Management System",
+      description: "An intelligent fleet orchestration platform for a Middle Eastern conglomerate, combining AI routing, real-time tracking, and predictive maintenance using IoT telemetry.",
+      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
       industry: "Logistics",
-      stage: "Beta",
-      expectedRelease: "Available Q2 2025"
+      stage: "In Production",
+      deliveryType: "Built by Aicrays"
     },
     {
-      name: "CyberGuard Enterprise",
-      description: "Next-generation cybersecurity suite with zero-trust architecture and automated threat response.",
-      components: ["Cybersecurity", "AI/ML", "UX Systems"],
-      industry: "Enterprise",
-      stage: "Alpha",
-      expectedRelease: "Available Q3 2025"
+      name: "Inventory Management System",
+      description: "Smart inventory platform built for high-volume operations, using machine learning and IoT sensors to optimize stock levels, predict demand, and reduce wastage.",
+      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
+      industry: "Manufacturing",
+      stage: "In Production",
+      deliveryType: "Built by Aicrays"
     },
     {
-      name: "EduTech Platform",
-      description: "Personalized learning management system with adaptive AI tutoring and progress tracking.",
-      components: ["AI/ML", "UX Systems", "Data Intelligence"],
-      industry: "Education",
-      stage: "Testing",
-      expectedRelease: "Available Q4 2025"
+      name: "Property Companion",
+      description: "A powerful tenant and property management tool for both private and public sectors. Offers real-time leasing data, rent automation, and unified digital records in one intuitive interface.",
+      components: ["UI/UX", "Data Intelligence", "AI/ML"],
+      industry: "Real Estate",
+      stage: "MVP",
+      deliveryType: "Built by Aicrays"
+    },
+    {
+      name: "AI-Powered Detection",
+      description: "Autonomous threat detection platform using GNNs, NLP, and time-series analytics to catch evolving anomalies in real time — before they become threats.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Cybersecurity",
+      stage: "MVP",
+      deliveryType: "Built by Aicrays"
+    },
+    {
+      name: "AI-Powered Prevention",
+      description: "Proactive defense system powered by AI that blocks advanced persistent threats and phishing using adversarial learning, behavior modeling, and dynamic IPS rules.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Cybersecurity",
+      stage: "MVP",
+      deliveryType: "Built by Aicrays"
+    },
+    {
+      name: "AI-Powered Threat Intelligence",
+      description: "Aggregates real-time global threat data, refines it using AI-enhanced analysis, and powers automatic preventive actions — with privacy-preserving federated learning.",
+      components: ["AI", "Cybersecurity"],
+      industry: "Cybersecurity",
+      stage: "MVP",
+      deliveryType: "Built by Aicrays"
     }
   ];
 
   const getStageColor = (stage: string) => {
     switch (stage) {
+      case "MVP": return "bg-purple-100 text-purple-700 border-purple-200";
+      case "In Production": return "bg-blue-100 text-blue-700 border-blue-200";
       case "Alpha": return "bg-orange-100 text-orange-700 border-orange-200";
       case "Beta": return "bg-blue-100 text-blue-700 border-blue-200";
       case "Testing": return "bg-yellow-100 text-yellow-700 border-yellow-200";
@@ -117,13 +143,11 @@ const CurrentlyInDevelopment = () => {
                   </Badge>
                 </div>
                 
-                {product.expectedRelease && (
-                  <div>
-                    <Badge variant="outline" className="text-xs border-green-200 text-green-700">
-                      {product.expectedRelease}
-                    </Badge>
-                  </div>
-                )}
+                <div>
+                  <Badge variant="outline" className="text-xs border-gray-200 text-gray-700">
+                    {product.deliveryType}
+                  </Badge>
+                </div>
               </div>
             </div>
           ))}
