@@ -1,54 +1,40 @@
-
 import React from "react";
 
 const OurPartners = () => {
   const partners = [
     {
-      name: "TechFlow Industries",
-      description: "Co-developed an AI-powered manufacturing optimization platform with real-time IoT integration.",
-      products: ["SmartFactory Pro", "Quality Control AI"],
-      status: "Ongoing",
-      tags: ["AI/ML", "IoT", "Manufacturing"]
+      name: "Pro17Analytics",
+      description: "Our digital transformation ally for AI, cloud modernization, and IoT integration. Together, we build scalable data-first enterprise platforms.",
+      products: ["Built with Pro17Analytics"],
+      status: "Active",
+      tags: ["AI", "IoT", "Data Intelligence", "Custom Apps"]
     },
     {
-      name: "SecureData Corp",
-      description: "Built a comprehensive cybersecurity dashboard for enterprise threat detection and response.",
-      products: ["ThreatWatch Enterprise"],
-      status: "Completed",
-      tags: ["Cybersecurity", "Enterprise", "Data Intelligence"]
+      name: "Infisign",
+      description: "Advanced IAM and biometric authentication solutions provider. Together, we power secure access for healthcare, finance, and infrastructure.",
+      products: ["Built with Infisign"],
+      status: "Active",
+      tags: ["Cybersecurity", "IAM", "Compliance", "Biometrics"]
     },
     {
-      name: "HealthTech Innovations",
-      description: "Collaborated on a patient monitoring system with RFID tracking and predictive analytics.",
-      products: ["PatientCare360"],
-      status: "Pilot",
-      tags: ["Healthcare", "RFID", "Predictive Analytics"]
+      name: "Thunai",
+      description: "AI-powered knowledge automation partner. We use Thunai's agents to transform documentation, meetings, and workflows into smart, responsive experiences.",
+      products: ["Powered by Thunai"],
+      status: "Active",
+      tags: ["AI", "Automation", "Knowledge Agents", "CRM Integration"]
     },
     {
-      name: "RetailNext Solutions",
-      description: "Developing an omnichannel customer experience platform with AI-driven personalization.",
-      products: ["RetailAI Suite"],
-      status: "Ongoing",
-      tags: ["Retail", "AI/ML", "Customer Experience"]
-    },
-    {
-      name: "GreenEnergy Systems",
-      description: "Creating smart grid management tools with renewable energy optimization algorithms.",
-      products: ["GridOptimizer Pro"],
-      status: "Exploratory",
-      tags: ["Energy", "IoT", "Sustainability"]
-    },
-    {
-      name: "FinanceFlow Partners",
-      description: "Built secure financial transaction processing with advanced fraud detection capabilities.",
-      products: ["SecureTransact"],
-      status: "Completed",
-      tags: ["Finance", "Security", "Transaction Processing"]
+      name: "EinNel (Task)",
+      description: "Our productivity and team coordination partner. Task by EinNel helps us deliver task automation, analytics, and secure collaboration for distributed teams.",
+      products: ["Powered by EinNel Task"],
+      status: "Active",
+      tags: ["Productivity", "Collaboration", "Analytics", "Workforce Optimization"]
     }
   ];
 
   const getStatusColor = (status: string) => {
     switch (status) {
+      case "Active": return "bg-green-100 text-green-700 border-green-200";
       case "Ongoing": return "bg-green-100 text-green-700 border-green-200";
       case "Completed": return "bg-blue-100 text-blue-700 border-blue-200";
       case "Pilot": return "bg-yellow-100 text-yellow-700 border-yellow-200";
@@ -58,7 +44,7 @@ const OurPartners = () => {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40 py-16 md:py-24">
+    <section className="relative bg-gradient-to-br from-purple-100 via-purple-200/60 to-purple-300/40 py-16 md:py-24" id="our-partners">
       {/* Section-specific splotches for partner cards area - dramatically enhanced visibility */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Partners section large splotches - significantly more prominent */}
@@ -126,7 +112,7 @@ const OurPartners = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {partners.map((partner, index) => (
             <div
               key={index}
@@ -147,7 +133,7 @@ const OurPartners = () => {
               </p>
 
               <div className="mb-6">
-                <p className="text-sm font-medium text-gray-800 mb-3">Products Built:</p>
+                <p className="text-sm font-medium text-gray-800 mb-3">Partnership Status:</p>
                 <div className="flex flex-wrap gap-2">
                   {partner.products.map((product, idx) => (
                     <span key={idx} className="px-3 py-1 bg-purple-50 text-purple-700 rounded-lg text-xs font-medium border border-purple-100">

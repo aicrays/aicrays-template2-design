@@ -3,26 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Users, Rocket, Layers, Link } from "lucide-react";
 
 const PartnerWithUs = () => {
   const [formData, setFormData] = useState({
     fullName: "",
-    businessEmail: "",
     companyName: "",
-    websiteUrl: "",
-    partnershipType: "",
-    proposal: ""
+    businessEmail: "",
+    serviceOffering: ""
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, partnershipType: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,22 +26,22 @@ const PartnerWithUs = () => {
   const benefits = [
     {
       icon: Users,
-      title: "Co-Development",
-      description: "Joint product development with shared expertise and resources"
+      title: "Co-create scalable, intelligent platforms",
+      description: "Build next-generation solutions together with shared expertise and resources"
     },
     {
       icon: Rocket,
-      title: "Go-to-Market Access",
+      title: "Share innovation and market exposure",
       description: "Leverage our network and distribution channels for faster market entry"
     },
     {
       icon: Layers,
-      title: "Modular Architecture",
+      title: "Access secure, compliant frameworks",
       description: "Flexible, scalable solutions that integrate seamlessly with your tech stack"
     },
     {
       icon: Link,
-      title: "API-First Integrations",
+      title: "Get long-term product support",
       description: "Deep technical integration capabilities for enhanced product offerings"
     }
   ];
@@ -119,7 +112,7 @@ const PartnerWithUs = () => {
           {/* Left Column - Benefits */}
           <div className="space-y-8">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight bg-gradient-to-r from-gray-900 via-purple-800 to-purple-950 bg-clip-text text-transparent">
-              Why Partner with Aicrays?
+              Why Partner with Us?
             </h2>
             
             <div className="space-y-6">
@@ -156,31 +149,17 @@ const PartnerWithUs = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="fullName" className="text-gray-800">Full Name</Label>
-                  <Input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    value={formData.fullName}
-                    onChange={handleInputChange}
-                    className="border-purple-200 focus:border-purple-500 bg-white/90"
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="businessEmail" className="text-gray-800">Business Email</Label>
-                  <Input
-                    id="businessEmail"
-                    name="businessEmail"
-                    type="email"
-                    value={formData.businessEmail}
-                    onChange={handleInputChange}
-                    className="border-purple-200 focus:border-purple-500 bg-white/90"
-                    required
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="fullName" className="text-gray-800">Full Name</Label>
+                <Input
+                  id="fullName"
+                  name="fullName"
+                  type="text"
+                  value={formData.fullName}
+                  onChange={handleInputChange}
+                  className="border-purple-200 focus:border-purple-500 bg-white/90"
+                  required
+                />
               </div>
               
               <div className="space-y-2">
@@ -197,42 +176,24 @@ const PartnerWithUs = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="websiteUrl" className="text-gray-800">Website URL (Optional)</Label>
+                <Label htmlFor="businessEmail" className="text-gray-800">Business Email</Label>
                 <Input
-                  id="websiteUrl"
-                  name="websiteUrl"
-                  type="url"
-                  value={formData.websiteUrl}
+                  id="businessEmail"
+                  name="businessEmail"
+                  type="email"
+                  value={formData.businessEmail}
                   onChange={handleInputChange}
                   className="border-purple-200 focus:border-purple-500 bg-white/90"
-                  placeholder="https://"
+                  required
                 />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="partnershipType" className="text-gray-800">Type of Partnership</Label>
-                <Select value={formData.partnershipType} onValueChange={handleSelectChange}>
-                  <SelectTrigger className="border-purple-200 focus:border-purple-500 bg-white/90">
-                    <SelectValue placeholder="Select partnership type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="co-development">Co-Development</SelectItem>
-                    <SelectItem value="technology-integration">Technology Integration</SelectItem>
-                    <SelectItem value="white-label">White-Label Solutions</SelectItem>
-                    <SelectItem value="research">Research & Innovation</SelectItem>
-                    <SelectItem value="distribution">Distribution Partnership</SelectItem>
-                    <SelectItem value="strategic">Strategic Alliance</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="proposal" className="text-gray-800">Describe Your Proposal</Label>
+                <Label htmlFor="serviceOffering" className="text-gray-800">Area of Partnership / Service Offering</Label>
                 <Textarea
-                  id="proposal"
-                  name="proposal"
-                  value={formData.proposal}
+                  id="serviceOffering"
+                  name="serviceOffering"
+                  value={formData.serviceOffering}
                   onChange={handleInputChange}
                   className="border-purple-200 focus:border-purple-500 bg-white/90 min-h-[120px]"
                   placeholder="Tell us about your partnership vision, goals, and how we can collaborate..."
@@ -244,9 +205,18 @@ const PartnerWithUs = () => {
                 type="submit"
                 className="w-full bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                Start the Partnership Conversation
+                Let's Collaborate
               </Button>
             </form>
+
+            <div className="mt-6 pt-6 border-t border-purple-100">
+              <p className="text-sm text-gray-600 text-center">
+                Prefer email? Contact us at{" "}
+                <a href="mailto:hello@aicrays.com" className="text-purple-600 hover:text-purple-700 font-medium">
+                  hello@aicrays.com
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>

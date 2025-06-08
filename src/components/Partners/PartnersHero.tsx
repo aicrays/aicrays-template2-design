@@ -1,6 +1,6 @@
 
 import React, { useRef, useState, useEffect } from "react";
-import { ArrowRight, Shield, Building2, Heart, Cpu, Factory, GraduationCap } from "lucide-react";
+import { ArrowRight, Shield, Building2, Heart, Cpu } from "lucide-react";
 
 const PartnersHero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,52 +13,36 @@ const PartnersHero = () => {
 
   const partners = [
     {
-      icon: Shield,
-      name: "SecureGuard Technologies",
-      summary: "Co-developing an AI analytics module for healthcare.",
-      tag: "Cybersecurity",
+      icon: Building2,
+      name: "Pro17Analytics",
+      summary: "Digital transformation ally for AI, cloud modernization, and IoT integration.",
+      tag: "AI & IoT",
       gradient: "from-purple-500 to-purple-600",
       tagColor: "text-purple-600 bg-purple-50"
     },
     {
-      icon: Building2,
-      name: "Enterprise Solutions Corp",
-      summary: "Building scalable cloud infrastructure platforms.",
-      tag: "Enterprise",
+      icon: Shield,
+      name: "Infisign",
+      summary: "Advanced IAM and biometric authentication solutions provider.",
+      tag: "Cybersecurity",
       gradient: "from-purple-600 to-indigo-600",
       tagColor: "text-blue-600 bg-blue-50"
     },
     {
-      icon: Heart,
-      name: "HealthTech Innovations",
-      summary: "Creating patient management systems with AI diagnostics.",
-      tag: "Healthcare",
+      icon: Cpu,
+      name: "Thunai",
+      summary: "AI-powered knowledge automation partner transforming workflows.",
+      tag: "AI Automation",
       gradient: "from-indigo-500 to-purple-500",
       tagColor: "text-green-600 bg-green-50"
     },
     {
-      icon: Factory,
-      name: "Industrial IoT Partners",
-      summary: "Developing smart manufacturing optimization tools.",
-      tag: "Manufacturing",
+      icon: Heart,
+      name: "EinNel (Task)",
+      summary: "Productivity and team coordination partner for task automation.",
+      tag: "Productivity",
       gradient: "from-purple-500 to-pink-500",
       tagColor: "text-orange-600 bg-orange-50"
-    },
-    {
-      icon: Cpu,
-      name: "TechFlow Systems",
-      summary: "Integrating embedded systems for aerospace applications.",
-      tag: "In Progress",
-      gradient: "from-indigo-600 to-purple-700",
-      tagColor: "text-yellow-600 bg-yellow-50"
-    },
-    {
-      icon: GraduationCap,
-      name: "EduTech Collaborative",
-      summary: "Building personalized learning platforms with adaptive AI.",
-      tag: "Education",
-      gradient: "from-purple-400 to-indigo-500",
-      tagColor: "text-purple-600 bg-purple-50"
     }
   ];
 
@@ -126,7 +110,7 @@ const PartnersHero = () => {
                   </p>
                 </div>
 
-                {/* Partners Grid - 2x3 layout matching Products style */}
+                {/* Partners Grid - 2x2 layout */}
                 <div className="grid grid-cols-2 gap-3 lg:gap-4 max-w-2xl">
                   {partners.map((partner, index) => (
                     <div
