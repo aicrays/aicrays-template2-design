@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { BarChart3, Shield, Fingerprint, Eye, Truck, Zap } from "lucide-react";
+import { BarChart3, Shield, Fingerprint, Eye } from "lucide-react";
 
 const BuiltAndDelivered = () => {
   const products = [
@@ -44,26 +43,6 @@ const BuiltAndDelivered = () => {
       status: "Built",
       icon: Shield,
       iconGradient: "from-purple-600 to-violet-700"
-    },
-    {
-      name: "Fleet Management System",
-      description: "An intelligent fleet orchestration platform for a Middle Eastern conglomerate, combining AI routing, real-time tracking, and predictive maintenance using IoT telemetry.",
-      components: ["AI/ML", "IoT/RFID", "Data Intelligence"],
-      industry: "Logistics",
-      deliveryType: "Built by Aicrays",
-      status: "In Production",
-      icon: Truck,
-      iconGradient: "from-violet-600 to-purple-700"
-    },
-    {
-      name: "AI-Powered Detection",
-      description: "Autonomous threat detection platform using GNNs, NLP, and time-series analytics to catch evolving anomalies in real time — before they become threats.",
-      components: ["AI", "Cybersecurity"],
-      industry: "Security",
-      deliveryType: "Built by Aicrays",
-      status: "MVP",
-      icon: Zap,
-      iconGradient: "from-purple-500 to-violet-600"
     }
   ];
 
@@ -71,9 +50,7 @@ const BuiltAndDelivered = () => {
     switch (status) {
       case "Live": return "bg-green-100 text-green-700 border-green-200";
       case "Built": return "bg-green-100 text-green-700 border-green-200";
-      case "In Production": return "bg-green-100 text-green-700 border-green-200";
-      case "In Progress": return "bg-blue-100 text-blue-700 border-blue-200";
-      case "MVP": return "bg-purple-100 text-purple-700 border-purple-200";
+      case "In Production": return "bg-blue-100 text-blue-700 border-blue-200";
       case "Archived": return "bg-gray-100 text-gray-700 border-gray-200";
       default: return "bg-purple-100 text-purple-700 border-purple-200";
     }
@@ -81,7 +58,6 @@ const BuiltAndDelivered = () => {
 
   return (
     <section className="relative py-16 overflow-hidden" id="built-and-delivered">
-      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large splotches with increased visibility */}
         <div className="absolute top-[10%] left-[15%] w-[550px] h-[550px] bg-gradient-to-br from-purple-300/85 to-violet-400/80 rounded-full blur-3xl animate-float opacity-90" style={{ animationDelay: '3s', animationDuration: '25s' }}></div>
@@ -98,9 +74,9 @@ const BuiltAndDelivered = () => {
         <div className="absolute top-[75%] left-[80%] w-[320px] h-[320px] bg-gradient-to-tl from-purple-300/75 to-indigo-300/70 rounded-full blur-xl animate-float opacity-80" style={{ animationDelay: '10s', animationDuration: '32s' }}></div>
       </div>
 
-      
+      {/* Section-specific orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        
+        {/* Scattered orbs throughout the section with enhanced variety */}
         <div className="absolute top-[15%] left-[20%] w-4 h-4 bg-purple-500/70 rounded-full blur-xs animate-float opacity-95" style={{ animationDelay: '2s', animationDuration: '18s' }}></div>
         <div className="absolute top-[25%] left-[60%] w-9 h-9 bg-violet-600/60 rounded-full blur-sm animate-float opacity-90" style={{ animationDelay: '7s', animationDuration: '22s' }}></div>
         <div className="absolute top-[35%] left-[85%] w-5 h-5 bg-indigo-500/65 rounded-full blur-xs animate-float opacity-100" style={{ animationDelay: '12s', animationDuration: '20s' }}></div>
@@ -117,10 +93,11 @@ const BuiltAndDelivered = () => {
       <div className="section-container relative z-10">
         <div className="text-center mb-12">
           <h2 className="section-title bg-gradient-to-r from-gray-800 via-purple-700 to-purple-900 bg-clip-text text-transparent mb-4">
-            Built and Running
+            Built and Delivered
           </h2>
           <p className="section-subtitle mx-auto">
-            Explore the platforms we've already deployed—custom-built, scalable, and evolving.
+            Explore our flagship platforms—custom-built with precision and performance. 
+            Each solution is engineered using our modular components, designed for industry-specific outcomes.
           </p>
         </div>
 
